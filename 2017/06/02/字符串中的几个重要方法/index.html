@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>字符串中的几个重要方法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.通过索引查找字符串1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变例如:12345var str = &amp;apos;addias&amp;apos;;console.log(str.charAt(0),str);//&amp;quot;a&amp;quot; &amp;quo">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符串中的几个重要方法">
+<meta property="og:url" content="http://yoursite.com/2017/06/02/字符串中的几个重要方法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.通过索引查找字符串1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变例如:12345var str = &amp;apos;addias&amp;apos;;console.log(str.charAt(0),str);//&amp;quot;a&amp;quot; &amp;quo">
+<meta property="og:updated_time" content="2017-06-02T12:51:31.089Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符串中的几个重要方法">
+<meta name="twitter:description" content="1.通过索引查找字符串1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变例如:12345var str = &amp;apos;addias&amp;apos;;console.log(str.charAt(0),str);//&amp;quot;a&amp;quot; &amp;quo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-字符串中的几个重要方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/02/字符串中的几个重要方法/" class="article-date">
+  <time datetime="2017-06-02T12:03:49.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字符串中的几个重要方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.通过索引查找字符串<br>1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变<br>2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.charAt(0),str);</div><div class="line">//&quot;a&quot; &quot;addias&quot; 原字符串不变</div><div class="line">console.log(str.charCodeAt(0),str);</div><div class="line">//97 &quot;addias&quot;  原字符串不变</div></pre></td></tr></table></figure></p>
+<p>2.检取字符串</p>
+<blockquote>
+<ol>
+<li>substr(n,m); 从索引n开始截取m个</li>
+</ol>
+<ul>
+<li>返回值为截取的字符串</li>
+<li>原有字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(1, 2),str);//&quot;dd&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>1). str.substr();// 复制字符串</li>
+<li>2). str.substr(0);// 复制字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div><div class="line">console.log(str.substr(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>subString(n,m) 从索引n找到索引m之前，不包含m处;原字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(3, 4),str);</div><div class="line">//&quot;i&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>substring(0); 克隆字符串</li>
+<li>substring(); 克隆字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div><div class="line">console.log(str.substring(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>slice  字符串也可以使用slice<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.slice(-1+str.length));//s</div><div class="line">console.log(str.slice(-1)); //s 同数组的使用方法一样</div><div class="line">console.log(str.slice(-2)); //as 同数组的使用方法一样</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>4.indexOf();字符串中当前字符出现的第一个索引;<br>lastIndexOf();字符串中当前字符出现的最后一个索引;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.indexOf(&apos;f&apos;));//-1</div><div class="line">console.log(str.lastIndexOf(&apos;a&apos;));//4</div></pre></td></tr></table></figure></p>
+<p>5.toUpperCase();字符串转化成大写;<br>toLowerCase();字符串转化成小写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.toUpperCase(), str);</div><div class="line">// &quot;ADDIAS&quot; &quot;addias&quot; 字符串转化成大写</div><div class="line">var str = &apos;ADDIAS&apos;;</div><div class="line">console.log(str.toLowerCase(), str);</div><div class="line">//&quot;addias&quot; &quot;ADDIAS&quot; 字符串转化成小写</div></pre></td></tr></table></figure></p>
+<p>6.replace 替换字符串中的字符;原字符串不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str1.replace(&apos;珠&apos;, &apos;zhu&apos;), str1);</div><div class="line">//&quot;zhu,峰,珠,训&quot;    &quot;珠,峰,珠,训&quot;</div></pre></td></tr></table></figure></p>
+<p>6.split 将字符串拆分成数组;将字符串以字符串中存在的指定分隔符拆分成数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str2.split(&apos;a&apos;));</div><div class="line">//(5) [&quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;]</div><div class="line">console.log(str2.split());</div><div class="line">//[&quot;sdasdasdasdasd&quot;]</div><div class="line">console.log(str1.split(&apos;,&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;峰&quot;, &quot;珠&quot;, &quot;训&quot;]</div><div class="line">console.log(str1.split(&apos;&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;,&quot;, &quot;峰&quot;, &quot;,&quot;, &quot;珠&quot;, &quot;,&quot;, &quot;训&quot;]</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/02/字符串中的几个重要方法/" data-id="cj3fumqte000420tt5ginct9b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/29/JS中的作用域/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS中的作用域
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/02/字符串中的几个重要方法/">字符串中的几个重要方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/JS中的作用域/">JS中的作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/JS中的预解释/">JS中的预解释</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/自定义属性和引用数据类型的赋值/">自定义属性和引用数据类型的赋值</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/基于GitHub创建自己的博客/">基于GitHub创建自己的博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
