@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>canvas 绘制线条的有关属性和步骤 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;canvas id=&amp;quot;&amp;quot; width=&amp;quot;&amp;quot; height=&amp;quot;&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas :H5标签 在页面上绘制图形用的（通常称他画布）canvas只是一个容器，我们用js脚本来控制他&amp;lt;canvas id=&amp;quot;draw&amp;quot; width=&amp;quot;600&amp;quot; height=&amp;">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas 绘制线条的有关属性和步骤">
+<meta property="og:url" content="http://yoursite.com/2017/06/08/1.canvas-绘制线条的有关属性和步骤/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;lt;canvas id=&amp;quot;&amp;quot; width=&amp;quot;&amp;quot; height=&amp;quot;&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas :H5标签 在页面上绘制图形用的（通常称他画布）canvas只是一个容器，我们用js脚本来控制他&amp;lt;canvas id=&amp;quot;draw&amp;quot; width=&amp;quot;600&amp;quot; height=&amp;">
+<meta property="og:updated_time" content="2017-06-08T11:50:18.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas 绘制线条的有关属性和步骤">
+<meta name="twitter:description" content="&amp;lt;canvas id=&amp;quot;&amp;quot; width=&amp;quot;&amp;quot; height=&amp;quot;&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt;canvas :H5标签 在页面上绘制图形用的（通常称他画布）canvas只是一个容器，我们用js脚本来控制他&amp;lt;canvas id=&amp;quot;draw&amp;quot; width=&amp;quot;600&amp;quot; height=&amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-1.canvas-绘制线条的有关属性和步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/08/1.canvas-绘制线条的有关属性和步骤/" class="article-date">
+  <time datetime="2017-06-08T11:44:17.000Z" itemprop="datePublished">2017-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      canvas 绘制线条的有关属性和步骤
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>&lt;canvas id=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/canvas&gt;</code><br>canvas :H5标签 在页面上绘制图形用的（通常称他画布）<br>canvas只是一个容器，我们用js脚本来控制他<br><code>&lt;canvas id=&quot;draw&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border: 1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</code></p>
+<h3 id="绘制线条的有关属性和步骤"><a href="#绘制线条的有关属性和步骤" class="headerlink" title="绘制线条的有关属性和步骤"></a>绘制线条的有关属性和步骤</h3><blockquote>
+<p>1.相关属性</p>
+</blockquote>
+<ul>
+<li><p>1.填充的样式cvs.fillStyle</p>
+<ul>
+<li><code>cvs.strokeStyle --&gt;</code>strokeStyle<code>笔触样式 主要用来画边框的</code></li>
+<li><code>cvs.lineWidth --&gt; 边框的宽度</code></li>
+</ul>
+</li>
+<li><p>2.绘制图形有两种方式</p>
+<ul>
+<li><code>cvs.fill(); --&gt; 填充样式</code></li>
+<li><code>cvs.stroke(); --&gt; 边框样式</code></li>
+</ul>
+</li>
+<li><p>3.颜色值的四种书写方式</p>
+<ul>
+<li>1).颜色名      –&gt;”red”</li>
+<li>2).十六进制    –&gt;”#fff”</li>
+<li>3).三色值      –&gt;rgb(0,0,0)</li>
+<li>4).四色值      –&gt;rgba(0,0,0,0.3)</li>
+</ul>
+</li>
+<li><p>4.坐标:</p>
+<ul>
+<li>1.)以画布为基准,距离画布的上边是y坐标值(top值),距离画布的左边是x坐标值(left值);</li>
+<li>cvs.moveTo(x,y);  –&gt; 起始点坐标</li>
+<li>cvs.lineTo(x,y);  –&gt; 结束点的坐标</li>
+<li>如果没有moveTo就把上一个挨着的lineTo作为起始坐标</li>
+<li>例如:假如第一个不是moveTo而是lineTo,那么lineTo就是其实坐标</li>
+</ul>
+</li>
+<li><p>5.开始和关闭一个路径</p>
+<ul>
+<li>cvs.beginPath(); –&gt; 开始一个新的路径</li>
+<li>cvs.closePath(); –&gt; 关闭当前路径</li>
+<li>注意:加上.closePath会自动闭合 会自动连接起始坐标和结束坐标</li>
+</ul>
+</li>
+<li><p>6.canvas中的圆角</p>
+<ul>
+<li>1).设置线条交汇处的样式</li>
+<li>cvs.lineJoin 他有三个属性：<ul>
+<li>1).尖角miter</li>
+<li>2).斜角bevel</li>
+<li>3).圆角round</li>
+</ul>
+</li>
+<li>2).设置一条线段两端点的样式</li>
+<li>lineCap焦点样式<ul>
+<li>1)平的butt(默认值)</li>
+<li>2.)圆角round</li>
+<li>3.)方角square</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>2.步骤及案例</p>
+</blockquote>
+<ul>
+<li>步骤1.获取出canvas标签,例如:<br><code>var draw=document.getElementById(&#39;draw&#39;);</code></li>
+<li><p>步骤2.设置绘制环境–2d 平面图,例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">//cvs 这个就是你的画板 接下来就可以在cvs上进行绘制</div></pre></td></tr></table></figure>
+</li>
+<li><p>步骤3</p>
+</li>
+<li><p>案例1:线段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">cvs.beginPath();</div><div class="line">cvs.moveTo(50,50);</div><div class="line">cvs.lineTo(150,50);</div><div class="line">cvs.closePath();</div><div class="line">cvs.strokeStyle=&apos;#800080&apos;;</div><div class="line">cvs.lineWidth=5;</div><div class="line">cvs.stroke();//以边框的形式显示</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2:等腰直角三角形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineTo(80,120);</div><div class="line">	cvs.lineTo(80,240);</div><div class="line">	cvs.lineTo(200,240);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.strokeStyle=&apos;ec568c&apos;;</div><div class="line">	cvs.lineWidth=10;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3:圆角矩形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineCap=&apos;round&apos;;</div><div class="line">	cvs.lineTo(50,50);</div><div class="line">	cvs.lineTo(250,50);</div><div class="line">	cvs.closePath();//关闭就没有圆角效果</div><div class="line">	cvs.lineWidth=100;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例4:圆角三角形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineJoin=&apos;round&apos;;//设置圆角</div><div class="line">	cvs.moveTo(200,100);</div><div class="line">	cvs.lineTo(100,250);</div><div class="line">	cvs.lineTo(300,250);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.lineWidth=50;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/08/1.canvas-绘制线条的有关属性和步骤/" data-id="cj3oeek3m0000m0tt1vwb13ph" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/02/字符串中的几个重要方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          字符串中的几个重要方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/08/2-canvas画圆/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2.canvas画圆</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/08/2-canvas画圆/">2.canvas画圆</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/08/1.canvas-绘制线条的有关属性和步骤/">canvas 绘制线条的有关属性和步骤</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/02/字符串中的几个重要方法/">字符串中的几个重要方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/JS中的作用域/">JS中的作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/JS中的预解释/">JS中的预解释</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

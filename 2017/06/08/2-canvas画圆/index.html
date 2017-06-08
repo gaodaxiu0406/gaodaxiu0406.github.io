@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>2.canvas画圆 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise); x,y 圆心坐标 radius半径r startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针) endAngle  结束角 anticlokwise 是否逆时针 默认值false false表示顺时针      案例  案例1:边框半圆">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.canvas画圆">
+<meta property="og:url" content="http://yoursite.com/2017/06/08/2-canvas画圆/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise); x,y 圆心坐标 radius半径r startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针) endAngle  结束角 anticlokwise 是否逆时针 默认值false false表示顺时针      案例  案例1:边框半圆">
+<meta property="og:updated_time" content="2017-06-08T12:26:55.570Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2.canvas画圆">
+<meta name="twitter:description" content="cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise); x,y 圆心坐标 radius半径r startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针) endAngle  结束角 anticlokwise 是否逆时针 默认值false false表示顺时针      案例  案例1:边框半圆">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2-canvas画圆" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/08/2-canvas画圆/" class="article-date">
+  <time datetime="2017-06-08T11:56:51.000Z" itemprop="datePublished">2017-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2.canvas画圆
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><ol>
+<li>cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise);<ul>
+<li>x,y 圆心坐标</li>
+<li>radius半径r</li>
+<li>startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针)</li>
+<li>endAngle  结束角</li>
+<li>anticlokwise 是否逆时针 默认值false false表示顺时针</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li><p>案例</p>
+<ul>
+<li><p>案例1:边框半圆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;//边框圆</div><div class="line">	cvs.strokeStyle=&apos;#ffa50&apos;;//设置笔触样式(边框样式)颜色</div><div class="line">	cvs.beginPath();//开始一个路径</div><div class="line">	cvs.arc(500,500,100,0,Math.PI);//圆心坐标是500,500，半径是100px，起始角为0度，结束角为180度</div><div class="line">	cvs.closePath();//结束路径</div><div class="line">	cvs.lineWidth=10;//边框宽度为10px</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2:同心圆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	cvs.beginPath();</div><div class="line">	//开始一个新的路径</div><div class="line">	cvs.arc(200,200,60,Math.PI/2,2*Math.PI);</div><div class="line">	//圆心坐标是(200,200),半径为60px,起始角为90度,结束角为360度</div><div class="line">	cvs.closePath();</div><div class="line">	//结束一个路径</div><div class="line">	cvs.fill();</div><div class="line">	//绘制图形以填充样式绘制</div><div class="line">	cvs.strokeStyle=&apos;yellow&apos;;</div><div class="line">	//设置 笔触样式(边框样式) 为黄色</div><div class="line">	cvs.lineWidth=40;</div><div class="line">	//边框的宽度为40px</div><div class="line">	cvs.beginPath();</div><div class="line">	//开始一个新的路径</div><div class="line">	cvs.arc(200,200,80,0,2*Math.PI);</div><div class="line">	//圆心坐标是(200,200),半径为80px,起始角度为0度,结束角度为360度</div><div class="line">	cvs.closePath();//结束一个路径</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3:每次调用fill绘制填充图的时候，会把当次路径的起始点和结束点分别连接，填充闭合部分(如果想让每个路径互不干扰 一定要记得写结束路径–&gt;关闭路径)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.strokeStyle=&apos;pink&apos;;//设置笔触样式(边框样式)颜色为粉色</div><div class="line">	cvs.beginPath();//开始一个路径</div><div class="line">	cvs.lineWidth=2;//边框的宽度为2px</div><div class="line">	cvs.arc(100,100,100,0,Math.PI);//圆心坐标是100,100,半径为100,起始角度为0度,结束角度为180度</div><div class="line">	cvs.closePath();//结束一个路径</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">	cvs.fillStyle=&apos;gray&apos;;//设置填充颜色为灰色</div><div class="line">	cvs.arc(300,300,80,0,Math.PI/2);//圆心坐标是300,300，半径是80px，起始角度为0，结束角度为90度</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.fill();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/08/2-canvas画圆/" data-id="cj3oeek3t0001m0ttffkhoxxt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/08/1.canvas-绘制线条的有关属性和步骤/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          canvas 绘制线条的有关属性和步骤
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/08/2-canvas画圆/">2.canvas画圆</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/08/1.canvas-绘制线条的有关属性和步骤/">canvas 绘制线条的有关属性和步骤</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/02/字符串中的几个重要方法/">字符串中的几个重要方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/JS中的作用域/">JS中的作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/29/JS中的预解释/">JS中的预解释</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
