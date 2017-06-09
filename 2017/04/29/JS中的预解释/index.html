@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/29/JS中的预解释/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="预解释的基础知识 例子 1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function  1.预解释:  是一个过程，作用域形成之后，代码执行之前，">
-<meta property="og:updated_time" content="2017-06-09T03:23:04.026Z">
+<meta property="og:updated_time" content="2017-06-09T03:24:04.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的预解释">
 <meta name="twitter:description" content="预解释的基础知识 例子 1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function  1.预解释:  是一个过程，作用域形成之后，代码执行之前，">
@@ -53,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -112,12 +112,10 @@
 <li>预解释的时候遇到变量已经声明过了就不用声明了，但是需要重新定义,例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//变量只声明未定义就是undefined</div><div class="line">console.log(obj1);//--&gt;undefined</div><div class="line">var obj1=&#123;name:&quot;111&quot;&#125;;</div><div class="line">console.log(fn);</div><div class="line">function fn() &#123;&#125;</div><div class="line">//1.全局作用形成</div><div class="line">//2.全局作用域下的预解释：var obj1，function fn=xxxfff000</div><div class="line">//3.代码执行：</div><div class="line">// 1.console.log(obj1);--&gt;undefined</div><div class="line">// 2.obj1=xxxfff111</div><div class="line">// 3. console.log(fn);--&gt;function fn() &#123;&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="预解释的几种特殊情况"><a href="#预解释的几种特殊情况" class="headerlink" title="预解释的几种特殊情况"></a>预解释的几种特殊情况</h3><blockquote>
-<p>注意:</p>
-<ul>
+<h3 id="预解释的几种特殊情况"><a href="#预解释的几种特殊情况" class="headerlink" title="预解释的几种特殊情况"></a>预解释的几种特殊情况</h3><ul>
+<li>注意:</li>
 <li>全局作用域下的变量就是window的一个属性</li>
 </ul>
-</blockquote>
 <h4 id="1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）"><a href="#1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）" class="headerlink" title="1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）"></a>1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var ff=function () &#123;</div><div class="line">    console.log(1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h4 id="2-return-后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释"><a href="#2-return-后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释" class="headerlink" title="2.return 后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释"></a>2.return 后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function fn() &#123;</div><div class="line">    var a=0;</div><div class="line">    console.log(f);//function f()&#123;&#125;</div><div class="line">    return function () &#123;</div><div class="line">        console.log(1);</div><div class="line">        return 1</div><div class="line">    &#125;;</div><div class="line">    function f() &#123;&#125;</div><div class="line">&#125;</div><div class="line">var d=fn();</div><div class="line">console.log(d());</div><div class="line">fn()();</div></pre></td></tr></table></figure>
 <h4 id="3-在条件语句中"><a href="#3-在条件语句中" class="headerlink" title="3.在条件语句中"></a>3.在条件语句中</h4><ul>
@@ -141,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj3oeek3y0003m0ttuvndiepc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj3oeek3y0003m0ttuvndiepc" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -151,7 +149,7 @@
 <nav id="article-nav">
   
     <a href="/2017/04/29/自定义属性和引用数据类型的赋值/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           自定义属性和引用数据类型的赋值
@@ -161,7 +159,7 @@
   
   
     <a href="/2017/04/29/JS中的作用域/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">JS中的作用域</div>
     </a>
   
@@ -194,7 +192,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -231,7 +229,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
