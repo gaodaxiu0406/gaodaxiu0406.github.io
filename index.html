@@ -61,6 +61,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-canvas之8图形组合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/canvas之8图形组合/" class="article-date">
+  <time datetime="2017-06-09T09:41:16.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/canvas之8图形组合/">canvas之8图形组合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="图形组合"><a href="#图形组合" class="headerlink" title="图形组合"></a>图形组合</h4><ul>
+<li>cvs.globalCompositeOperation=type;</li>
+<li><p>type的值:</p>
+<ul>
+<li>1.source-over 默认值 覆盖 在原来的图形上绘制新图 新图在上</li>
+<li>2.source-out 显示新图的非交集部分</li>
+<li>3.source-in 显示新图和图形的交集，颜色是新图的颜色</li>
+<li>4.source-atop 显示旧图和交集部分 交集是新图颜色</li>
+<li>5.destination-over  在原来图形的下面绘制新图 旧图在上</li>
+<li>6.destination-out 显示旧图的非交集部分</li>
+<li>7.destination-in 显示交集 颜色是旧图颜色</li>
+<li>8.destination-atop 显示新图和交集部分 交集是旧图颜色</li>
+<li>9.lighter:全部显示 交集部分是叠加颜色</li>
+<li>10.xor:显示新旧图的非交集部分</li>
+<li>11.copy 只显示新图</li>
+</ul>
+</li>
+<li><p>案例1:在原来的图形上绘制新图 新图在上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">function draw1()&#123;</div><div class="line">	cvs.fillStyle=&apos;gold&apos;;</div><div class="line">	cvs.fillRect(10,10,100,100);</div><div class="line">       cvs.globalCompositeOperation=&apos;source-over&apos;;</div><div class="line">	cvs.fillStyle=&apos;pink&apos;;</div><div class="line">	cvs.fillRect(50,50,100,100);</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj3pp4moz000bkcttm27b8rev" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-canvas之7变形" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/09/canvas之7变形/" class="article-date">
@@ -111,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj3pnuo26000b9wtt74vk9ndg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj3pp4mp1000ckcttncmyzg07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj3pnuo24000a9wtt2n2teov6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj3pp4mox000akcttan6m1zq8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj3pnuo2100089wtt7fuhw1xc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj3pp4mol0006kcttdj1cqwt5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj3pnuo1s00069wttox2lce2c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj3pp4mow0009kcttkxco4jv2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj3pnuo2200099wttjusjpb3o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj3pp4mou0008kctt4cmgpq66" class="article-share-link">Share</a>
       
       
     </footer>
@@ -481,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj3pnuo2a000d9wttslqjv745" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj3pp4mp7000fkcttbdog9ank" class="article-share-link">Share</a>
       
       
     </footer>
@@ -546,7 +602,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj3pnuo1u00079wttpzx7r5zq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj3pp4mop0007kcttqkdl9e9o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -665,7 +721,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj3pnuo1p00059wtts6ksq86t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj3pp4moh0005kcttevch7mas" class="article-share-link">Share</a>
       
       
     </footer>
@@ -739,44 +795,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj3pnuo1g00029wttv0e9707j" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS中的作用域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/29/JS中的作用域/" class="article-date">
-  <time datetime="2017-04-29T04:27:46.000Z" itemprop="datePublished">2017-04-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/JS中的作用域/">JS中的作用域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h4><h5 id="1-堆内存：来存储东西的，一般来存储引用数据类型"><a href="#1-堆内存：来存储东西的，一般来存储引用数据类型" class="headerlink" title="1.堆内存：来存储东西的，一般来存储引用数据类型"></a>1.堆内存：来存储东西的，一般来存储引用数据类型</h5><h5 id="2-栈内存：代码执行空间，作用域"><a href="#2-栈内存：代码执行空间，作用域" class="headerlink" title="2.栈内存：代码执行空间，作用域"></a>2.栈内存：代码执行空间，作用域</h5><h4 id="作用域两种："><a href="#作用域两种：" class="headerlink" title="作用域两种："></a>作用域两种：</h4><h5 id="全局作用域：一打开浏览器就会形成"><a href="#全局作用域：一打开浏览器就会形成" class="headerlink" title="全局作用域：一打开浏览器就会形成"></a>全局作用域：一打开浏览器就会形成</h5><h5 id="私有作用域：函数执行形成的作用域"><a href="#私有作用域：函数执行形成的作用域" class="headerlink" title="私有作用域：函数执行形成的作用域"></a>私有作用域：函数执行形成的作用域</h5><h3 id="函数执行的时候"><a href="#函数执行的时候" class="headerlink" title="函数执行的时候"></a>函数执行的时候</h3><h5 id="1-函数一执行，形成一个私有作用域"><a href="#1-函数一执行，形成一个私有作用域" class="headerlink" title="1.函数一执行，形成一个私有作用域"></a>1.函数一执行，形成一个私有作用域</h5><h5 id="2-有形参数的话给形参数赋值，相当于var-一个变量，function-s-a-s-1-gt-var-a-1"><a href="#2-有形参数的话给形参数赋值，相当于var-一个变量，function-s-a-s-1-gt-var-a-1" class="headerlink" title="2.有形参数的话给形参数赋值，相当于var 一个变量，function s(a){},s(1)-&gt;var a=1;"></a>2.有形参数的话给形参数赋值，相当于var 一个变量，function s(a){},s(1)-&gt;var a=1;</h5><h5 id="3-预解释"><a href="#3-预解释" class="headerlink" title="3.预解释"></a>3.预解释</h5><h5 id="4-代码执行"><a href="#4-代码执行" class="headerlink" title="4.代码执行"></a>4.代码执行</h5><h4 id="私有变量："><a href="#私有变量：" class="headerlink" title="私有变量："></a>私有变量：</h4><h5 id="1-形参"><a href="#1-形参" class="headerlink" title="1.形参"></a>1.形参</h5><h5 id="2-在私有作用域中声明的变量，var过和function过得"><a href="#2-在私有作用域中声明的变量，var过和function过得" class="headerlink" title="2.在私有作用域中声明的变量，var过和function过得"></a>2.在私有作用域中声明的变量，var过和function过得</h5><p><strong>记住：私有变量只能私有作用域自己使用，别人获取不到</strong></p>
-<h4 id="闭包：函数执行的时候形参一个私有作用域，来保护里面的私有变量不受外界干扰，这种机制叫做闭包"><a href="#闭包：函数执行的时候形参一个私有作用域，来保护里面的私有变量不受外界干扰，这种机制叫做闭包" class="headerlink" title="闭包：函数执行的时候形参一个私有作用域，来保护里面的私有变量不受外界干扰，这种机制叫做闭包"></a>闭包：函数执行的时候形参一个私有作用域，来保护里面的私有变量不受外界干扰，这种机制叫做闭包</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj3pnuo1500009wtt5x03mj85" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj3pp4mo90002kctt18czb16x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -820,6 +839,10 @@
       <ul>
         
           <li>
+            <a href="/2017/06/09/canvas之8图形组合/">canvas之8图形组合</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/09/canvas之7变形/">canvas之7变形</a>
           </li>
         
@@ -833,10 +856,6 @@
         
           <li>
             <a href="/2017/06/09/canvas之3绘制矩形/">canvas之3绘制矩形</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/09/canvas之5绘制文本/">canvas之5绘制文本</a>
           </li>
         
       </ul>
