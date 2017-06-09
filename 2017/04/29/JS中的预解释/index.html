@@ -5,17 +5,17 @@
   
   <title>JS中的预解释 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="预解释的基础知识例子1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function  预解释：是一个过程，作用域形成之后，代码执行之前，把所有带va">
+  <meta name="description" content="预解释的基础知识 例子1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function    1.预解释:  是一个过程，作用域形成之后，代码执行之前">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的预解释">
 <meta property="og:url" content="http://yoursite.com/2017/04/29/JS中的预解释/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="预解释的基础知识例子1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function  预解释：是一个过程，作用域形成之后，代码执行之前，把所有带va">
-<meta property="og:updated_time" content="2017-04-29T04:21:30.673Z">
+<meta property="og:description" content="预解释的基础知识 例子1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function    1.预解释:  是一个过程，作用域形成之后，代码执行之前">
+<meta property="og:updated_time" content="2017-06-09T03:21:07.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的预解释">
-<meta name="twitter:description" content="预解释的基础知识例子1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function  预解释：是一个过程，作用域形成之后，代码执行之前，把所有带va">
+<meta name="twitter:description" content="预解释的基础知识 例子1234567console.log(d);//--&amp;gt;function d()&amp;#123;&amp;#125;;d=1;//--&amp;gt;d=1s=d;//--&amp;gt;s=1function d()&amp;#123;//--&amp;gt;xxxfff000&amp;#125;d();//--&amp;gt;d is not a function    1.预解释:  是一个过程，作用域形成之后，代码执行之前">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -53,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -86,19 +86,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="预解释的基础知识"><a href="#预解释的基础知识" class="headerlink" title="预解释的基础知识"></a>预解释的基础知识</h2><p>例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">console.log(d);//--&gt;function d()&#123;&#125;;</div><div class="line">d=1;//--&gt;d=1</div><div class="line">s=d;//--&gt;s=1</div><div class="line">function d()&#123;//--&gt;xxxfff000</div><div class="line"></div><div class="line">&#125;</div><div class="line">d();//--&gt;d is not a function</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>预解释：是一个过程，作用域形成之后，代码执行之前，把所有带var关键字和function提前声明或定义</p>
-<p>作用域：</p>
-<ul>
-<li>全局作用域：window下，一打开浏览器就会形成</li>
-<li>私有作用域：一个函数就是一个私有作用域，函数一执行就会形成私有作用域</li>
+        <h4 id="预解释的基础知识"><a href="#预解释的基础知识" class="headerlink" title="预解释的基础知识"></a>预解释的基础知识</h4><ul>
+<li>例子<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">console.log(d);//--&gt;function d()&#123;&#125;;</div><div class="line">d=1;//--&gt;d=1</div><div class="line">s=d;//--&gt;s=1</div><div class="line">function d()&#123;//--&gt;xxxfff000</div><div class="line"></div><div class="line">&#125;</div><div class="line">d();//--&gt;d is not a function</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>声明：告诉浏览器这里有个变量，var关键字的只有声明</p>
-<p>定义：赋值过程，在预解释的时候function即声明还定义</p>
-<p>预解释的时候遇到变量已经声明过了就不用声明了，但是需要重新定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//变量只声明未定义就是undefined</div><div class="line">console.log(obj1);//--&gt;undefined</div><div class="line">var obj1=&#123;name:&quot;111&quot;&#125;;</div><div class="line">console.log(fn);</div><div class="line">function fn() &#123;&#125;</div><div class="line">//1.全局作用形成</div><div class="line">//2.全局作用域下的预解释：var obj1，function fn=xxxfff000</div><div class="line">//3.代码执行：</div><div class="line">// 1.console.log(obj1);--&gt;undefined</div><div class="line">// 2.obj1=xxxfff111</div><div class="line">// 3. console.log(fn);--&gt;function fn() &#123;&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>1.预解释:</p>
+<ul>
+<li>是一个过程，作用域形成之后，代码执行之前，把所有带var关键字和function提前声明或定义</li>
+</ul>
+<p>2.作用域：</p>
+<ul>
+<li>1). 全局作用域：window下，一打开浏览器就会形成</li>
+<li>2). 私有作用域：一个函数就是一个私有作用域，函数一执行就会形成私有作用域</li>
+</ul>
+<p>3.声明:</p>
+<ul>
+<li>告诉浏览器这里有个变量，var关键字的只有声明</li>
+</ul>
+<p>4.定义:</p>
+<ul>
+<li>赋值过程，在预解释的时候function即声明还定义</li>
+</ul>
+<p>5.注意:</p>
+<ul>
+<li>预解释的时候遇到变量已经声明过了就不用声明了，但是需要重新定义,例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//变量只声明未定义就是undefined</div><div class="line">console.log(obj1);//--&gt;undefined</div><div class="line">var obj1=&#123;name:&quot;111&quot;&#125;;</div><div class="line">console.log(fn);</div><div class="line">function fn() &#123;&#125;</div><div class="line">//1.全局作用形成</div><div class="line">//2.全局作用域下的预解释：var obj1，function fn=xxxfff000</div><div class="line">//3.代码执行：</div><div class="line">// 1.console.log(obj1);--&gt;undefined</div><div class="line">// 2.obj1=xxxfff111</div><div class="line">// 3. console.log(fn);--&gt;function fn() &#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
-<h2 id="预解释的几种特殊情况"><a href="#预解释的几种特殊情况" class="headerlink" title="预解释的几种特殊情况"></a>预解释的几种特殊情况</h2><h5 id="注意：全局作用域下的变量就是window的一个属性"><a href="#注意：全局作用域下的变量就是window的一个属性" class="headerlink" title="注意：全局作用域下的变量就是window的一个属性"></a>注意：全局作用域下的变量就是window的一个属性</h5><h4 id="1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）"><a href="#1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）" class="headerlink" title="1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）"></a>1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var ff=function () &#123;</div><div class="line">    console.log(1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="预解释的几种特殊情况"><a href="#预解释的几种特殊情况" class="headerlink" title="预解释的几种特殊情况"></a>预解释的几种特殊情况</h3><blockquote>
+<p>注意:</p>
+<ul>
+<li>全局作用域下的变量就是window的一个属性</li>
+</ul>
+</blockquote>
+<h4 id="1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）"><a href="#1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）" class="headerlink" title="1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）"></a>1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var ff=function () &#123;</div><div class="line">    console.log(1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <h4 id="2-return-后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释"><a href="#2-return-后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释" class="headerlink" title="2.return 后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释"></a>2.return 后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function fn() &#123;</div><div class="line">    var a=0;</div><div class="line">    console.log(f);//function f()&#123;&#125;</div><div class="line">    return function () &#123;</div><div class="line">        console.log(1);</div><div class="line">        return 1</div><div class="line">    &#125;;</div><div class="line">    function f() &#123;&#125;</div><div class="line">&#125;</div><div class="line">var d=fn();</div><div class="line">console.log(d());</div><div class="line">fn()();</div></pre></td></tr></table></figure>
 <h4 id="3-在条件语句中"><a href="#3-在条件语句中" class="headerlink" title="3.在条件语句中"></a>3.在条件语句中</h4><ul>
 <li><p>1)不管条件是否成立都进行预解释</p>
@@ -121,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj3oeek3y0003m0ttuvndiepc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj3oeek3y0003m0ttuvndiepc" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -131,7 +153,7 @@
 <nav id="article-nav">
   
     <a href="/2017/04/29/自定义属性和引用数据类型的赋值/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
+      <strong class="article-nav-caption">Nieuwer</strong>
       <div class="article-nav-title">
         
           自定义属性和引用数据类型的赋值
@@ -141,7 +163,7 @@
   
   
     <a href="/2017/04/29/JS中的作用域/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">JS中的作用域</div>
     </a>
   
@@ -164,7 +186,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
     </div>
@@ -174,7 +196,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         
@@ -211,7 +233,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
