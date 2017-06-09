@@ -83,7 +83,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ul>
+<li><ol>
+<li>cvs.fillRect(x,y,w,h); –&gt; 填充矩形<ul>
+<li>x,y 是这个矩形左上角的坐标</li>
+<li>w,h 是这个矩形的宽高</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>cvs.strokeRect(x,y,w,h); –&gt; 带边框的矩形<ul>
+<li>x,y 是这个矩形左上角的坐标</li>
+<li>w,h 是这个矩形的宽高<ul>
+<li>注意:如果设置边框 边框一半在里面一半在外面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>cvs.clearRect(x,y,w,h); –&gt; 清除填充图的某一部分，清除的还是一个矩形<ul>
+<li>x,y 是这个矩形左上角的坐标</li>
+<li>w,h 是这个矩形的宽高<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>案例1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	//填充矩形</div><div class="line">	cvs.fillStyle=&apos;#fccdda&apos;;//画之前填充颜色</div><div class="line">	cvs.fillRect(10,20,100,50);//设置填充矩形,矩形的左上角坐标为10,20 宽100px 高50px</div><div class="line">	//边框矩形</div><div class="line">	cvs.strokeStyle=&apos;red&apos;;//设置边框的矩形边框颜色</div><div class="line">	cvs.lineWidth=20;//设置边框宽度20px</div><div class="line">	cvs.strokeRect(150,20,100,50);//设置边框矩形，	矩形的左上角坐标为150,20 宽100px 高50px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;//清除填充图的某一部分，清除的还是一个矩形cvs.clearRect(x,y,w,h)</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	//画之前填充颜色</div><div class="line">	cvs.fillRect(20,100,300,100);</div><div class="line">	//设置填充矩形,矩形左上角坐标为20,100 宽300px 高100px</div><div class="line">	cvs.clearRect(140,140,60,60);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标140,140 宽60px 高60px</div><div class="line">	cvs.clearRect(20,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标20,100 宽40px 高40px</div><div class="line">	cvs.clearRect(280,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标280,100 宽40px 高40px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
