@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="自定义属性:- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值  只要是引用数据类型都可以加自定义属性 特别注意：函数也可以加  对于引用数据类型: 对象:  浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存 把所有的键值对（属性名：属性值）">
-<meta property="og:updated_time" content="2017-06-09T04:52:00.413Z">
+<meta property="og:updated_time" content="2017-06-09T06:51:48.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义属性和引用数据类型的赋值">
 <meta name="twitter:description" content="自定义属性:- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值  只要是引用数据类型都可以加自定义属性 特别注意：函数也可以加  对于引用数据类型: 对象:  浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存 把所有的键值对（属性名：属性值）">
@@ -53,9 +53,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -106,12 +106,21 @@
 <li>将地址赋给函数名</li>
 </ul>
 </li>
+<li><p>案例1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">		cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">		cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">		cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">		cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">		cvs.fillRect(50,50,100,100);</div><div class="line">		//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">	&#125;</div><div class="line">	draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">	cvs.fillStyle=&apos;yellow&apos;;//设置填充样式颜色</div><div class="line">	cvs.font=&apos;40px verdana&apos;;//设置字体样式</div><div class="line">	cvs.textAlign=&apos;start&apos;;//设置字体的水平对齐方式</div><div class="line">	cvs.textBaseline=&apos;top&apos;;//设置字体的垂直对齐方式</div><div class="line">	cvs.fillText(text,10,10);</div><div class="line">	//设置填充文字 文本内容text 文本起始点坐标10,10</div><div class="line">	var length=cvs.measureText(text);</div><div class="line">	//获取文本宽度(长度)length</div><div class="line">	console.dir(length);</div><div class="line">	//TextMetrics--&gt;width:241.171875</div><div class="line">	//==&gt;length.width字体的宽度</div><div class="line">	cvs.fillText(&quot;字体长度为&quot;+length.width,10,60);</div><div class="line">	//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,60</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj3peewdo0004jcttu1i1jvwf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj3pj2dsf0000twttv2b3no23" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -121,7 +130,7 @@
 <nav id="article-nav">
   
     <a href="/2017/04/25/基于GitHub创建自己的博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           基于GitHub创建自己的博客
@@ -131,7 +140,7 @@
   
   
     <a href="/2017/04/29/JS中的预解释/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">JS中的预解释</div>
     </a>
   
@@ -164,16 +173,20 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/09/canvas之4渐变/">canvas之4渐变</a>
+          </li>
         
           <li>
             <a href="/2017/06/09/canvas之3绘制矩形/">canvas之3绘制矩形</a>
           </li>
         
           <li>
-            <a href="/2017/06/09/canvas之4绘制文本/">canvas之4绘制文本</a>
+            <a href="/2017/06/09/canvas之5绘制文本/">canvas之4绘制文本</a>
           </li>
         
           <li>
@@ -182,10 +195,6 @@
         
           <li>
             <a href="/2017/06/08/canvas之2画圆/">canvas之2画圆</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/">canvas之1绘制线条的有关属性和步骤</a>
           </li>
         
       </ul>
@@ -201,7 +210,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
