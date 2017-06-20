@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,256 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-DOS基本命令大全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/20/DOS基本命令大全/" class="article-date">
+  <time datetime="2017-06-20T06:41:46.000Z" itemprop="datePublished">2017-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/DOS基本命令大全/">DOS基本命令大全</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><ul>
+<li>1、列出文件<ul>
+<li>ls 参数 目录名</li>
+<li>例: 看看驱动目录下有什么:ls /System/Library/Extensions</li>
+<li>参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件</li>
+</ul>
+</li>
+<li><p>2、转换目录</p>
+<ul>
+<li>cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions</li>
+</ul>
+</li>
+<li><p>3、建立新目录</p>
+<ul>
+<li>mkdir 目录名</li>
+<li>例：在驱动目录下建一个备份目录 backup</li>
+<li>mkdir /System/Library/Extensions/backup</li>
+<li>在桌面上建一个备份目录 backup</li>
+<li>mkdir /User/用户名/Desktop/backup</li>
+</ul>
+</li>
+<li><p>4、拷贝文件</p>
+<ul>
+<li>cp 参数 源文件 目标文件</li>
+<li>例：想把桌面的Natit.kext 拷贝到驱动目录中</li>
+<li>cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions</li>
+<li>参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。</li>
+<li>把驱动目录下的所有文件备份到桌面backup</li>
+<li>cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</li>
+</ul>
+</li>
+<li><p>5、删除文件</p>
+<ul>
+<li>rm 参数 文件</li>
+<li>例：想删除驱动的缓存  rm -rf /System/Library/Extensions.kextcache</li>
+<li>rm -rf /System/Library/Extensions.mkext</li>
+<li>参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了</li>
+</ul>
+</li>
+<li><p>6、移动文件</p>
+<ul>
+<li>mv 文件</li>
+<li>例：想把AppleHDA.Kext 移到桌面</li>
+<li>mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop</li>
+<li>想把AppleHDA.Kext 移到备份目录中</li>
+<li>mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup</li>
+</ul>
+</li>
+<li><p>7、文本编辑</p>
+<ul>
+<li>nano 文件名</li>
+<li>例：编辑natit Info.plist</li>
+<li>nano /System/Library/Extensions/Natit.kext/Info.plist</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>目录操作</p>
+</blockquote>
+<ul>
+<li><p>命令名           功能描述                          使用举例</p>
+</li>
+<li><p>mkdir        创建一个目录                      mkdir dirname</p>
+</li>
+<li><p>rmdir        删除一个目录                      rmdir dirname</p>
+</li>
+<li><p>mvdir        移动或重命名一个目录                mvdir dir1 dir2</p>
+</li>
+<li><p>cd           改变当前目录                       cd dirname</p>
+</li>
+<li><p>pwd          显示当前目录的路径名                pwd</p>
+</li>
+<li><p>ls           显示当前目录的内容                  ls -la</p>
+</li>
+</ul>
+<blockquote>
+<p>文件操作</p>
+</blockquote>
+<ul>
+<li><p>命令名              功能描述                  使用举例</p>
+</li>
+<li><p>cat        显示或连接文件                 cat filename</p>
+</li>
+<li><p>od         显示非文本文件的内容            od -c filename</p>
+</li>
+<li><p>cp         复制文件或目录                 cp file1 file2</p>
+</li>
+<li><p>rm         删除文件或目录                 rm filename</p>
+</li>
+<li><p>mv         改变文件名或所在目录            mv file1 file2</p>
+</li>
+<li><p>find       使用匹配表达式查找文件          find . -name “*.c” -print</p>
+</li>
+<li><p>file       显示文件类型                  file filename</p>
+</li>
+</ul>
+<blockquote>
+<p>选择操作</p>
+</blockquote>
+<ul>
+<li><p>命令名           功能描述                  使用举例</p>
+</li>
+<li><p>head      显示文件的最初几行          head -20 filename</p>
+</li>
+<li><p>tail      显示文件的最后几行          tail -15 filename</p>
+</li>
+<li><p>cut       显示文件每行中的某些域       cut -f1,7 -d: /etc/passwd</p>
+</li>
+<li><p>colrm     从标准输入中删除若干列       colrm 8 20 file2</p>
+</li>
+<li><p>diff      比较并显示两个文件的差异      diff file1 file2</p>
+</li>
+<li><p>sort      排序或归并文件               sort -d -f -u file1</p>
+</li>
+<li><p>uniq      去掉文件中的重复行            uniq file1 file2</p>
+</li>
+<li><p>comm      显示两有序文件的公共和非公共行   comm file1 file2</p>
+</li>
+<li><p>wc        统计文件的字符数、词数和行数     wc filename</p>
+</li>
+<li><p>nl        给文件加上行号                nl file1 &gt;file2</p>
+</li>
+</ul>
+<blockquote>
+<p>进程操作</p>
+</blockquote>
+<ul>
+<li><p>命令名          功能描述               使用举例</p>
+</li>
+<li><p>ps          显示进程当前状态           ps u</p>
+</li>
+<li><p>kill        终止进程                 kill -9 30142</p>
+</li>
+</ul>
+<blockquote>
+<p>时间操作</p>
+</blockquote>
+<ul>
+<li><p>命令名       功能描述                 使用举例</p>
+</li>
+<li><p>date      显示系统的当前日期和时间      date</p>
+</li>
+<li><p>cal       显示日历                    cal 8 1996</p>
+</li>
+<li><p>time      统计程序的执行时间           time a.out</p>
+</li>
+</ul>
+<blockquote>
+<p>网络与通信操作</p>
+</blockquote>
+<ul>
+<li><p>命令名          功能描述                         使用举例</p>
+</li>
+<li><p>telnet      远程登录                       telnet hpc.sp.NET.edu.cn</p>
+</li>
+<li><p>rlogin      远程登录                       rlogin hostname -l username</p>
+</li>
+<li><p>rsh         在远程主机执行指定命令            rsh f01n03 date</p>
+</li>
+<li><p>ftp         在本地主机与远程主机之间传输文件    ftpftp.sp.net.edu.cn</p>
+</li>
+<li><p>rcp         在本地主机与远程主机 之间复制文件   rcp file1 host1:file2</p>
+</li>
+<li><p>ping        给一个网络主机发送 回应请求         ping hpc.sp.net.edu.cn</p>
+</li>
+<li><p>mail        阅读和发送电子邮件                 mail</p>
+</li>
+<li><p>write       给另一用户发送报文                 write username pts/1</p>
+</li>
+<li><p>mesg        允许或拒绝接收报文                 mesg n</p>
+</li>
+</ul>
+<blockquote>
+<p>Korn Shell 命令</p>
+</blockquote>
+<ul>
+<li><p>命令名              功能描述                     使用举例</p>
+</li>
+<li><p>history       列出最近执行过的 几条命令及编号        history</p>
+</li>
+<li><p>r             重复执行最近执行过的 某条命令          r -2</p>
+</li>
+<li><p>alias         给某个命令定义别名                   alias del=rm -i</p>
+</li>
+<li><p>unalias       取消对某个别名的定义                 unalias del</p>
+</li>
+</ul>
+<blockquote>
+<p>其它命令</p>
+</blockquote>
+<ul>
+<li><p>命令名                功能描述                    使用举例</p>
+</li>
+<li><p>uname      显示操作系统的有关信息                  uname -a</p>
+</li>
+<li><p>clear      清除屏幕或窗口内容                       clear</p>
+</li>
+<li><p>env        显示当前所有设置过的环境变量              env</p>
+</li>
+<li><p>who        列出当前登录的所有用户                   who</p>
+</li>
+<li><p>whoami     显示当前正进行操作的用户名               whoami</p>
+</li>
+<li><p>tty        显示终端或伪终端的名称                  tty</p>
+</li>
+<li><p>stty       显示或重置控制键定义                   stty -a</p>
+</li>
+<li><p>du         查询磁盘使用情况                       du -k subdir</p>
+</li>
+<li><p>df /tmp    显示文件系统的总空间和可用空间</p>
+</li>
+<li><p>w          显示当前系统活动的总信息</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj457o0ke0000z4ttuvlhksdx" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-canvas动态案例" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -87,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj3pph6c9000aggtt9kfjgm8n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj457o0ll000fz4tt6ahr52h1" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -143,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj3pph6ce000dggttw8aq5fvw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj457o0lk000ez4ttefe7ggsb" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -203,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj3pph6c70009ggtt7fd3zevq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj457o0lb000az4tt9jvrl8eq" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -293,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj3pph6by0007ggtttq4kmu3a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj457o0le000cz4ttvtf805lq" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -361,7 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj3pph6ca000bggtttpcap668" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj457o0l10007z4tt3vyquzv2" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -432,7 +682,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj3pph6bu0006ggttr6mxu2lf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj457o0l80008z4tt3x3zm7o0" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -519,7 +769,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj3pph6cc000cggttwvbfwau8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj457o0ld000bz4ttr5id6jc9" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -573,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj3pph6ci000fggttagxqt7dm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj457o0lp000hz4ttv9s3fk4l" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -638,127 +888,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj3pph6c60008ggttlx098585" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-canvas之1绘制线条的有关属性和步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/" class="article-date">
-  <time datetime="2017-06-08T11:44:17.000Z" itemprop="datePublished">2017-06-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/">canvas之1绘制线条的有关属性和步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>&lt;canvas id=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/canvas&gt;</code><br>canvas :H5标签 在页面上绘制图形用的（通常称他画布）<br>canvas只是一个容器，我们用js脚本来控制他<br><code>&lt;canvas id=&quot;draw&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border: 1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</code></p>
-<h3 id="绘制线条的有关属性和步骤"><a href="#绘制线条的有关属性和步骤" class="headerlink" title="绘制线条的有关属性和步骤"></a>绘制线条的有关属性和步骤</h3><blockquote>
-<p>1.相关属性</p>
-</blockquote>
-<ul>
-<li><p>1.填充的样式</p>
-<ul>
-<li><code>cvs.fillStyle --&gt;</code>fillStyle`填充样式</li>
-<li><code>cvs.strokeStyle --&gt;</code>strokeStyle<code>笔触样式 主要用来画边框的</code></li>
-<li><code>cvs.lineWidth --&gt; 边框的宽度</code></li>
-</ul>
-</li>
-<li><p>2.绘制图形有两种方式</p>
-<ul>
-<li><code>cvs.fill(); --&gt; 填充样式</code></li>
-<li><code>cvs.stroke(); --&gt; 边框样式</code></li>
-</ul>
-</li>
-<li><p>3.颜色值的四种书写方式</p>
-<ul>
-<li>1).颜色名      –&gt;”red”</li>
-<li>2).十六进制    –&gt;”#fff”</li>
-<li>3).三色值      –&gt;rgb(0,0,0)</li>
-<li>4).四色值      –&gt;rgba(0,0,0,0.3)</li>
-</ul>
-</li>
-<li><p>4.坐标:</p>
-<ul>
-<li>1.)以画布为基准,距离画布的上边是y坐标值(top值),距离画布的左边是x坐标值(left值);</li>
-<li>cvs.moveTo(x,y);  –&gt; 起始点坐标</li>
-<li>cvs.lineTo(x,y);  –&gt; 结束点的坐标</li>
-<li>如果没有moveTo就把上一个挨着的lineTo作为起始坐标</li>
-<li>例如:假如第一个不是moveTo而是lineTo,那么lineTo就是其实坐标</li>
-</ul>
-</li>
-<li><p>5.开始和关闭一个路径</p>
-<ul>
-<li>cvs.beginPath(); –&gt; 开始一个新的路径</li>
-<li>cvs.closePath(); –&gt; 关闭当前路径</li>
-<li>注意:加上.closePath会自动闭合 会自动连接起始坐标和结束坐标</li>
-</ul>
-</li>
-<li><p>6.canvas中的圆角</p>
-<ul>
-<li>1).设置线条交汇处的样式</li>
-<li>cvs.lineJoin 他有三个属性：<ul>
-<li>1).尖角miter</li>
-<li>2).斜角bevel</li>
-<li>3).圆角round</li>
-</ul>
-</li>
-<li>2).设置一条线段两端点的样式</li>
-<li>lineCap焦点样式<ul>
-<li>1)平的butt(默认值)</li>
-<li>2.)圆角round</li>
-<li>3.)方角square</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>2.步骤及案例</p>
-</blockquote>
-<ul>
-<li>步骤1.获取出canvas标签,例如:<br><code>var draw=document.getElementById(&#39;draw&#39;);</code></li>
-<li><p>步骤2.设置绘制环境–2d 平面图,例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">//cvs 这个就是你的画板 接下来就可以在cvs上进行绘制</div></pre></td></tr></table></figure>
-</li>
-<li><p>步骤3</p>
-</li>
-<li><p>案例1:线段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">cvs.beginPath();</div><div class="line">cvs.moveTo(50,50);</div><div class="line">cvs.lineTo(150,50);</div><div class="line">cvs.closePath();</div><div class="line">cvs.strokeStyle=&apos;#800080&apos;;</div><div class="line">cvs.lineWidth=5;</div><div class="line">cvs.stroke();//以边框的形式显示</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2:等腰直角三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineTo(80,120);</div><div class="line">	cvs.lineTo(80,240);</div><div class="line">	cvs.lineTo(200,240);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.strokeStyle=&apos;ec568c&apos;;</div><div class="line">	cvs.lineWidth=10;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例3:圆角矩形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineCap=&apos;round&apos;;</div><div class="line">	cvs.lineTo(50,50);</div><div class="line">	cvs.lineTo(250,50);</div><div class="line">	cvs.closePath();//关闭就没有圆角效果</div><div class="line">	cvs.lineWidth=100;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例4:圆角三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineJoin=&apos;round&apos;;//设置圆角</div><div class="line">	cvs.moveTo(200,100);</div><div class="line">	cvs.lineTo(100,250);</div><div class="line">	cvs.lineTo(300,250);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.lineWidth=50;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj3pph6bq0005ggttl9jrgeji" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj457o0l90009z4ttbkjhrjaj" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -787,7 +917,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
     </div>
@@ -797,9 +927,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/20/DOS基本命令大全/">DOS基本命令大全</a>
+          </li>
         
           <li>
             <a href="/2017/06/09/canvas动态案例/">canvas动态案例</a>
@@ -815,10 +949,6 @@
         
           <li>
             <a href="/2017/06/09/canvas之6绘制图片/">canvas之6绘制图片</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/09/canvas之4渐变/">canvas之4渐变</a>
           </li>
         
       </ul>
