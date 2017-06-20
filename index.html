@@ -61,6 +61,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-IE版本条件注释语句-全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/20/IE版本条件注释语句-全/" class="article-date">
+  <time datetime="2017-06-20T08:47:12.000Z" itemprop="datePublished">2017-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/IE版本条件注释语句-全/">IE版本条件注释语句(全)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;js/html5.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>1、只有IE才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>因为只有IE5以上的版本才开始支持IE条件注释，所有“只有IE”才能识别的意思是“只有IE5版本以上”才能识别。</p>
+</li>
+<li><p>2、只有特定版本才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE 8]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>识别特定的IE版本，高了或者低了都不可以。上例只有IE8才能识别。</p>
+</li>
+<li><p>3、只有不是特定版本的才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if !IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中特定IE7版本不能识别，其他版本都能识别，当然要在IE5以上。</p>
+</li>
+<li><p>4、只有高于特定版本才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if gt IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中只有高于IE7的版本才能识别。IE7无法识别。</p>
+</li>
+<li><p>5、等于或者高于特定版本才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if gte IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中IE7和更高的版本都能识别。</p>
+</li>
+<li><p>6、只有低于特定版本的才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中只有低于IE7的版本才能识别，IE7无法识别。</p>
+</li>
+<li><p>7、等于或者低于特定版本的才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lte IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中IE7和更低的版本可以识别。</p>
+</li>
+<li><p>关键词解释</p>
+</li>
+<li>上面那些代码好像很难记的样子，其实只要稍微解释一下关键字就很容易记住了。</li>
+<li>lt ：就是Less than的简写，也就是小于的意思。</li>
+<li>lte ：就是Less than or equal to的简写，也就是小于或等于的意思。</li>
+<li>gt ：就是Greater than的简写，也就是大于的意思。</li>
+<li>gte：就是Greater than or equal to的简写，也就是大于或等于的意思。</li>
+<li>!：就是不等于的意思，跟javascript里的不等于判断符相同。</li>
+</ul>
+<ul>
+<li>特别提示：</li>
+<li>１、有人会试图使用&lt;!–[if !IE]&gt;来定义非IE浏览器下的状况，但注意：条件注释只有在IE浏览器下才能执行，这个代码在非IE浏览下被当做注释视而不见。</li>
+<li>２、我们通常用IE条件注释根据浏览器不同载入不同css，从而解决样式兼容性问题的。其实它可以做的更多。它可以保护任何代码块——HTML代码块、JavaScript代码块、服务器端代码……看看下面的代码。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE]&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"> alert(&quot;你使用的是IE浏览器！&quot;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;!–[if !IE]&gt;&lt;!–&gt;&lt;!–&lt;![endif]–&gt;&lt;!–除IE外都可识别（IE10版本以上也可以识别）–&gt;</div><div class="line">&lt;!–[if IE]&gt;&lt;![endif]–&gt;&lt;!–IE9以及以下版本可识别–&gt;</div><div class="line">&lt;!–[if IE 5]&gt;&lt;![endif]–&gt;&lt;!–仅IE5可识别–&gt;</div><div class="line">&lt;!–[if IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–仅IE5.0可识别–&gt;</div><div class="line">&lt;!–[if IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–仅IE5.5可识别–&gt;</div><div class="line">&lt;!–[if IE 6]&gt;&lt;![endif]–&gt;&lt;!–仅IE6可识别–&gt;</div><div class="line">&lt;!–[if IE 7]&gt;&lt;![endif]–&gt;&lt;!–仅IE7可识别–&gt;</div><div class="line">&lt;!–[if IE 8]&gt;&lt;![endif]–&gt;&lt;!–仅IE8可识别–&gt;</div><div class="line">&lt;!–[if IE 9]&gt;&lt;![endif]–&gt;&lt;!–仅IE9可识别–&gt;</div><div class="line">&lt;!–[if lt IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以及IE5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以及IE5.0以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以及IE5.5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以及IE6以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以及IE7以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以及IE8以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以及IE9以下版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以及IE5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以及IE5.0以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以及IE5.5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以及IE6以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以及IE7以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以及IE8以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以及IE9以上版本可识别–&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/20/IE版本条件注释语句-全/" data-id="cj45byhpd0001qkttkl8sy194" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-网站如何发布" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/20/网站如何发布/" class="article-date">
@@ -210,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj458bij5000chottapfwjb2j" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj45byhqp000jqktt5mklf0ze" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -460,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj458biia0000hottks7th5jq" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj45byhp70000qkttjliz3ugm" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -496,7 +584,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj458bijd000fhottiv984bmy" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj45byhqf000fqktt6vadg9by" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -552,7 +640,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj458bijb000ehott2defpw2o" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj45byhqc000dqkttqmticvf2" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -612,7 +700,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj458bij10009hottu1qptne2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj45byhqd000eqkttucvso2gl" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -702,7 +790,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj458bij4000bhott32wtkono" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj45byhqa000cqkttwnhdfpx7" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -770,7 +858,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj458bij2000ahottbcdjzibe" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj45byhq20008qkttwiv7r8ke" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -841,7 +929,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj458biiv0007hottido7ti92" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj45byhq8000bqkttfgc3yqpj" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -928,61 +1016,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj458bij7000dhottgmwhn0im" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-服务器及相关知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/09/服务器及相关知识/" class="article-date">
-  <time datetime="2017-06-09T03:38:02.000Z" itemprop="datePublished">2017-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/服务器及相关知识/">服务器及相关知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><ul>
-<li>是具有储存功能的计算机设备（笔记本电脑本身就是一个服务器）<h5 id="服务器根据功能分类："><a href="#服务器根据功能分类：" class="headerlink" title="服务器根据功能分类："></a>服务器根据功能分类：</h5></li>
-<li>web服务器：供用户访问的 安全系数相对较低</li>
-<li>数据库服务器：放在内网的服务器，用来安装数据库</li>
-<li>应用服务器：放在内网的服务器，用来安装应用（产品）</li>
-</ul>
-<h5 id="操作系统有关"><a href="#操作系统有关" class="headerlink" title="操作系统有关"></a>操作系统有关</h5><ul>
-<li>可视操作：可以直观看到所有文件，可以直接操作这些文件（window）</li>
-<li>不可视操作：不能直观看到所有文件，需要ssh，ftp这样的工具进行连接（或者是敲命令进行）</li>
-</ul>
-<h5 id="大型机与嵌入式系统使用很多样化的操作系统。"><a href="#大型机与嵌入式系统使用很多样化的操作系统。" class="headerlink" title="大型机与嵌入式系统使用很多样化的操作系统。"></a>大型机与嵌入式系统使用很多样化的操作系统。</h5><ul>
-<li>在服务器方面Linux、UNIX和WindowsServer占据了市场的大部分份额。在超级计算机方面，Linux取代Unix成为了第一大操作系统，截止2012年6月，世界超级计算机500强排名中基于Linux的超级计算机占据了462个席位，比率高达92%。随着智能手机的发展，Android和iOS已经成为目前最流行的两大手机操作系统。</li>
-</ul>
-<h5 id="内外网："><a href="#内外网：" class="headerlink" title="内外网："></a>内外网：</h5><ul>
-<li>内网：数据库 ，产品应用——可供用户观看的页面</li>
-<li>外网：web服务器，web服务器（多个相同的web服务器，负载均衡）——可供用户访问的</li>
-<li>vpn(翻墙软件)负载均衡：内外网的连接工具</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj458bijs000ihott4n5ins0t" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj45byhq6000aqktto13agxen" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1026,6 +1060,10 @@
       <ul>
         
           <li>
+            <a href="/2017/06/20/IE版本条件注释语句-全/">IE版本条件注释语句(全)</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/20/网站如何发布/">网站如何发布</a>
           </li>
         
@@ -1039,10 +1077,6 @@
         
           <li>
             <a href="/2017/06/09/canvas之8图形组合/">canvas之8图形组合</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/09/canvas之7变形/">canvas之7变形</a>
           </li>
         
       </ul>
