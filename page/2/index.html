@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,93 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-canvas之5绘制文本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/canvas之5绘制文本/" class="article-date">
+  <time datetime="2017-06-09T04:55:35.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/canvas之5绘制文本/">canvas之5绘制文本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>1.阴影<ul>
+<li>cvs.shadowOffsetX//阴影的横向偏移量，默认值是0</li>
+<li>cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0</li>
+<li>cvs.shadowColor//阴影的颜色</li>
+<li>cvs.shadowBlur//阴影的模糊范围（值越大越模糊）</li>
+</ul>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">	cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">	cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">	cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">	cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">	cvs.fillRect(50,50,100,100);//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.绘制文本</p>
+<ul>
+<li>设置字体样式 cvs.font=’字体大小font-size 字体样式font-family’</li>
+<li>水平对齐方式 cvs.textAlign(start,end,right,center);</li>
+<li>垂直对齐方式 cvs.textBaseline=’’</li>
+<li>属性值:top,middle,hangle,bottom,alphabetic,ideographic</li>
+<li>计算文本长度<ul>
+<li>var text=’dfbzbh’</li>
+<li>console.log(cvs.measureText(text));//width:40.453125</li>
+</ul>
+</li>
+<li>填充文字<ul>
+<li>cvs.fillText(text,x,y,maxWidth);</li>
+<li>1) text:文本内容</li>
+<li>2) x:文字起始点的横坐标</li>
+<li>3) y:文字起始点的纵坐标</li>
+</ul>
+</li>
+<li>绘制文字轮廓<ul>
+<li>cvs.strokeText(text,x,y,maxWidth);</li>
+<li>1) text:文本内容</li>
+<li>2) x:文字起始点的横坐标</li>
+<li>3) y:文字起始点的纵坐标</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>案例1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">		cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">		cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">		cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">		cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">		cvs.fillRect(50,50,100,100);</div><div class="line">		//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">	&#125;</div><div class="line">	draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">	cvs.fillStyle=&apos;yellow&apos;;//设置填充样式颜色</div><div class="line">	cvs.font=&apos;40px verdana&apos;;//设置字体样式</div><div class="line">	cvs.textAlign=&apos;start&apos;;//设置字体的水平对齐方式</div><div class="line">	cvs.textBaseline=&apos;top&apos;;//设置字体的垂直对齐方式</div><div class="line">	cvs.fillText(text,10,10);</div><div class="line">	//设置填充文字 文本内容text 文本起始点坐标10,10</div><div class="line">	var length=cvs.measureText(text);</div><div class="line">	//获取文本宽度(长度)length</div><div class="line">	console.dir(length);</div><div class="line">	//TextMetrics--&gt;width:241.171875</div><div class="line">	//==&gt;length.width字体的宽度</div><div class="line">	cvs.fillText(&quot;字体长度为&quot;+length.width,10,60);</div><div class="line">	//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,60</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3:文本线性渐变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">		var CLG=cvs.createLinearGradient(0,0,300,100);</div><div class="line">		//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标300,100</div><div class="line">		CLG.addColorStop(0,&apos;skyblue&apos;);//设置渐变的偏移量0% 天空蓝</div><div class="line">		CLG.addColorStop(0.25,&apos;plum&apos;);//设置渐变的偏移量25% 紫色</div><div class="line">		CLG.addColorStop(0.5,&apos;lightblue&apos;);//设置渐变的偏移量50% 蓝</div><div class="line">		CLG.addColorStop(0.75,&apos;skyblue&apos;);//设置渐变的偏移量75% 天空蓝</div><div class="line">		CLG.addColorStop(1,&apos;plum&apos;);//设置渐变的偏移量100% 紫色</div><div class="line">		var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">		cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">		cvs.shadowOffsetX=5;//设置阴影的横向偏移量5px</div><div class="line">		cvs.shadowOffsetY=4;//设置阴影的纵向偏移量4px</div><div class="line">		cvs.shadowColor=&apos;#ffb6c1&apos;;//设置阴影的颜色</div><div class="line">		cvs.shadowBlur=5;//设置阴影的模糊度</div><div class="line">		cvs.font=&apos;40px cursive&apos;;//设置字体样式</div><div class="line">		cvs.textAlign=&apos;top&apos;;//设置字体的水平对齐方式</div><div class="line">		cvs.fillText(text,50,150);</div><div class="line">		//设置填充文字text 文本起始点坐标50,150</div><div class="line">		var width=cvs.measureText(text).width;//获取文本宽度(长度)length</div><div class="line">		cvs.fillText(&quot;字体长度为：&quot;+width,10,200);</div><div class="line">		//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,200</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	draw3();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例4:文本径向渐变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var CRG=cvs.createLinearGradient(0,0,600,0,0,20);</div><div class="line">	//创建一个径向渐变 渐变开始的坐标0,0 开始渐变的半径600px 渐变结束的坐标0,0 渐变结束的半径20px</div><div class="line">	CRG.addColorStop(0,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.25,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(0.5,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.75,&apos;plum&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;skyblue&apos;);</div><div class="line">		var text=&apos;I WANT EAT&apos;;</div><div class="line">		cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">		cvs.font=&apos;80px simsun&apos;;//设置字体样式</div><div class="line">  		cvs.textAlign=&apos;start&apos;;//设置文本横向对齐方式</div><div class="line">		cvs.textBaseline=&apos;top&apos;;//设置文本纵向对齐方式</div><div class="line">		cvs.shadowColor=&apos;lightblue&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowBlur=10;//设置阴影的模糊范围10px</div><div class="line">		cvs.fillText(text,10,10);//设置填充文字text 文本起始点坐标10,10</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4a0thw8000ebgtt1ntwzd0t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-服务器及相关知识" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -105,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj45byhqm000hqkttw9u68irn" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4a0thwk000jbgttpzsm1u52" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj45byhpk0004qkttfimbx5mq" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4a0thvv0009bgttg88rz54m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj45byhpt0006qktt6w40of46" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4a0thvt0008bgtt05kcpa5z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -364,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj45byhpg0002qkttuovg5oav" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4a0thvi0005bgtt94fecbi7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj45byhpi0003qktto0ydrhp4" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4a0thvf0004bgtt3txdxnm0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -486,7 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj45byhpo0005qktt49u7pd4l" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj4a0thvd0003bgtt79h3p97x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -543,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj45byhpw0007qktt7412z8xa" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj4a0thvo0007bgtts1si5usa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -687,7 +774,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/基于GitHub创建自己的博客/" data-id="cj45byhqo000iqkttrjv4s4hz" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/25/基于GitHub创建自己的博客/" data-id="cj4a0thwh000ibgttz6ai0sic" class="article-share-link">Share</a>
       
       
     </footer>
@@ -888,52 +975,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/JS数组中的方法/" data-id="cj45byhq40009qktty8v3lw3w" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/25/hello-world/" class="article-date">
-  <time datetime="2017-04-25T07:14:47.168Z" itemprop="datePublished">2017-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/hello-world/" data-id="cj45byhqh000gqktthrwzz417" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/25/JS数组中的方法/" data-id="cj4a0thvm0006bgttu3wrt27q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -946,7 +988,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -972,9 +1014,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/23/JS中的同步异步编程思想/">JS中的同步异步编程思想</a>
+          </li>
         
           <li>
             <a href="/2017/06/20/IE版本条件注释语句-全/">IE版本条件注释语句(全)</a>
@@ -992,10 +1038,6 @@
             <a href="/2017/06/09/canvas动态案例/">canvas动态案例</a>
           </li>
         
-          <li>
-            <a href="/2017/06/09/canvas之8图形组合/">canvas之8图形组合</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1009,7 +1051,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
