@@ -61,6 +61,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-canvas之3绘制矩形" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/canvas之3绘制矩形/" class="article-date">
+  <time datetime="2017-06-09T05:07:19.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/canvas之3绘制矩形/">canvas之3绘制矩形</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><ol>
+<li>cvs.fillRect(x,y,w,h); –&gt; 填充矩形<ul>
+<li>x,y 是这个矩形左上角的坐标</li>
+<li>w,h 是这个矩形的宽高</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>cvs.strokeRect(x,y,w,h); –&gt; 带边框的矩形<ul>
+<li>x,y 是这个矩形左上角的坐标</li>
+<li>w,h 是这个矩形的宽高<ul>
+<li>注意:如果设置边框 边框一半在里面一半在外面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>cvs.clearRect(x,y,w,h); –&gt; 清除填充图的某一部分，清除的还是一个矩形<ul>
+<li>x,y 是这个矩形左上角的坐标</li>
+<li>w,h 是这个矩形的宽高<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>案例1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	//填充矩形</div><div class="line">	cvs.fillStyle=&apos;#fccdda&apos;;//画之前填充颜色</div><div class="line">	cvs.fillRect(10,20,100,50);//设置填充矩形,矩形的左上角坐标为10,20 宽100px 高50px</div><div class="line">	//边框矩形</div><div class="line">	cvs.strokeStyle=&apos;red&apos;;//设置边框的矩形边框颜色</div><div class="line">	cvs.lineWidth=20;//设置边框宽度20px</div><div class="line">	cvs.strokeRect(150,20,100,50);//设置边框矩形，	矩形的左上角坐标为150,20 宽100px 高50px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;//清除填充图的某一部分，清除的还是一个矩形cvs.clearRect(x,y,w,h)</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	//画之前填充颜色</div><div class="line">	cvs.fillRect(20,100,300,100);</div><div class="line">	//设置填充矩形,矩形左上角坐标为20,100 宽300px 高100px</div><div class="line">	cvs.clearRect(140,140,60,60);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标140,140 宽60px 高60px</div><div class="line">	cvs.clearRect(20,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标20,100 宽40px 高40px</div><div class="line">	cvs.clearRect(280,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标280,100 宽40px 高40px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj4dzpoox000acktt89td11do" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-canvas之5绘制文本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/09/canvas之5绘制文本/" class="article-date">
@@ -138,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4avqtwm000d8kttuz3q5vl0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4dzpopc000eckttssjpn0ay" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4avqtww000j8kttkc34xzrp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4dzpopc000jcktt27pkr3cc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4avqtwe00098kttwqma9gsg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4dzpoox000bcktt4gbfffq1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4avqtwc00088ktt4ub3yamj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4dzpoox0009ckttz57277z6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -451,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4avqtvz00058kttpnfl8358" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4dzpoox0006cktt83rx1y01" class="article-share-link">Share</a>
       
       
     </footer>
@@ -488,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4avqtvt00028ktts3z77942" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4dzpooh0004cktto6ogai2c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -573,7 +644,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj4avqtvw00048kttp6zpdgkk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj4dzpooh0005cktt8ycxy8k4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,7 +701,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj4avqtw600078kttpf160mwe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj4dzpoox0008ckttgb449pcr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -774,208 +845,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/基于GitHub创建自己的博客/" data-id="cj4avqtwt000h8ktthnakqaff" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS数组中的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/25/JS数组中的方法/" class="article-date">
-  <time datetime="2017-04-25T09:12:39.000Z" itemprop="datePublished">2017-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/25/JS数组中的方法/">数组中的方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数组中的方法"><a href="#数组中的方法" class="headerlink" title="数组中的方法"></a>数组中的方法</h2><ul>
-<li><p>1.给数组添加值</p>
-<ul>
-<li><p>1). push();向数组末尾增加n项</p>
-<ul>
-<li>参数:想向数组末尾增加的内容,可以传递多个值,统一向数组末尾增加n向</li>
-<li>返回值:新增后数组的长度</li>
-<li>原数组:改变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var ary=[12,23,34,45];</div><div class="line">    ary.push(56);</div><div class="line">    console.log(ary);//--&gt;[12,23,34,45,56]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>2). unshift();向数组开头增加n项</p>
-<ul>
-<li>参数:想向数组开头增加的内容,可以传递多个值,统一向数组开头增加n向</li>
-<li>返回值:新增后数组的长度</li>
-<li>原数组:改变</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>扩展:向数组末尾增加</p>
-<ul>
-<li>a). splice(a.length,0,x);向末尾增加,可增加多项</li>
-</ul>
-</li>
-<li><p>2.删除数组中的项</p>
-<ul>
-<li>1). pop();删除数组最后一项内容<ul>
-<li>参数:没有</li>
-<li>返回值:被删除的那一项内容</li>
-<li>原数组:改变</li>
-</ul>
-</li>
-<li>2). shift();删除数组中的第一项<ul>
-<li>参数:没有</li>
-<li>返回值:被删除的那一项内容</li>
-<li>原数组:改变</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>扩展:删除数组最后一项内容的方法</p>
-<ul>
-<li>a) pop();删除数组最后一项内容</li>
-<li>b) ary.length–;</li>
-<li>c) ary.splice(ary.length-1);</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>3.数组中的截取和拼接</p>
-<ul>
-<li><p>1).slice 实现数组的截取，在原来的数组中截取某一部分</p>
-<ul>
-<li>a). slice(n,m);</li>
-<li>a1). n&gt;=m 返回空数组</li>
-<li><p>a2). n&lt;0,m&lt;0,n&lt;m 从索引m开始找到索引为n处，不包含n，将找到的部分，以新数组返回，原数组不变。原数组的索引最后一位是0,倒数第二位索引是-1,以此类推;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var ary1=[11,22,33,44,55,66,77,88,99];</div><div class="line">var res=ary1.slice(-4,-3);</div><div class="line">console.log(res,ary1);</div><div class="line">//[66]   (9) [11, 22, 33, 44, 55, 66, 77, 88, 99]</div></pre></td></tr></table></figure>
-</li>
-<li><p>a3). n&gt;0,m<0 原数组的长度（从前往后）变为总长度+m(m为负数，即原数组总长度减短)，slice(n,m)返回索引n开始到减短后的数组末尾="" 当n和m的绝对值相加="">=原数组总长度时，slice(n,m)返回空数组;例如</0></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var ary1=[11,22,33,44,55,66,77,88,99];</div><div class="line">var res=ary1.slice(3,-3);</div><div class="line">//[44, 55, 66]   (9) [11, 22, 33, 44, 55, 66, 77, 88, 99]</div></pre></td></tr></table></figure>
-</li>
-<li><p>a4). n&gt;0,m&gt;0,m&gt;n<br>   参数:从索引n开始找到索引m处(不包含m);<br>   返回值:索引n项到索引m-1项,将找到的部分以新数组返回;<br>   原数组:不变;</p>
-</li>
-<li>b). slice(n);<ul>
-<li>参数:从索引n开始一直找到数组末尾</li>
-<li>将找到的部分以新数组返回</li>
-<li>原数组:不变</li>
-</ul>
-</li>
-<li>c). slice(0);/slice()<ul>
-<li>把原来的数组克隆一份一模一样的新数组返回</li>
-<li>原数组:不变</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2).concat();把两个数组拼接在一起</li>
-<li>参数:<ul>
-<li>a). ary1.concat(ary2);将ary1和ary2进行拼接,ary2在后面</li>
-<li>b). ary1.concat();把ary1克隆一份一模一样的数组</li>
-</ul>
-</li>
-<li>原数组:不变</li>
-</ul>
-</li>
-<li><p>4.修改数组中某一项的值</p>
-<ul>
-<li>1).利用对象的操作方式修改某一项的值,例如:ary[2]=100;<ul>
-<li>原数组:改变</li>
-</ul>
-</li>
-<li><p>2).数组中的方法splice</p>
-<ul>
-<li><p>a). splice 既能实现删除,也能实现增加,还能实现修改</p>
-<p>splice的删除:</p>
-</li>
-<li>返回值:删除的数据以新数组的方式返回</li>
-<li>原数组:改变</li>
-<li>a1). splice(n,m);从索引n开始,删除m个元素,把删除的内容以一个新数组的方式返回,原数组改变</li>
-<li>a2). splice(n);从索引n开始,删除到数组的末尾</li>
-<li><p>a3). splice(0);从索引0开始,删除到数组的末尾;原数组返回空数组,splice(0)相当于克隆一份原数组,这样的克隆会修改原来的数;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a=[11,22,33,44,55,66,77];</div><div class="line">var res=a.splice(0);</div><div class="line">console.log(res,a);</div><div class="line">//(7) [11, 22, 33, 44, 55, 66, 77] , []</div></pre></td></tr></table></figure>
-</li>
-<li><p>a4). splice();相当于没有对原数组进行任何操作,splice()返回一个空数组.原数组不变;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    var a=[11,22,33,44,55,66,77];</div><div class="line">var res=a.splice();</div><div class="line">console.log(res,a);</div><div class="line">//[] , (7) [11, 22, 33, 44, 55, 66, 77]</div></pre></td></tr></table></figure>
-</li>
-<li><p>a5). splice(a.length-1);删除最后一项，把所有索引最后一个删除掉;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a=[11,22,33,44,55,66];</div><div class="line">var res=a.splice(a.length-1);</div><div class="line">console.log(res,a);</div><div class="line">//[66] , (5) [11, 22, 33, 44, 55]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>splice的修改:</p>
-</li>
-<li><p>b1). splice(n,m,x); 从索引n开始，删除m个，用x替换删除的部分,x可以是多项;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var b=[1,2,3,4,5,6];</div><div class="line">    var res=b.splice(1,2,11,12,13);</div><div class="line">    console.log(res,b);</div><div class="line">    //[2, 3] , (7) [1, 11, 12, 13, 4, 5, 6]</div></pre></td></tr></table></figure>
-<p>splice的增加:</p>
-</li>
-<li><p>c1). splice(n,0,x); 从索引n开始，删除0个，用x替换删除的部分–&gt;相当于把x增加到索引n的前面;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a=[11,22,33,44,55,66];</div><div class="line">var res=a.splice(1,0,77,88);</div><div class="line">console.log(res,a);</div><div class="line">//[] , (8) [11, 77, 88, 22, 33, 44, 55, 66]</div></pre></td></tr></table></figure>
-</li>
-<li><p>c2). splice(a.length,0,x);向末尾增加,可增加多项</p>
-</li>
-</ul>
-</li>
-<li><p>5.通过属性值查找索引:只有在标准浏览器下兼容的(数组中不兼容 字符串中兼容)原数组不变</p>
-<ul>
-<li>1) indexOf()</li>
-<li>2) lastIndexof()</li>
-</ul>
-</li>
-<li><p>6.遍历数组中的每一项</p>
-<ul>
-<li><p>1) forEach(function(x,y,i){});没有返回值,例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var b=[11,22,33,44,55,66,11];</div><div class="line">b.forEach(function (item,index) &#123;</div><div class="line">    //item为数组当前项,index为数组中的索引</div><div class="line">    console.log(item,index);</div><div class="line">&#125;);</div><div class="line">//没有返回值</div><div class="line">   var new1b=b.forEach(function (a,b) &#123;</div><div class="line">           return a*10;</div><div class="line">       &#125;);</div><div class="line">       console.log(new1b);//undefined</div></pre></td></tr></table></figure>
-</li>
-<li><p>2) map(function(x,y,i){return;});</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var b=[11,22,33,44,55,66,11];</div><div class="line">b.map(function (item,index) &#123;</div><div class="line">    //item为数组当前项,index为数组中的索引</div><div class="line">    console.log(item,index);</div><div class="line">&#125;);</div><div class="line">var newb=b.map(function (item,index) &#123;</div><div class="line">    return item*10;</div><div class="line">&#125;);</div><div class="line">console.log(newb);//[110, 220, 330, 440, 550, 660, 110]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>7.将数组转化为字符串:</p>
-<ul>
-<li><p>1) join(“”);按照每一个分隔符，把数组中的每一项拼接成一个字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var b=[12,22,33,44,55];</div><div class="line">var res=b.join(&apos;+&apos;);</div><div class="line">console.log(res,b);</div><div class="line">//&quot;12+22+33+44+55&quot;  (5) [12, 22, 33, 44, 55]</div><div class="line">//扩展:eval：JS中把字符串变为JS表达式执行的一种方法</div><div class="line">    console.log(eval(res));//166</div><div class="line">    //简写:</div><div class="line">    console.log(eval(b.join(&apos;+&apos;)));//166</div></pre></td></tr></table></figure>
-</li>
-<li><p>2) toString();原数组不变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var b=[12,22,33,44,55];</div><div class="line">var res=b.toString();</div><div class="line">console.log(res);//&quot;12,22,33,44,55&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>8.排序</p>
-<ul>
-<li><p>1) reverse();把数组倒过来排列,原数组也倒过来排列;例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var b=[11,22,33,44,55,66,11];</div><div class="line">var res=b.reverse();</div><div class="line">console.log(res,b);</div><div class="line">//(7) [11, 66, 55, 44, 33, 22, 11]   (7) [11, 66, 55, 44, 33, 22, 11]</div></pre></td></tr></table></figure>
-</li>
-<li><p>2) sort();给数组进行排序,原数组也进行排序</p>
-<ul>
-<li>a). ary.sort(); 只能处理10以内的数字</li>
-<li>b). sort(function(a,b){return a-b;});从小到大排序</li>
-<li>c). sort(function(a,b){return b-a;);从大到小排序</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/JS数组中的方法/" data-id="cj4avqtw300068kttk3arff5q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/基于GitHub创建自己的博客/" data-id="cj4dzpops000kcktt0skjffpm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1019,6 +889,10 @@
       <ul>
         
           <li>
+            <a href="/2017/06/26/JS中的caller和callee/">caller和callee</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/23/JS中的同步异步编程思想/">JS中的同步异步编程思想</a>
           </li>
         
@@ -1032,10 +906,6 @@
         
           <li>
             <a href="/2017/06/20/DOS基本命令大全/">DOS基本命令大全</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/09/canvas动态案例/">canvas动态案例</a>
           </li>
         
       </ul>
