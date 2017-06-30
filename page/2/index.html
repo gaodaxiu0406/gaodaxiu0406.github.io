@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,337 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Nodejs的全局对象和全局变量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/27/Nodejs的全局对象和全局变量/" class="article-date">
+  <time datetime="2017-06-27T06:32:40.000Z" itemprop="datePublished">2017-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/Nodejs的全局对象和全局变量/">Nodejs的全局对象和全局变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h4><ul>
+<li>所有模块都可以调用</li>
+<li><ol>
+<li>global：表示Node所在的全局环境，类似于浏览器中的window对象。<ul>
+<li>你可以通过<code>console.log(global);</code>来输出一下global;</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>1-1. global全局对象里常用的变量</p>
+<ul>
+<li><p>1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> console.log(__dirname);</div><div class="line">//C:\Users\Gao\Documents\webstore学习文件\node</div></pre></td></tr></table></figure>
+</li>
+<li><p>2).  __filename  文件名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(__filename);</div><div class="line">//C:\Users\Gao\Documents\webstore学习文件\node\global.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>process 程序所执行的一些相关的内容信息的封装对象</li>
+</ol>
+</li>
+<li>指向Node内置的process模块，允许开发者与当前进程互动。<ul>
+<li>例如你在DOS或终端窗口直接输入node，就会进入NODE的命令行方式（REPL环境）。如果要退出的话，可以输入 process.exit();</li>
+</ul>
+</li>
+<li>2-1. 和输出相关的 process.stdout/process.stderr</li>
+<li>1) process.stdout –&gt;  standard output –&gt; 标准的信息输出</li>
+<li><p>2) process.stderr –&gt;  standard error  –&gt; 标准的错误输出</p>
+<ul>
+<li>console.info和console.error这些相关的输出功能就是调用的process.stdout和process.stderr来完成的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">process.stdout.write(&quot;this is stdout&quot;);</div><div class="line">process.stderr.write(&quot;this is stderr&quot;);//红色的</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2-2. process如何去监听一些事件</p>
+</li>
+<li>1) process.stdin.on()  监听用户输入的键盘信息</li>
+<li>2)process.on()监听操作系统对node发出的一些信号</li>
+</ul>
+<ul>
+<li>2-3. 如何读取输入用户的键盘输入</li>
+<li><p>1).process.stdin</p>
+<ul>
+<li><p>在使用process.stdin之前  要先对他进行一下编码设置<br>```<br>process.stdin.setEncoding(“utf-8”);<br>//这里的编码设置和平常编写网页时候的文本编码不一样<br>//在这里如果想读取纯文本信息  只要把他的编码设置成utf-8就可以了   不需要去考虑类似jbk或者jb2312来区分是不是中文<br>//on方法来监听用户相关的输入事件<br>// process.stdin.on(“data”,function (data) {<br>//     console.log(data);<br>// });<br>process.stdin.on(“readable”,function () {<br>  var data=process.stdin.read();<br>  //回调函数没有参数 需要通过process.stdin.read来读取用户的键盘输入信息<br>  console.log(data);<br>});</p>
+<p>//exit事件<br>process.on(“exit”,function () {<br>  console.log(“programe will exit”);<br>});<br>//在程序正常退出的之前  会触发exit事件</p>
+<p>//SIGINT –&gt; signal    interrupted  信号 被中断<br>//当一个信号被中断的时候就会触发SIGINT事件(cmd 中  ctrl+c会中断信号)</p>
+<p>process.on(“SIGINT”,function () {//会改变程序默认的退出行为<br>  console.log(“programe has a sigint”);<br>  process.exit();//让程序正常退出<br>});</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ol>
+<li>console：指向Node内置的console模块，提供命令行环境中的标准输入、标准输出功能。<br>通常是写console.log();<h4 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h4></li>
+</ol>
+</li>
+<li><ol>
+<li>定时器函数：共有4个，分别是setTimeout(), clearTimeout(), setInterval(), clearInterval()。</li>
+</ol>
+</li>
+<li><ol>
+<li>require：用于加载模块</li>
+</ol>
+</li>
+</ul>
+<h4 id="全局变量："><a href="#全局变量：" class="headerlink" title="全局变量："></a>全局变量：</h4><ul>
+<li><ol>
+<li>_filename：指向当前运行的脚本文件名。</li>
+</ol>
+</li>
+<li><ol>
+<li>_dirname：指向当前运行的脚本所在的目录</li>
+</ol>
+</li>
+</ul>
+<h4 id="准全局变量"><a href="#准全局变量" class="headerlink" title="准全局变量"></a>准全局变量</h4><ul>
+<li><p>模块内部的局部变量，指向的对象根据模块不同而不同，但是所有模块都适用，可以看作是伪全局变量，主要为module, module.exports, exports等。</p>
+</li>
+<li><p>module变量指代当前模块。module.exports变量表示当前模块对外输出的接口，其他文件加载该模块，实际上就是读取module.exports变量。</p>
+</li>
+<li><p>module.id 模块的识别符，通常是模块的文件名。</p>
+</li>
+<li>module.filename 模块的文件名。</li>
+<li>module.loaded 返回一个布尔值，表示模块是否已经完成加载。</li>
+<li>module.parent 返回使用该模块的模块。</li>
+<li><p>module.children 返回一个数组，表示该模块要用到的其他模块。</p>
+</li>
+<li><p>这里需要特别指出的是，exports变量实际上是一个指向module.exports对象的链接，等同在每个模块头部，有一行这样的命令。<br><code>var exports = module.exports;</code></p>
+</li>
+<li>这造成的结果是，在对外输出模块接口时，可以向exports对象添加方法，但是不能直接将exports变量指向一个函数：<br><code>exports = function (x){ console.log(x);};</code></li>
+<li>上面这样的写法是无效的，因为它切断了exports与module.exports之间的链接。</li>
+<li>如果你觉得，exports与module.exports之间的区别很难分清，一个简单的处理方法，就是放弃使用exports，只使用module.exports。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/" data-id="cj4jl9fp7000kvgttovrfgk8i" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS中的caller和callee" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/26/JS中的caller和callee/" class="article-date">
+  <time datetime="2017-06-26T10:02:17.000Z" itemprop="datePublished">2017-06-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/26/JS中的caller和callee/">caller和callee</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h3><ul>
+<li>检验函数被谁调用过</li>
+<li>检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null<h3 id="arguments-callee"><a href="#arguments-callee" class="headerlink" title="arguments.callee"></a>arguments.callee</h3></li>
+<li>函数本身<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123;</div><div class="line">    console.log(arguments.callee.caller);//--&gt;function fn() &#123;Fn()&#125;</div><div class="line">    //--&gt;arguments.callee 函数本身</div><div class="line">    //caller:检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null</div><div class="line">    console.log(Fn.prototype.constructor === arguments.callee);//--&gt;true</div><div class="line">&#125;</div><div class="line">function fn() &#123;</div><div class="line">    Fn()</div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function sum(n) &#123;</div><div class="line">    console.log(arguments.callee===arguments.callee.caller);</div><div class="line">    //-&gt;第一次输出false，因为第一次是函数自己执行，即自调用 自调用的时候console.log(arguments.callee.caller) 输出null   而此时arguments.callee 函数本身仍然是sun函数本身   所以输出false;</div><div class="line">    // --&gt;当自调用执行完成后  arguments.callee===arguments.callee.caller===sum这个函数本身   ---&gt;  返回true</div><div class="line">    if(n&lt;=0)&#123;</div><div class="line">        return 0</div><div class="line">    &#125;</div><div class="line">    return n+sum(--n);</div><div class="line">&#125;</div><div class="line">console.log(sum(10));//55</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/26/JS中的caller和callee/" data-id="cj4jl9fo4000bvgtt1fs4eaqk" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS中的同步异步编程思想" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/23/JS中的同步异步编程思想/" class="article-date">
+  <time datetime="2017-06-23T14:22:04.000Z" itemprop="datePublished">2017-06-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/23/JS中的同步异步编程思想/">JS中的同步异步编程思想</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>JS是单线程的-&gt;JS就是个傻子,脑子一根筋,做着当前的这件事情,没有完成之前,绝对不会做下一件是事情</li>
+</ul>
+<h3 id="JS中的两种编程思想-同步、异步"><a href="#JS中的两种编程思想-同步、异步" class="headerlink" title="JS中的两种编程思想:同步、异步"></a>JS中的两种编程思想:同步、异步</h3><ul>
+<li><p>1、同步编程-&gt;上一件事情没有完成,继续处理上一件事情,只有上一件事情完成了,才会做下一件事情(JS中大部分都是同步编程的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for (var i = 0; i &lt; 100000; i++) &#123;</div><div class="line">    if (i == 99999) &#123;</div><div class="line">        console.log(&quot;循环结束了~~&quot;);//-&gt;(1)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">console.log(&quot;ok&quot;);//-&gt;(2)</div></pre></td></tr></table></figure>
+</li>
+<li><p>1) for循环就是同步编程的,只有循环结束后,才会继续执行下面的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">while (1) &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">console.log(&quot;ok&quot;);//-&gt;永远都不会执行的,因为上面的循环是死循环,循环永远都不会结束</div></pre></td></tr></table></figure>
+</li>
+<li><p>2、异步-&gt;规划要做一件事情,但是不是当前立马去执行这件事情,需要等一定的时间,这样的话,我们不会等着它执行,而是继续执行下面的操作,”只有当下面的事情都处理完成了,才会返回头处理之前的事情;如果下面的事情并没有处理完成,不管之前的事情有没有到时间,都踏踏实实的给我等着”</p>
+</li>
+<li><p>在JS中异步编程只有四种情况:</p>
+<ul>
+<li>1)定时器都是异步编程的</li>
+<li>2)所有的事件绑定都是异步编程的</li>
+<li>3)Ajax读取数据的时候,我们一般都设置为异步编程</li>
+<li>4)回调函数也是异步编程的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var n = 0;</div><div class="line">window.setTimeout(function () &#123;</div><div class="line">    n++;</div><div class="line">    console.log(n);//-&gt;1 (2)</div><div class="line">&#125;, 1000);</div><div class="line">console.log(n);//-&gt;0 (1)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>3.定时器</p>
+<ul>
+<li><p>1) 每一个浏览器对于定时器的等待时间都有一个最小的值,谷歌:5~6ms IE:10~13ms,如果设置的等待时间小于这个值,不起作用,还是需要等到最小时间才执行的;尤其是写0也不是立即执行;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var n = 0;</div><div class="line">window.setTimeout(function () &#123;</div><div class="line">    n++;</div><div class="line">    console.log(n);//-&gt;1 (2)</div><div class="line">&#125;, 0);</div><div class="line">console.log(n);//-&gt;0 (1)</div><div class="line">//--&gt;先输出0  再输出1</div></pre></td></tr></table></figure>
+</li>
+<li><p>2) 我们定时器设置的等待时间不一定就是最后执行的时间,如果定时器之后还有其他的事情正在处理中,不管定时器的时间有没有到,都是不会执行定时器的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">    var n = 0;</div><div class="line">    window.setTimeout(function () &#123;</div><div class="line">        n++;</div><div class="line">        console.log(n);//-&gt;不执行的</div><div class="line">    &#125;, 0);</div><div class="line">    console.log(n);//-&gt;0 (1)</div><div class="line">    while (1) &#123;//-&gt;死循环</div><div class="line">        n++;</div><div class="line">    &#125;</div><div class="line">console.log(n);//-&gt;不执行</div><div class="line">    var n = 0;</div><div class="line">    window.setTimeout(function () &#123;</div><div class="line">        n += 2;</div><div class="line">        console.log(n); //-&gt;7 (4)</div><div class="line">    &#125;, 20);</div><div class="line">    window.setTimeout(function () &#123;</div><div class="line">        n += 5;</div><div class="line">        console.log(n); //-&gt;5 (3)</div><div class="line">    &#125;, 5);</div><div class="line">    console.log(n);//-&gt;0 (1)</div><div class="line">    for (var i = 0; i &lt; 10000000; i++) &#123;&#125;</div><div class="line">    console.log(n);//-&gt;0 (2)</div></pre></td></tr></table></figure>
+</li>
+<li><p>3)事件绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var oLis=document.getElementsByTagName(&quot;li&quot;);</div><div class="line">    for(var i=0;i&lt;oLis.length;i++)&#123;</div><div class="line">        oLis[i].onclick=function()&#123;</div><div class="line">            tabChange(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/23/JS中的同步异步编程思想/" data-id="cj4jl9fos000dvgttubl4b0lb" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-IE版本条件注释语句-全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/20/IE版本条件注释语句-全/" class="article-date">
+  <time datetime="2017-06-20T08:47:12.000Z" itemprop="datePublished">2017-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/IE版本条件注释语句-全/">IE版本条件注释语句(全)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;js/html5.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>1、只有IE才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>因为只有IE5以上的版本才开始支持IE条件注释，所有“只有IE”才能识别的意思是“只有IE5版本以上”才能识别。</p>
+</li>
+<li><p>2、只有特定版本才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE 8]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>识别特定的IE版本，高了或者低了都不可以。上例只有IE8才能识别。</p>
+</li>
+<li><p>3、只有不是特定版本的才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if !IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中特定IE7版本不能识别，其他版本都能识别，当然要在IE5以上。</p>
+</li>
+<li><p>4、只有高于特定版本才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if gt IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中只有高于IE7的版本才能识别。IE7无法识别。</p>
+</li>
+<li><p>5、等于或者高于特定版本才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if gte IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中IE7和更高的版本都能识别。</p>
+</li>
+<li><p>6、只有低于特定版本的才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lt IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中只有低于IE7的版本才能识别，IE7无法识别。</p>
+</li>
+<li><p>7、等于或者低于特定版本的才能识别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lte IE 7]&gt;</div><div class="line">&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;my.css&quot; /&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上例中IE7和更低的版本可以识别。</p>
+</li>
+<li><p>关键词解释</p>
+</li>
+<li>上面那些代码好像很难记的样子，其实只要稍微解释一下关键字就很容易记住了。</li>
+<li>lt ：就是Less than的简写，也就是小于的意思。</li>
+<li>lte ：就是Less than or equal to的简写，也就是小于或等于的意思。</li>
+<li>gt ：就是Greater than的简写，也就是大于的意思。</li>
+<li>gte：就是Greater than or equal to的简写，也就是大于或等于的意思。</li>
+<li>!：就是不等于的意思，跟javascript里的不等于判断符相同。</li>
+</ul>
+<ul>
+<li>特别提示：</li>
+<li>１、有人会试图使用&lt;!–[if !IE]&gt;来定义非IE浏览器下的状况，但注意：条件注释只有在IE浏览器下才能执行，这个代码在非IE浏览下被当做注释视而不见。</li>
+<li>２、我们通常用IE条件注释根据浏览器不同载入不同css，从而解决样式兼容性问题的。其实它可以做的更多。它可以保护任何代码块——HTML代码块、JavaScript代码块、服务器端代码……看看下面的代码。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE]&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line"> alert(&quot;你使用的是IE浏览器！&quot;);</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;!–[if !IE]&gt;&lt;!–&gt;&lt;!–&lt;![endif]–&gt;&lt;!–除IE外都可识别（IE10版本以上也可以识别）–&gt;</div><div class="line">&lt;!–[if IE]&gt;&lt;![endif]–&gt;&lt;!–IE9以及以下版本可识别–&gt;</div><div class="line">&lt;!–[if IE 5]&gt;&lt;![endif]–&gt;&lt;!–仅IE5可识别–&gt;</div><div class="line">&lt;!–[if IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–仅IE5.0可识别–&gt;</div><div class="line">&lt;!–[if IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–仅IE5.5可识别–&gt;</div><div class="line">&lt;!–[if IE 6]&gt;&lt;![endif]–&gt;&lt;!–仅IE6可识别–&gt;</div><div class="line">&lt;!–[if IE 7]&gt;&lt;![endif]–&gt;&lt;!–仅IE7可识别–&gt;</div><div class="line">&lt;!–[if IE 8]&gt;&lt;![endif]–&gt;&lt;!–仅IE8可识别–&gt;</div><div class="line">&lt;!–[if IE 9]&gt;&lt;![endif]–&gt;&lt;!–仅IE9可识别–&gt;</div><div class="line">&lt;!–[if lt IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以下版本可识别–&gt;</div><div class="line">&lt;!–[if lt IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以及IE5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以及IE5.0以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以及IE5.5以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以及IE6以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以及IE7以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以及IE8以下版本可识别–&gt;</div><div class="line">&lt;!–[if lte IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以及IE9以下版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以上版本可识别–&gt;</div><div class="line">&lt;!–[if gt IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 5]&gt;&lt;![endif]–&gt;&lt;!–IE5以及IE5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 5.0]&gt;&lt;![endif]–&gt;&lt;!–IE5.0以及IE5.0以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 5.5]&gt;&lt;![endif]–&gt;&lt;!–IE5.5以及IE5.5以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 6]&gt;&lt;![endif]–&gt;&lt;!–IE6以及IE6以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 7]&gt;&lt;![endif]–&gt;&lt;!–IE7以及IE7以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 8]&gt;&lt;![endif]–&gt;&lt;!–IE8以及IE8以上版本可识别–&gt;</div><div class="line">&lt;!–[if gte IE 9]&gt;&lt;![endif]–&gt;&lt;!–IE9以及IE9以上版本可识别–&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/20/IE版本条件注释语句-全/" data-id="cj4jl9fnq0006vgtt1aixogi9" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-网站如何发布" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -210,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj4jkbfwm000sgottbs0ezsqb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj4jl9fpu000tvgttsi70555a" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -460,7 +791,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj4jkbfv60003gottjpnxhjf3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj4jl9fns0007vgtt82t4rtwz" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -496,7 +827,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj4jkbfwc000mgottwufevuic" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj4jl9fph000pvgttxsg1hj2x" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -552,7 +883,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj4jkbfw8000kgottnylmhdss" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj4jl9fpx000vvgttynrlxc5l" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -612,7 +943,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj4jkbfwa000lgott3fo0je4j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj4jl9fpf000ovgtt15nrkzm5" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -702,287 +1033,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj4jkbfw6000jgott8xplqyt8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-canvas之4渐变" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/09/canvas之4渐变/" class="article-date">
-  <time datetime="2017-06-09T06:56:44.000Z" itemprop="datePublished">2017-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/canvas之4渐变/">canvas之4渐变</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>1.线性渐变</li>
-<li>var CLG=cvs.createLinearGradient(x0,y0,x1,y1);<ul>
-<li>x0:渐变开始的x坐标</li>
-<li>y0:渐变开始的y坐标</li>
-<li>x1:渐变结束的x坐标</li>
-<li>y1:渐变结束的y坐标</li>
-</ul>
-</li>
-<li><p>CLG.addColorStop(n,m);</p>
-<ul>
-<li>n:设置颜色的偏移量</li>
-<li>m:颜色</li>
-</ul>
-</li>
-<li><p>例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	var CLG=cvs.createLinearGradient(0,0,200,200);</div><div class="line">	//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标200,200 (即从左上角到右下角渐变)</div><div class="line">	CLG.addColorStop(0,&apos;red&apos;);//设置渐变的偏移量0% 颜色红色</div><div class="line">	CLG.addColorStop(0.25,&apos;yellow&apos;);//设置渐变的偏移量25% 颜色黄色</div><div class="line">	CLG.addColorStop(0.5,&apos;skyblue&apos;);//设置渐变的偏移量50% 颜色天空蓝</div><div class="line">	CLG.addColorStop(0.75,&apos;orange&apos;);//设置渐变的偏移量75% 颜色橘黄</div><div class="line">	CLG.addColorStop(1,&apos;pink&apos;);//设置渐变的偏移量100% 颜色粉色</div><div class="line">	cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">	cvs.fillRect(0,0,200,200);//设置填充矩形 左上角坐标0,0  宽200px  高200px</div><div class="line">	cvs.fill();//设置样式为填充样式</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>2.径向渐变(发散性渐变)</p>
-</li>
-<li>cvs.createRadialGradient(x0,y0,x1,y1,r1);<ul>
-<li>x0:发散渐变开始中心的x坐标</li>
-<li>y0：发散渐变开始中心的y坐标</li>
-<li>r0:发散渐变开始的半径</li>
-<li>x1:发散渐变结束中心的x坐标</li>
-<li>y1：发散渐变结束中心的y坐标</li>
-<li>r1:发散渐变结束的半径</li>
-</ul>
-</li>
-<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var CRG=cvs.createRadialGradient(200,200,200,200,200,10);</div><div class="line">	//创建一个径向/发散性渐变 渐变开始的坐标200,200 渐变开始的半径200px 渐变结束的坐标200,200 渐变结束的半径10px</div><div class="line">	CRG.addColorStop(0,&apos;purple&apos;);</div><div class="line">	CRG.addColorStop(0.2,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.4,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.6,&apos;lightblue&apos;);</div><div class="line">	CRG.addColorStop(0.8,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;white&apos;);</div><div class="line">	cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">	cvs.fillRect(100,100,200,200);</div><div class="line">	//设置填充矩形 左上角坐标100,100  宽200px  高200px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj4jkbfw1000ggottcjhezpi9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-canvas之3绘制矩形" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/09/canvas之3绘制矩形/" class="article-date">
-  <time datetime="2017-06-09T05:07:19.000Z" itemprop="datePublished">2017-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/canvas之3绘制矩形/">canvas之3绘制矩形</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><ol>
-<li>cvs.fillRect(x,y,w,h); –&gt; 填充矩形<ul>
-<li>x,y 是这个矩形左上角的坐标</li>
-<li>w,h 是这个矩形的宽高</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>cvs.strokeRect(x,y,w,h); –&gt; 带边框的矩形<ul>
-<li>x,y 是这个矩形左上角的坐标</li>
-<li>w,h 是这个矩形的宽高<ul>
-<li>注意:如果设置边框 边框一半在里面一半在外面</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>cvs.clearRect(x,y,w,h); –&gt; 清除填充图的某一部分，清除的还是一个矩形<ul>
-<li>x,y 是这个矩形左上角的坐标</li>
-<li>w,h 是这个矩形的宽高<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>案例1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	//填充矩形</div><div class="line">	cvs.fillStyle=&apos;#fccdda&apos;;//画之前填充颜色</div><div class="line">	cvs.fillRect(10,20,100,50);//设置填充矩形,矩形的左上角坐标为10,20 宽100px 高50px</div><div class="line">	//边框矩形</div><div class="line">	cvs.strokeStyle=&apos;red&apos;;//设置边框的矩形边框颜色</div><div class="line">	cvs.lineWidth=20;//设置边框宽度20px</div><div class="line">	cvs.strokeRect(150,20,100,50);//设置边框矩形，	矩形的左上角坐标为150,20 宽100px 高50px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;//清除填充图的某一部分，清除的还是一个矩形cvs.clearRect(x,y,w,h)</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	//画之前填充颜色</div><div class="line">	cvs.fillRect(20,100,300,100);</div><div class="line">	//设置填充矩形,矩形左上角坐标为20,100 宽300px 高100px</div><div class="line">	cvs.clearRect(140,140,60,60);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标140,140 宽60px 高60px</div><div class="line">	cvs.clearRect(20,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标20,100 宽40px 高40px</div><div class="line">	cvs.clearRect(280,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标280,100 宽40px 高40px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj4jkbfvz000fgottfqd661yr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-canvas之5绘制文本" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/09/canvas之5绘制文本/" class="article-date">
-  <time datetime="2017-06-09T04:55:35.000Z" itemprop="datePublished">2017-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/canvas之5绘制文本/">canvas之5绘制文本</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>1.阴影<ul>
-<li>cvs.shadowOffsetX//阴影的横向偏移量，默认值是0</li>
-<li>cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0</li>
-<li>cvs.shadowColor//阴影的颜色</li>
-<li>cvs.shadowBlur//阴影的模糊范围（值越大越模糊）</li>
-</ul>
-</li>
-<li><p>案例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">	cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">	cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">	cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">	cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">	cvs.fillRect(50,50,100,100);//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>2.绘制文本</p>
-<ul>
-<li>设置字体样式 cvs.font=’字体大小font-size 字体样式font-family’</li>
-<li>水平对齐方式 cvs.textAlign(start,end,right,center);</li>
-<li>垂直对齐方式 cvs.textBaseline=’’</li>
-<li>属性值:top,middle,hangle,bottom,alphabetic,ideographic</li>
-<li>计算文本长度<ul>
-<li>var text=’dfbzbh’</li>
-<li>console.log(cvs.measureText(text));//width:40.453125</li>
-</ul>
-</li>
-<li>填充文字<ul>
-<li>cvs.fillText(text,x,y,maxWidth);</li>
-<li>1) text:文本内容</li>
-<li>2) x:文字起始点的横坐标</li>
-<li>3) y:文字起始点的纵坐标</li>
-</ul>
-</li>
-<li>绘制文字轮廓<ul>
-<li>cvs.strokeText(text,x,y,maxWidth);</li>
-<li>1) text:文本内容</li>
-<li>2) x:文字起始点的横坐标</li>
-<li>3) y:文字起始点的纵坐标</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>案例1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">		cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">		cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">		cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">		cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">		cvs.fillRect(50,50,100,100);</div><div class="line">		//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">	&#125;</div><div class="line">	draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">	cvs.fillStyle=&apos;yellow&apos;;//设置填充样式颜色</div><div class="line">	cvs.font=&apos;40px verdana&apos;;//设置字体样式</div><div class="line">	cvs.textAlign=&apos;start&apos;;//设置字体的水平对齐方式</div><div class="line">	cvs.textBaseline=&apos;top&apos;;//设置字体的垂直对齐方式</div><div class="line">	cvs.fillText(text,10,10);</div><div class="line">	//设置填充文字 文本内容text 文本起始点坐标10,10</div><div class="line">	var length=cvs.measureText(text);</div><div class="line">	//获取文本宽度(长度)length</div><div class="line">	console.dir(length);</div><div class="line">	//TextMetrics--&gt;width:241.171875</div><div class="line">	//==&gt;length.width字体的宽度</div><div class="line">	cvs.fillText(&quot;字体长度为&quot;+length.width,10,60);</div><div class="line">	//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,60</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例3:文本线性渐变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">		var CLG=cvs.createLinearGradient(0,0,300,100);</div><div class="line">		//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标300,100</div><div class="line">		CLG.addColorStop(0,&apos;skyblue&apos;);//设置渐变的偏移量0% 天空蓝</div><div class="line">		CLG.addColorStop(0.25,&apos;plum&apos;);//设置渐变的偏移量25% 紫色</div><div class="line">		CLG.addColorStop(0.5,&apos;lightblue&apos;);//设置渐变的偏移量50% 蓝</div><div class="line">		CLG.addColorStop(0.75,&apos;skyblue&apos;);//设置渐变的偏移量75% 天空蓝</div><div class="line">		CLG.addColorStop(1,&apos;plum&apos;);//设置渐变的偏移量100% 紫色</div><div class="line">		var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">		cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">		cvs.shadowOffsetX=5;//设置阴影的横向偏移量5px</div><div class="line">		cvs.shadowOffsetY=4;//设置阴影的纵向偏移量4px</div><div class="line">		cvs.shadowColor=&apos;#ffb6c1&apos;;//设置阴影的颜色</div><div class="line">		cvs.shadowBlur=5;//设置阴影的模糊度</div><div class="line">		cvs.font=&apos;40px cursive&apos;;//设置字体样式</div><div class="line">		cvs.textAlign=&apos;top&apos;;//设置字体的水平对齐方式</div><div class="line">		cvs.fillText(text,50,150);</div><div class="line">		//设置填充文字text 文本起始点坐标50,150</div><div class="line">		var width=cvs.measureText(text).width;//获取文本宽度(长度)length</div><div class="line">		cvs.fillText(&quot;字体长度为：&quot;+width,10,200);</div><div class="line">		//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,200</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	draw3();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例4:文本径向渐变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var CRG=cvs.createLinearGradient(0,0,600,0,0,20);</div><div class="line">	//创建一个径向渐变 渐变开始的坐标0,0 开始渐变的半径600px 渐变结束的坐标0,0 渐变结束的半径20px</div><div class="line">	CRG.addColorStop(0,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.25,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(0.5,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.75,&apos;plum&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;skyblue&apos;);</div><div class="line">		var text=&apos;I WANT EAT&apos;;</div><div class="line">		cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">		cvs.font=&apos;80px simsun&apos;;//设置字体样式</div><div class="line">  		cvs.textAlign=&apos;start&apos;;//设置文本横向对齐方式</div><div class="line">		cvs.textBaseline=&apos;top&apos;;//设置文本纵向对齐方式</div><div class="line">		cvs.shadowColor=&apos;lightblue&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowBlur=10;//设置阴影的模糊范围10px</div><div class="line">		cvs.fillText(text,10,10);//设置填充文字text 文本起始点坐标10,10</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4jkbfw4000igott5zjlnyoe" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-服务器及相关知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/09/服务器及相关知识/" class="article-date">
-  <time datetime="2017-06-09T03:38:02.000Z" itemprop="datePublished">2017-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/服务器及相关知识/">服务器及相关知识</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><ul>
-<li>是具有储存功能的计算机设备（笔记本电脑本身就是一个服务器）<h5 id="服务器根据功能分类："><a href="#服务器根据功能分类：" class="headerlink" title="服务器根据功能分类："></a>服务器根据功能分类：</h5></li>
-<li>web服务器：供用户访问的 安全系数相对较低</li>
-<li>数据库服务器：放在内网的服务器，用来安装数据库</li>
-<li>应用服务器：放在内网的服务器，用来安装应用（产品）</li>
-</ul>
-<h5 id="操作系统有关"><a href="#操作系统有关" class="headerlink" title="操作系统有关"></a>操作系统有关</h5><ul>
-<li>可视操作：可以直观看到所有文件，可以直接操作这些文件（window）</li>
-<li>不可视操作：不能直观看到所有文件，需要ssh，ftp这样的工具进行连接（或者是敲命令进行）</li>
-</ul>
-<h5 id="大型机与嵌入式系统使用很多样化的操作系统。"><a href="#大型机与嵌入式系统使用很多样化的操作系统。" class="headerlink" title="大型机与嵌入式系统使用很多样化的操作系统。"></a>大型机与嵌入式系统使用很多样化的操作系统。</h5><ul>
-<li>在服务器方面Linux、UNIX和WindowsServer占据了市场的大部分份额。在超级计算机方面，Linux取代Unix成为了第一大操作系统，截止2012年6月，世界超级计算机500强排名中基于Linux的超级计算机占据了462个席位，比率高达92%。随着智能手机的发展，Android和iOS已经成为目前最流行的两大手机操作系统。</li>
-</ul>
-<h5 id="内外网："><a href="#内外网：" class="headerlink" title="内外网："></a>内外网：</h5><ul>
-<li>内网：数据库 ，产品应用——可供用户观看的页面</li>
-<li>外网：web服务器，web服务器（多个相同的web服务器，负载均衡）——可供用户访问的</li>
-<li>vpn(翻墙软件)负载均衡：内外网的连接工具</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4jkbfwk000rgott4oxrk48f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj4jl9fpo000rvgtt7ia6frpp" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -995,7 +1046,7 @@
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -1021,28 +1072,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2017/06/30/CSS中的form表单与table表格/">CSS中的form表单与table表格</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/CSS标签语义化/">标签语义化</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/HTML标签分类/">HTML标签分类</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/HTML基本结构/">HTML基本结构</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/CSS常用选择器/">CSS常用选择器</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/Window快捷键整理/">Window快捷键整理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/CSS中常用的HTML元素及标签/">CSS中常用的HTML元素及标签</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/“前端三层”/">“前端三层”</a>
           </li>
         
       </ul>
@@ -1058,7 +1109,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

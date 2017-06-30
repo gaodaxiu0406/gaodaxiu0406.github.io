@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS中的form表单与table表格 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="form表单 用来获取用户信息&amp;lt;form&amp;gt;&amp;lt;/form&amp;gt; 12345678910111213141516171819202122&amp;lt;form&amp;gt;    &amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;ok&amp;quot; checked=&amp;quot;checked&amp;quot;&amp;gt;&amp;lt;!--单选按钮--&amp;gt;&amp;lt;lab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS中的form表单与table表格">
+<meta property="og:url" content="http://yoursite.com/2017/06/30/CSS中的form表单与table表格/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="form表单 用来获取用户信息&amp;lt;form&amp;gt;&amp;lt;/form&amp;gt; 12345678910111213141516171819202122&amp;lt;form&amp;gt;    &amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;ok&amp;quot; checked=&amp;quot;checked&amp;quot;&amp;gt;&amp;lt;!--单选按钮--&amp;gt;&amp;lt;lab">
+<meta property="og:updated_time" content="2017-06-30T08:18:15.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS中的form表单与table表格">
+<meta name="twitter:description" content="form表单 用来获取用户信息&amp;lt;form&amp;gt;&amp;lt;/form&amp;gt; 12345678910111213141516171819202122&amp;lt;form&amp;gt;    &amp;lt;input type=&amp;quot;radio&amp;quot; name=&amp;quot;ok&amp;quot; checked=&amp;quot;checked&amp;quot;&amp;gt;&amp;lt;!--单选按钮--&amp;gt;&amp;lt;lab">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS中的form表单与table表格" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/CSS中的form表单与table表格/" class="article-date">
+  <time datetime="2017-06-30T08:15:23.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS中的form表单与table表格
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h3><ul>
+<li><p>用来获取用户信息<code>&lt;form&gt;&lt;/form&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;form&gt;</div><div class="line">    &lt;input type=&quot;radio&quot; name=&quot;ok&quot; checked=&quot;checked&quot;&gt;&lt;!--单选按钮--&gt;&lt;label&gt;满意&lt;/label&gt;&lt;!--label 描述表单元素功能--&gt;</div><div class="line">    &lt;!--type 类型--&gt;</div><div class="line">    &lt;!--name 名字--&gt;</div><div class="line">    &lt;!--checked 选中--&gt;</div><div class="line">    &lt;input type=&quot;radio&quot; name=&quot;ok&quot;&gt;&lt;!--单选按钮--&gt;&lt;label&gt;不满意&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;篮球&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot; checked&gt;&lt;label&gt;美女&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;彭于晏&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;陈冠希&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;杨颖&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;维密&lt;/label&gt;</div><div class="line"></div><div class="line">    &lt;textarea maxlength=&quot;10&quot; minlength=&quot;1&quot;&gt;&lt;/textarea&gt;&lt;!--文本域--&gt;</div><div class="line">    &lt;!--maxlength 字符输入的最大长度--&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;姓名&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;手机&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;密码&lt;/label&gt;&lt;input type=&quot;password&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>radio 单选按钮</p>
+<ul>
+<li>name=”ok”（name的值相同情况下）同时给到input type=”radio”，表示单选只能选中其中的一个</li>
+</ul>
+</li>
+<li>lable描述表单元素功能</li>
+<li>type 类型</li>
+<li>name 名字</li>
+<li>cheked 选中<ul>
+<li>单独写checked也可以达到选中的效果</li>
+</ul>
+</li>
+<li><code>&lt;input type=&quot;checkbox&quot;&gt;</code>checkbox 多选按钮</li>
+<li>textarea 文本域</li>
+<li><code>&lt;textarea maxlength=&quot;10&quot; minlength=&quot;1&quot;&gt;&lt;/textarea&gt;</code><ul>
+<li>maxlength字符输入的最大长度</li>
+</ul>
+</li>
+</ul>
+<h3 id="table表格"><a href="#table表格" class="headerlink" title="table表格"></a>table表格</h3><ul>
+<li><code>&lt;caption&gt;标题&lt;/caption&gt;</code></li>
+<li><code>&lt;thead&gt;表头&lt;/thead&gt;</code><ul>
+<li>tr&gt;th（标题单元格，th加粗居中）</li>
+</ul>
+</li>
+<li><code>&lt;tfoot&gt;</code> 表尾<ul>
+<li>tr&gt;th（普通单元格）</li>
+<li>tr&gt;td（普通单元格，td不加粗不居中）</li>
+</ul>
+</li>
+<li>tbody 表身<ul>
+<li>tr&gt;th（普通单元格）<blockquote>
+<p>thead和tfoot分别有一个 tbody可以有多个<br>tfoot一般放置在thead的后面，为了防止tbody中的内容过多，tfoot加载过慢的情况，但是虽然书写位置在前面，在页面中显示的时候，这部分依然在整个表格的最后面<br>如果table用来搭建结构，我们只需写tr和td</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/CSS中的form表单与table表格/" data-id="cj4jl9fnp0005vgttmvi7l71o" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/30/CSS标签语义化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">标签语义化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/30/CSS中的form表单与table表格/">CSS中的form表单与table表格</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/CSS标签语义化/">标签语义化</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/HTML标签分类/">HTML标签分类</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/HTML基本结构/">HTML基本结构</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
