@@ -61,6 +61,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS的引入方式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/CSS的引入方式/" class="article-date">
+  <time datetime="2017-06-30T07:27:20.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="css如何在html中使用（html引入css的四种方法）"><a href="#css如何在html中使用（html引入css的四种方法）" class="headerlink" title="css如何在html中使用（html引入css的四种方法）"></a>css如何在html中使用（html引入css的四种方法）</h2><ul>
+<li><ol>
+<li>行内式：直接写在标签内，通过标签属性style引入<ul>
+<li>媒介：style属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;css属性名:属性值；&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img style=&quot;css属性名:属性值；&quot;alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>内嵌式（内联式）:将css代码写在style元素内，通过css选择器选择html元素，将css样式添加个这个元素<ul>
+<li>媒介：style标签+选择器</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>style这个元素一般放在head元素内</p>
+<ul>
+<li>style元素：盛装css样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;height:100px;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>外联式（外链式）：将css代码单独放置在一个css文件中，再通过link标签将这个css文件引入到html文件中<ul>
+<li>媒介：link标签+选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; herf=&quot;url&quot; type=&quot;text/css&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>导入式：都是引入一个单独的css文件<ul>
+<li>媒介：@import”url”;</li>
+<li>@import”url”;既不是html标签，也不是css属性，他是一条声明语句</li>
+<li>这条语句必须写在style元素内,或者css文件内</li>
+<li>这条语句必须在所在文件内的第一行</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="外链式和导入式的差别："><a href="#外链式和导入式的差别：" class="headerlink" title="外链式和导入式的差别："></a>外链式和导入式的差别：</h2><ul>
+<li>link和@import虽然都是引入外部的css文件，但是他们是由天差地别的区别的<ul>
+<li>1) link是html标签，@import完全是css提供的方式，要写在css文件或者style标签中。</li>
+<li>2) 他们的加载顺序也是有区别的，当一个页面被加载的时候，link引用的css文件会被同时加载，而@import引入的css文件会等页面全部下载完后再加载。</li>
+<li>3) 当使用javascript控制DOM去改变css样式的时候，只能使用link标签，因为import是不能被DOM控制的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="在工作中常用的引入方式是外链式"><a href="#在工作中常用的引入方式是外链式" class="headerlink" title="在工作中常用的引入方式是外链式"></a>在工作中常用的引入方式是外链式</h3><ul>
+<li>四种引入方式的权重（一个html元素最终加载的css样式是谁决定的）<ul>
+<li>有行内式的时候，听行内的</li>
+<li>在选择器相同的情况下，谁最后加载就听谁的</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/CSS的引入方式/" data-id="cj4jkbfv40002gott0loxceim" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS常用选择器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/30/CSS常用选择器/" class="article-date">
@@ -210,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS常用选择器/" data-id="cj4jj8y7000018ottqrev0ejs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS常用选择器/" data-id="cj4jkbfuu0000gottxa9p0au9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/Window快捷键整理/" data-id="cj4jj8y8f000c8ottld27no51" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/Window快捷键整理/" data-id="cj4jkbfvw000dgottctydvsp7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +404,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="常用的HTML元素"><a href="#常用的HTML元素" class="headerlink" title="常用的HTML元素"></a>常用的HTML元素</h3><ul>
+        <h3 id="常用的HTML标签总结"><a href="#常用的HTML标签总结" class="headerlink" title="常用的HTML标签总结"></a>常用的HTML标签总结</h3><ul>
 <li><ol>
 <li>div 无意义标签，用来区分网页大模块，例如网页头部、主题内容、尾部<br><code>&lt;div&gt;无意义元素，用它来区分网页大模块&lt;/div&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">banner</div><div class="line">&lt;div&gt;区分模块</div><div class="line">    &lt;a href=&quot;http://www.baidu.com&quot;&gt;</div><div class="line">        &lt;img src=&quot;pic.jpg&quot; alt=&quot;备注/描述&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    &lt;a href=&quot;&quot;&gt;</div><div class="line">        &lt;img src=&quot;&quot; alt=&quot;图片加载出问题了&quot; width=&quot;100px&quot; height=&quot;100px&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 </li>
@@ -356,15 +448,156 @@
 </li>
 </ol>
 </li>
+<li><ol>
+<li>i 作用：<em>斜体</em></li>
+</ol>
+</li>
+<li><ol>
+<li>em 强调 作用：*斜体</li>
+</ol>
+</li>
+<li><ol>
+<li>h1-h6 标题</li>
+</ol>
+</li>
+<li><ol>
+<li>dl-dt-dd定义列表 常用在新闻标题和摘要<ul>
+<li>dt 定义标题</li>
+<li>dd 定义描述</li>
+<li>一个dt可以多个dd进行描述</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>table表格</li>
+</ol>
+</li>
+<li><code>&lt;caption&gt;标题&lt;/caption&gt;</code></li>
+<li><code>&lt;thead&gt;表头&lt;/thead&gt;</code><ul>
+<li>tr&gt;th（标题单元格，th加粗居中）</li>
+</ul>
+</li>
+<li><code>&lt;tfoot&gt;</code> 表尾<ul>
+<li>tr&gt;th（普通单元格）</li>
+<li>tr&gt;td（普通单元格，td不加粗不居中）</li>
+</ul>
+</li>
+<li><p>tbody 表身</p>
+<ul>
+<li>tr&gt;th（普通单元格）<blockquote>
+<p>thead和tfoot分别有一个 tbody可以有多个<br>tfoot一般放置在thead的后面，为了防止tbody中的内容过多，tfoot加载过慢的情况，但是虽然书写位置在前面，在页面中显示的时候，这部分依然在整个表格的最后面<br>如果table用来搭建结构，我们只需写tr和td</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>form表单 用来获取用户信息<code>&lt;form&gt;&lt;/form&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;form&gt;</div><div class="line">    &lt;input type=&quot;radio&quot; name=&quot;ok&quot; checked=&quot;checked&quot;&gt;&lt;!--单选按钮--&gt;&lt;label&gt;满意&lt;/label&gt;&lt;!--label 描述表单元素功能--&gt;</div><div class="line">    &lt;!--type 类型--&gt;</div><div class="line">    &lt;!--name 名字--&gt;</div><div class="line">    &lt;!--checked 选中--&gt;</div><div class="line">    &lt;input type=&quot;radio&quot; name=&quot;ok&quot;&gt;&lt;!--单选按钮--&gt;&lt;label&gt;不满意&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;篮球&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot; checked&gt;&lt;label&gt;美女&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;彭于晏&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;陈冠希&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;杨颖&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;维密&lt;/label&gt;</div><div class="line"></div><div class="line">    &lt;textarea maxlength=&quot;10&quot; minlength=&quot;1&quot;&gt;&lt;/textarea&gt;&lt;!--文本域--&gt;</div><div class="line">    &lt;!--maxlength 字符输入的最大长度--&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;姓名&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;手机&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;密码&lt;/label&gt;&lt;input type=&quot;password&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>radio 单选按钮<ul>
+<li>name=”ok”（name的值相同情况下）同时给到input type=”radio”，表示单选只能选中其中的一个</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>lable描述表单元素功能</li>
+<li>type 类型</li>
+<li>name 名字</li>
+<li>cheked 选中<ul>
+<li>单独写checked也可以达到选中的效果</li>
+</ul>
+</li>
+<li><code>&lt;input type=&quot;checkbox&quot;&gt;</code>checkbox 多选按钮</li>
+<li>textarea 文本域</li>
+<li><code>&lt;textarea maxlength=&quot;10&quot; minlength=&quot;1&quot;&gt;&lt;/textarea&gt;</code><ul>
+<li>maxlength字符输入的最大长度</li>
+</ul>
+</li>
+</ul>
+<h2 id="html的基本结构"><a href="#html的基本结构" class="headerlink" title="html的基本结构"></a>html的基本结构</h2><ul>
+<li>一个html文件也叫做一个网页，可以称作是一个文档(document)</li>
+<li>这个文档从html元素开始，一致向下分支延伸，像一颗大树一样，所以我们将html元素叫做这个文档的<strong>根元素</strong></li>
+</ul>
+<p><code>&lt;!DOCTYPE html&gt;</code>html5的文档声明</p>
+<p>作用：定义这个文档类型，浏览器先识别这句话，会按照定义的类型去解析这个文档</p>
+<p>html5的文档声明，那么浏览器就会按照html5的规则解析整个页面</p>
+<p><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;
+        &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code>html4版本的文档声明</p>
+<ul>
+<li>所有高版本都会向下兼容，所以在以后的工作中，我们直接将文档声明写错html5就可以了</li>
+<li>文档声明必须写在html文件的第一行</li>
+<li>文档声明不区分大小写</li>
+<li>如果html文件没有文档声明，会触发浏览器的怪异模式</li>
+<li>文档声明不是一个html标签</li>
+</ul>
+<h3 id="1-html元素"><a href="#1-html元素" class="headerlink" title="1.html元素"></a>1.html元素</h3><p>此元素告知浏览器其自身是一个html元素<br>是由开始和结束标签组成的，html文件里面所有的内容都会放在这个这个元素内</p>
+<h3 id="2-head元素"><a href="#2-head元素" class="headerlink" title="2.head元素"></a>2.head元素</h3><pre><code>- 整个文档的头部，head元素自带隐藏功能，display:none;里面的内容不会隐藏，只不过一般放置在head元素中的其他元素和内容也是自带隐藏功能的，例如link、script、meta···
+- `&lt;script&gt;&lt;/script&gt;与head标签一样具有隐藏功能，写在其内的内容在网页不显示`
+</code></pre><h3 id="3-lt-meta-charset-quot-UTF-8-quot-gt"><a href="#3-lt-meta-charset-quot-UTF-8-quot-gt" class="headerlink" title="3.&lt;meta charset=&quot;UTF-8&quot;&gt;"></a>3.<code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></h3><h3 id="4-lt-meta-gt-规定了html文档的元信息"><a href="#4-lt-meta-gt-规定了html文档的元信息" class="headerlink" title="4.&lt;meta&gt;规定了html文档的元信息"></a>4.<code>&lt;meta&gt;</code>规定了html文档的元信息</h3><ul>
+<li>charset=”UTF-8” 文档的编码<ul>
+<li>UTF-8 国际通用编码</li>
+<li>gbk 国标</li>
+<li>gb2312 国标</li>
+</ul>
+</li>
+<li>name=”keyword” content=”关键词”<ul>
+<li>name=”keyword” content=”HTML5J5…”</li>
+<li>SEO优化有关</li>
+<li>SEO搜索引擎<br><code>&lt;meta name=&quot;keyword&quot; content=&quot;关键词&quot;&gt;</code><br><code>&lt;meta name=&quot;description&quot; content=&quot;八年专注 前端培训&quot;&gt;</code><h3 id="5-title元素"><a href="#5-title元素" class="headerlink" title="5.title元素"></a>5.title元素</h3>html文档名称 一个页面只有一个title元素<br>放文字 显示在浏览器的页卡（页头）位置</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-link标签"><a href="#6-link标签" class="headerlink" title="6.link标签"></a>6.link标签</h3><ul>
+<li><code>&lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;shortcut icon&quot;&gt;</code><ul>
+<li>图标让设计师生成</li>
+<li>一般整个图片放在整个项目的根目录下</li>
+<li>显示在浏览器页卡位置，title内容之前</li>
+</ul>
+</li>
+<li><code>&lt;link rel=&quot;stylesheet&quot; herf=&quot;url&quot; type=&quot;texe/css&quot;&gt;</code><ul>
+<li>引入一个外部的css文件</li>
+<li>rel不能缺少 stylesheet样式表</li>
+<li>type可以省略 但是建议写全</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-body元素"><a href="#7-body元素" class="headerlink" title="7.body元素"></a>7.body元素</h3><ul>
+<li>定义整个文档的主体部分，所有展示给用户的内容都要放在这个元素中</li>
+<li>body中有常用的html元素（div、ul），文本内容、音频、视频、图片、表单<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UIF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
+<li>标签（由尖括号和关键字组成的超文本）</li>
+<li>关键字（就是普通文本），在编辑html这门语言的时候，相关组织将这些文本归纳到了一定的规则中，是他有了特殊的含义和作用</li>
+<li><p>标签的分类：开始标签、结束标签、空标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;开始标签&gt;&lt;空标签 /&gt;</div><div class="line">&lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;b&gt;&lt;/b&gt;</div><div class="line">&lt;strong&gt;&lt;/strong&gt;</div><div class="line">&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</div><div class="line">&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</div><div class="line">&lt;p&gt;&lt;/p&gt;···</div><div class="line">&lt;/结束标签&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>标签属性：用来描述标签功能的，一般写在开始标签中，跟在标签名的后面，用空格隔开，一个标签可以有很多标签属性，每一个属性都用空格隔开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;开始标签 属性名=&quot;属性值&quot; 属性名1=&quot;属性值&quot;&gt;&lt;结束标签&gt;</div><div class="line">&lt;img src=&quot;url&quot; alt=&quot;备注&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h3 id="html标签"><a href="#html标签" class="headerlink" title="html标签"></a>html标签</h3><ul>
-<li><p>html标签HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</p>
+<li><ol>
+<li>html标签HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</li>
+</ol>
 </li>
 <li><p>标签不会出现在页面中，只有标签中的内容才会显示在页面上 ：也就是<code>&lt;html&gt;此处为内容&lt;/html&gt;</code></p>
 </li>
 <li><p>标签不区分大小写，但是推荐使用小写 ：(X)HTML 版本中强制使用小写，这样更加严谨</p>
 </li>
 <li><p>标签分为闭合标签和空标签 ：闭合标签是指由开始标签和结束标签组成的一对标签，这种标签允许嵌套和承载内容，例如：<code>&lt;html&gt;&lt;/html&gt;、&lt;p&gt;&lt;/p&gt;</code>；空标签是没有内容的标签，在开始标签中自动闭合，例如：<code>&lt;img /&gt;、&lt;br /&gt;、&lt;hr /&gt;等</code></p>
+</li>
+</ul>
+<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><ul>
+<li><p>由标签（开始和结束标签中有内容）和内容组成，元素中内容可以为空，一个空标签也叫做一个元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;content&lt;/div&gt;--&gt;div元素</div><div class="line">&lt;img src=&quot;url&quot; alt=&quot;备注&quot; /&gt;--&gt;img元素</div></pre></td></tr></table></figure>
+<blockquote>
+<p>标签属性经过html的进化，舍弃了有关样式的标签属性，保留功能的标签属性<br>例如舍弃width bgcolor align，这些样式描述都放在css里面<br>保留alt title src href···</p>
+</blockquote>
 </li>
 </ul>
 <h3 id="html标签分类"><a href="#html标签分类" class="headerlink" title="html标签分类"></a>html标签分类</h3><ul>
@@ -451,24 +684,41 @@
         - label（input 元素定义标注/标记）、img
         - sub 下标
         - sup 上标
-</code></pre><h3 id="标签语义化的重要性-为什么要遵循标签语义化："><a href="#标签语义化的重要性-为什么要遵循标签语义化：" class="headerlink" title="标签语义化的重要性/为什么要遵循标签语义化："></a>标签语义化的重要性/为什么要遵循标签语义化：</h3><ul>
-<li>1、利于SEO优化（也就是搜索引擎的抓取，搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重）；</li>
-<li>2、在样式丢失的时候，还是可以比较好的呈现结构；</li>
+</code></pre><h3 id="标签语义化的重要性-为什么要遵循标签语义化：合理的标签做合理的事情"><a href="#标签语义化的重要性-为什么要遵循标签语义化：合理的标签做合理的事情" class="headerlink" title="标签语义化的重要性/为什么要遵循标签语义化：合理的标签做合理的事情"></a>标签语义化的重要性/为什么要遵循标签语义化：合理的标签做合理的事情</h3><ul>
+<li>1、重要的内容，要放在语义重要的标签中，利于SEO优化(搜索引擎榨取),利于SEO优化(也就是搜索引擎的抓取，搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重);<ul>
+<li>浏览器会按照每个标签的意义去解析这个标签中的内容:h1–&gt;这是一个大标题，意义很重要，搜索引擎会重点抓取这个里面的内容</li>
+<li>p–&gt;段落 浏览器在展现这一部分的时候，会独立成一块，让网页结构更加清晰，给用户更好的浏览体验</li>
+</ul>
+</li>
+<li>2、在没有css样式的时候，页面也可以整齐的显示效果</li>
 <li>3、更好的支持各种终端，例如无障碍阅读和有声小说等；</li>
-<li>4、利于团队开发和维护，W3C给我们定了一个标准，那么团队中都遵循这个标准，那么代码的差异就会缩小，在开发和维护的时候就可以提高效率；</li>
+<li>4、利于团队协作和后期维护</li>
 </ul>
 <h4 id="日常工作中怎样遵循标签语义化："><a href="#日常工作中怎样遵循标签语义化：" class="headerlink" title="日常工作中怎样遵循标签语义化："></a>日常工作中怎样遵循标签语义化：</h4><ul>
 <li>1、尽量减少使用无意义标签，例如span和div；</li>
 <li>2、尽量不使用标签本身的css属性，例如b、font、s等标签，如果需要这些样式，那么使用css样式来进行添加；</li>
 <li>3、在需要强调的部分，使用strong、em，但是样式尽量使用css样式来描述；</li>
 <li>4、表格搭建时，使用`<thead>表格头部</thead> <tbody>表格身体</tbody> <tfoot>表格尾部</tfoot>；</li>
-<li>5、列表搭建时，使用<ul>无序列表</ul> <ol>有序列表</ol> <dl>定义列表</dl>；`</li>
+<li><p>5、列表搭建时，使用<ul>无序列表</ul> <ol>有序列表</ol> <dl>定义列表</dl>；`</p>
+<ul>
+<li>国家评比一个网站的关键点：访问量（流量/点击量）</li>
+</ul>
+</li>
+</ul>
+<h2 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h2><p>在引入其他文件的时候，必须写宽度和高度</p>
+<h1 id="CSS层叠样式表"><a href="#CSS层叠样式表" class="headerlink" title="CSS层叠样式表"></a>CSS层叠样式表</h1><ul>
+<li>css的作用：<ul>
+<li>给html文档添加静态或者动态的样式</li>
+</ul>
+</li>
+<li>css和html如何融合到一起</li>
+<li>在css文件中如何选择一个html元素，将样式添加给这个元素</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS中常用的HTML元素及标签/" data-id="cj4jj8y6n00008otts23gdlq2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS中常用的HTML元素及标签/" data-id="cj4jkbfv00001gottf8s119cc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -637,7 +887,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/“前端三层”/" data-id="cj4jj8y9x000o8ottqiog2ils" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/“前端三层”/" data-id="cj4jkbfwg000pgottskfdvbk9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -747,7 +997,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/markdown的简单使用/" data-id="cj4jj8y9t000n8ott4wshsfk8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/markdown的简单使用/" data-id="cj4jkbfwe000ogottvzpflcdx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -877,7 +1127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/" data-id="cj4jj8y8c000b8otto9cswgrx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/" data-id="cj4jkbfvu000cgottx56btc7f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -920,7 +1170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/26/JS中的caller和callee/" data-id="cj4jj8y7l00058ottnpcr0tpi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/26/JS中的caller和callee/" data-id="cj4jkbfvf0006gottft2b2tw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -990,7 +1240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/23/JS中的同步异步编程思想/" data-id="cj4jj8y7q00068ottf0mg7f21" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/23/JS中的同步异步编程思想/" data-id="cj4jkbfvg0007gott8jw06e7h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1078,166 +1328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/IE版本条件注释语句-全/" data-id="cj4jj8y7d00038otthm17pfw0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-网站如何发布" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/20/网站如何发布/" class="article-date">
-  <time datetime="2017-06-20T06:58:34.000Z" itemprop="datePublished">2017-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/20/网站如何发布/">网站如何发布</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>客户端（浏览器）</li>
-<li>DNS服务器  域名解析服务器</li>
-<li>www.baidu.com-&gt;61.135.169.121</li>
-</ul>
-<h4 id="网站如何发布"><a href="#网站如何发布" class="headerlink" title="网站如何发布?"></a>网站如何发布?</h4><h5 id="1-租一台服务器（阿里云服务器：主机-虚拟服务器）-给这个主机-服务器连接网络（连个网线），联网之后就会有个外网ip地址-（就是别人通过外网的ip可以找到我们的服务器，一般公司都会禁止外网IP访问）"><a href="#1-租一台服务器（阿里云服务器：主机-虚拟服务器）-给这个主机-服务器连接网络（连个网线），联网之后就会有个外网ip地址-（就是别人通过外网的ip可以找到我们的服务器，一般公司都会禁止外网IP访问）" class="headerlink" title="1.租一台服务器（阿里云服务器：主机/虚拟服务器） 给这个主机/服务器连接网络（连个网线），联网之后就会有个外网ip地址 （就是别人通过外网的ip可以找到我们的服务器，一般公司都会禁止外网IP访问）"></a>1.租一台服务器（阿里云服务器：主机/虚拟服务器） 给这个主机/服务器连接网络（连个网线），联网之后就会有个外网ip地址 （就是别人通过外网的ip可以找到我们的服务器，一般公司都会禁止外网IP访问）</h5><ul>
-<li><p>例如，通过本地webstore打开本地的文件地址是 <a href="http://localhost:63342/webstore%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/JS%E6%AD%A3%E5%BC%8F%E8%AF%BE/%E5%91%A8%E5%95%B8%E5%A4%A9%E8%AF%BE%E4%BB%B6/JavaScript201602-master/20160512_CSS3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/PPT/%E9%99%84%E4%BB%B6/2%E3%80%81%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/1%E3%80%81%E4%BD%BF%E7%94%A8border-color%E5%88%B6%E4%BD%9C%E4%B8%89%E8%A7%92%E7%AC%A6%E5%8F%B7.html?_ijt=214ukq11e5l4bismdevhkenfhm" target="_blank" rel="external">http://localhost:63342/webstore%E5%AD%A6%E4%B9%A0%E6%96%87%E4%BB%B6/JS%E6%AD%A3%E5%BC%8F%E8%AF%BE/%E5%91%A8%E5%95%B8%E5%A4%A9%E8%AF%BE%E4%BB%B6/JavaScript201602-master/20160512_CSS3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/PPT/%E9%99%84%E4%BB%B6/2%E3%80%81%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7/1%E3%80%81%E4%BD%BF%E7%94%A8border-color%E5%88%B6%E4%BD%9C%E4%B8%89%E8%A7%92%E7%AC%A6%E5%8F%B7.html?_ijt=214ukq11e5l4bismdevhkenfhm</a></p>
-<ul>
-<li>localhost:本地文件地址</li>
-</ul>
-</li>
-<li><p>百度的服务器的外网IP：61.135.169.121</p>
-</li>
-</ul>
-<h5 id="2-买一个域名（域名备案）"><a href="#2-买一个域名（域名备案）" class="headerlink" title="2.买一个域名（域名备案）"></a>2.买一个域名（域名备案）</h5><ul>
-<li>域名有哪些？<ul>
-<li>.cn / .com / .net / .org / .wang /.gov……</li>
-</ul>
-</li>
-</ul>
-<h5 id="3-将自己的项目放到服务器上-上传到服务器指定的磁盘上–-gt-FTP上传（上传工具FileZilla）"><a href="#3-将自己的项目放到服务器上-上传到服务器指定的磁盘上–-gt-FTP上传（上传工具FileZilla）" class="headerlink" title="3.将自己的项目放到服务器上 上传到服务器指定的磁盘上–&gt;FTP上传（上传工具FileZilla）"></a>3.将自己的项目放到服务器上 上传到服务器指定的磁盘上–&gt;FTP上传（上传工具FileZilla）</h5><h5 id="4-发布项目（网站）一个服务区可以发布多个项目，每个项目各自占一个端口，每一个端口都有对应的端口号（每一个端口号都是唯一的，不能重复的），用端口号来进行区分项目"><a href="#4-发布项目（网站）一个服务区可以发布多个项目，每个项目各自占一个端口，每一个端口都有对应的端口号（每一个端口号都是唯一的，不能重复的），用端口号来进行区分项目" class="headerlink" title="4.发布项目（网站）一个服务区可以发布多个项目，每个项目各自占一个端口，每一个端口都有对应的端口号（每一个端口号都是唯一的，不能重复的），用端口号来进行区分项目"></a>4.发布项目（网站）一个服务区可以发布多个项目，每个项目各自占一个端口，每一个端口都有对应的端口号（每一个端口号都是唯一的，不能重复的），用端口号来进行区分项目</h5><p>–&gt;0~65535之间的任意一个数</p>
-<ul>
-<li>1）发布网站的工具 IIS  Apache   nginx   node</li>
-</ul>
-<h5 id="5-域名解析（DNS解析）-把购买的域名和服务器的IP地址关联到一起-以后只要提到域名-就关联的是这个服务器"><a href="#5-域名解析（DNS解析）-把购买的域名和服务器的IP地址关联到一起-以后只要提到域名-就关联的是这个服务器" class="headerlink" title="5.域名解析（DNS解析） 把购买的域名和服务器的IP地址关联到一起 以后只要提到域名 就关联的是这个服务器"></a>5.域名解析（DNS解析） 把购买的域名和服务器的IP地址关联到一起 以后只要提到域名 就关联的是这个服务器</h5><ul>
-<li>DNS服务器：他是一台服务器 是属于全世界的万维网联盟，只要是地球上的域名解析都在他这里进行</li>
-<li>www.baidu.com  61.135.169.121</li>
-<li>www.jd.com  111.206.231.1</li>
-</ul>
-<blockquote>
-<p>HTTP事物</p>
-<ul>
-<li>请求Request阶段：</li>
-<li>1.客户端通过域名访问，到DNS服务器上找到对应的外网IP地址</li>
-<li>2.通过外网IP找到对应的项目服务器</li>
-<li>3.通过端口号找到服务器上对应的项目，因为在发布项目的时候，就已经将项目文件和端口号对应了</li>
-<li>响应response阶段：</li>
-<li>4.服务器将客户端请求的资源文件的 源代码 返回给客户端</li>
-<li>5.客户端（浏览器）进行解析文件 渲染页面<ul>
-<li>这两步组成了前后交互的模型/过程 “HTTP事物”–&gt;只有请求Request阶段  响应response阶段  都完成  才叫做HTTP事物</li>
-</ul>
-</li>
-</ul>
-<p>URI</p>
-<ul>
-<li>URI：统一资源标识符</li>
-<li>URI=URL+URN</li>
-<li>URL：统一资源定位符</li>
-<li>URN：统一资源名称</li>
-</ul>
-</blockquote>
-<h5 id="一个完整的URL-–-gt-https-www-baidu-com-443-xxx-xxx-html-name-hh-amp-age-10-video"><a href="#一个完整的URL-–-gt-https-www-baidu-com-443-xxx-xxx-html-name-hh-amp-age-10-video" class="headerlink" title="一个完整的URL   –&gt;    https://www.baidu.com:443/xxx/xxx.html?name=hh&amp;age=10#video"></a>一个完整的URL   –&gt;    <a href="https://www.baidu.com:443/xxx/xxx.html?name=hh&amp;age=10#video" target="_blank" rel="external">https://www.baidu.com:443/xxx/xxx.html?name=hh&amp;age=10#video</a></h5><ul>
-<li><ol>
-<li>https             传输协议<ul>
-<li>传输协议：HTTP / HTTPS  /  FTP</li>
-<li>他是内容传输的媒介（快递公司）</li>
-<li>客户端通过传输协议把一些信息传给服务器</li>
-<li>同样 服务端也可以把一些信息返回给客户端</li>
-<li>HTTP：超文本传输协议 除了传输文本之外 还可以传输其他的东西 比如图片 音频 视频（二进制流/base64）</li>
-<li>HTTPS:更安全的HTTP，因为他的传输通道加密了（SSL加密）（一般跟金钱 用户重要信息的网站都会采用HTTPS传输）</li>
-<li>FTP：一般都是将我们的项目文件传到服务器上，采用一些工具 例如上传工具FileZilla</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>www.baidu.com  域名<ul>
-<li>一级域名 www.qq.com 一级域名 需要购买 ，二级域名、三级域名自己分配即可</li>
-<li>二级域名 sport.qq.com</li>
-<li>三级域名 kbs.sports.qq.com</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>443  端口号<ul>
-<li>取值范围 0-65535之间的一个数</li>
-<li>HTTP的端口号:80</li>
-<li>HTTPS的端口号:443</li>
-<li>FTP的端口号:21</li>
-<li>webstore 默认的端口号：63342</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>xxx/xxx.html    文件的目录–请求文件的路径和名称<ul>
-<li>表示的是在当前项目下xxx文件夹下的xxx.html</li>
-<li>/index.html    表示的是当前项目根目录下的index.html文件</li>
-<li>../index.html  表示的是当前项目上一级目录下的index.html文件</li>
-<li>在不指定文件目录的时候 默认进入的是index.html（因为一般在发布项目的时候，会指定一个默认的入口文件 一般是index.html或者deflut.html）</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>?name=hh&amp;age=10     ?+参数</li>
-</ol>
-</li>
-<li>1）客户端可以通过 ?+参数 的方式给服务器传递一些信息</li>
-<li>2）服务器不进行处理，例如之前做H5的时候  根据page=n，展示不同的区域</li>
-<li>3）处理缓存的问题 传某个参数，但是这个参数服务器不需要  我们用它来做缓存处理  保证每次的URL都不一样  防止缓存   （例如ajax获取数据的拼接）</li>
-<li><ol>
-<li>#video  哈希值HASH<ul>
-<li>1） 客户端也可以通过这种方式给服务器传数据 （一般不用了）</li>
-<li>2） 锚点定位</li>
-<li>3） 通过哈希值HASH 实现页面路由的切换</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h5 id="6-客户端-浏览器-代码解析和页面的渲染"><a href="#6-客户端-浏览器-代码解析和页面的渲染" class="headerlink" title="6.客户端 浏览器  代码解析和页面的渲染"></a>6.客户端 浏览器  代码解析和页面的渲染</h5><ul>
-<li>开发标准由W3C</li>
-<li>W3C：一个非盈利机构，他就是用来制定编程规范和标准的地方</li>
-<li>按照浏览器的开发标准和规范开发出来的浏览器 都有一个东西叫引擎 也就是内核</li>
-<li>我们前端工程师也要按照标准和规范去写代码</li>
-<li>把符合标准的代码放到标准的浏览器中 通过引擎来渲染</li>
-<li>IE内核（Trident引擎）：IE5-11，IE Edge，360，猎豹，百度</li>
-<li>Gecko：火狐</li>
-<li>webkit（V8引擎）  最快的 ： 谷歌 ，Safari，QQ</li>
-<li>Presto引擎：欧朋Opera</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj4jj8ya6000r8ottz8tp8gle" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/20/IE版本条件注释语句-全/" data-id="cj4jkbfv70004gott2vaaoz06" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1281,6 +1372,10 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS常用选择器/">CSS常用选择器</a>
           </li>
         
@@ -1294,10 +1389,6 @@
         
           <li>
             <a href="/2017/06/30/“前端三层”/">“前端三层”</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/markdown的简单使用/">markdown的简单使用</a>
           </li>
         
       </ul>
