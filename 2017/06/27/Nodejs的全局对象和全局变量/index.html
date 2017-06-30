@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Nodejs的全局对象和全局变量 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="全局对象 所有模块都可以调用  global：表示Node所在的全局环境，类似于浏览器中的window对象。 你可以通过console.log(global);来输出一下global;     1-1. global全局对象里常用的变量  1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录 12 console.log(__dirname);//C:\U">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs的全局对象和全局变量">
+<meta property="og:url" content="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="全局对象 所有模块都可以调用  global：表示Node所在的全局环境，类似于浏览器中的window对象。 你可以通过console.log(global);来输出一下global;     1-1. global全局对象里常用的变量  1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录 12 console.log(__dirname);//C:\U">
+<meta property="og:updated_time" content="2017-06-27T07:09:35.744Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nodejs的全局对象和全局变量">
+<meta name="twitter:description" content="全局对象 所有模块都可以调用  global：表示Node所在的全局环境，类似于浏览器中的window对象。 你可以通过console.log(global);来输出一下global;     1-1. global全局对象里常用的变量  1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录 12 console.log(__dirname);//C:\U">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Nodejs的全局对象和全局变量" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/27/Nodejs的全局对象和全局变量/" class="article-date">
+  <time datetime="2017-06-27T06:32:40.000Z" itemprop="datePublished">2017-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nodejs的全局对象和全局变量
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h4><ul>
+<li>所有模块都可以调用</li>
+<li><ol>
+<li>global：表示Node所在的全局环境，类似于浏览器中的window对象。<ul>
+<li>你可以通过<code>console.log(global);</code>来输出一下global;</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>1-1. global全局对象里常用的变量</p>
+<ul>
+<li><p>1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> console.log(__dirname);</div><div class="line">//C:\Users\Gao\Documents\webstore学习文件\node</div></pre></td></tr></table></figure>
+</li>
+<li><p>2).  __filename  文件名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(__filename);</div><div class="line">//C:\Users\Gao\Documents\webstore学习文件\node\global.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>process 程序所执行的一些相关的内容信息的封装对象</li>
+</ol>
+</li>
+<li>指向Node内置的process模块，允许开发者与当前进程互动。<ul>
+<li>例如你在DOS或终端窗口直接输入node，就会进入NODE的命令行方式（REPL环境）。如果要退出的话，可以输入 process.exit();</li>
+</ul>
+</li>
+<li>2-1. 和输出相关的 process.stdout/process.stderr</li>
+<li>1) process.stdout –&gt;  standard output –&gt; 标准的信息输出</li>
+<li><p>2) process.stderr –&gt;  standard error  –&gt; 标准的错误输出</p>
+<ul>
+<li>console.info和console.error这些相关的输出功能就是调用的process.stdout和process.stderr来完成的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">process.stdout.write(&quot;this is stdout&quot;);</div><div class="line">process.stderr.write(&quot;this is stderr&quot;);//红色的</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2-2. process如何去监听一些事件</p>
+</li>
+<li>1) process.stdin.on()  监听用户输入的键盘信息</li>
+<li>2)process.on()监听操作系统对node发出的一些信号</li>
+</ul>
+<ul>
+<li>2-3. 如何读取输入用户的键盘输入</li>
+<li><p>1).process.stdin</p>
+<ul>
+<li><p>在使用process.stdin之前  要先对他进行一下编码设置<br>```<br>process.stdin.setEncoding(“utf-8”);<br>//这里的编码设置和平常编写网页时候的文本编码不一样<br>//在这里如果想读取纯文本信息  只要把他的编码设置成utf-8就可以了   不需要去考虑类似jbk或者jb2312来区分是不是中文<br>//on方法来监听用户相关的输入事件<br>// process.stdin.on(“data”,function (data) {<br>//     console.log(data);<br>// });<br>process.stdin.on(“readable”,function () {<br>  var data=process.stdin.read();<br>  //回调函数没有参数 需要通过process.stdin.read来读取用户的键盘输入信息<br>  console.log(data);<br>});</p>
+<p>//exit事件<br>process.on(“exit”,function () {<br>  console.log(“programe will exit”);<br>});<br>//在程序正常退出的之前  会触发exit事件</p>
+<p>//SIGINT –&gt; signal    interrupted  信号 被中断<br>//当一个信号被中断的时候就会触发SIGINT事件(cmd 中  ctrl+c会中断信号)</p>
+<p>process.on(“SIGINT”,function () {//会改变程序默认的退出行为<br>  console.log(“programe has a sigint”);<br>  process.exit();//让程序正常退出<br>});</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ol>
+<li>console：指向Node内置的console模块，提供命令行环境中的标准输入、标准输出功能。<br>通常是写console.log();<h4 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h4></li>
+</ol>
+</li>
+<li><ol>
+<li>定时器函数：共有4个，分别是setTimeout(), clearTimeout(), setInterval(), clearInterval()。</li>
+</ol>
+</li>
+<li><ol>
+<li>require：用于加载模块</li>
+</ol>
+</li>
+</ul>
+<h4 id="全局变量："><a href="#全局变量：" class="headerlink" title="全局变量："></a>全局变量：</h4><ul>
+<li><ol>
+<li>_filename：指向当前运行的脚本文件名。</li>
+</ol>
+</li>
+<li><ol>
+<li>_dirname：指向当前运行的脚本所在的目录</li>
+</ol>
+</li>
+</ul>
+<h4 id="准全局变量"><a href="#准全局变量" class="headerlink" title="准全局变量"></a>准全局变量</h4><ul>
+<li><p>模块内部的局部变量，指向的对象根据模块不同而不同，但是所有模块都适用，可以看作是伪全局变量，主要为module, module.exports, exports等。</p>
+</li>
+<li><p>module变量指代当前模块。module.exports变量表示当前模块对外输出的接口，其他文件加载该模块，实际上就是读取module.exports变量。</p>
+</li>
+<li><p>module.id 模块的识别符，通常是模块的文件名。</p>
+</li>
+<li>module.filename 模块的文件名。</li>
+<li>module.loaded 返回一个布尔值，表示模块是否已经完成加载。</li>
+<li>module.parent 返回使用该模块的模块。</li>
+<li><p>module.children 返回一个数组，表示该模块要用到的其他模块。</p>
+</li>
+<li><p>这里需要特别指出的是，exports变量实际上是一个指向module.exports对象的链接，等同在每个模块头部，有一行这样的命令。<br><code>var exports = module.exports;</code></p>
+</li>
+<li>这造成的结果是，在对外输出模块接口时，可以向exports对象添加方法，但是不能直接将exports变量指向一个函数：<br><code>exports = function (x){ console.log(x);};</code></li>
+<li>上面这样的写法是无效的，因为它切断了exports与module.exports之间的链接。</li>
+<li>如果你觉得，exports与module.exports之间的区别很难分清，一个简单的处理方法，就是放弃使用exports，只使用module.exports。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/" data-id="cj4jh5mqx00079cttxhng1yw1" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/30/markdown的简单使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          markdown的简单使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/26/JS中的caller和callee/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">caller和callee</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/30/markdown的简单使用/">markdown的简单使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/27/Nodejs的全局对象和全局变量/">Nodejs的全局对象和全局变量</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/26/JS中的caller和callee/">caller和callee</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/23/JS中的同步异步编程思想/">JS中的同步异步编程思想</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/20/IE版本条件注释语句-全/">IE版本条件注释语句(全)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
