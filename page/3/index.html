@@ -61,6 +61,200 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-canvas之1绘制线条的有关属性和步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/" class="article-date">
+  <time datetime="2017-06-08T11:44:17.000Z" itemprop="datePublished">2017-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/">canvas之1绘制线条的有关属性和步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>&lt;canvas id=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/canvas&gt;</code><br>canvas :H5标签 在页面上绘制图形用的（通常称他画布）<br>canvas只是一个容器，我们用js脚本来控制他<br><code>&lt;canvas id=&quot;draw&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border: 1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</code></p>
+<h3 id="绘制线条的有关属性和步骤"><a href="#绘制线条的有关属性和步骤" class="headerlink" title="绘制线条的有关属性和步骤"></a>绘制线条的有关属性和步骤</h3><blockquote>
+<p>1.相关属性</p>
+</blockquote>
+<ul>
+<li><p>1.填充的样式</p>
+<ul>
+<li><code>cvs.fillStyle --&gt;</code>fillStyle`填充样式</li>
+<li><code>cvs.strokeStyle --&gt;</code>strokeStyle<code>笔触样式 主要用来画边框的</code></li>
+<li><code>cvs.lineWidth --&gt; 边框的宽度</code></li>
+</ul>
+</li>
+<li><p>2.绘制图形有两种方式</p>
+<ul>
+<li><code>cvs.fill(); --&gt; 填充样式</code></li>
+<li><code>cvs.stroke(); --&gt; 边框样式</code></li>
+</ul>
+</li>
+<li><p>3.颜色值的四种书写方式</p>
+<ul>
+<li>1).颜色名      –&gt;”red”</li>
+<li>2).十六进制    –&gt;”#fff”</li>
+<li>3).三色值      –&gt;rgb(0,0,0)</li>
+<li>4).四色值      –&gt;rgba(0,0,0,0.3)</li>
+</ul>
+</li>
+<li><p>4.坐标:</p>
+<ul>
+<li>1.)以画布为基准,距离画布的上边是y坐标值(top值),距离画布的左边是x坐标值(left值);</li>
+<li>cvs.moveTo(x,y);  –&gt; 起始点坐标</li>
+<li>cvs.lineTo(x,y);  –&gt; 结束点的坐标</li>
+<li>如果没有moveTo就把上一个挨着的lineTo作为起始坐标</li>
+<li>例如:假如第一个不是moveTo而是lineTo,那么lineTo就是其实坐标</li>
+</ul>
+</li>
+<li><p>5.开始和关闭一个路径</p>
+<ul>
+<li>cvs.beginPath(); –&gt; 开始一个新的路径</li>
+<li>cvs.closePath(); –&gt; 关闭当前路径</li>
+<li>注意:加上.closePath会自动闭合 会自动连接起始坐标和结束坐标</li>
+</ul>
+</li>
+<li><p>6.canvas中的圆角</p>
+<ul>
+<li>1).设置线条交汇处的样式</li>
+<li>cvs.lineJoin 他有三个属性：<ul>
+<li>1).尖角miter</li>
+<li>2).斜角bevel</li>
+<li>3).圆角round</li>
+</ul>
+</li>
+<li>2).设置一条线段两端点的样式</li>
+<li>lineCap焦点样式<ul>
+<li>1)平的butt(默认值)</li>
+<li>2.)圆角round</li>
+<li>3.)方角square</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>2.步骤及案例</p>
+</blockquote>
+<ul>
+<li>步骤1.获取出canvas标签,例如:<br><code>var draw=document.getElementById(&#39;draw&#39;);</code></li>
+<li><p>步骤2.设置绘制环境–2d 平面图,例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">//cvs 这个就是你的画板 接下来就可以在cvs上进行绘制</div></pre></td></tr></table></figure>
+</li>
+<li><p>步骤3</p>
+</li>
+<li><p>案例1:线段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">cvs.beginPath();</div><div class="line">cvs.moveTo(50,50);</div><div class="line">cvs.lineTo(150,50);</div><div class="line">cvs.closePath();</div><div class="line">cvs.strokeStyle=&apos;#800080&apos;;</div><div class="line">cvs.lineWidth=5;</div><div class="line">cvs.stroke();//以边框的形式显示</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2:等腰直角三角形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineTo(80,120);</div><div class="line">	cvs.lineTo(80,240);</div><div class="line">	cvs.lineTo(200,240);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.strokeStyle=&apos;ec568c&apos;;</div><div class="line">	cvs.lineWidth=10;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3:圆角矩形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineCap=&apos;round&apos;;</div><div class="line">	cvs.lineTo(50,50);</div><div class="line">	cvs.lineTo(250,50);</div><div class="line">	cvs.closePath();//关闭就没有圆角效果</div><div class="line">	cvs.lineWidth=100;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例4:圆角三角形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineJoin=&apos;round&apos;;//设置圆角</div><div class="line">	cvs.moveTo(200,100);</div><div class="line">	cvs.lineTo(100,250);</div><div class="line">	cvs.lineTo(300,250);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.lineWidth=50;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4jj8y8m000d8ottc00unw9b" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS字符串中的几个重要方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/02/JS字符串中的几个重要方法/" class="article-date">
+  <time datetime="2017-06-02T12:03:49.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/02/JS字符串中的几个重要方法/">字符串中的几个重要方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.通过索引查找字符串<br>1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变<br>2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.charAt(0),str);</div><div class="line">//&quot;a&quot; &quot;addias&quot; 原字符串不变</div><div class="line">console.log(str.charCodeAt(0),str);</div><div class="line">//97 &quot;addias&quot;  原字符串不变</div></pre></td></tr></table></figure></p>
+<p>2.检取字符串</p>
+<blockquote>
+<ol>
+<li>substr(n,m); 从索引n开始截取m个</li>
+</ol>
+<ul>
+<li>返回值为截取的字符串</li>
+<li>原有字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(1, 2),str);//&quot;dd&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>1). str.substr();// 复制字符串</li>
+<li>2). str.substr(0);// 复制字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div><div class="line">console.log(str.substr(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>subString(n,m) 从索引n找到索引m之前，不包含m处;原字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(3, 4),str);</div><div class="line">//&quot;i&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>substring(0); 克隆字符串</li>
+<li>substring(); 克隆字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div><div class="line">console.log(str.substring(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>slice  字符串也可以使用slice<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.slice(-1+str.length));//s</div><div class="line">console.log(str.slice(-1)); //s 同数组的使用方法一样</div><div class="line">console.log(str.slice(-2)); //as 同数组的使用方法一样</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>4.indexOf();字符串中当前字符出现的第一个索引;<br>lastIndexOf();字符串中当前字符出现的最后一个索引;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.indexOf(&apos;f&apos;));//-1</div><div class="line">console.log(str.lastIndexOf(&apos;a&apos;));//4</div></pre></td></tr></table></figure></p>
+<p>5.toUpperCase();字符串转化成大写;<br>toLowerCase();字符串转化成小写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.toUpperCase(), str);</div><div class="line">// &quot;ADDIAS&quot; &quot;addias&quot; 字符串转化成大写</div><div class="line">var str = &apos;ADDIAS&apos;;</div><div class="line">console.log(str.toLowerCase(), str);</div><div class="line">//&quot;addias&quot; &quot;ADDIAS&quot; 字符串转化成小写</div></pre></td></tr></table></figure></p>
+<p>6.replace 替换字符串中的字符;原字符串不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str1.replace(&apos;珠&apos;, &apos;zhu&apos;), str1);</div><div class="line">//&quot;zhu,峰,珠,训&quot;    &quot;珠,峰,珠,训&quot;</div></pre></td></tr></table></figure></p>
+<p>6.split 将字符串拆分成数组;将字符串以字符串中存在的指定分隔符拆分成数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str2.split(&apos;a&apos;));</div><div class="line">//(5) [&quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;]</div><div class="line">console.log(str2.split());</div><div class="line">//[&quot;sdasdasdasdasd&quot;]</div><div class="line">console.log(str1.split(&apos;,&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;峰&quot;, &quot;珠&quot;, &quot;训&quot;]</div><div class="line">console.log(str1.split(&apos;&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;,&quot;, &quot;峰&quot;, &quot;,&quot;, &quot;珠&quot;, &quot;,&quot;, &quot;训&quot;]</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4jj8y8200088ott1awsb2x9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS中的作用域" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/04/29/JS中的作用域/" class="article-date">
@@ -88,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4jhx1kc00056ottxmrhw9mn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4jj8y7f00048ott54gbdeno" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj4jhx1kf00066ottdv0pt2xx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj4jj8y7t00078ottwjums1rh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj4jhx1kw000a6ottt2zkjpz1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj4jj8y88000a8ottwyq21d04" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,7 +568,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/基于GitHub创建自己的博客/" data-id="cj4jhx1lv000n6ottqss1p0m0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/基于GitHub创建自己的博客/" data-id="cj4jj8ya0000p8ottsy3mbchx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -575,7 +769,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/JS数组中的方法/" data-id="cj4jhx1ko00086ottqghv6bbl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/JS数组中的方法/" data-id="cj4jj8y8500098ott4pe8n5gj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -620,7 +814,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/25/hello-world/" data-id="cj4jhx1lp000k6otti3jbweip" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/25/hello-world/" data-id="cj4jj8y9n000m8ottlwu3usi7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -664,6 +858,14 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/CSS常用选择器/">CSS常用选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/Window快捷键整理/">Window快捷键整理</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS中常用的HTML元素及标签/">CSS中常用的HTML元素及标签</a>
           </li>
         
@@ -673,14 +875,6 @@
         
           <li>
             <a href="/2017/06/30/markdown的简单使用/">markdown的简单使用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/27/Nodejs的全局对象和全局变量/">Nodejs的全局对象和全局变量</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/26/JS中的caller和callee/">caller和callee</a>
           </li>
         
       </ul>

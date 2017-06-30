@@ -61,6 +61,292 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-DOS基本命令大全" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/20/DOS基本命令大全/" class="article-date">
+  <time datetime="2017-06-20T06:41:46.000Z" itemprop="datePublished">2017-06-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/20/DOS基本命令大全/">DOS基本命令大全</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><ul>
+<li>1、列出文件<ul>
+<li>ls 参数 目录名</li>
+<li>例: 看看驱动目录下有什么:ls /System/Library/Extensions</li>
+<li>参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件</li>
+</ul>
+</li>
+<li><p>2、转换目录</p>
+<ul>
+<li>cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions</li>
+</ul>
+</li>
+<li><p>3、建立新目录</p>
+<ul>
+<li>mkdir 目录名</li>
+<li>例：在驱动目录下建一个备份目录 backup</li>
+<li>mkdir /System/Library/Extensions/backup</li>
+<li>在桌面上建一个备份目录 backup</li>
+<li>mkdir /User/用户名/Desktop/backup</li>
+</ul>
+</li>
+<li><p>4、拷贝文件</p>
+<ul>
+<li>cp 参数 源文件 目标文件</li>
+<li>例：想把桌面的Natit.kext 拷贝到驱动目录中</li>
+<li>cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions</li>
+<li>参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。</li>
+<li>把驱动目录下的所有文件备份到桌面backup</li>
+<li>cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</li>
+</ul>
+</li>
+<li><p>5、删除文件</p>
+<ul>
+<li>rm 参数 文件</li>
+<li>例：想删除驱动的缓存  rm -rf /System/Library/Extensions.kextcache</li>
+<li>rm -rf /System/Library/Extensions.mkext</li>
+<li>参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了</li>
+</ul>
+</li>
+<li><p>6、移动文件</p>
+<ul>
+<li>mv 文件</li>
+<li>例：想把AppleHDA.Kext 移到桌面</li>
+<li>mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop</li>
+<li>想把AppleHDA.Kext 移到备份目录中</li>
+<li>mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup</li>
+</ul>
+</li>
+<li><p>7、文本编辑</p>
+<ul>
+<li>nano 文件名</li>
+<li>例：编辑natit Info.plist</li>
+<li>nano /System/Library/Extensions/Natit.kext/Info.plist</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>目录操作</p>
+</blockquote>
+<ul>
+<li><p>命令名           功能描述                          使用举例</p>
+</li>
+<li><p>mkdir        创建一个目录                      mkdir dirname</p>
+</li>
+<li><p>rmdir        删除一个目录                      rmdir dirname</p>
+</li>
+<li><p>mvdir        移动或重命名一个目录                mvdir dir1 dir2</p>
+</li>
+<li><p>cd           改变当前目录                       cd dirname</p>
+</li>
+<li><p>pwd          显示当前目录的路径名                pwd</p>
+</li>
+<li><p>ls           显示当前目录的内容                  ls -la</p>
+</li>
+</ul>
+<blockquote>
+<p>文件操作</p>
+</blockquote>
+<ul>
+<li><p>命令名              功能描述                  使用举例</p>
+</li>
+<li><p>cat        显示或连接文件                 cat filename</p>
+</li>
+<li><p>od         显示非文本文件的内容            od -c filename</p>
+</li>
+<li><p>cp         复制文件或目录                 cp file1 file2</p>
+</li>
+<li><p>rm         删除文件或目录                 rm filename</p>
+</li>
+<li><p>mv         改变文件名或所在目录            mv file1 file2</p>
+</li>
+<li><p>find       使用匹配表达式查找文件          find . -name “*.c” -print</p>
+</li>
+<li><p>file       显示文件类型                  file filename</p>
+</li>
+</ul>
+<blockquote>
+<p>选择操作</p>
+</blockquote>
+<ul>
+<li><p>命令名           功能描述                  使用举例</p>
+</li>
+<li><p>head      显示文件的最初几行          head -20 filename</p>
+</li>
+<li><p>tail      显示文件的最后几行          tail -15 filename</p>
+</li>
+<li><p>cut       显示文件每行中的某些域       cut -f1,7 -d: /etc/passwd</p>
+</li>
+<li><p>colrm     从标准输入中删除若干列       colrm 8 20 file2</p>
+</li>
+<li><p>diff      比较并显示两个文件的差异      diff file1 file2</p>
+</li>
+<li><p>sort      排序或归并文件               sort -d -f -u file1</p>
+</li>
+<li><p>uniq      去掉文件中的重复行            uniq file1 file2</p>
+</li>
+<li><p>comm      显示两有序文件的公共和非公共行   comm file1 file2</p>
+</li>
+<li><p>wc        统计文件的字符数、词数和行数     wc filename</p>
+</li>
+<li><p>nl        给文件加上行号                nl file1 &gt;file2</p>
+</li>
+</ul>
+<blockquote>
+<p>进程操作</p>
+</blockquote>
+<ul>
+<li><p>命令名          功能描述               使用举例</p>
+</li>
+<li><p>ps          显示进程当前状态           ps u</p>
+</li>
+<li><p>kill        终止进程                 kill -9 30142</p>
+</li>
+</ul>
+<blockquote>
+<p>时间操作</p>
+</blockquote>
+<ul>
+<li><p>命令名       功能描述                 使用举例</p>
+</li>
+<li><p>date      显示系统的当前日期和时间      date</p>
+</li>
+<li><p>cal       显示日历                    cal 8 1996</p>
+</li>
+<li><p>time      统计程序的执行时间           time a.out</p>
+</li>
+</ul>
+<blockquote>
+<p>网络与通信操作</p>
+</blockquote>
+<ul>
+<li><p>命令名          功能描述                         使用举例</p>
+</li>
+<li><p>telnet      远程登录                       telnet hpc.sp.NET.edu.cn</p>
+</li>
+<li><p>rlogin      远程登录                       rlogin hostname -l username</p>
+</li>
+<li><p>rsh         在远程主机执行指定命令            rsh f01n03 date</p>
+</li>
+<li><p>ftp         在本地主机与远程主机之间传输文件    ftpftp.sp.net.edu.cn</p>
+</li>
+<li><p>rcp         在本地主机与远程主机 之间复制文件   rcp file1 host1:file2</p>
+</li>
+<li><p>ping        给一个网络主机发送 回应请求         ping hpc.sp.net.edu.cn</p>
+</li>
+<li><p>mail        阅读和发送电子邮件                 mail</p>
+</li>
+<li><p>write       给另一用户发送报文                 write username pts/1</p>
+</li>
+<li><p>mesg        允许或拒绝接收报文                 mesg n</p>
+</li>
+</ul>
+<blockquote>
+<p>Korn Shell 命令</p>
+</blockquote>
+<ul>
+<li><p>命令名              功能描述                     使用举例</p>
+</li>
+<li><p>history       列出最近执行过的 几条命令及编号        history</p>
+</li>
+<li><p>r             重复执行最近执行过的 某条命令          r -2</p>
+</li>
+<li><p>alias         给某个命令定义别名                   alias del=rm -i</p>
+</li>
+<li><p>unalias       取消对某个别名的定义                 unalias del</p>
+</li>
+</ul>
+<blockquote>
+<p>其它命令</p>
+</blockquote>
+<ul>
+<li><p>命令名                功能描述                    使用举例</p>
+</li>
+<li><p>uname      显示操作系统的有关信息                  uname -a</p>
+</li>
+<li><p>clear      清除屏幕或窗口内容                       clear</p>
+</li>
+<li><p>env        显示当前所有设置过的环境变量              env</p>
+</li>
+<li><p>who        列出当前登录的所有用户                   who</p>
+</li>
+<li><p>whoami     显示当前正进行操作的用户名               whoami</p>
+</li>
+<li><p>tty        显示终端或伪终端的名称                  tty</p>
+</li>
+<li><p>stty       显示或重置控制键定义                   stty -a</p>
+</li>
+<li><p>du         查询磁盘使用情况                       du -k subdir</p>
+</li>
+<li><p>df /tmp    显示文件系统的总空间和可用空间</p>
+</li>
+<li><p>w          显示当前系统活动的总信息</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj4jj8y7500028otte3eudnpm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-canvas动态案例" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/canvas动态案例/" class="article-date">
+  <time datetime="2017-06-09T10:17:02.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/canvas动态案例/">canvas动态案例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;canvas id=&quot;draw&quot; width=&quot;220&quot; height=&quot;320&quot; style=&quot;background-color: skyblue&quot;&gt;&lt;/canvas&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	var img=new Image;</div><div class="line">	img.src=&apos;walkingdead.png&apos;;//添加图片地址</div><div class="line">	img.onload=function()&#123;//图片上有10张小图横着排列</div><div class="line">		var width=this.width/10;</div><div class="line">		var height=this.height;</div><div class="line">		var i=0;</div><div class="line">		window.setInterval(function()&#123;</div><div class="line">			cvs.clearRect(0,0,draw.width,draw.height);//清除上一个图片</div><div class="line">		cvs.drawImage(img,i*width,0,width,height,0,0,width,height);</div><div class="line">		if(i==9)&#123;</div><div class="line">			i=0</div><div class="line">		&#125;else&#123;i++;&#125;</div><div class="line">		&#125;,200);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj4jj8y9f000l8ottt6t2x3wd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-canvas之8图形组合" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/09/canvas之8图形组合/" class="article-date">
@@ -107,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj4jhx1lo000j6ottvdcs5spb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之8图形组合/" data-id="cj4jj8y95000k8ott3z3c5t5d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj4jhx1lh000h6ott2tln56aj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj4jj8y92000j8ottl5j8pezp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj4jhx1ld000g6ott8esfpt7r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj4jj8y8z000i8ott1rp89iby" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj4jhx1la000e6ott385sjybw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj4jj8y8t000g8ottpbzvmfqb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,7 +682,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj4jhx1l6000d6otthx7sx5v4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj4jj8y8q000f8ottc59sumuc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -483,7 +769,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4jhx1lc000f6ottahnkqzhn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4jj8y8x000h8otthxxc7yn5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4jhx1lx000o6ottg4e8n4vp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4jj8ya2000q8ottyrqh8f2g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -602,201 +888,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4jhx1l4000c6ottfoaufbh4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-canvas之1绘制线条的有关属性和步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/" class="article-date">
-  <time datetime="2017-06-08T11:44:17.000Z" itemprop="datePublished">2017-06-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/">canvas之1绘制线条的有关属性和步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>&lt;canvas id=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/canvas&gt;</code><br>canvas :H5标签 在页面上绘制图形用的（通常称他画布）<br>canvas只是一个容器，我们用js脚本来控制他<br><code>&lt;canvas id=&quot;draw&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border: 1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</code></p>
-<h3 id="绘制线条的有关属性和步骤"><a href="#绘制线条的有关属性和步骤" class="headerlink" title="绘制线条的有关属性和步骤"></a>绘制线条的有关属性和步骤</h3><blockquote>
-<p>1.相关属性</p>
-</blockquote>
-<ul>
-<li><p>1.填充的样式</p>
-<ul>
-<li><code>cvs.fillStyle --&gt;</code>fillStyle`填充样式</li>
-<li><code>cvs.strokeStyle --&gt;</code>strokeStyle<code>笔触样式 主要用来画边框的</code></li>
-<li><code>cvs.lineWidth --&gt; 边框的宽度</code></li>
-</ul>
-</li>
-<li><p>2.绘制图形有两种方式</p>
-<ul>
-<li><code>cvs.fill(); --&gt; 填充样式</code></li>
-<li><code>cvs.stroke(); --&gt; 边框样式</code></li>
-</ul>
-</li>
-<li><p>3.颜色值的四种书写方式</p>
-<ul>
-<li>1).颜色名      –&gt;”red”</li>
-<li>2).十六进制    –&gt;”#fff”</li>
-<li>3).三色值      –&gt;rgb(0,0,0)</li>
-<li>4).四色值      –&gt;rgba(0,0,0,0.3)</li>
-</ul>
-</li>
-<li><p>4.坐标:</p>
-<ul>
-<li>1.)以画布为基准,距离画布的上边是y坐标值(top值),距离画布的左边是x坐标值(left值);</li>
-<li>cvs.moveTo(x,y);  –&gt; 起始点坐标</li>
-<li>cvs.lineTo(x,y);  –&gt; 结束点的坐标</li>
-<li>如果没有moveTo就把上一个挨着的lineTo作为起始坐标</li>
-<li>例如:假如第一个不是moveTo而是lineTo,那么lineTo就是其实坐标</li>
-</ul>
-</li>
-<li><p>5.开始和关闭一个路径</p>
-<ul>
-<li>cvs.beginPath(); –&gt; 开始一个新的路径</li>
-<li>cvs.closePath(); –&gt; 关闭当前路径</li>
-<li>注意:加上.closePath会自动闭合 会自动连接起始坐标和结束坐标</li>
-</ul>
-</li>
-<li><p>6.canvas中的圆角</p>
-<ul>
-<li>1).设置线条交汇处的样式</li>
-<li>cvs.lineJoin 他有三个属性：<ul>
-<li>1).尖角miter</li>
-<li>2).斜角bevel</li>
-<li>3).圆角round</li>
-</ul>
-</li>
-<li>2).设置一条线段两端点的样式</li>
-<li>lineCap焦点样式<ul>
-<li>1)平的butt(默认值)</li>
-<li>2.)圆角round</li>
-<li>3.)方角square</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>2.步骤及案例</p>
-</blockquote>
-<ul>
-<li>步骤1.获取出canvas标签,例如:<br><code>var draw=document.getElementById(&#39;draw&#39;);</code></li>
-<li><p>步骤2.设置绘制环境–2d 平面图,例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">//cvs 这个就是你的画板 接下来就可以在cvs上进行绘制</div></pre></td></tr></table></figure>
-</li>
-<li><p>步骤3</p>
-</li>
-<li><p>案例1:线段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">cvs.beginPath();</div><div class="line">cvs.moveTo(50,50);</div><div class="line">cvs.lineTo(150,50);</div><div class="line">cvs.closePath();</div><div class="line">cvs.strokeStyle=&apos;#800080&apos;;</div><div class="line">cvs.lineWidth=5;</div><div class="line">cvs.stroke();//以边框的形式显示</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2:等腰直角三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineTo(80,120);</div><div class="line">	cvs.lineTo(80,240);</div><div class="line">	cvs.lineTo(200,240);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.strokeStyle=&apos;ec568c&apos;;</div><div class="line">	cvs.lineWidth=10;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例3:圆角矩形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineCap=&apos;round&apos;;</div><div class="line">	cvs.lineTo(50,50);</div><div class="line">	cvs.lineTo(250,50);</div><div class="line">	cvs.closePath();//关闭就没有圆角效果</div><div class="line">	cvs.lineWidth=100;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例4:圆角三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineJoin=&apos;round&apos;;//设置圆角</div><div class="line">	cvs.moveTo(200,100);</div><div class="line">	cvs.lineTo(100,250);</div><div class="line">	cvs.lineTo(300,250);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.lineWidth=50;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4jhx1l0000b6ottsj1auoq3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS字符串中的几个重要方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/02/JS字符串中的几个重要方法/" class="article-date">
-  <time datetime="2017-06-02T12:03:49.000Z" itemprop="datePublished">2017-06-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/02/JS字符串中的几个重要方法/">字符串中的几个重要方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.通过索引查找字符串<br>1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变<br>2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.charAt(0),str);</div><div class="line">//&quot;a&quot; &quot;addias&quot; 原字符串不变</div><div class="line">console.log(str.charCodeAt(0),str);</div><div class="line">//97 &quot;addias&quot;  原字符串不变</div></pre></td></tr></table></figure></p>
-<p>2.检取字符串</p>
-<blockquote>
-<ol>
-<li>substr(n,m); 从索引n开始截取m个</li>
-</ol>
-<ul>
-<li>返回值为截取的字符串</li>
-<li>原有字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(1, 2),str);//&quot;dd&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>1). str.substr();// 复制字符串</li>
-<li>2). str.substr(0);// 复制字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div><div class="line">console.log(str.substr(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<ol>
-<li>subString(n,m) 从索引n找到索引m之前，不包含m处;原字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(3, 4),str);</div><div class="line">//&quot;i&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<ul>
-<li>substring(0); 克隆字符串</li>
-<li>substring(); 克隆字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div><div class="line">console.log(str.substring(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<ol>
-<li>slice  字符串也可以使用slice<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.slice(-1+str.length));//s</div><div class="line">console.log(str.slice(-1)); //s 同数组的使用方法一样</div><div class="line">console.log(str.slice(-2)); //as 同数组的使用方法一样</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>4.indexOf();字符串中当前字符出现的第一个索引;<br>lastIndexOf();字符串中当前字符出现的最后一个索引;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.indexOf(&apos;f&apos;));//-1</div><div class="line">console.log(str.lastIndexOf(&apos;a&apos;));//4</div></pre></td></tr></table></figure></p>
-<p>5.toUpperCase();字符串转化成大写;<br>toLowerCase();字符串转化成小写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.toUpperCase(), str);</div><div class="line">// &quot;ADDIAS&quot; &quot;addias&quot; 字符串转化成大写</div><div class="line">var str = &apos;ADDIAS&apos;;</div><div class="line">console.log(str.toLowerCase(), str);</div><div class="line">//&quot;addias&quot; &quot;ADDIAS&quot; 字符串转化成小写</div></pre></td></tr></table></figure></p>
-<p>6.replace 替换字符串中的字符;原字符串不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str1.replace(&apos;珠&apos;, &apos;zhu&apos;), str1);</div><div class="line">//&quot;zhu,峰,珠,训&quot;    &quot;珠,峰,珠,训&quot;</div></pre></td></tr></table></figure></p>
-<p>6.split 将字符串拆分成数组;将字符串以字符串中存在的指定分隔符拆分成数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str2.split(&apos;a&apos;));</div><div class="line">//(5) [&quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;]</div><div class="line">console.log(str2.split());</div><div class="line">//[&quot;sdasdasdasdasd&quot;]</div><div class="line">console.log(str1.split(&apos;,&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;峰&quot;, &quot;珠&quot;, &quot;训&quot;]</div><div class="line">console.log(str1.split(&apos;&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;,&quot;, &quot;峰&quot;, &quot;,&quot;, &quot;珠&quot;, &quot;,&quot;, &quot;训&quot;]</div></pre></td></tr></table></figure></p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4jhx1ki00076ottrscuo6lq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4jj8y8o000e8ott2zetjmp4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -840,6 +932,14 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/CSS常用选择器/">CSS常用选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/Window快捷键整理/">Window快捷键整理</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS中常用的HTML元素及标签/">CSS中常用的HTML元素及标签</a>
           </li>
         
@@ -849,14 +949,6 @@
         
           <li>
             <a href="/2017/06/30/markdown的简单使用/">markdown的简单使用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/27/Nodejs的全局对象和全局变量/">Nodejs的全局对象和全局变量</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/26/JS中的caller和callee/">caller和callee</a>
           </li>
         
       </ul>

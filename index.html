@@ -61,6 +61,235 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS常用选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/CSS常用选择器/" class="article-date">
+  <time datetime="2017-06-30T07:14:52.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/CSS常用选择器/">CSS常用选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h1><ul>
+<li>我们将html和css分离成不同的文件，那么如何让css属性作用在html元素上呢，那就是厉害的选择器啦。</li>
+<li>选择器是css属性和html元素的连接桥梁，通过正确的选择器来找到想要操作的元素，添加一定的样式。</li>
+<li>选择器{}</li>
+</ul>
+<h2 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h2><h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
+<li>直接使用元素标签进行选择<ul>
+<li>例如：<code>&lt;p&gt;&lt;/p&gt;</code></li>
+<li>p{color:red;}</li>
+</ul>
+</li>
+<li>权重：1</li>
+</ul>
+<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><ul>
+<li>通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素</li>
+<li>类名是元素class属性中的属性值，例如<ul>
+<li><p class="sum"></p></li>
+<li>.sum{}</li>
+</ul>
+</li>
+<li>权重：10</li>
+<li>p.s：类选择器最前方一定要有点</li>
+</ul>
+<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><ul>
+<li>通过元素的id名，来选择元素</li>
+<li>类名是元素id属性中的属性值，例如<ul>
+<li><p id="sum"></p></li>
+<li>#sum{}</li>
+</ul>
+</li>
+<li>权重：100</li>
+<li>类选择器最前方一定要有#</li>
+</ul>
+<h3 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h3><ul>
+<li>通过*选择全部元素，包括根元素</li>
+<li>*{}</li>
+<li>权重&lt;1，可被覆盖</li>
+</ul>
+<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><ul>
+<li>你可以对选择器进行分组，这样，被分组的选择器就可以分享相同的声明。用逗号将需要分组的选择器分开。在下面的例子中，我们对所有的标题元素进行了分组。所有的标题元素都是绿色的。<ul>
+<li>例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1,h2,h3,h4,h5,h6&#123;color:green;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><ul>
+<li><p>列表中的 strong 元素变为斜体字，而不是通常的粗体字，可以这样定义一个派生选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">li strong &#123;</div><div class="line">    font-style: italic;</div><div class="line">    font-weight: normal;</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>html结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ol&gt;</div><div class="line">    &lt;li&gt;&lt;strong&gt;我是斜体字。这是因为 strong 元素位于 li 元素内。&lt;/strong&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><ul>
+<li>对带有指定属性的 HTML 元素设置样式，可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</li>
+<li>属性选择器：<ul>
+<li>下面的例子为带有 title 属性的所有元素设置样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[title]</div><div class="line">    &#123;</div><div class="line">    color:red;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="属性和值选择器"><a href="#属性和值选择器" class="headerlink" title="属性和值选择器"></a>属性和值选择器</h3><ul>
+<li><p>下面的例子为 title=”zfpx” 的所有元素设置样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[title=zfpx]</div><div class="line">    &#123;</div><div class="line">    border:5px solid blue;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>设置表单的样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">input[type=&quot;text&quot;]</div><div class="line">&#123;</div><div class="line">  width:150px;</div><div class="line">  display:block;</div><div class="line">  margin-bottom:10px;</div><div class="line">  background-color:yellow;</div><div class="line">  font-family: Verdana, Arial;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h3><ul>
+<li>两种属性同属一个元素的时候，我们可以使用交集选择器来进行元素的准确选择<ul>
+<li><code>&lt;p class=&#39;name1 name2&#39; id=&#39;id1&#39;&gt;&lt;/p&gt;</code><ul>
+<li><code>p.name1{}</code></li>
+<li><code>p#id1{}</code></li>
+<li><code>.name1.name2{}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="子集选择器"><a href="#子集选择器" class="headerlink" title="子集选择器"></a>子集选择器</h3><ul>
+<li>与后代选择器相比，子元素选择器只能选择作为某元素子元素的元素。<ul>
+<li><code>h1&gt;strong{color:red;}</code>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;h1&gt;</div><div class="line">This is</div><div class="line">&lt;strong&gt;very&lt;/strong&gt;</div><div class="line"> &lt;strong&gt;very&lt;/strong&gt;</div><div class="line">  important.</div><div class="line">&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h3><ul>
+<li>相邻兄弟选择器可选择紧接在另一元素后的元素，且二者有相同父元素。<ul>
+<li><code>h1 + p {margin-top:50px;}</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS-伪类"><a href="#CSS-伪类" class="headerlink" title="CSS 伪类"></a>CSS 伪类</h2><ul>
+<li>CSS 伪类用于向某些选择器添加特殊的效果<ul>
+<li>a:link {color: #FF0000}<br>/<em> 未访问的链接 </em>/</li>
+<li>a:visited {color: #00FF00}<br>/<em> 已访问的链接 </em>/</li>
+<li>a:hover {color: #FF00FF}<br>/<em> 鼠标移动到链接上 </em>/</li>
+<li>a:active {color: #0000FF}<br>/<em> 选定的链接 </em>/</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS-伪元素"><a href="#CSS-伪元素" class="headerlink" title="CSS 伪元素"></a>CSS 伪元素</h2><ul>
+<li>CSS 伪元素用于向某些选择器设置特殊效果</li>
+<li>before 伪元素<ul>
+<li>“:before” 伪元素可以在元素的内容前面插入新内容。</li>
+<li>下面的例子在每个 <code>&lt;h1&gt;</code> 元素前面插入一幅图片：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h1:before</div><div class="line">  &#123;</div><div class="line">  content:&apos;我是一个伪元素&apos;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS属性的继承"><a href="#CSS属性的继承" class="headerlink" title="CSS属性的继承"></a>CSS属性的继承</h2><ul>
+<li>根据 CSS，子元素从父元素继承属性。看看下面这条规则：<ul>
+<li>body {font-family: Verdana, sans-serif;}<ul>
+<li>根据上面这条规则，站点的 body 元素将使用 Verdana 字体（假如访问者的系统中存在该字体的话）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继承的权重较小，可被其他选择器的样式覆盖</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/CSS常用选择器/" data-id="cj4jj8y7000018ottqrev0ejs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Window快捷键整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/Window快捷键整理/" class="article-date">
+  <time datetime="2017-06-30T07:12:01.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/Window快捷键整理/">Window快捷键整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>window+E 打开我的电脑</p>
+</li>
+<li><p>alt+tab 切换操作界面</p>
+</li>
+<li><p>window+R 运行</p>
+</li>
+<li><p>ctrl+C 复制</p>
+</li>
+<li><p>ctrl+X 剪切</p>
+</li>
+<li><p>ctrl+S 保存</p>
+</li>
+<li><p>ctrl+shift+S 另存</p>
+</li>
+<li><p>ctrl+Z 撤销</p>
+</li>
+<li><p>ctrl+W 关闭</p>
+</li>
+<li><p>ctrl+A 全选</p>
+</li>
+<li><p>ctrl+V 粘贴</p>
+</li>
+<li><p>ctrl+alt+delete 资源管理器  或 菜单右键选择资源管理器</p>
+</li>
+<li><p>F2 重命名</p>
+</li>
+</ul>
+<ul>
+<li><p>web：</p>
+</li>
+<li><p>ctrl+alt+L整理代码</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/Window快捷键整理/" data-id="cj4jj8y8f000c8ottld27no51" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS中常用的HTML元素及标签" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/30/CSS中常用的HTML元素及标签/" class="article-date">
@@ -239,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS中常用的HTML元素及标签/" data-id="cj4jhx1ju00006ott1428rvz9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS中常用的HTML元素及标签/" data-id="cj4jj8y6n00008otts23gdlq2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +637,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/“前端三层”/" data-id="cj4jhx1lu000m6ott468f24rz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/“前端三层”/" data-id="cj4jj8y9x000o8ottqiog2ils" class="article-share-link">Share</a>
       
       
     </footer>
@@ -518,7 +747,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/markdown的简单使用/" data-id="cj4jhx1ls000l6ottzmnmi5tj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/30/markdown的简单使用/" data-id="cj4jj8y9t000n8ott4wshsfk8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -648,7 +877,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/" data-id="cj4jhx1kv00096ottdwec3flx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/" data-id="cj4jj8y8c000b8otto9cswgrx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -691,7 +920,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/26/JS中的caller和callee/" data-id="cj4jhx1k400026ottx925gz9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/26/JS中的caller和callee/" data-id="cj4jj8y7l00058ottnpcr0tpi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -761,7 +990,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/23/JS中的同步异步编程思想/" data-id="cj4jhx1k700036ottb9g6of2d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/23/JS中的同步异步编程思想/" data-id="cj4jj8y7q00068ottf0mg7f21" class="article-share-link">Share</a>
       
       
     </footer>
@@ -849,7 +1078,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/IE版本条件注释语句-全/" data-id="cj4jhx1k900046ottit0hx290" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/20/IE版本条件注释语句-全/" data-id="cj4jj8y7d00038otthm17pfw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1008,293 +1237,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj4jhx1ly000p6ottqag0bwr3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-DOS基本命令大全" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/20/DOS基本命令大全/" class="article-date">
-  <time datetime="2017-06-20T06:41:46.000Z" itemprop="datePublished">2017-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/20/DOS基本命令大全/">DOS基本命令大全</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h4><ul>
-<li>1、列出文件<ul>
-<li>ls 参数 目录名</li>
-<li>例: 看看驱动目录下有什么:ls /System/Library/Extensions</li>
-<li>参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件</li>
-</ul>
-</li>
-<li><p>2、转换目录</p>
-<ul>
-<li>cd    例：想到驱动目录下溜达一圈   cd /System/Library/Extensions</li>
-</ul>
-</li>
-<li><p>3、建立新目录</p>
-<ul>
-<li>mkdir 目录名</li>
-<li>例：在驱动目录下建一个备份目录 backup</li>
-<li>mkdir /System/Library/Extensions/backup</li>
-<li>在桌面上建一个备份目录 backup</li>
-<li>mkdir /User/用户名/Desktop/backup</li>
-</ul>
-</li>
-<li><p>4、拷贝文件</p>
-<ul>
-<li>cp 参数 源文件 目标文件</li>
-<li>例：想把桌面的Natit.kext 拷贝到驱动目录中</li>
-<li>cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions</li>
-<li>参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。</li>
-<li>把驱动目录下的所有文件备份到桌面backup</li>
-<li>cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</li>
-</ul>
-</li>
-<li><p>5、删除文件</p>
-<ul>
-<li>rm 参数 文件</li>
-<li>例：想删除驱动的缓存  rm -rf /System/Library/Extensions.kextcache</li>
-<li>rm -rf /System/Library/Extensions.mkext</li>
-<li>参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了</li>
-</ul>
-</li>
-<li><p>6、移动文件</p>
-<ul>
-<li>mv 文件</li>
-<li>例：想把AppleHDA.Kext 移到桌面</li>
-<li>mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop</li>
-<li>想把AppleHDA.Kext 移到备份目录中</li>
-<li>mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup</li>
-</ul>
-</li>
-<li><p>7、文本编辑</p>
-<ul>
-<li>nano 文件名</li>
-<li>例：编辑natit Info.plist</li>
-<li>nano /System/Library/Extensions/Natit.kext/Info.plist</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>目录操作</p>
-</blockquote>
-<ul>
-<li><p>命令名           功能描述                          使用举例</p>
-</li>
-<li><p>mkdir        创建一个目录                      mkdir dirname</p>
-</li>
-<li><p>rmdir        删除一个目录                      rmdir dirname</p>
-</li>
-<li><p>mvdir        移动或重命名一个目录                mvdir dir1 dir2</p>
-</li>
-<li><p>cd           改变当前目录                       cd dirname</p>
-</li>
-<li><p>pwd          显示当前目录的路径名                pwd</p>
-</li>
-<li><p>ls           显示当前目录的内容                  ls -la</p>
-</li>
-</ul>
-<blockquote>
-<p>文件操作</p>
-</blockquote>
-<ul>
-<li><p>命令名              功能描述                  使用举例</p>
-</li>
-<li><p>cat        显示或连接文件                 cat filename</p>
-</li>
-<li><p>od         显示非文本文件的内容            od -c filename</p>
-</li>
-<li><p>cp         复制文件或目录                 cp file1 file2</p>
-</li>
-<li><p>rm         删除文件或目录                 rm filename</p>
-</li>
-<li><p>mv         改变文件名或所在目录            mv file1 file2</p>
-</li>
-<li><p>find       使用匹配表达式查找文件          find . -name “*.c” -print</p>
-</li>
-<li><p>file       显示文件类型                  file filename</p>
-</li>
-</ul>
-<blockquote>
-<p>选择操作</p>
-</blockquote>
-<ul>
-<li><p>命令名           功能描述                  使用举例</p>
-</li>
-<li><p>head      显示文件的最初几行          head -20 filename</p>
-</li>
-<li><p>tail      显示文件的最后几行          tail -15 filename</p>
-</li>
-<li><p>cut       显示文件每行中的某些域       cut -f1,7 -d: /etc/passwd</p>
-</li>
-<li><p>colrm     从标准输入中删除若干列       colrm 8 20 file2</p>
-</li>
-<li><p>diff      比较并显示两个文件的差异      diff file1 file2</p>
-</li>
-<li><p>sort      排序或归并文件               sort -d -f -u file1</p>
-</li>
-<li><p>uniq      去掉文件中的重复行            uniq file1 file2</p>
-</li>
-<li><p>comm      显示两有序文件的公共和非公共行   comm file1 file2</p>
-</li>
-<li><p>wc        统计文件的字符数、词数和行数     wc filename</p>
-</li>
-<li><p>nl        给文件加上行号                nl file1 &gt;file2</p>
-</li>
-</ul>
-<blockquote>
-<p>进程操作</p>
-</blockquote>
-<ul>
-<li><p>命令名          功能描述               使用举例</p>
-</li>
-<li><p>ps          显示进程当前状态           ps u</p>
-</li>
-<li><p>kill        终止进程                 kill -9 30142</p>
-</li>
-</ul>
-<blockquote>
-<p>时间操作</p>
-</blockquote>
-<ul>
-<li><p>命令名       功能描述                 使用举例</p>
-</li>
-<li><p>date      显示系统的当前日期和时间      date</p>
-</li>
-<li><p>cal       显示日历                    cal 8 1996</p>
-</li>
-<li><p>time      统计程序的执行时间           time a.out</p>
-</li>
-</ul>
-<blockquote>
-<p>网络与通信操作</p>
-</blockquote>
-<ul>
-<li><p>命令名          功能描述                         使用举例</p>
-</li>
-<li><p>telnet      远程登录                       telnet hpc.sp.NET.edu.cn</p>
-</li>
-<li><p>rlogin      远程登录                       rlogin hostname -l username</p>
-</li>
-<li><p>rsh         在远程主机执行指定命令            rsh f01n03 date</p>
-</li>
-<li><p>ftp         在本地主机与远程主机之间传输文件    ftpftp.sp.net.edu.cn</p>
-</li>
-<li><p>rcp         在本地主机与远程主机 之间复制文件   rcp file1 host1:file2</p>
-</li>
-<li><p>ping        给一个网络主机发送 回应请求         ping hpc.sp.net.edu.cn</p>
-</li>
-<li><p>mail        阅读和发送电子邮件                 mail</p>
-</li>
-<li><p>write       给另一用户发送报文                 write username pts/1</p>
-</li>
-<li><p>mesg        允许或拒绝接收报文                 mesg n</p>
-</li>
-</ul>
-<blockquote>
-<p>Korn Shell 命令</p>
-</blockquote>
-<ul>
-<li><p>命令名              功能描述                     使用举例</p>
-</li>
-<li><p>history       列出最近执行过的 几条命令及编号        history</p>
-</li>
-<li><p>r             重复执行最近执行过的 某条命令          r -2</p>
-</li>
-<li><p>alias         给某个命令定义别名                   alias del=rm -i</p>
-</li>
-<li><p>unalias       取消对某个别名的定义                 unalias del</p>
-</li>
-</ul>
-<blockquote>
-<p>其它命令</p>
-</blockquote>
-<ul>
-<li><p>命令名                功能描述                    使用举例</p>
-</li>
-<li><p>uname      显示操作系统的有关信息                  uname -a</p>
-</li>
-<li><p>clear      清除屏幕或窗口内容                       clear</p>
-</li>
-<li><p>env        显示当前所有设置过的环境变量              env</p>
-</li>
-<li><p>who        列出当前登录的所有用户                   who</p>
-</li>
-<li><p>whoami     显示当前正进行操作的用户名               whoami</p>
-</li>
-<li><p>tty        显示终端或伪终端的名称                  tty</p>
-</li>
-<li><p>stty       显示或重置控制键定义                   stty -a</p>
-</li>
-<li><p>du         查询磁盘使用情况                       du -k subdir</p>
-</li>
-<li><p>df /tmp    显示文件系统的总空间和可用空间</p>
-</li>
-<li><p>w          显示当前系统活动的总信息</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/20/DOS基本命令大全/" data-id="cj4jhx1k100016ottaz85nojp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-canvas动态案例" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/09/canvas动态案例/" class="article-date">
-  <time datetime="2017-06-09T10:17:02.000Z" itemprop="datePublished">2017-06-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/09/canvas动态案例/">canvas动态案例</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;canvas id=&quot;draw&quot; width=&quot;220&quot; height=&quot;320&quot; style=&quot;background-color: skyblue&quot;&gt;&lt;/canvas&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	var img=new Image;</div><div class="line">	img.src=&apos;walkingdead.png&apos;;//添加图片地址</div><div class="line">	img.onload=function()&#123;//图片上有10张小图横着排列</div><div class="line">		var width=this.width/10;</div><div class="line">		var height=this.height;</div><div class="line">		var i=0;</div><div class="line">		window.setInterval(function()&#123;</div><div class="line">			cvs.clearRect(0,0,draw.width,draw.height);//清除上一个图片</div><div class="line">		cvs.drawImage(img,i*width,0,width,height,0,0,width,height);</div><div class="line">		if(i==9)&#123;</div><div class="line">			i=0</div><div class="line">		&#125;else&#123;i++;&#125;</div><div class="line">		&#125;,200);</div><div class="line">	&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas动态案例/" data-id="cj4jhx1lk000i6ottyfsrqkfb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/20/网站如何发布/" data-id="cj4jj8ya6000r8ottz8tp8gle" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1338,6 +1281,14 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/CSS常用选择器/">CSS常用选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/Window快捷键整理/">Window快捷键整理</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS中常用的HTML元素及标签/">CSS中常用的HTML元素及标签</a>
           </li>
         
@@ -1347,14 +1298,6 @@
         
           <li>
             <a href="/2017/06/30/markdown的简单使用/">markdown的简单使用</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/27/Nodejs的全局对象和全局变量/">Nodejs的全局对象和全局变量</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/26/JS中的caller和callee/">caller和callee</a>
           </li>
         
       </ul>
