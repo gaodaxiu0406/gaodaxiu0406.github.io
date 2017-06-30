@@ -5,16 +5,16 @@
   
   <title>CSS的引入方式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css如何在html中使用（html引入css的四种方法）  行内式：直接写在标签内，通过标签属性style引入 媒介：style属性12&amp;lt;div style=&amp;quot;css属性名:属性值；&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;img style=&amp;quot;css属性名:属性值；&amp;quot;alt=&amp;quot;&amp;quot;&amp;gt;       内嵌式（内联式）:将css代">
+  <meta name="description" content="css如何在html中使用（html引入css的四种方法）  行内式：直接写在标签内，通过标签属性style引入 媒介：style属性&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;选择器{}&amp;lt;/style&amp;gt;12&amp;lt;div style=&amp;quot;css属性名:属性值；&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;img style=&amp;quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS的引入方式">
 <meta property="og:url" content="http://yoursite.com/2017/06/30/CSS的引入方式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="css如何在html中使用（html引入css的四种方法）  行内式：直接写在标签内，通过标签属性style引入 媒介：style属性12&amp;lt;div style=&amp;quot;css属性名:属性值；&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;img style=&amp;quot;css属性名:属性值；&amp;quot;alt=&amp;quot;&amp;quot;&amp;gt;       内嵌式（内联式）:将css代">
-<meta property="og:updated_time" content="2017-06-30T08:19:49.746Z">
+<meta property="og:description" content="css如何在html中使用（html引入css的四种方法）  行内式：直接写在标签内，通过标签属性style引入 媒介：style属性&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;选择器{}&amp;lt;/style&amp;gt;12&amp;lt;div style=&amp;quot;css属性名:属性值；&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;img style=&amp;quot;">
+<meta property="og:updated_time" content="2017-06-30T08:27:51.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS的引入方式">
-<meta name="twitter:description" content="css如何在html中使用（html引入css的四种方法）  行内式：直接写在标签内，通过标签属性style引入 媒介：style属性12&amp;lt;div style=&amp;quot;css属性名:属性值；&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;img style=&amp;quot;css属性名:属性值；&amp;quot;alt=&amp;quot;&amp;quot;&amp;gt;       内嵌式（内联式）:将css代">
+<meta name="twitter:description" content="css如何在html中使用（html引入css的四种方法）  行内式：直接写在标签内，通过标签属性style引入 媒介：style属性&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;选择器{}&amp;lt;/style&amp;gt;12&amp;lt;div style=&amp;quot;css属性名:属性值；&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;img style=&amp;quot;">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -88,11 +88,13 @@
         <h2 id="css如何在html中使用（html引入css的四种方法）"><a href="#css如何在html中使用（html引入css的四种方法）" class="headerlink" title="css如何在html中使用（html引入css的四种方法）"></a>css如何在html中使用（html引入css的四种方法）</h2><ul>
 <li><ol>
 <li>行内式：直接写在标签内，通过标签属性style引入<ul>
-<li>媒介：style属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;css属性名:属性值；&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img style=&quot;css属性名:属性值；&quot;alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+<li>媒介：style属性<code>&lt;style type=&quot;text/css&quot;&gt;选择器{}&lt;/style&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;css属性名:属性值；&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img style=&quot;css属性名:属性值；&quot;alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
+</li>
+<li><p>css想要生效，html中必须有这个元素才可以</p>
 </li>
 <li><ol>
 <li>内嵌式（内联式）:将css代码写在style元素内，通过css选择器选择html元素，将css样式添加个这个元素<ul>
@@ -109,16 +111,21 @@
 </li>
 <li><ol>
 <li>外联式（外链式）：将css代码单独放置在一个css文件中，再通过link标签将这个css文件引入到html文件中<ul>
-<li>媒介：link标签+选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; herf=&quot;url&quot; type=&quot;text/css&quot;&gt;</div></pre></td></tr></table></figure>
+<li>媒介：link标签+选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; herf=&quot;css文件链接地址&quot; type=&quot;text/css&quot;&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 </li>
+<li><p>css这个文件中不能出现标签</p>
+</li>
 <li><ol>
 <li>导入式：都是引入一个单独的css文件<ul>
-<li>媒介：@import”url”;</li>
-<li>@import”url”;既不是html标签，也不是css属性，他是一条声明语句</li>
+<li>媒介：@import”css文件链接地址”;<ul>
+<li>当有多个css文件的时候，可以使用导入式先导入到一个css文件中，再用外链式link外链进html文件</li>
+</ul>
+</li>
+<li>@import”css文件链接地址”;既不是html标签，也不是css属性，他是一条声明语句</li>
 <li>这条语句必须写在style元素内,或者css文件内</li>
 <li>这条语句必须在所在文件内的第一行</li>
 </ul>
@@ -135,10 +142,13 @@
 </li>
 </ul>
 <h3 id="在工作中常用的引入方式是外链式"><a href="#在工作中常用的引入方式是外链式" class="headerlink" title="在工作中常用的引入方式是外链式"></a>在工作中常用的引入方式是外链式</h3><ul>
-<li>四种引入方式的权重（一个html元素最终加载的css样式是谁决定的）<ul>
+<li><p>四种引入方式的权重（一个html元素最终加载的css样式是谁决定的）</p>
+<ul>
 <li>有行内式的时候，听行内的</li>
 <li>在选择器相同的情况下，谁最后加载就听谁的</li>
 </ul>
+</li>
+<li><p>外链式和内嵌式一般都放在head元素内</p>
 </li>
 </ul>
 <h1 id="CSS层叠样式表"><a href="#CSS层叠样式表" class="headerlink" title="CSS层叠样式表"></a>CSS层叠样式表</h1><ul>
@@ -153,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS的引入方式/" data-id="cj4jl9fnh0002vgttnhntn5sy" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS的引入方式/" data-id="cj4jmyfge00055ktt2yjfbxw8" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -211,6 +221,14 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/相对路径与绝对路径/">相对路径与绝对路径</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/CSS属性的继承及相关面试题/">CSS属性的继承及相关面试题</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS中的form表单与table表格/">CSS中的form表单与table表格</a>
           </li>
         
@@ -220,14 +238,6 @@
         
           <li>
             <a href="/2017/06/30/HTML标签分类/">HTML标签分类</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/HTML基本结构/">HTML基本结构</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
           </li>
         
       </ul>

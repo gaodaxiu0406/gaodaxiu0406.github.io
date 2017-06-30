@@ -61,6 +61,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-相对路径与绝对路径" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/相对路径与绝对路径/" class="article-date">
+  <time datetime="2017-06-30T08:59:57.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/相对路径与绝对路径/">相对路径与绝对路径</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="路径url"><a href="#路径url" class="headerlink" title="路径url"></a>路径url</h2><h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><ul>
+<li>指带域名的文件的完整路径或磁盘中指定文件的全部路径。<ul>
+<li>例如：C:\windows\system32\cmd.exe</li>
+<li>例如：<a href="http://www.zhufengpeixun.com/" target="_blank" rel="external">http://www.zhufengpeixun.com/</a></li>
+</ul>
+</li>
+<li>可以理解为地址：珠峰培训的地址是北京昌平区回龙观东大街3号楼02号东段珠峰培训</li>
+</ul>
+<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><ul>
+<li>是指在同一个文件夹下通过一个参考点找到其他文件</li>
+<li>返回上一级用“../”</li>
+<li>平级之间直接写文件名</li>
+<li>下一级用“/”<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;../面试题.md&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/相对路径与绝对路径/" data-id="cj4jmyfi5000x5kttuc923tel" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS属性的继承及相关面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/30/CSS属性的继承及相关面试题/" class="article-date">
+  <time datetime="2017-06-30T08:56:14.000Z" itemprop="datePublished">2017-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/CSS属性的继承及相关面试题/">CSS属性的继承及相关面试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS属性的继承"><a href="#CSS属性的继承" class="headerlink" title="CSS属性的继承"></a>CSS属性的继承</h2><ul>
+<li>子级元素从父级元素身上继承的一些可继承的css属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p&gt;woshiyige[biaoqian&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>根据 CSS，子元素从父元素继承属性。看看下面这条规则：<ul>
+<li>body {font-family: Verdana, sans-serif;}<ul>
+<li>根据上面这条规则，站点的 body 元素将使用 Verdana 字体（假如访问者的系统中存在该字体的话）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继承的权重较小，可被其他选择器的样式覆盖</li>
+</ul>
+<h2 id="面试题："><a href="#面试题：" class="headerlink" title="面试题："></a>面试题：</h2><ul>
+<li>哪些css样式可以被继承：和文字有关的css样式 和列表有关的css样式<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3></li>
+<li>1.可继承属性</li>
+<li><p>1)可以继承的文本相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)可以继承的列表相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.不可继承属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;display&gt;&lt;margin&gt;&lt;border&gt;&lt;padding&gt;&lt;background&gt;&lt;height&gt;&lt;min-height&gt;&lt;max-height&gt;&lt;width&gt;&lt;min-width&gt;&lt;max-width&gt;&lt;overflow&gt;&lt;position&gt;&lt;left&gt;&lt;right&gt;&lt;top&gt;&lt;bottom&gt;&lt;z-index&gt;&lt;float&gt;&lt;clear&gt;&lt;table-layout&gt;&lt;vertical-align&gt;&lt;page-break-after&gt;&lt;page-bread-before&gt;和&lt;unicode-bidi&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.所有元素可继承：</p>
+</li>
+<li><p><code>&lt;visibility&gt;（可见性）和&lt;cursor&gt;(光标)</code></p>
+</li>
+<li><p>4.终端块状元素可继承：</p>
+</li>
+<li><code>&lt;text-indent&gt;和&lt;text-align&gt;</code></li>
+</ul>
+<ul>
+<li>5.如果css属性不带有继承性，如何继承父级身上的属性，可以将要继承的属性的属性值写上inherit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ul&#123;float:left;&#125;</div><div class="line">li&#123;float:inherit;&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/30/CSS属性的继承及相关面试题/" data-id="cj4jmyfg700025kttt20mktgz" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS中的form表单与table表格" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/30/CSS中的form表单与table表格/" class="article-date">
@@ -129,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS中的form表单与table表格/" data-id="cj4jl9fnp0005vgttmvi7l71o" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS中的form表单与table表格/" data-id="cj4jmyfg300015ktt3qxqtgd5" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -186,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS标签语义化/" data-id="cj4jl9fnj0003vgttjbi9lq1t" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS标签语义化/" data-id="cj4jmyfg900035ktto6nhko5d" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -306,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/HTML标签分类/" data-id="cj4jl9fnl0004vgttbip0selh" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/HTML标签分类/" data-id="cj4jmyfgr000a5kttrqt6bbon" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -398,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/HTML基本结构/" data-id="cj4jl9fo6000cvgttyzrhpwd8" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/HTML基本结构/" data-id="cj4jmyfgi00075kttnvt5o9zc" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -433,11 +557,13 @@
         <h2 id="css如何在html中使用（html引入css的四种方法）"><a href="#css如何在html中使用（html引入css的四种方法）" class="headerlink" title="css如何在html中使用（html引入css的四种方法）"></a>css如何在html中使用（html引入css的四种方法）</h2><ul>
 <li><ol>
 <li>行内式：直接写在标签内，通过标签属性style引入<ul>
-<li>媒介：style属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;css属性名:属性值；&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img style=&quot;css属性名:属性值；&quot;alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+<li>媒介：style属性<code>&lt;style type=&quot;text/css&quot;&gt;选择器{}&lt;/style&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;css属性名:属性值；&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img style=&quot;css属性名:属性值；&quot;alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
+</li>
+<li><p>css想要生效，html中必须有这个元素才可以</p>
 </li>
 <li><ol>
 <li>内嵌式（内联式）:将css代码写在style元素内，通过css选择器选择html元素，将css样式添加个这个元素<ul>
@@ -454,16 +580,21 @@
 </li>
 <li><ol>
 <li>外联式（外链式）：将css代码单独放置在一个css文件中，再通过link标签将这个css文件引入到html文件中<ul>
-<li>媒介：link标签+选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; herf=&quot;url&quot; type=&quot;text/css&quot;&gt;</div></pre></td></tr></table></figure>
+<li>媒介：link标签+选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; herf=&quot;css文件链接地址&quot; type=&quot;text/css&quot;&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 </li>
+<li><p>css这个文件中不能出现标签</p>
+</li>
 <li><ol>
 <li>导入式：都是引入一个单独的css文件<ul>
-<li>媒介：@import”url”;</li>
-<li>@import”url”;既不是html标签，也不是css属性，他是一条声明语句</li>
+<li>媒介：@import”css文件链接地址”;<ul>
+<li>当有多个css文件的时候，可以使用导入式先导入到一个css文件中，再用外链式link外链进html文件</li>
+</ul>
+</li>
+<li>@import”css文件链接地址”;既不是html标签，也不是css属性，他是一条声明语句</li>
 <li>这条语句必须写在style元素内,或者css文件内</li>
 <li>这条语句必须在所在文件内的第一行</li>
 </ul>
@@ -480,10 +611,13 @@
 </li>
 </ul>
 <h3 id="在工作中常用的引入方式是外链式"><a href="#在工作中常用的引入方式是外链式" class="headerlink" title="在工作中常用的引入方式是外链式"></a>在工作中常用的引入方式是外链式</h3><ul>
-<li>四种引入方式的权重（一个html元素最终加载的css样式是谁决定的）<ul>
+<li><p>四种引入方式的权重（一个html元素最终加载的css样式是谁决定的）</p>
+<ul>
 <li>有行内式的时候，听行内的</li>
 <li>在选择器相同的情况下，谁最后加载就听谁的</li>
 </ul>
+</li>
+<li><p>外链式和内嵌式一般都放在head元素内</p>
 </li>
 </ul>
 <h1 id="CSS层叠样式表"><a href="#CSS层叠样式表" class="headerlink" title="CSS层叠样式表"></a>CSS层叠样式表</h1><ul>
@@ -498,7 +632,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS的引入方式/" data-id="cj4jl9fnh0002vgttnhntn5sy" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS的引入方式/" data-id="cj4jmyfge00055ktt2yjfbxw8" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -531,68 +665,77 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><ul>
-<li>我们将html和css分离成不同的文件，那么如何让css属性作用在html元素上呢，那就是厉害的选择器啦。</li>
+<li>因为html和css分离，那么就出现一个问题，如何选择一个元素，将样式添加给这个元素–&gt;css选择器</li>
 <li>选择器是css属性和html元素的连接桥梁，通过正确的选择器来找到想要操作的元素，添加一定的样式。</li>
 <li>选择器{}</li>
 </ul>
-<h2 id="CSS基础选择器"><a href="#CSS基础选择器" class="headerlink" title="CSS基础选择器"></a>CSS基础选择器</h2><h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
+<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h3><p>选择器{key:value;key:value;}</p>
+<ul>
+<li>可以批量选择<strong>选择器</strong>名称相同的元素</li>
+<li>通过选择器类型不同，可以选择不同的html元素</li>
+</ul>
+<h2 id="2-CSS基础选择器分类"><a href="#2-CSS基础选择器分类" class="headerlink" title="2.CSS基础选择器分类"></a>2.CSS基础选择器分类</h2><h3 id="1-标签选择器"><a href="#1-标签选择器" class="headerlink" title="1) 标签选择器"></a>1) 标签选择器</h3><ul>
 <li>直接使用元素标签进行选择<ul>
 <li>例如：<code>&lt;p&gt;&lt;/p&gt;</code></li>
 <li>p{color:red;}</li>
 </ul>
 </li>
-<li>权重：1</li>
+<li>权重：1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">h1&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1&gt;标签选择器&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><ul>
+<h3 id="2-类选择器"><a href="#2-类选择器" class="headerlink" title="2) 类选择器"></a>2) 类选择器</h3><ul>
+<li>将html元素的class标签属性值当作选择器使用，需要在这个属性值前面加一个“.”</li>
 <li>通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素</li>
 <li>类名是元素class属性中的属性值，例如<ul>
 <li><p class="sum"></p></li>
 <li>.sum{}</li>
 </ul>
 </li>
+<li>一个html元素可以有多个css属性值（可以有多个类名，每一个类名之间用空格隔开）<br>类名可以重复使用</li>
 <li>权重：10</li>
-<li>p.s：类选择器最前方一定要有点</li>
-</ul>
-<h3 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h3><ul>
-<li>通过元素的id名，来选择元素</li>
-<li>类名是元素id属性中的属性值，例如<ul>
-<li><p id="sum"></p></li>
-<li>#sum{}</li>
-</ul>
+<li>p.s：类选择器最前方一定要有点<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.tytle&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1 class=&quot;tytle title1&quot;&gt;标签选择器&lt;/h1&gt;</div><div class="line">&lt;h1 class=&quot;tytle&quot;&gt;标签选择器&lt;/h1&gt;</div></pre></td></tr></table></figure>
 </li>
-<li>权重：100</li>
+</ul>
+<h3 id="3-id选择器"><a href="#3-id选择器" class="headerlink" title="3) id选择器"></a>3) id选择器</h3><ul>
+<li>一个html元素，id属性值只能用一次，id在html中具有唯一性</li>
 <li>类选择器最前方一定要有#</li>
+<li>通过元素的id名，来选择元素</li>
+<li>权重：100</li>
+<li>类名是元素id属性中的属性值，例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">#tytle&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1 id=&quot;tytle title1&quot;&gt;id选择器&lt;/h1&gt;</div><div class="line">&lt;h1 id=&quot;tytle&quot;&gt;错误的，不识别&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h3><ul>
-<li>通过*选择全部元素，包括根元素</li>
+<p>###总结：<br>标签选择器相当于人的姓名，类选择器相当于人的名字，id选择器相当于身份证号码。</p>
+<h3 id="4-通配符选择器"><a href="#4-通配符选择器" class="headerlink" title="4) 通配符选择器"></a>4) 通配符选择器</h3><ul>
+<li>通过*匹配全部html元素，包括根元素</li>
+<li>一般不使用，因为全部匹配耗性能</li>
 <li>*{}</li>
-<li>权重&lt;1，可被覆盖</li>
+<li>权重&lt;1，可被覆盖<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*&#123;key:value&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h3><ul>
+<h3 id="5-并集选择器"><a href="#5-并集选择器" class="headerlink" title="5) 并集选择器"></a>5) 并集选择器</h3><ul>
 <li>你可以对选择器进行分组，这样，被分组的选择器就可以分享相同的声明。用逗号将需要分组的选择器分开。在下面的例子中，我们对所有的标题元素进行了分组。所有的标题元素都是绿色的。<ul>
 <li>例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1,h2,h3,h4,h5,h6&#123;color:green;&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h3><ul>
-<li><p>列表中的 strong 元素变为斜体字，而不是通常的粗体字，可以这样定义一个派生选择器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">li strong &#123;</div><div class="line">    font-style: italic;</div><div class="line">    font-weight: normal;</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>html结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ol&gt;</div><div class="line">    &lt;li&gt;&lt;strong&gt;我是斜体字。这是因为 strong 元素位于 li 元素内。&lt;/strong&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><ul>
+<h3 id="6-属性选择器"><a href="#6-属性选择器" class="headerlink" title="6) 属性选择器"></a>6) 属性选择器</h3><ul>
 <li>对带有指定属性的 HTML 元素设置样式，可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</li>
-<li>属性选择器：<ul>
+<li><p>属性选择器：</p>
+<ul>
 <li>下面的例子为带有 title 属性的所有元素设置样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[title]</div><div class="line">    &#123;</div><div class="line">    color:red;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
+<li><p>利用标签的属性名和属性值来选择html元素</p>
+</li>
+<li>权重：10</li>
+<li>语法：</li>
+<li>[标签属性名]{}</li>
+<li>[标签属性名=属性值]{}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">h1[title]&#123;&#125;交集选择器</div><div class="line">标签+属性的权重=11</div><div class="line">[type]&#123;&#125;</div><div class="line">权重：10</div><div class="line">[type=text]&#123;&#125;</div><div class="line">权重：10</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;a href=&quot;&quot; title=&quot;&quot;&gt;link&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="属性和值选择器"><a href="#属性和值选择器" class="headerlink" title="属性和值选择器"></a>属性和值选择器</h3><ul>
+<h3 id="7-属性和值选择器"><a href="#7-属性和值选择器" class="headerlink" title="7)属性和值选择器"></a>7)属性和值选择器</h3><ul>
 <li><p>下面的例子为 title=”zfpx” 的所有元素设置样式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[title=zfpx]</div><div class="line">    &#123;</div><div class="line">    border:5px solid blue;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <ul>
@@ -601,7 +744,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h3><ul>
+<h3 id="8-分组选择器"><a href="#8-分组选择器" class="headerlink" title="8)分组选择器"></a>8)分组选择器</h3><p>作用（应用场景）：同一份css样式，可以一次性的添加给多个不同的html元素<br>权重：分组选择器将不同的html分为一组，权重计算的时候都是独立计算，不会叠加。<br>语法：<br>选择器1，选择器2，选择器3{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.box,li,.p1&#123;color: red&#125;</div><div class="line">.box&#123;color:green&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="9-交集选择器"><a href="#9-交集选择器" class="headerlink" title="9)交集选择器"></a>9)交集选择器</h3><ul>
 <li>两种属性同属一个元素的时候，我们可以使用交集选择器来进行元素的准确选择<ul>
 <li><code>&lt;p class=&#39;name1 name2&#39; id=&#39;id1&#39;&gt;&lt;/p&gt;</code><ul>
 <li><code>p.name1{}</code></li>
@@ -611,53 +755,90 @@
 </li>
 </ul>
 </li>
-</ul>
-<h3 id="子集选择器"><a href="#子集选择器" class="headerlink" title="子集选择器"></a>子集选择器</h3><ul>
-<li>与后代选择器相比，子元素选择器只能选择作为某元素子元素的元素。<ul>
-<li><code>h1&gt;strong{color:red;}</code>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;h1&gt;</div><div class="line">This is</div><div class="line">&lt;strong&gt;very&lt;/strong&gt;</div><div class="line"> &lt;strong&gt;very&lt;/strong&gt;</div><div class="line">  important.</div><div class="line">&lt;/h1&gt;</div></pre></td></tr></table></figure>
+<li>组合选择器之间没有任何的符号和空格</li>
+<li>标签选择器和其他选择器组合的时候，标签选择器要放在前面</li>
+<li><p>交集选择器是两个选择器组合在一起，可以是标签和类名，标签和属性选择器，标签和ｉｄ，两个类选择器</p>
+</li>
+<li><p>作用：精确查找元素，增加选择器的权重</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">h1&#123;&#125; 标签选择器 权重：1</div><div class="line">[title]&#123;&#125; 属性选择器 权重：10</div><div class="line">[title=zfpx]&#123;&#125; 属性选择器 权重：10</div><div class="line">h2[title]&#123;&#125; 交集选择器 权重：11</div><div class="line">h2[title=zfpx]&#123;&#125; 交集选择器 权重：11</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1 title=&quot;zfpx&quot;&gt;&lt;/h1&gt;</div><div class="line">&lt;h2 title=&quot;zfpx&quot;&gt;&lt;/h2&gt;</div><div class="line">&lt;style&gt;</div><div class="line">p.p1&#123;&#125;  交集选择器  权重：11</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p class=&quot;p1&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;style&gt;</div><div class="line">.p1.p2&#123;&#125;  交集选择器  权重：20</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p class=&quot;p1 p2&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>属性选择器在使用的时候，如果一个元素有两个类名，那么是不生效的。例如：</p>
+</li>
+<li>属性选择器我们一般不会使用class，因为class可以直接使用类选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!--有多少种方法只获取div--&gt;</div><div class="line"> /*如果class值有两个，不能这样使用*/</div><div class="line">        [class=div1]&#123;&#125;</div><div class="line">&lt;div class=&quot;div1 p1&quot; id=&quot;div2&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;p class=&quot;p1&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h3 id="10-子集选择器"><a href="#10-子集选择器" class="headerlink" title="10)子集选择器"></a>10)子集选择器</h3><ul>
+<li>与后代选择器相比，子元素选择器只能选择作为某元素子元素的元素。</li>
+<li>语法：父级选择器&gt;子级选择器</li>
+<li>父级选择器是用来确定范围的，</li>
+<li>子级选择器才是我们要添加样式的那个元素</li>
+<li>权重：所有选择器之和</li>
+<li>子级选择器必须是紧邻的父子关系<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">ul&gt;li&#123;color:red;&#125; 选择ul下的li</div><div class="line">权重：2</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h3><ul>
+<h3 id="11-后代选择器"><a href="#11-后代选择器" class="headerlink" title="11)后代选择器"></a>11)后代选择器</h3><ul>
+<li><p>html结构：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ol&gt;</div><div class="line">    &lt;li&gt;&lt;strong&gt;我是斜体字。这是因为 strong 元素位于 li 元素内。&lt;/strong&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>列表中的 strong 元素变为斜体字，而不是通常的粗体字，可以这样定义一个派生选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">li strong &#123;</div><div class="line">    font-style: italic;</div><div class="line">    font-weight: normal;</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在一个根元素的范围内，查找到它的后代元素</p>
+</li>
+<li><p>语法：祖辈选择器 要查找的后代选择器{}<br>中间用空格连接</p>
+</li>
+<li><p>后代选择器在写的时候尽量控制在３个左右</p>
+</li>
+<li>选择器过多浪费性能，不建议使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.div1 ul span&#123;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;div1&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;只选择这个span元素&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ol&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;wenzdskaldjaslk&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;div2&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;wenzdskaldjaslk&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ol&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;wenzdskaldjaslk&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="12-相邻兄弟选择器"><a href="#12-相邻兄弟选择器" class="headerlink" title="12)相邻兄弟选择器"></a>12)相邻兄弟选择器</h3><ul>
 <li>相邻兄弟选择器可选择紧接在另一元素后的元素，且二者有相同父元素。<ul>
 <li><code>h1 + p {margin-top:50px;}</code></li>
 </ul>
 </li>
+<li>通过各个元素选择弟弟选择器，两个选择器之间用“+”连接</li>
+<li>语法：哥哥选择器+弟弟选择器{}</li>
+<li>权重：选择器之和<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .list1+li&#123;color: red;&#125;</div><div class="line">    22222变为红色</div><div class="line">    .list3+li&#123;color: green;&#125;</div><div class="line">    4444变为绿色</div><div class="line">    /*li+.list3&#123;&#125;*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li class=&quot;list1&quot;&gt;11111&lt;/li&gt;</div><div class="line">    &lt;li&gt;22222&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;list3&quot;&gt;33333&lt;/li&gt;</div><div class="line">    &lt;li&gt;4444&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="CSS-伪类"><a href="#CSS-伪类" class="headerlink" title="CSS 伪类"></a>CSS 伪类</h2><ul>
-<li>CSS 伪类用于向某些选择器添加特殊的效果<ul>
-<li>a:link {color: #FF0000}<br>/<em> 未访问的链接 </em>/</li>
-<li>a:visited {color: #00FF00}<br>/<em> 已访问的链接 </em>/</li>
-<li>a:hover {color: #FF00FF}<br>/<em> 鼠标移动到链接上 </em>/</li>
-<li>a:active {color: #0000FF}<br>/<em> 选定的链接 </em>/</li>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><ul>
+<li>给一个元素添加某种状态<ul>
+<li>例如：鼠标经过时 获取焦点时 鼠标点击时</li>
 </ul>
+</li>
+<li>权重：10</li>
+<li>1) a标签</li>
+<li><p>CSS 伪类用于向某些选择器添加特殊的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    a:link &#123;color: #FF0000&#125;</div><div class="line">    /* 未访问的链接 是默认状态*/</div><div class="line">    a:visited &#123;color: #00FF00&#125;</div><div class="line">    /* 已访问的链接 鼠标点击后的状态*/</div><div class="line">    a:hover &#123;color: #FF00FF&#125;</div><div class="line">    /* 鼠标移动到链接上 鼠标经过的状态*/</div><div class="line">    a:active &#123;color: #0000FF&#125;</div><div class="line">    /* 选定的链接 鼠标点击的状态*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;a href=&quot;javascript:void (0)&quot;&gt;最初形态&lt;/a&gt;</div><div class="line">&lt;a href=&quot;javascript:void 0&quot;&gt;赛亚人形态&lt;/a&gt;</div><div class="line">&lt;a href=&quot;javascript:&quot;&gt;超级赛亚人形态&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)input标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">        .input&#123;border: 1px solid gainsboro&#125;</div><div class="line">        .input:hover&#123;border-color: gray&#125;</div><div class="line">        .input:focus&#123;border-color: blue&#125;</div><div class="line">        /*input:focus 鼠标聚焦后的状态，input独有的属性*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;input type=&quot;text&quot; class=&quot;input&quot;&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="CSS-伪元素"><a href="#CSS-伪元素" class="headerlink" title="CSS 伪元素"></a>CSS 伪元素</h2><ul>
+<li>通过css代码向指定元素<strong>内</strong>添加假的（html中不存在的）元素</li>
+</ul>
+<ul>
 <li>CSS 伪元素用于向某些选择器设置特殊效果</li>
-<li>before 伪元素<ul>
+<li><p>1)before 会出现在div所有内容之前</p>
+<ul>
 <li>“:before” 伪元素可以在元素的内容前面插入新内容。</li>
 <li>下面的例子在每个 <code>&lt;h1&gt;</code> 元素前面插入一幅图片：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h1:before</div><div class="line">  &#123;</div><div class="line">  content:&apos;我是一个伪元素&apos;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-</ul>
-<h2 id="CSS属性的继承"><a href="#CSS属性的继承" class="headerlink" title="CSS属性的继承"></a>CSS属性的继承</h2><ul>
-<li>根据 CSS，子元素从父元素继承属性。看看下面这条规则：<ul>
-<li>body {font-family: Verdana, sans-serif;}<ul>
-<li>根据上面这条规则，站点的 body 元素将使用 Verdana 字体（假如访问者的系统中存在该字体的话）。</li>
-</ul>
+<li><p>2)after 会出现在div所有内容之后<br>使用伪元素的时候要保证两个前提</p>
 </li>
-</ul>
+<li>要有display这个属性</li>
+<li>要有content这个属性，这个属性的属性值可以为空，但是引号不能少<code>content:&quot;&quot;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background-color: red;</div><div class="line">        &#125;</div><div class="line">    div:before&#123;</div><div class="line">        display: block;</div><div class="line">        content: &quot;我是before&quot;;</div><div class="line">        font-size: 40px;</div><div class="line">        color: white;</div><div class="line">               &#125;</div><div class="line">    div:after&#123;</div><div class="line">        display: block;</div><div class="line">        content: &quot;我是aftre&quot;;</div><div class="line">        font-size: 40px;</div><div class="line">        color: blue;</div><div class="line">              &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div&gt;</div><div class="line">    &lt;span&gt;我是span&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">网页显示：</div><div class="line">&lt;div&gt;</div><div class="line">::before</div><div class="line">&lt;span&gt;···&lt;span&gt;</div><div class="line">::after</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 </li>
-<li>继承的权重较小，可被其他选择器的样式覆盖</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS常用选择器/" data-id="cj4jl9fn60000vgttbxnx796l" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS常用选择器/" data-id="cj4jmyfgb00045kttfp0awnvt" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -727,7 +908,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/Window快捷键整理/" data-id="cj4jl9fo2000avgttwsvp6fgp" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/Window快捷键整理/" data-id="cj4jmyfha000i5kttus7i8q4e" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -862,286 +1043,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/CSS中常用的HTML元素及标签/" data-id="cj4jl9fne0001vgttefhvhr9j" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-“前端三层”" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/30/“前端三层”/" class="article-date">
-  <time datetime="2017-06-30T06:26:17.000Z" itemprop="datePublished">2017-06-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/30/“前端三层”/">“前端三层”</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前端三层"><a href="#前端三层" class="headerlink" title="前端三层"></a>前端三层</h2><ul>
-<li><ol>
-<li>html结构 是直接被浏览器解析加载</li>
-</ol>
-</li>
-<li><ol>
-<li>CSS样式 是在html结构之上去装点网站</li>
-</ol>
-</li>
-<li><ol>
-<li>javascript 交互 动态效果/数据交互</li>
-</ol>
-</li>
-</ul>
-<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
-<li><ol>
-<li>网页<ul>
-<li>网页是构成网站的基本元素，通俗来讲，一个html文件就是一个网页</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>网站<ul>
-<li>是由很多个网页组成的，共同为一个目标服务的网页集合</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>站群（流水线统一化管理）<ul>
-<li>由很多网站组成的，为同一个公司服务。</li>
-<li>例如整个百度下所属的子公司都有自己的网站。例如：百度搜索/糯米/音乐/手机助手/百度金融等组成的就是一个站群。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="HTTP（超文本传输协议）"><a href="#HTTP（超文本传输协议）" class="headerlink" title="HTTP（超文本传输协议）"></a>HTTP（超文本传输协议）</h3><ul>
-<li>HyperText Transfer Protocol</li>
-<li>在万维网上提供一种发布和接收HTML页面（网页）的方法。</li>
-<li>eg：<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a></li>
-</ul>
-<p>404服务器无响应</p>
-<h5 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h5><ul>
-<li><ol>
-<li>输入网址，建立链接，建立客户端和服务端的连接。</li>
-</ol>
-</li>
-<li><ol>
-<li>发送请求信息：客户端发送一个请求给服务器</li>
-</ol>
-</li>
-<li><ol>
-<li>发送相应信息：服务器找到请求后，给予相应的响应信息</li>
-</ol>
-</li>
-<li><ol>
-<li>关闭连接：客户端接收服务器所返回的信息通过浏览器显示在用户的显示屏上，然后客户机与服务器断开连接</li>
-</ol>
-</li>
-</ul>
-<h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><ul>
-<li>服务器，是提供计算服务的设备。由于服务器需要响应服务请求，并进行处理，因此一般来说服务器应具备承担服务并且保障服务的能力。</li>
-<li><p>在网络环境下，根据服务器提供的服务类型不同，分为文件服务器，数据库服务器，应用程序服务器，WEB服务器等。</p>
-<ul>
-<li>防篡改：WEB端服务器一旦受到攻击，在0.0n秒做出反应，将内网服务器中的内容，马上覆盖在WEB服务器上。</li>
-<li>负载均衡：平均WEB服务器压力，将用户访问进行分流。</li>
-<li>vpn：用来翻墙，有指定账号就可以通过这个产品进行内网访问。</li>
-</ul>
-</li>
-</ul>
-<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><ul>
-<li>浏览器是指可以显示网页服务器或者文件系统的HTML文件（标准通用标记语言的一个应用）内容，并让用户与这些文件交互的一种软件。</li>
-<li><p>html，css，js都是运行在这个软件中，浏览器是一个工厂，html/css/js是工人和原料。</p>
-</li>
-<li><p>IE6–&gt;IE7（很快淘汰）–&gt;IE8(时间较长，稳定性好)–&gt;IE9(半年到一年)–&gt;IE10–&gt;IE11–&gt;IE11–&gt;IE(Edge)</p>
-</li>
-<li><p>最好用的浏览器–&gt;谷歌</p>
-</li>
-</ul>
-<h3 id="网页的基本组成"><a href="#网页的基本组成" class="headerlink" title="网页的基本组成"></a>网页的基本组成</h3><ul>
-<li>HTML:是网页的骨架,支撑起血肉(文字,图片,音视频等)</li>
-<li>CSS:表皮和衣服、化妆品</li>
-<li>javascript：动态和交互</li>
-</ul>
-<h2 id="HTML（超文本标记语言）"><a href="#HTML（超文本标记语言）" class="headerlink" title="HTML（超文本标记语言）"></a>HTML（超文本标记语言）</h2><ul>
-<li>网页本身就是一种文本文件（除了文字再无其他），只有通过特定的标记描述，那些普通文本才能在浏览器中正常显示。</li>
-<li>在页面中如果遇到图片、音视频的时候，如何用文本描述，需要用超文本进行引入才可以正常显示。</li>
-</ul>
-<h4 id="HTML文件的特点："><a href="#HTML文件的特点：" class="headerlink" title="HTML文件的特点："></a>HTML文件的特点：</h4><ul>
-<li>浏览器根据标记来解析和描述内容（从html的第一行开始向下），如果遇到错误，浏览器不会指出也不会报错，会跳过此处继续加载，编辑人员需要根据显示效果去分析哪里出错误了——html不会报错</li>
-</ul>
-<h4 id="HTML的兼容问题："><a href="#HTML的兼容问题：" class="headerlink" title="HTML的兼容问题："></a>HTML的兼容问题：</h4><ul>
-<li>因为浏览器是由不同厂商生产的，所以对html的解析有分歧，产生了页面效果显示不一致的情况，我们将这个问题叫做兼容问题。</li>
-</ul>
-<h4 id="超文本（标签）"><a href="#超文本（标签）" class="headerlink" title="超文本（标签）"></a>超文本（标签）</h4><ul>
-<li><p>标签语法：</p>
-<ul>
-<li><p>由成对的尖括号和关键字组成，叫做标签。<tagname></tagname></p>
-</li>
-<li><p>关键字（标签名）：是已经规范过的，不是自己随便制造的。</p>
-</li>
-<li><p>例如：<code>&lt;div&gt;</code> , <code>&lt;/h2&gt;</code> , <code>&lt;img/&gt;</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="标签属性"><a href="#标签属性" class="headerlink" title="标签属性"></a>标签属性</h4><ul>
-<li><p>属性提供了这个元素的更多信息，语法：由属性名和属性值组成（键值对 key=”value”）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;span style=&quot;font-family:宋体;&quot; title=&quot;标题&quot;&gt;</div><div class="line">span是标签名</div><div class="line">style是标签属性名</div><div class="line">&quot;font-family:宋体;标签属性值</div></pre></td></tr></table></figure>
-</li>
-<li><p>一个标签可以由多个标签属性，每一个属性之间用空格隔开</p>
-</li>
-</ul>
-<h4 id="标签的分类"><a href="#标签的分类" class="headerlink" title="标签的分类:"></a>标签的分类:</h4><ul>
-<li>开始标签 <code>&lt;div&gt;</code></li>
-<li>结束标签 <code>&lt;/div&gt;</code></li>
-<li>自闭合标签(空标签) <code>&lt;br/&gt;</code></li>
-</ul>
-<h4 id="HTML元素"><a href="#HTML元素" class="headerlink" title="HTML元素"></a>HTML元素</h4><ul>
-<li><p>可以将元素理解成一个容器，容器中放置的就是</p>
-</li>
-<li><p>由标签和内容组成的，叫做元素。</p>
-</li>
-</ul>
-<p><code>&lt;div&gt;此处是内容&lt;/div&gt;</code></p>
-<h4 id="元素分类"><a href="#元素分类" class="headerlink" title="元素分类"></a>元素分类</h4><ul>
-<li>由开始标签和结束标签组成的元素，可以进行嵌套（一个元素包着另一个元素），元素中可以添加内容，只有一个空标签，只能进行功能的添加，例如img元素</li>
-</ul>
-<ul>
-<li>标签和元素是用来标记和描述内容的，所以这些标签和元素用户是看不到的，用户只能看到这个元素的内容。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/“前端三层”/" data-id="cj4jl9fpl000qvgttnsvw07co" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-markdown的简单使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/30/markdown的简单使用/" class="article-date">
-  <time datetime="2017-06-30T06:18:07.000Z" itemprop="datePublished">2017-06-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/30/markdown的简单使用/">markdown的简单使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><h1 id="–-gt-一级标题-相当于html中的h1标签"><a href="#–-gt-一级标题-相当于html中的h1标签" class="headerlink" title="–&gt; 一级标题 相当于html中的h1标签"></a>–&gt; 一级标题 相当于html中的h1标签</h1></li>
-<li><p>目录–&gt;[TOC]</p>
-</li>
-<li><h2 id="–-gt-二级标题-相当于html中的h2标签"><a href="#–-gt-二级标题-相当于html中的h2标签" class="headerlink" title="–&gt; 二级标题 相当于html中的h2标签"></a>–&gt; 二级标题 相当于html中的h2标签</h2></li>
-<li><h3 id="–-gt-三级标题-相当于html中的h3标签"><a href="#–-gt-三级标题-相当于html中的h3标签" class="headerlink" title="–&gt; 三级标题 相当于html中的h3标签"></a>–&gt; 三级标题 相当于html中的h3标签</h3></li>
-<li><h4 id="–-gt-四级标题-相当于html中的h4标签"><a href="#–-gt-四级标题-相当于html中的h4标签" class="headerlink" title="–&gt; 四级标题 相当于html中的h4标签"></a>–&gt; 四级标题 相当于html中的h4标签</h4></li>
-<li><h5 id="–-gt-五级标题-相当于html中的h5标签"><a href="#–-gt-五级标题-相当于html中的h5标签" class="headerlink" title="–&gt; 五级标题 相当于html中的h5标签"></a>–&gt; 五级标题 相当于html中的h5标签</h5></li>
-<li><h6 id="–-gt-六级标题-相当于html中的h6标签"><a href="#–-gt-六级标题-相当于html中的h6标签" class="headerlink" title="–&gt; 六级标题 相当于html中的h6标签"></a>–&gt; 六级标题 相当于html中的h6标签</h6></li>
-<li><p>在每个段落或标题结束后 增加一个回车（一行空白）</p>
-</li>
-<li><p>普通段落相当于html中的p标签</p>
-</li>
-<li><p>列表：</p>
-</li>
-<li>-+空格（-列表-）<ul>
-<li>-+空格+tab（二级列表）<ul>
-<li>-+空格+tab+tab（三级列表）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>如何缩进 –&gt; 点击tab键</li>
-<li><p>编辑新的内容（英文状态下，按住shift+“—”）</p>
-</li>
-<li><blockquote>
-<p>(大于号加空格)–&gt; 摘要或标注</p>
-</blockquote>
-</li>
-<li><p>编辑表格:</p>
-</li>
-<li>快捷键：ctrl+alt+T</li>
-<li>|标题|标题|标题|</li>
-<li>|:—-:|:—-:|:—-:|</li>
-<li>|内容|内容|内容|</li>
-<li><p>|内容|内容|内容|</p>
-</li>
-<li><p>编辑代码块<code>&lt;div&gt;div&lt;/div&gt;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">&lt;div&gt;div&lt;/div&gt;</div><div class="line">&lt;div&gt;div&lt;/div&gt;</div><div class="line">&lt;div&gt;div&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>```</p>
-<ul>
-<li>编辑行内代码:独立的行间代码</li>
-<li><p>html中的p标签：<code>&lt;p&gt;</code></p>
-</li>
-<li><p>插入图片</p>
-</li>
-<li>可以直接复制粘贴</li>
-<li><p>快捷键：ctrl+G</p>
-</li>
-<li><p>插入链接：</p>
-</li>
-<li>ctrl+L</li>
-</ul>
-<ul>
-<li>保存笔记的方法:</li>
-<li>点击【账号】选择【导出】 –&gt;  可以导出md格式，pdf格式，html格式</li>
-<li>md格式：再次打开时，可以使用文本文档打开，将内容复制一份粘到markdown软件中</li>
-<li>pdf格式：直接观看，但不能修改</li>
-<li>html格式：可以浏览器中直接观看，可以在代码编辑器中修改</li>
-</ul>
-<ul>
-<li>快捷键：</li>
-<li>文档管理 –&gt; Ctrl+O</li>
-<li>帮助 –&gt; Ctrl+/</li>
-<li>最大化编辑器 –&gt; Ctrl+Enter</li>
-<li>预览文档 –&gt; Ctrl+Alt+Enter</li>
-<li>同步文档 –&gt; Ctrl+S</li>
-<li>创建文档 –&gt; Ctrl+Alt+N</li>
-<li>系统菜单 –&gt; Ctrl+M</li>
-<li>斜体 –&gt; Ctrl+I</li>
-<li>粗体 –&gt; Ctrl+B</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/30/markdown的简单使用/" data-id="cj4jl9fpe000nvgttl63x9ans" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/30/CSS中常用的HTML元素及标签/" data-id="cj4jmyffy00005kttpr81kvil" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -1185,6 +1087,14 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/相对路径与绝对路径/">相对路径与绝对路径</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/CSS属性的继承及相关面试题/">CSS属性的继承及相关面试题</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS中的form表单与table表格/">CSS中的form表单与table表格</a>
           </li>
         
@@ -1194,14 +1104,6 @@
         
           <li>
             <a href="/2017/06/30/HTML标签分类/">HTML标签分类</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/HTML基本结构/">HTML基本结构</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
           </li>
         
       </ul>

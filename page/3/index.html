@@ -61,6 +61,156 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-canvas之7变形" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/canvas之7变形/" class="article-date">
+  <time datetime="2017-06-09T09:19:54.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/canvas之7变形/">canvas之7变形</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><ol>
+<li>平移translate(x,y);<br>x:坐标原点向x轴平移的距离<br>y:坐标原点向y轴平移的距离</li>
+</ol>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.fillStyle=&apos;skyblue&apos;;</div><div class="line">	//设置填充颜色天空蓝</div><div class="line">	cvs.fillRect(0,0,200,100);</div><div class="line">	//矩形左上角坐标0,0 宽200px 高100px</div><div class="line">	cvs.translate(50,50);</div><div class="line">	//设置平移 坐标原点向x轴(向右)平移50px 坐标原点向y轴(向下)偏移50px</div><div class="line">	//--&gt;这个平移只会对后面的矩形造成影响 不会影响前面的</div><div class="line">	cvs.fillStyle=&apos;pink&apos;;</div><div class="line">	//设置填充颜色粉色</div><div class="line">	cvs.fillRect(0,0,180,80);</div><div class="line">	//矩形左上角坐标0,0 宽180px 高80px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>缩放 vas.scale(x0,y0);<br>x0:x轴按照x0的比例缩放<br>y0:y轴按照x0的比例缩放</li>
+</ol>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	cvs.scale(1,2);//设置缩放 x轴不变 y轴是之前的2倍</div><div class="line">	cvs.fillStyle=&apos;plum&apos;;//设置填充样式为颜色填充</div><div class="line">	cvs.fillRect(0,0,200,100);</div><div class="line">	//矩形左上角坐标0,0 宽200px 高100px</div><div class="line">	//--&gt;那么转化后的矩形宽200px 高200px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.旋转 vas.rotate(angle);<br>  angle:坐标轴转的角度 他是一个弧度(和画圆的计算是一样的)</p>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.rotate(Math.PI/4);//设置旋转  旋转角度为45度</div><div class="line">	cvs.fillStyle=&apos;lightblue&apos;;</div><div class="line">	cvs.fillRect(100,100,200,100);</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="注意：平移、缩放、旋转都是对原始坐标（画布）操作的"><a href="#注意：平移、缩放、旋转都是对原始坐标（画布）操作的" class="headerlink" title="注意：平移、缩放、旋转都是对原始坐标（画布）操作的"></a>注意：平移、缩放、旋转都是对原始坐标（画布）操作的</h4><ul>
+<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.translate(200,0);//此时的原点已经变到200,0的位置</div><div class="line">	cvs.rotate(Math.PI/4);//设置旋转  旋转角度为45度</div><div class="line">	cvs.fillStyle=&apos;lightblue&apos;;</div><div class="line">	cvs.fillRect(100,100,200,100);</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/09/canvas之7变形/" data-id="cj4jmyfhp000p5kttgm9s0scj" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-canvas之6绘制图片" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/canvas之6绘制图片/" class="article-date">
+  <time datetime="2017-06-09T08:51:59.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/canvas之6绘制图片/">canvas之6绘制图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h5><ul>
+<li><ol>
+<li>cvs.drawImage(Image,x,y,w,h);<ul>
+<li>Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的</li>
+<li>x,y 图片放入画布,在画布左上角的坐标</li>
+<li>w,h 绘制图片的宽高</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>案例:将图片放在画布上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	var img=new Image;//动态创建一个img</div><div class="line">	img.src=&apos;default.gif&apos;;//添加图片链接</div><div class="line">	img.onload=function()&#123;//如果图片地址真实存在 执行这个函数</div><div class="line">		cvs.drawImage(this,0,100,100,90);</div><div class="line">		//将图片放在画布上 图片左上角的坐标0,100 图片宽100px 高90px</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li><p>cvs.drawImage(img_elem,sx,sy,sw,sh,dx,dy,dw,dh);</p>
+<ul>
+<li>sx,sy 图片左上角的坐标</li>
+<li>sw,sh  矩形区域的宽高 用来截取图片</li>
+<li>dx,dy  截取出来放在画布canvas上的坐标</li>
+<li><p>dw,dh  画在canvas上的宽高</p>
+</li>
+<li><p>总结:</p>
+<ul>
+<li>sw,sy,sx,sy 是用来截取图片的过程</li>
+<li>dx,dy,dw,dh 把截取出来的图片放在canvas上的过程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>案例:截取图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	function draw2()&#123;</div><div class="line">		var img=new Image;//动态创建一个img</div><div class="line">		img.src=&apos;1.jpg&apos;;//添加图片链接</div><div class="line">		img.onload=function()&#123;//如果图片地址真实存在 执行这个函数</div><div class="line">			cvs.drawImage(this,480,150,440,410,0,0,200,200);</div><div class="line">			//this就是img 将图片放在画布上 需要截取的图片在原图片左上角的坐标480,150  截取图片的大小为440px*410px 截取出来的图片放入画布的坐标0,0 截取出来的图片画在画布canvas的宽200px 高200px</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">//	draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>设置平铺</li>
+</ol>
+</li>
+<li><p>cvs.creatPattern(image,type)</p>
+<ul>
+<li>Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的</li>
+<li>type:<ul>
+<li>no-repeat 不平铺</li>
+<li>repeat 全方向平铺</li>
+<li>repeat-x x轴方向平铺</li>
+<li>repeat-y y轴方向平铺</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var img=new Image;</div><div class="line">	img.src=&apos;default.gif&apos;;</div><div class="line">	img.onload=function()&#123;</div><div class="line">		var rep=cvs.createPattern(this,&apos;repeat&apos;);//设置图片平铺</div><div class="line">		cvs.fillStyle=rep;//设置填充样式为图片平铺</div><div class="line">		cvs.fillRect(0,0,draw.width,draw.height);</div><div class="line">		//draw.width画布的宽 draw.height画布的高</div><div class="line">		//设置填充矩形 矩形左上角坐标0,0 矩形的宽为画布的宽 矩形的高为画布的高</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//draw3();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/09/canvas之6绘制图片/" data-id="cj4jmyfhn000o5ktt51xj9sm5" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-canvas之4渐变" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/09/canvas之4渐变/" class="article-date">
@@ -119,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj4jl9fpa000lvgttfs96qpyl" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之4渐变/" data-id="cj4jmyfhl000n5kttaa35ufx0" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -190,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj4jl9fp3000ivgttp17e4dsg" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之3绘制矩形/" data-id="cj4jmyfhh000l5kttktophtxs" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -277,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4jl9fpb000mvgttyzgxo3h5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/canvas之5绘制文本/" data-id="cj4jmyfhk000m5ktt33xjep7n" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -331,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4jl9fpy000wvgttdi4vhbzi" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/09/服务器及相关知识/" data-id="cj4jmyfi2000w5kttyh8n6395" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -396,7 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4jl9fp5000jvgtt36hzjipd" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之2画圆/" data-id="cj4jmyfhe000k5kttl0ixthwf" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -516,7 +666,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4jl9fp1000hvgttw0z3wa0l" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/08/canvas之1绘制线条的有关属性和步骤/" data-id="cj4jmyfhd000j5kttymmgfuxp" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -590,7 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4jl9foz000gvgtt021l9pnr" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/02/JS字符串中的几个重要方法/" data-id="cj4jmyfgw000c5kttptq8jyie" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -627,149 +777,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4jl9fny0008vgtttb3nf6fb" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS中的预解释" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/29/JS中的预解释/" class="article-date">
-  <time datetime="2017-04-29T02:29:55.000Z" itemprop="datePublished">2017-04-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/JS中的预解释/">JS中的预解释</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="预解释的基础知识"><a href="#预解释的基础知识" class="headerlink" title="预解释的基础知识"></a>预解释的基础知识</h4><ul>
-<li><p>例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">console.log(d);//--&gt;function d()&#123;&#125;;</div><div class="line">d=1;//--&gt;d=1</div><div class="line">s=d;//--&gt;s=1</div><div class="line">function d()&#123;//--&gt;xxxfff000</div><div class="line"></div><div class="line">&#125;</div><div class="line">d();//--&gt;d is not a function</div></pre></td></tr></table></figure>
-</li>
-<li><p>1.预解释:</p>
-</li>
-<li><p>是一个过程，作用域形成之后，代码执行之前，把所有带var关键字和function提前声明或定义</p>
-</li>
-<li><p>2.作用域：</p>
-</li>
-<li>1). 全局作用域：window下，一打开浏览器就会形成</li>
-<li><p>2). 私有作用域：一个函数就是一个私有作用域，函数一执行就会形成私有作用域</p>
-</li>
-<li><p>3.声明:</p>
-</li>
-<li><p>告诉浏览器这里有个变量，var关键字的只有声明</p>
-</li>
-<li><p>4.定义:</p>
-</li>
-<li><p>赋值过程，在预解释的时候function即声明还定义</p>
-</li>
-<li><p>5.注意:</p>
-</li>
-<li>预解释的时候遇到变量已经声明过了就不用声明了，但是需要重新定义,例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//变量只声明未定义就是undefined</div><div class="line">console.log(obj1);//--&gt;undefined</div><div class="line">var obj1=&#123;name:&quot;111&quot;&#125;;</div><div class="line">console.log(fn);</div><div class="line">function fn() &#123;&#125;</div><div class="line">//1.全局作用形成</div><div class="line">//2.全局作用域下的预解释：var obj1，function fn=xxxfff000</div><div class="line">//3.代码执行：</div><div class="line">// 1.console.log(obj1);--&gt;undefined</div><div class="line">// 2.obj1=xxxfff111</div><div class="line">// 3. console.log(fn);--&gt;function fn() &#123;&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="预解释的几种特殊情况"><a href="#预解释的几种特殊情况" class="headerlink" title="预解释的几种特殊情况"></a>预解释的几种特殊情况</h3><ul>
-<li>注意:</li>
-<li>全局作用域下的变量就是window的一个属性</li>
-</ul>
-<h4 id="1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）"><a href="#1-右边函数不进行预解释（函数作为值的时候-绑定事件的时候-不进行预解释）" class="headerlink" title="1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）"></a>1.=右边函数不进行预解释（函数作为值的时候\绑定事件的时候 不进行预解释）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var ff=function () &#123;</div><div class="line">    console.log(1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h4 id="2-return-后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释"><a href="#2-return-后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释" class="headerlink" title="2.return 后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释"></a>2.return 后面的代码不行行但是需要预解释，return出的内容执行但是不进行预解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function fn() &#123;</div><div class="line">    var a=0;</div><div class="line">    console.log(f);//function f()&#123;&#125;</div><div class="line">    return function () &#123;</div><div class="line">        console.log(1);</div><div class="line">        return 1</div><div class="line">    &#125;;</div><div class="line">    function f() &#123;&#125;</div><div class="line">&#125;</div><div class="line">var d=fn();</div><div class="line">console.log(d());</div><div class="line">fn()();</div></pre></td></tr></table></figure>
-<h4 id="3-在条件语句中"><a href="#3-在条件语句中" class="headerlink" title="3.在条件语句中"></a>3.在条件语句中</h4><ul>
-<li><p>1)不管条件是否成立都进行预解释</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">console.log(num);</div><div class="line">if (0)&#123;</div><div class="line">    //虽然条件不成立 但是需要预解释</div><div class="line">    var num=0</div><div class="line">&#125;</div><div class="line">ss=0;//-&gt;window.ss=0</div><div class="line">console.log(&quot;ss&quot; in window);</div></pre></td></tr></table></figure>
-</li>
-<li><p>2)条件中有函数function</p>
-<ul>
-<li><p>在条件中的var和function只声明不定义，声明的时候当遇到变量已经被声明了，就会报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if(&apos;a&apos; in window)&#123;</div><div class="line">var a=1;</div><div class="line">function()&#123;&#125;;//--&gt;&apos;a&apos; has already been declared</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>条件一旦成立，首先给函数赋值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">console.log(a);</div><div class="line">if (&quot;a&quot; in window)&#123;</div><div class="line">    console.log(a);</div><div class="line">    a=1;</div><div class="line">    function a() &#123;&#125;</div><div class="line">    console.log(a);</div><div class="line">&#125;</div><div class="line">//预解释：function a  --&gt;就相当于给window增加一个“a”属性</div><div class="line">//&quot;a&quot; in window 就是true</div><div class="line">//条件成立第一步先给function a赋值=xxxfff000</div><div class="line">//代码执行：console.log(a);xxxfff000-&gt;function a() &#123;&#125;</div><div class="line">// a=1,重新给a赋值</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-自执行函数-不进行预解释"><a href="#4-自执行函数-不进行预解释" class="headerlink" title="4.自执行函数 不进行预解释"></a>4.自执行函数 不进行预解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//console.log(sss)</div><div class="line">;(function  sss() &#123;</div><div class="line">    console.log(&quot;a&quot;)</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<h4 id="5-函数作为参数的时候不进行预解释"><a href="#5-函数作为参数的时候不进行预解释" class="headerlink" title="5.函数作为参数的时候不进行预解释"></a>5.函数作为参数的时候不进行预解释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[1,2,3].sort(function(a,b)&#123;</div><div class="line">return a-b;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h4 id="6-预解释的时候遇到已经声明过得变量不需要声明了，但是需要定义"><a href="#6-预解释的时候遇到已经声明过得变量不需要声明了，但是需要定义" class="headerlink" title="6.预解释的时候遇到已经声明过得变量不需要声明了，但是需要定义"></a>6.预解释的时候遇到已经声明过得变量不需要声明了，但是需要定义</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var s1=1;</div><div class="line">function s1() &#123;//s1=xxxfff000</div><div class="line">  console.log(&quot;s1&quot;)</div><div class="line">&#125;</div><div class="line">function s1() &#123;//s1=xxxfff111</div><div class="line">   console.log(&quot;s11&quot;)</div><div class="line">&#125;</div><div class="line">console.log(s1);</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS中的预解释/" data-id="cj4jl9fnz0009vgttdonah9f6" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS自定义属性和引用数据类型的赋值" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/29/JS自定义属性和引用数据类型的赋值/" class="article-date">
-  <time datetime="2017-04-29T02:19:20.000Z" itemprop="datePublished">2017-04-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/29/JS自定义属性和引用数据类型的赋值/">自定义属性和引用数据类型的赋值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h6 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性:"></a>自定义属性:</h6><pre><code>- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值
-</code></pre><ul>
-<li>只要是引用数据类型都可以加自定义属性</li>
-<li>特别注意：函数也可以加</li>
-</ul>
-<h6 id="对于引用数据类型"><a href="#对于引用数据类型" class="headerlink" title="对于引用数据类型:"></a>对于引用数据类型:</h6><ul>
-<li><p>对象:</p>
-<ul>
-<li>浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存</li>
-<li>把所有的键值对（属性名：属性值）放到这个堆内存里，如果属性值遇到变量名，是把变量代表的值存起来</li>
-<li>把这个地址赋给对象</li>
-</ul>
-</li>
-<li><p>函数</p>
-<ul>
-<li>浏览器检测他是什么数据类型，是函数的话就给他开辟一个堆内存</li>
-<li>将函数当做字符串存起来</li>
-<li>将地址赋给函数名</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/" data-id="cj4jl9fow000evgtt7ditdn19" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/29/JS中的作用域/" data-id="cj4jmyfgu000b5kttfcbpcpd1" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -813,6 +821,14 @@
       <ul>
         
           <li>
+            <a href="/2017/06/30/相对路径与绝对路径/">相对路径与绝对路径</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/30/CSS属性的继承及相关面试题/">CSS属性的继承及相关面试题</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/30/CSS中的form表单与table表格/">CSS中的form表单与table表格</a>
           </li>
         
@@ -822,14 +838,6 @@
         
           <li>
             <a href="/2017/06/30/HTML标签分类/">HTML标签分类</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/HTML基本结构/">HTML基本结构</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/30/CSS的引入方式/">CSS的引入方式</a>
           </li>
         
       </ul>
