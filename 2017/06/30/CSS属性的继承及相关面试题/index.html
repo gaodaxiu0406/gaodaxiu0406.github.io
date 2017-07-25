@@ -1,0 +1,479 @@
+
+ <!DOCTYPE HTML>
+<html lang="中文">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CSS属性的继承及相关面试题 | 高大秀博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="高大秀">
+    
+
+    
+    <meta name="description" content="CSS属性的继承 子级元素从父级元素身上继承的一些可继承的css属性  1234&amp;lt;style&amp;gt;div&amp;#123;color:red;&amp;#125;&amp;lt;/style&amp;gt;&amp;lt;p&amp;gt;woshiyige[biaoqian&amp;lt;/p&amp;gt;  根据 CSS，子元素从父元素继承属性。看看下面这条规则： body {font-family: Verdana, sans-serif;}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS属性的继承及相关面试题">
+<meta property="og:url" content="http://yoursite.com/2017/06/30/CSS属性的继承及相关面试题/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="CSS属性的继承 子级元素从父级元素身上继承的一些可继承的css属性  1234&amp;lt;style&amp;gt;div&amp;#123;color:red;&amp;#125;&amp;lt;/style&amp;gt;&amp;lt;p&amp;gt;woshiyige[biaoqian&amp;lt;/p&amp;gt;  根据 CSS，子元素从父元素继承属性。看看下面这条规则： body {font-family: Verdana, sans-serif;}">
+<meta property="og:updated_time" content="2017-06-30T08:58:45.775Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS属性的继承及相关面试题">
+<meta name="twitter:description" content="CSS属性的继承 子级元素从父级元素身上继承的一些可继承的css属性  1234&amp;lt;style&amp;gt;div&amp;#123;color:red;&amp;#125;&amp;lt;/style&amp;gt;&amp;lt;p&amp;gt;woshiyige[biaoqian&amp;lt;/p&amp;gt;  根据 CSS，子元素从父元素继承属性。看看下面这条规则： body {font-family: Verdana, sans-serif;}">
+
+    
+    <link rel="alternative" href="/atom.xml" title="高大秀博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="高大秀博客" title="高大秀博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="高大秀博客">高大秀博客</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/CSS属性的继承及相关面试题/" title="CSS属性的继承及相关面试题" itemprop="url">CSS属性的继承及相关面试题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T08:56:14.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS属性的继承"><span class="toc-number">1.</span> <span class="toc-text">CSS属性的继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面试题："><span class="toc-number">2.</span> <span class="toc-text">面试题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结："><span class="toc-number">2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="CSS属性的继承"><a href="#CSS属性的继承" class="headerlink" title="CSS属性的继承"></a>CSS属性的继承</h2><ul>
+<li>子级元素从父级元素身上继承的一些可继承的css属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p&gt;woshiyige[biaoqian&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>根据 CSS，子元素从父元素继承属性。看看下面这条规则：<ul>
+<li>body {font-family: Verdana, sans-serif;}<ul>
+<li>根据上面这条规则，站点的 body 元素将使用 Verdana 字体（假如访问者的系统中存在该字体的话）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继承的权重较小，可被其他选择器的样式覆盖</li>
+</ul>
+<h2 id="面试题："><a href="#面试题：" class="headerlink" title="面试题："></a>面试题：</h2><ul>
+<li>哪些css样式可以被继承：和文字有关的css样式 和列表有关的css样式<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3></li>
+<li>1.可继承属性</li>
+<li><p>1)可以继承的文本相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)可以继承的列表相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.不可继承属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;display&gt;&lt;margin&gt;&lt;border&gt;&lt;padding&gt;&lt;background&gt;&lt;height&gt;&lt;min-height&gt;&lt;max-height&gt;&lt;width&gt;&lt;min-width&gt;&lt;max-width&gt;&lt;overflow&gt;&lt;position&gt;&lt;left&gt;&lt;right&gt;&lt;top&gt;&lt;bottom&gt;&lt;z-index&gt;&lt;float&gt;&lt;clear&gt;&lt;table-layout&gt;&lt;vertical-align&gt;&lt;page-break-after&gt;&lt;page-bread-before&gt;和&lt;unicode-bidi&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.所有元素可继承：</p>
+</li>
+<li><p><code>&lt;visibility&gt;（可见性）和&lt;cursor&gt;(光标)</code></p>
+</li>
+<li><p>4.终端块状元素可继承：</p>
+</li>
+<li><code>&lt;text-indent&gt;和&lt;text-align&gt;</code></li>
+</ul>
+<ul>
+<li>5.如果css属性不带有继承性，如何继承父级身上的属性，可以将要继承的属性的属性值写上inherit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ul&#123;float:left;&#125;</div><div class="line">li&#123;float:inherit;&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/06/30/CSS属性的继承及相关面试题/" data-title="CSS属性的继承及相关面试题 | 高大秀博客" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/06/30/相对路径与绝对路径/" title="相对路径与绝对路径">
+  <strong>上一篇：</strong><br/>
+  <span>
+  相对路径与绝对路径</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/06/30/CSS中的form表单与table表格/"  title="CSS中的form表单与table表格">
+ <strong>下一篇：</strong><br/> 
+ <span>CSS中的form表单与table表格
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS属性的继承"><span class="toc-number">1.</span> <span class="toc-text">CSS属性的继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面试题："><span class="toc-number">2.</span> <span class="toc-text">面试题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结："><span class="toc-number">2.1.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="高大秀">高大秀</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

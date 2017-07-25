@@ -1,0 +1,1721 @@
+
+ <!DOCTYPE HTML>
+<html lang="中文">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>高大秀博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="高大秀">
+    
+
+    
+    <meta name="description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
+<meta property="og:type" content="website">
+<meta property="og:title" content="高大秀博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高大秀博客">
+<meta name="twitter:description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
+
+    
+    <link rel="alternative" href="/atom.xml" title="高大秀博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="高大秀博客" title="高大秀博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="高大秀博客">高大秀博客</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/07/21/css选择器种类和兼容性总结大全/" title="css选择器种类和兼容性总结大全" itemprop="url">css选择器种类和兼容性总结大全</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-07-21T07:57:22.000Z" itemprop="datePublished"> Published 2017-07-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <table>
+<thead>
+<tr>
+<th>名称</th>
+<th>举例</th>
+<th>描述</th>
+<th>详细</th>
+<th>权重</th>
+<th>ie6-7</th>
+<th>ie8</th>
+<th>ie9+</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签选择器</td>
+<td>p{}</td>
+<td>直接使用元素标签进行选择</td>
+<td></td>
+<td>1</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>.sum{}</td>
+<td>类选择器最前方一定要有点</td>
+<td>通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是元素class属性中的属性值，例如<code>&lt;p class=&#39;sum&#39;&gt;&lt;/p&gt;</code></td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>#tytle{color:red;}</td>
+<td>id在html中具有唯一性,这个属性值前面加一个“#”</td>
+<td>一个html元素，id属性值只能用一次</td>
+<td>100</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>*{key:value}</td>
+<td>匹配全部html元素</td>
+<td>一般不使用，因为全部匹配耗性能</td>
+<td>0&lt;通配符选择器&lt;1</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>(标签)属性选择器</td>
+<td>[type]或[type=text]</td>
+<td>[标签属性名]{}或[标签属性名=属性值]{}</td>
+<td>利用标签的属性名和属性值来选择html元素</td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>属性选择器在使用的时候，如果一个元素有两个类名，那么是不生效的</td>
+</tr>
+<tr>
+<td>分组选择器</td>
+<td>.box,li,.p1{color: red};</td>
+<td>选择器1，选择器2，选择器3{}</td>
+<td>同一份css样式，可以一次性的添加给多个不同的html元素</td>
+<td>分组选择器将不同的html分为一组，权重计算的时候都是独立计算，不会叠加。</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td>h2[title]{}</td>
+<td></td>
+<td>两种选择器同属于一个元素的时候，我们可以使用交集选择器来进行元素的准确选择</td>
+<td>所有组合选择器权重之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>作用：精确查找元素，增加选择器的权重</td>
+</tr>
+<tr>
+<td>子级选择器</td>
+<td>ul&gt;li{color:red;}</td>
+<td>父级选择器&gt;子级选择器{}</td>
+<td>存在包含关系的元素选择，通过父级确定选择子级</td>
+<td>所有选择器之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>子级选择器必须是紧邻的父子关系</td>
+</tr>
+<tr>
+<td>后代选择器(派生选择器)</td>
+<td>.div1 ul span{}</td>
+<td>祖辈选择器 要查找的后代选择器{},中间用空格连接</td>
+<td>后代选择器在写的时候尽量控制在３个左右</td>
+<td></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>在一个根元素的范围内，查找到它的后代元素，选择器过多浪费性能，不建议使用</td>
+</tr>
+<tr>
+<td>相邻兄弟选择器</td>
+<td>.list1+li{color: red;}</td>
+<td>哥哥选择器+弟弟选择器{}</td>
+<td>通过各个元素选择弟弟选择器，两个选择器之间用“+”连接</td>
+<td>选择器之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td><code>a:hover{color: red}鼠标经过的状态,或a:link{color: blue}默认状态,或a：active{color: green}鼠标点击的状态,或a:visited{color: blanchedalmond}鼠标点击后的状态</code></td>
+<td></td>
+<td></td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>.input:focus{border-color: blue};input:focus 鼠标聚焦后的状态，input独有的属性</td>
+</tr>
+<tr>
+<td>伪元素</td>
+<td>div:before{}；或div:after{}</td>
+<td>通过css代码向指定元素<strong>内</strong>添加假的（html中不存在的）元素</td>
+<td>before 会出现在div所有内容之前，after 会出现在div所有内容之后</td>
+<td></td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>使用伪元素的时候要保证两个前提：1.要有display这个属性2.要有content这个属性，这个属性的属性值可以为空，但是引号不能少<code>content:&quot;&quot;</code></td>
+</tr>
+<tr>
+<td></td>
+<td>visited</td>
+<td></td>
+<td></td>
+<td></td>
+<td>security issue</td>
+<td>yes</td>
+<td>yes</td>
+<td>security issue</td>
+</tr>
+<tr>
+<td></td>
+<td>c</td>
+<td>s</td>
+<td>s</td>
+<td>3</td>
+<td>选</td>
+<td>择</td>
+<td>器</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>E[attr~=value]{}</td>
+<td></td>
+<td>指定属性名,并且具有属性值,此属性值是一个此列表(类名),并且以空格隔开,其中词列表中包含了一个value词,并且等号前的~不能省略.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>E[attr^=value]{}</td>
+<td></td>
+<td>^ 表示以谁为开头的,value可以是首字母或者类名</td>
+<td>必须是第一个类名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>E[attr$=value]{}</td>
+<td></td>
+<td>$ 表示以谁为结尾,value可以是末尾字母或者类名</td>
+<td>必须是最后一个类名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>E[attr</td>
+<td>=value]{}</td>
+<td>如果只有一个类名,没有”-“,也可以选中</td>
+<td>value必须后面带”-“，value必须是第一个类名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>.dome p:nth-child(3){background: red;}选择dome下的第三个p标签为背景色红色</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>2.</td>
+<td>.dome p:first-child{background: yellow;}选择dome下的第一个p标签为背景色黄色</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>almost</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>3.</td>
+<td>.dome p:last-child{background: black;}选择dome下的最后一个p标签为背景色黑色</td>
+<td></td>
+<td>伪类选择器是针对列表或者很多同级的标签使用,img下是没有效果的也用不到伪类选择器</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>.dome p:nth-child(nlength){}；选择dome下所有的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>.dome p:nth-child(2n){}；选择dome下的所有偶数个的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>.dome p:nth-child(3n)选择dome下的所有3的倍数的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>.dome p:nth-child(n+length)</td>
+<td>从第length个开始改变,包括第length个(n是从0开始取值的)</td>
+<td>选择大于length后面的元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>8.</td>
+<td>.dome p:nth-child(-n+length)</td>
+<td>包括length，length是从0开始的</td>
+<td>选择小于length前面的元素及length元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>9.</td>
+<td>p:nth-last-child(3)</td>
+<td>选择倒数第三个元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>10.</td>
+<td>p:nth-child(n)</td>
+<td>从大盒子的第一个元素开始</td>
+<td>nth-child选择同级元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>11.</td>
+<td>p:nth-of-type(n)</td>
+<td>从大盒子的第一个p元素开始</td>
+<td>nth-of-type 选择指定的元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>12.</td>
+<td>p:nth-last-of-type(n)</td>
+<td>倒数第n个</td>
+<td>在同级元素中</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>13.</td>
+<td>p:first-of-type{}</td>
+<td>同类型的第一个</td>
+<td>选择一个上级元素下的同类子元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>14.</td>
+<td>p:last-of-type{}</td>
+<td>同类型的最后一个</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>15.</td>
+<td>p:only-child{}</td>
+<td>在父元素中,里面的子元素是唯一的</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>16.</td>
+<td>p:only-of-type{}</td>
+<td>在父元素中,里面有很多的子元素,但是有一个子元素是唯一的</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>空标签</td>
+<td>p:empty{display:none;}</td>
+<td>empty 隐藏空标签</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>否定选择器</td>
+<td>not input:not([type=submit]){}</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>根元素</td>
+<td>root :root{}</td>
+<td>选择文档的根元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>目标元素</td>
+<td>:target{}</td>
+<td>选择器可用于选取当前活动的目标元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/Vuejs基础/" title="Vuejs基础" itemprop="url">Vuejs基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T09:10:39.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Vue-js是什么"><a href="#Vue-js是什么" class="headerlink" title="Vue.js是什么"></a>Vue.js是什么</h2><ul>
+<li>Vue.js（读音 /vjuː/，类似于 view） 是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，它不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与单文件组件和 Vue 生态系统支持的库结合使用时，Vue 也完全能够为复杂的单页应用程序提供驱动。</li>
+</ul>
+<h2 id="如何安装vue"><a href="#如何安装vue" class="headerlink" title="如何安装vue"></a>如何安装vue</h2><ul>
+<li><ol>
+<li>通过bower<br>安装bower: npm install bower -g<br>mac本: sudo npm install bower -g<br>查看vue的版本 ： bower info vue<br>安装vue：bower install vue@1.0.28</li>
+</ol>
+</li>
+<li><ol>
+<li>通过npm安装<br>通过npm: npm install vue<br>通过npm全局安装: npm install vue -g</li>
+</ol>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/相对路径与绝对路径/" title="相对路径与绝对路径" itemprop="url">相对路径与绝对路径</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T08:59:57.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="路径url"><a href="#路径url" class="headerlink" title="路径url"></a>路径url</h2><h3 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h3><ul>
+<li>指带域名的文件的完整路径或磁盘中指定文件的全部路径。<ul>
+<li>例如：C:\windows\system32\cmd.exe</li>
+<li>例如：<a href="http://www.zhufengpeixun.com/" target="_blank" rel="external">http://www.zhufengpeixun.com/</a></li>
+</ul>
+</li>
+<li>可以理解为地址：珠峰培训的地址是北京昌平区回龙观东大街3号楼02号东段珠峰培训</li>
+</ul>
+<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><ul>
+<li>是指在同一个文件夹下通过一个参考点找到其他文件</li>
+<li>返回上一级用“../”</li>
+<li>平级之间直接写文件名</li>
+<li>下一级用“/”<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;../面试题.md&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/CSS属性的继承及相关面试题/" title="CSS属性的继承及相关面试题" itemprop="url">CSS属性的继承及相关面试题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T08:56:14.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="CSS属性的继承"><a href="#CSS属性的继承" class="headerlink" title="CSS属性的继承"></a>CSS属性的继承</h2><ul>
+<li>子级元素从父级元素身上继承的一些可继承的css属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p&gt;woshiyige[biaoqian&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>根据 CSS，子元素从父元素继承属性。看看下面这条规则：<ul>
+<li>body {font-family: Verdana, sans-serif;}<ul>
+<li>根据上面这条规则，站点的 body 元素将使用 Verdana 字体（假如访问者的系统中存在该字体的话）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继承的权重较小，可被其他选择器的样式覆盖</li>
+</ul>
+<h2 id="面试题："><a href="#面试题：" class="headerlink" title="面试题："></a>面试题：</h2><ul>
+<li>哪些css样式可以被继承：和文字有关的css样式 和列表有关的css样式<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3></li>
+<li>1.可继承属性</li>
+<li><p>1)可以继承的文本相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)可以继承的列表相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.不可继承属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;display&gt;&lt;margin&gt;&lt;border&gt;&lt;padding&gt;&lt;background&gt;&lt;height&gt;&lt;min-height&gt;&lt;max-height&gt;&lt;width&gt;&lt;min-width&gt;&lt;max-width&gt;&lt;overflow&gt;&lt;position&gt;&lt;left&gt;&lt;right&gt;&lt;top&gt;&lt;bottom&gt;&lt;z-index&gt;&lt;float&gt;&lt;clear&gt;&lt;table-layout&gt;&lt;vertical-align&gt;&lt;page-break-after&gt;&lt;page-bread-before&gt;和&lt;unicode-bidi&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.所有元素可继承：</p>
+</li>
+<li><p><code>&lt;visibility&gt;（可见性）和&lt;cursor&gt;(光标)</code></p>
+</li>
+<li><p>4.终端块状元素可继承：</p>
+</li>
+<li><code>&lt;text-indent&gt;和&lt;text-align&gt;</code></li>
+</ul>
+<ul>
+<li>5.如果css属性不带有继承性，如何继承父级身上的属性，可以将要继承的属性的属性值写上inherit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ul&#123;float:left;&#125;</div><div class="line">li&#123;float:inherit;&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/CSS中的form表单与table表格/" title="CSS中的form表单与table表格" itemprop="url">CSS中的form表单与table表格</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T08:15:23.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h3><ul>
+<li><p>用来获取用户信息<code>&lt;form&gt;&lt;/form&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;form&gt;</div><div class="line">    &lt;input type=&quot;radio&quot; name=&quot;ok&quot; checked=&quot;checked&quot;&gt;&lt;!--单选按钮--&gt;&lt;label&gt;满意&lt;/label&gt;&lt;!--label 描述表单元素功能--&gt;</div><div class="line">    &lt;!--type 类型--&gt;</div><div class="line">    &lt;!--name 名字--&gt;</div><div class="line">    &lt;!--checked 选中--&gt;</div><div class="line">    &lt;input type=&quot;radio&quot; name=&quot;ok&quot;&gt;&lt;!--单选按钮--&gt;&lt;label&gt;不满意&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;篮球&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot; checked&gt;&lt;label&gt;美女&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;彭于晏&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;陈冠希&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;杨颖&lt;/label&gt;</div><div class="line">    &lt;input type=&quot;checkbox&quot;&gt;&lt;label&gt;维密&lt;/label&gt;</div><div class="line"></div><div class="line">    &lt;textarea maxlength=&quot;10&quot; minlength=&quot;1&quot;&gt;&lt;/textarea&gt;&lt;!--文本域--&gt;</div><div class="line">    &lt;!--maxlength 字符输入的最大长度--&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;姓名&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;手机&lt;/label&gt;&lt;input type=&quot;text&quot;&gt;</div><div class="line">    &lt;br&gt;</div><div class="line">    &lt;label&gt;密码&lt;/label&gt;&lt;input type=&quot;password&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>radio 单选按钮</p>
+<ul>
+<li>name=”ok”（name的值相同情况下）同时给到input type=”radio”，表示单选只能选中其中的一个</li>
+</ul>
+</li>
+<li>lable描述表单元素功能</li>
+<li>type 类型</li>
+<li>name 名字</li>
+<li>cheked 选中<ul>
+<li>单独写checked也可以达到选中的效果</li>
+</ul>
+</li>
+<li><code>&lt;input type=&quot;checkbox&quot;&gt;</code>checkbox 多选按钮</li>
+<li>textarea 文本域</li>
+<li><code>&lt;textarea maxlength=&quot;10&quot; minlength=&quot;1&quot;&gt;&lt;/textarea&gt;</code><ul>
+<li>maxlength字符输入的最大长度</li>
+</ul>
+</li>
+</ul>
+<h3 id="table表格"><a href="#table表格" class="headerlink" title="table表格"></a>table表格</h3><ul>
+<li><code>&lt;caption&gt;标题&lt;/caption&gt;</code></li>
+<li><code>&lt;thead&gt;表头&lt;/thead&gt;</code><ul>
+<li>tr&gt;th（标题单元格，th加粗居中）</li>
+</ul>
+</li>
+<li><code>&lt;tfoot&gt;</code> 表尾<ul>
+<li>tr&gt;th（普通单元格）</li>
+<li>tr&gt;td（普通单元格，td不加粗不居中）</li>
+</ul>
+</li>
+<li>tbody 表身<ul>
+<li>tr&gt;th（普通单元格）<blockquote>
+<p>thead和tfoot分别有一个 tbody可以有多个<br>tfoot一般放置在thead的后面，为了防止tbody中的内容过多，tfoot加载过慢的情况，但是虽然书写位置在前面，在页面中显示的时候，这部分依然在整个表格的最后面<br>如果table用来搭建结构，我们只需写tr和td</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">         &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/CSS标签语义化/" title="标签语义化" itemprop="url">标签语义化</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T08:11:33.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="标签语义化的重要性-为什么要遵循标签语义化：合理的标签做合理的事情"><a href="#标签语义化的重要性-为什么要遵循标签语义化：合理的标签做合理的事情" class="headerlink" title="标签语义化的重要性/为什么要遵循标签语义化：合理的标签做合理的事情"></a>标签语义化的重要性/为什么要遵循标签语义化：合理的标签做合理的事情</h3><ul>
+<li>1、重要的内容，要放在语义重要的标签中，利于SEO优化(搜索引擎榨取),利于SEO优化(也就是搜索引擎的抓取，搜索引擎的爬虫也依赖于标记来确定上下文和各个关键字的权重);<ul>
+<li>浏览器会按照每个标签的意义去解析这个标签中的内容:h1–&gt;这是一个大标题，意义很重要，搜索引擎会重点抓取这个里面的内容</li>
+<li>p–&gt;段落 浏览器在展现这一部分的时候，会独立成一块，让网页结构更加清晰，给用户更好的浏览体验</li>
+</ul>
+</li>
+<li>2、在没有css样式的时候，页面也可以整齐的显示效果</li>
+<li>3、更好的支持各种终端，例如无障碍阅读和有声小说等；</li>
+<li>4、利于团队协作和后期维护</li>
+</ul>
+<h4 id="日常工作中怎样遵循标签语义化："><a href="#日常工作中怎样遵循标签语义化：" class="headerlink" title="日常工作中怎样遵循标签语义化："></a>日常工作中怎样遵循标签语义化：</h4><ul>
+<li>1、尽量减少使用无意义标签，例如span和div；</li>
+<li>2、尽量不使用标签本身的css属性，例如b、font、s等标签，如果需要这些样式，那么使用css样式来进行添加；</li>
+<li>3、在需要强调的部分，使用strong、em，但是样式尽量使用css样式来描述；</li>
+<li>4、表格搭建时，使用`<thead>表格头部</thead> <tbody>表格身体</tbody> <tfoot>表格尾部</tfoot>；</li>
+<li><p>5、列表搭建时，使用<ul>无序列表</ul> <ol>有序列表</ol> <dl>定义列表</dl>；`</p>
+<ul>
+<li>国家评比一个网站的关键点：访问量（流量/点击量）</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/HTML标签分类/" title="HTML标签分类" itemprop="url">HTML标签分类</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T08:09:06.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="html标签分类"><a href="#html标签分类" class="headerlink" title="html标签分类"></a>html标签分类</h3><ul>
+<li><p>html标签又叫做html元素，它分为块级元素和内联元素（也可以叫做行内元素），都是html规范中的概念。</p>
+<ul>
+<li>块级元素</li>
+<li>块级元素是指本身属性为display:block;的元素。因为它自身的特点，我们通常使用块级元素来进行大布局（大结构）的搭建</li>
+<li>块级元素的特点：</li>
+<li><ol>
+<li>独占一行，每一个块级元素都会从新的一行重新开始，从上到下排布</li>
+</ol>
+</li>
+<li><ol>
+<li>可以直接控制宽度、高度以及盒子模型的相关css属性</li>
+</ol>
+</li>
+<li><ol>
+<li>在不设置宽度的情况下，块级元素的宽度是它父级元素内容的宽度</li>
+</ol>
+</li>
+<li><ol>
+<li><p>在不设置高度的情况下，块级元素的高度是它本身内容的高度</p>
+<ul>
+<li>常用的块级元素:</li>
+<li>div 常用块级容器，也是css layout的主要标签</li>
+<li>h1 大标题</li>
+<li>h2 副标题</li>
+<li>h3 三级标题</li>
+<li>h4 四级标题</li>
+<li>h5 五级标题</li>
+<li><p>h6 六级标题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">标题：</div><div class="line">&lt;h1&gt;一级标题&lt;/h1&gt;</div><div class="line">&lt;h2&gt;二级标题&lt;/h2&gt;</div><div class="line">h$&#123;$级标题&#125;*6+tab生成：</div><div class="line">&lt;h1&gt;1级标题&lt;/h1&gt;</div><div class="line">&lt;h2&gt;2级标题&lt;/h2&gt;</div><div class="line">&lt;h3&gt;3级标题&lt;/h3&gt;</div><div class="line">&lt;h4&gt;4级标题&lt;/h4&gt;</div><div class="line">&lt;h5&gt;5级标题&lt;/h5&gt;</div><div class="line">&lt;h6&gt;6级标题&lt;/h6&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>hr 水平分隔线</p>
+</li>
+<li>menu 菜单列表</li>
+<li><p>ol 有序列表 li列表项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">有序列表</div><div class="line">&lt;ol&gt;</div><div class="line">    &lt;li&gt;盗天仙图&lt;/li&gt;</div><div class="line">    &lt;li&gt;名侦探&lt;/li&gt;</div><div class="line">    &lt;li&gt;鬼吹灯&lt;/li&gt;</div><div class="line">    &lt;li&gt;盗墓笔记&lt;/li&gt;</div><div class="line">    &lt;li&gt;名侦探&lt;/li&gt;</div><div class="line">    &lt;li&gt;鬼吹灯&lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>ul 无序列表 li列表项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">无序列表</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;√&lt;b&gt;有保证&lt;/b&gt;&lt;/span&gt;:先学习考试后入学&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;√&lt;b&gt;有实力&lt;/b&gt;&lt;/span&gt;:专注JS培训七年铸就传奇就业,平均工资超12K&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;√&lt;b&gt;有深度&lt;/b&gt;&lt;/span&gt;:结合的大学算法和数据结构的基础课&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;√&lt;b&gt;重原生&lt;/b&gt;&lt;/span&gt;:狠练原生代码,原生JS+Node才是王道&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;√&lt;b&gt;重应用&lt;/b&gt;&lt;/span&gt;:PC+移动端+H5+CSS3+node的前后台全栈项目&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;span style=&quot;color:red&quot;&gt;√&lt;b&gt;重未来&lt;/b&gt;&lt;/span&gt;:app开发,微信开发,angular,es6,前沿技术&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>dl 定义列表 dt 定义术语 dd定义描述</p>
+</li>
+<li>table 表格</li>
+<li>p 段落<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;poem&quot;&gt;</div><div class="line">&lt;h4&gt;早发白帝城&lt;/h4&gt;</div><div class="line">&lt;h5&gt;作者：李白&lt;/h5&gt;</div><div class="line"></div><div class="line">&lt;p&gt;朝辞白帝彩云间，&lt;br&gt;</div><div class="line">    千里江陵一日还。&lt;br&gt;</div><div class="line">    两岸猿声啼不尽，&lt;br&gt;</div><div class="line">    轻舟已过万重山。&lt;br&gt;</div><div class="line">    &lt;img src=&quot;timg.jpg&quot; alt=&quot;李白&quot;&gt;</div><div class="line">&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;h4 align=&quot;center&quot;&gt;早发白帝城&lt;/h4&gt;</div><div class="line">    &lt;h5 align=&quot;center&quot;&gt;作者：李白&lt;/h5&gt;</div><div class="line">    &lt;p align=&quot;center&quot;&gt;朝辞白帝彩云间，&lt;/p&gt;</div><div class="line">    &lt;p align=&quot;center&quot;&gt;千里江陵一日还。&lt;/p&gt;</div><div class="line">    &lt;p align=&quot;center&quot;&gt;两岸猿声啼不尽，&lt;/p&gt;</div><div class="line">    &lt;p align=&quot;center&quot;&gt;轻舟已过万重山。&lt;/p&gt;</div><div class="line">    &lt;img src=&quot;timg.jpg&quot; alt=&quot;李白&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<pre><code>    - form 交互表单
+
+- 内联元素
+- 内联元素是指本身属性为display:inline;的元素。因为它自身的特点，我们通常使用块级元素来进行文字、小图标（小结构）的搭建。
+
+    - 内联元素的特点：
+    - 1. 和其他内联元素从左到右在一行显示
+    - 2.不能直接控制宽度、高度以及盒子模型的相关css属性，但是直接设置内外边距的左右值是可以的
+    - 3.内联元素的宽高是由本身内容的大小决定（文字、图片等）
+    - 4.内联元素只能容纳文本或者其他内联元素（此处请注意，不要在内联元素中嵌套块级元素）
+    - 常用的内联元素:
+    - span 常用内联容器，定义文本内区块
+    - a 锚点
+    - 文本设置类:
+        - b 加粗
+        - strong 加粗强调
+        - i 斜体
+        - em 斜体强调
+        - s 中划线（不推荐使用）
+        - strike 中划线
+        - del 文档中已被删除的文本
+        - big 大字体文本、small小字体文本）
+        - small 小字体文本
+        - br 强制换行
+        - u 下划线
+        - textarea 多行文本输入框
+        - input 输入框
+        - select 下拉列表
+        - label（input 元素定义标注/标记）、img
+        - sub 下标
+        - sup 上标
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/HTML基本结构/" title="HTML基本结构" itemprop="url">HTML基本结构</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T07:59:54.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="html的基本结构"><a href="#html的基本结构" class="headerlink" title="html的基本结构"></a>html的基本结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">文档声明：必须放在html文件的第一行；如果没有文档声明会触发浏览器的怪异模式</div><div class="line">&lt;html&gt;</div><div class="line">html元素：告知浏览器，我是一个html文件</div><div class="line">    &lt;head&gt;</div><div class="line">    head元素：文档的头部，一般放在文档头部的内容不会显示在浏览器的可视区内</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;规定一个语法</div><div class="line">    必须放在head的第一部分</div><div class="line">    &lt;title&gt;标题，显示在浏览器的页卡位置，title中的内容也会被seo抓取&lt;/title&gt;</div><div class="line">    &lt;body&gt;供用户浏览的所有内容，标签、图片、文本、视频···&lt;/body&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>一个html文件也叫做一个网页，可以称作是一个文档(document)</li>
+<li>这个文档从html元素开始，一致向下分支延伸，像一颗大树一样，所以我们将html元素叫做这个文档的<strong>根元素</strong></li>
+</ul>
+<p><code>&lt;!DOCTYPE html&gt;</code>html5的文档声明</p>
+<ul>
+<li><p>作用：定义这个文档类型，浏览器先识别这句话，会按照定义的类型去解析这个文档</p>
+</li>
+<li><p>html5的文档声明，那么浏览器就会按照html5的规则解析整个页面<br>`&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Transitional//EN”</p>
+<pre><code>&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;html4版本的文档声明`
+</code></pre></li>
+<li><p>所有高版本都会向下兼容，所以在以后的工作中，我们直接将文档声明写错html5就可以了</p>
+</li>
+<li>文档声明必须写在html文件的第一行</li>
+<li>文档声明不区分大小写</li>
+<li>如果html文件没有文档声明，会触发浏览器的怪异模式</li>
+<li>文档声明不是一个html标签</li>
+</ul>
+<h3 id="1-html元素"><a href="#1-html元素" class="headerlink" title="1.html元素"></a>1.html元素</h3><p>此元素告知浏览器其自身是一个html元素<br>是由开始和结束标签组成的，html文件里面所有的内容都会放在这个这个元素内</p>
+<h3 id="2-head元素"><a href="#2-head元素" class="headerlink" title="2.head元素"></a>2.head元素</h3><pre><code>- 整个文档的头部，head元素自带隐藏功能，display:none;里面的内容不会隐藏，只不过一般放置在head元素中的其他元素和内容也是自带隐藏功能的，例如link、script、meta···
+- `&lt;script&gt;&lt;/script&gt;与head标签一样具有隐藏功能，写在其内的内容在网页不显示`
+</code></pre><h3 id="3-lt-meta-charset-quot-UTF-8-quot-gt"><a href="#3-lt-meta-charset-quot-UTF-8-quot-gt" class="headerlink" title="3.&lt;meta charset=&quot;UTF-8&quot;&gt;"></a>3.<code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></h3><h3 id="4-lt-meta-gt-规定了html文档的元信息"><a href="#4-lt-meta-gt-规定了html文档的元信息" class="headerlink" title="4.&lt;meta&gt;规定了html文档的元信息"></a>4.<code>&lt;meta&gt;</code>规定了html文档的元信息</h3><ul>
+<li>charset=”UTF-8” 文档的编码<ul>
+<li>UTF-8 国际通用编码</li>
+<li>gbk 国标</li>
+<li>gb2312 国标</li>
+</ul>
+</li>
+<li>name=”keyword” content=”关键词”<ul>
+<li>name=”keyword” content=”HTML5J5…”</li>
+<li>SEO优化有关</li>
+<li>SEO搜索引擎<br><code>&lt;meta name=&quot;keyword&quot; content=&quot;关键词&quot;&gt;</code><br><code>&lt;meta name=&quot;description&quot; content=&quot;勿忘初心,方得始终&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="5-title元素"><a href="#5-title元素" class="headerlink" title="5.title元素"></a>5.title元素</h3><ul>
+<li>html文档名称 一个页面只有一个title元素<br>放文字 显示在浏览器的页卡（页头）位置<h3 id="6-link标签"><a href="#6-link标签" class="headerlink" title="6.link标签"></a>6.link标签</h3></li>
+<li><code>&lt;link href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot; rel=&quot;shortcut icon&quot;&gt;</code><ul>
+<li>图标让设计师生成</li>
+<li>一般整个图片放在整个项目的根目录下</li>
+<li>显示在浏览器页卡位置，title内容之前</li>
+</ul>
+</li>
+<li><code>&lt;link rel=&quot;stylesheet&quot; herf=&quot;url&quot; type=&quot;texe/css&quot;&gt;</code><ul>
+<li>引入一个外部的css文件</li>
+<li>rel不能缺少 stylesheet样式表</li>
+<li>type可以省略 但是建议写全</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-body元素"><a href="#7-body元素" class="headerlink" title="7.body元素"></a>7.body元素</h3><ul>
+<li>定义整个文档的主体部分，所有展示给用户的内容都要放在这个元素中</li>
+<li>body中有常用的html元素（div、ul），文本内容、音频、视频、图片、表单<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UIF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/CSS的引入方式/" title="CSS的引入方式" itemprop="url">CSS的引入方式</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T07:27:20.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="css如何在html中使用（html引入css的四种方法）"><a href="#css如何在html中使用（html引入css的四种方法）" class="headerlink" title="css如何在html中使用（html引入css的四种方法）"></a>css如何在html中使用（html引入css的四种方法）</h2><ul>
+<li><ol>
+<li>行内式：直接写在标签内，通过标签属性style引入<ul>
+<li>媒介：style属性<code>&lt;style type=&quot;text/css&quot;&gt;选择器{}&lt;/style&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;css属性名:属性值；&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;img style=&quot;css属性名:属性值；&quot;alt=&quot;&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>css想要生效，html中必须有这个元素才可以</p>
+</li>
+<li><ol>
+<li>内嵌式（内联式）:将css代码写在style元素内，通过css选择器选择html元素，将css样式添加个这个元素<ul>
+<li>媒介：style标签+选择器</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>style这个元素一般放在head元素内</p>
+<ul>
+<li>style元素：盛装css样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;height:100px;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;div&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>外联式（外链式）：将css代码单独放置在一个css文件中，再通过link标签将这个css文件引入到html文件中<ul>
+<li>媒介：link标签+选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; herf=&quot;css文件链接地址&quot; type=&quot;text/css&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>css这个文件中不能出现标签</p>
+</li>
+<li><ol>
+<li>导入式：都是引入一个单独的css文件<ul>
+<li>媒介：@import”css文件链接地址”;<ul>
+<li>当有多个css文件的时候，可以使用导入式先导入到一个css文件中，再用外链式link外链进html文件</li>
+</ul>
+</li>
+<li>@import”css文件链接地址”;既不是html标签，也不是css属性，他是一条声明语句</li>
+<li>这条语句必须写在style元素内,或者css文件内</li>
+<li>这条语句必须在所在文件内的第一行</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="外链式和导入式的差别："><a href="#外链式和导入式的差别：" class="headerlink" title="外链式和导入式的差别："></a>外链式和导入式的差别：</h2><ul>
+<li>link和@import虽然都是引入外部的css文件，但是他们是由天差地别的区别的<ul>
+<li>1) link是html标签，@import完全是css提供的方式，要写在css文件或者style标签中。</li>
+<li>2) 他们的加载顺序也是有区别的，当一个页面被加载的时候，link引用的css文件会被同时加载，而@import引入的css文件会等页面全部下载完后再加载。</li>
+<li>3) 当使用javascript控制DOM去改变css样式的时候，只能使用link标签，因为import是不能被DOM控制的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="在工作中常用的引入方式是外链式"><a href="#在工作中常用的引入方式是外链式" class="headerlink" title="在工作中常用的引入方式是外链式"></a>在工作中常用的引入方式是外链式</h3><ul>
+<li><p>四种引入方式的权重（一个html元素最终加载的css样式是谁决定的）</p>
+<ul>
+<li>有行内式的时候，听行内的</li>
+<li>在选择器相同的情况下，谁最后加载就听谁的</li>
+</ul>
+</li>
+<li><p>外链式和内嵌式一般都放在head元素内</p>
+</li>
+</ul>
+<h1 id="CSS层叠样式表"><a href="#CSS层叠样式表" class="headerlink" title="CSS层叠样式表"></a>CSS层叠样式表</h1><ul>
+<li>css的作用：<ul>
+<li>给html文档添加静态或者动态的样式</li>
+</ul>
+</li>
+<li>css和html如何融合到一起</li>
+<li>在css文件中如何选择一个html元素，将样式添加给这个元素</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/06/30/CSS常用选择器/" title="CSS常用选择器" itemprop="url">CSS常用选择器</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-30T07:14:52.000Z" itemprop="datePublished"> Published 2017-06-30</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><ul>
+<li>因为html和css分离，那么就出现一个问题，如何选择一个元素，将样式添加给这个元素–&gt;css选择器</li>
+<li>选择器是css属性和html元素的连接桥梁，通过正确的选择器来找到想要操作的元素，添加一定的样式。</li>
+<li>选择器{}</li>
+</ul>
+<h3 id="1-语法"><a href="#1-语法" class="headerlink" title="1.语法"></a>1.语法</h3><p>选择器{key:value;key:value;}</p>
+<ul>
+<li>可以批量选择<strong>选择器</strong>名称相同的元素</li>
+<li>通过选择器类型不同，可以选择不同的html元素</li>
+</ul>
+<h2 id="2-CSS基础选择器分类"><a href="#2-CSS基础选择器分类" class="headerlink" title="2.CSS基础选择器分类"></a>2.CSS基础选择器分类</h2><h3 id="1-标签选择器"><a href="#1-标签选择器" class="headerlink" title="1) 标签选择器"></a>1) 标签选择器</h3><ul>
+<li>直接使用元素标签进行选择<ul>
+<li>例如：<code>&lt;p&gt;&lt;/p&gt;</code></li>
+<li>p{color:red;}</li>
+</ul>
+</li>
+<li>权重：1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">h1&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1&gt;标签选择器&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-类选择器"><a href="#2-类选择器" class="headerlink" title="2) 类选择器"></a>2) 类选择器</h3><ul>
+<li>将html元素的class标签属性值当作选择器使用，需要在这个属性值前面加一个“.”</li>
+<li>通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素</li>
+<li>类名是元素class属性中的属性值，例如<ul>
+<li><p class="sum"></p></li>
+<li>.sum{}</li>
+</ul>
+</li>
+<li>一个html元素可以有多个css属性值（可以有多个类名，每一个类名之间用空格隔开）<br>类名可以重复使用</li>
+<li>权重：10</li>
+<li>p.s：类选择器最前方一定要有点<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.tytle&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1 class=&quot;tytle title1&quot;&gt;标签选择器&lt;/h1&gt;</div><div class="line">&lt;h1 class=&quot;tytle&quot;&gt;标签选择器&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-id选择器"><a href="#3-id选择器" class="headerlink" title="3) id选择器"></a>3) id选择器</h3><ul>
+<li>一个html元素，id属性值只能用一次，id在html中具有唯一性</li>
+<li>类选择器最前方一定要有#</li>
+<li>通过元素的id名，来选择元素</li>
+<li>权重：100</li>
+<li>类名是元素id属性中的属性值，例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">#tytle&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1 id=&quot;tytle title1&quot;&gt;id选择器&lt;/h1&gt;</div><div class="line">&lt;h1 id=&quot;tytle&quot;&gt;错误的，不识别&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###总结：<br>标签选择器相当于人的姓名，类选择器相当于人的名字，id选择器相当于身份证号码。</p>
+<h3 id="4-通配符选择器"><a href="#4-通配符选择器" class="headerlink" title="4) 通配符选择器"></a>4) 通配符选择器</h3><ul>
+<li>通过*匹配全部html元素，包括根元素</li>
+<li>一般不使用，因为全部匹配耗性能</li>
+<li>*{}</li>
+<li>权重&lt;1，可被覆盖<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*&#123;key:value&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-并集选择器"><a href="#5-并集选择器" class="headerlink" title="5) 并集选择器"></a>5) 并集选择器</h3><ul>
+<li>你可以对选择器进行分组，这样，被分组的选择器就可以分享相同的声明。用逗号将需要分组的选择器分开。在下面的例子中，我们对所有的标题元素进行了分组。所有的标题元素都是绿色的。<ul>
+<li>例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1,h2,h3,h4,h5,h6&#123;color:green;&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-属性选择器"><a href="#6-属性选择器" class="headerlink" title="6) 属性选择器"></a>6) 属性选择器</h3><ul>
+<li>对带有指定属性的 HTML 元素设置样式，可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</li>
+<li><p>属性选择器：</p>
+<ul>
+<li>下面的例子为带有 title 属性的所有元素设置样式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[title]</div><div class="line">    &#123;</div><div class="line">    color:red;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>利用标签的属性名和属性值来选择html元素</p>
+</li>
+<li>权重：10</li>
+<li>语法：</li>
+<li>[标签属性名]{}</li>
+<li>[标签属性名=属性值]{}<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">h1[title]&#123;&#125;交集选择器</div><div class="line">标签+属性的权重=11</div><div class="line">[type]&#123;&#125;</div><div class="line">权重：10</div><div class="line">[type=text]&#123;&#125;</div><div class="line">权重：10</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;a href=&quot;&quot; title=&quot;&quot;&gt;link&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="7-属性和值选择器"><a href="#7-属性和值选择器" class="headerlink" title="7)属性和值选择器"></a>7)属性和值选择器</h3><ul>
+<li><p>下面的例子为 title=”zfpx” 的所有元素设置样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[title=zfpx]</div><div class="line">    &#123;</div><div class="line">    border:5px solid blue;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>设置表单的样式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">input[type=&quot;text&quot;]</div><div class="line">&#123;</div><div class="line">  width:150px;</div><div class="line">  display:block;</div><div class="line">  margin-bottom:10px;</div><div class="line">  background-color:yellow;</div><div class="line">  font-family: Verdana, Arial;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-分组选择器"><a href="#8-分组选择器" class="headerlink" title="8)分组选择器"></a>8)分组选择器</h3><p>作用（应用场景）：同一份css样式，可以一次性的添加给多个不同的html元素<br>权重：分组选择器将不同的html分为一组，权重计算的时候都是独立计算，不会叠加。<br>语法：<br>选择器1，选择器2，选择器3{}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.box,li,.p1&#123;color: red&#125;</div><div class="line">.box&#123;color:green&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="9-交集选择器"><a href="#9-交集选择器" class="headerlink" title="9)交集选择器"></a>9)交集选择器</h3><ul>
+<li>两种属性同属一个元素的时候，我们可以使用交集选择器来进行元素的准确选择<ul>
+<li><code>&lt;p class=&#39;name1 name2&#39; id=&#39;id1&#39;&gt;&lt;/p&gt;</code><ul>
+<li><code>p.name1{}</code></li>
+<li><code>p#id1{}</code></li>
+<li><code>.name1.name2{}</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>组合选择器之间没有任何的符号和空格</li>
+<li>标签选择器和其他选择器组合的时候，标签选择器要放在前面</li>
+<li><p>交集选择器是两个选择器组合在一起，可以是标签和类名，标签和属性选择器，标签和ｉｄ，两个类选择器</p>
+</li>
+<li><p>作用：精确查找元素，增加选择器的权重</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">h1&#123;&#125; 标签选择器 权重：1</div><div class="line">[title]&#123;&#125; 属性选择器 权重：10</div><div class="line">[title=zfpx]&#123;&#125; 属性选择器 权重：10</div><div class="line">h2[title]&#123;&#125; 交集选择器 权重：11</div><div class="line">h2[title=zfpx]&#123;&#125; 交集选择器 权重：11</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;h1 title=&quot;zfpx&quot;&gt;&lt;/h1&gt;</div><div class="line">&lt;h2 title=&quot;zfpx&quot;&gt;&lt;/h2&gt;</div><div class="line">&lt;style&gt;</div><div class="line">p.p1&#123;&#125;  交集选择器  权重：11</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p class=&quot;p1&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;style&gt;</div><div class="line">.p1.p2&#123;&#125;  交集选择器  权重：20</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p class=&quot;p1 p2&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>属性选择器在使用的时候，如果一个元素有两个类名，那么是不生效的。例如：</p>
+</li>
+<li>属性选择器我们一般不会使用class，因为class可以直接使用类选择器<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!--有多少种方法只获取div--&gt;</div><div class="line"> /*如果class值有两个，不能这样使用*/</div><div class="line">        [class=div1]&#123;&#125;</div><div class="line">&lt;div class=&quot;div1 p1&quot; id=&quot;div2&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;p class=&quot;p1&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="10-子集选择器"><a href="#10-子集选择器" class="headerlink" title="10)子集选择器"></a>10)子集选择器</h3><ul>
+<li>与后代选择器相比，子元素选择器只能选择作为某元素子元素的元素。</li>
+<li>语法：父级选择器&gt;子级选择器</li>
+<li>父级选择器是用来确定范围的，</li>
+<li>子级选择器才是我们要添加样式的那个元素</li>
+<li>权重：所有选择器之和</li>
+<li>子级选择器必须是紧邻的父子关系<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">ul&gt;li&#123;color:red;&#125; 选择ul下的li</div><div class="line">权重：2</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="11-后代选择器"><a href="#11-后代选择器" class="headerlink" title="11)后代选择器"></a>11)后代选择器</h3><ul>
+<li><p>html结构：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ol&gt;</div><div class="line">    &lt;li&gt;&lt;strong&gt;我是斜体字。这是因为 strong 元素位于 li 元素内。&lt;/strong&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>列表中的 strong 元素变为斜体字，而不是通常的粗体字，可以这样定义一个派生选择器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">li strong &#123;</div><div class="line">    font-style: italic;</div><div class="line">    font-weight: normal;</div><div class="line">            &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在一个根元素的范围内，查找到它的后代元素</p>
+</li>
+<li><p>语法：祖辈选择器 要查找的后代选择器{}<br>中间用空格连接</p>
+</li>
+<li><p>后代选择器在写的时候尽量控制在３个左右</p>
+</li>
+<li>选择器过多浪费性能，不建议使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.div1 ul span&#123;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;div1&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;只选择这个span元素&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ol&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;wenzdskaldjaslk&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;div2&quot;&gt;</div><div class="line">    &lt;ul&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;wenzdskaldjaslk&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">    &lt;ol&gt;</div><div class="line">        &lt;li&gt;</div><div class="line">            &lt;span&gt;wenzdskaldjaslk&lt;/span&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line">    &lt;/ol&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="12-相邻兄弟选择器"><a href="#12-相邻兄弟选择器" class="headerlink" title="12)相邻兄弟选择器"></a>12)相邻兄弟选择器</h3><ul>
+<li>相邻兄弟选择器可选择紧接在另一元素后的元素，且二者有相同父元素。<ul>
+<li><code>h1 + p {margin-top:50px;}</code></li>
+</ul>
+</li>
+<li>通过各个元素选择弟弟选择器，两个选择器之间用“+”连接</li>
+<li>语法：哥哥选择器+弟弟选择器{}</li>
+<li>权重：选择器之和<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    .list1+li&#123;color: red;&#125;</div><div class="line">    22222变为红色</div><div class="line">    .list3+li&#123;color: green;&#125;</div><div class="line">    4444变为绿色</div><div class="line">    /*li+.list3&#123;&#125;*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li class=&quot;list1&quot;&gt;11111&lt;/li&gt;</div><div class="line">    &lt;li&gt;22222&lt;/li&gt;</div><div class="line">    &lt;li class=&quot;list3&quot;&gt;33333&lt;/li&gt;</div><div class="line">    &lt;li&gt;4444&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><ul>
+<li>给一个元素添加某种状态<ul>
+<li>例如：鼠标经过时 获取焦点时 鼠标点击时</li>
+</ul>
+</li>
+<li>权重：10</li>
+<li>1) a标签</li>
+<li><p>CSS 伪类用于向某些选择器添加特殊的效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    a:link &#123;color: #FF0000&#125;</div><div class="line">    /* 未访问的链接 是默认状态*/</div><div class="line">    a:visited &#123;color: #00FF00&#125;</div><div class="line">    /* 已访问的链接 鼠标点击后的状态*/</div><div class="line">    a:hover &#123;color: #FF00FF&#125;</div><div class="line">    /* 鼠标移动到链接上 鼠标经过的状态*/</div><div class="line">    a:active &#123;color: #0000FF&#125;</div><div class="line">    /* 选定的链接 鼠标点击的状态*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;a href=&quot;javascript:void (0)&quot;&gt;最初形态&lt;/a&gt;</div><div class="line">&lt;a href=&quot;javascript:void 0&quot;&gt;赛亚人形态&lt;/a&gt;</div><div class="line">&lt;a href=&quot;javascript:&quot;&gt;超级赛亚人形态&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)input标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">        .input&#123;border: 1px solid gainsboro&#125;</div><div class="line">        .input:hover&#123;border-color: gray&#125;</div><div class="line">        .input:focus&#123;border-color: blue&#125;</div><div class="line">        /*input:focus 鼠标聚焦后的状态，input独有的属性*/</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;input type=&quot;text&quot; class=&quot;input&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="CSS-伪元素"><a href="#CSS-伪元素" class="headerlink" title="CSS 伪元素"></a>CSS 伪元素</h2><ul>
+<li>通过css代码向指定元素<strong>内</strong>添加假的（html中不存在的）元素</li>
+</ul>
+<ul>
+<li>CSS 伪元素用于向某些选择器设置特殊效果</li>
+<li><p>1)before 会出现在div所有内容之前</p>
+<ul>
+<li>“:before” 伪元素可以在元素的内容前面插入新内容。</li>
+<li>下面的例子在每个 <code>&lt;h1&gt;</code> 元素前面插入一幅图片：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h1:before</div><div class="line">  &#123;</div><div class="line">  content:&apos;我是一个伪元素&apos;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2)after 会出现在div所有内容之后<br>使用伪元素的时候要保证两个前提</p>
+</li>
+<li>要有display这个属性</li>
+<li>要有content这个属性，这个属性的属性值可以为空，但是引号不能少<code>content:&quot;&quot;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">        width: 300px;</div><div class="line">        height: 300px;</div><div class="line">        background-color: red;</div><div class="line">        &#125;</div><div class="line">    div:before&#123;</div><div class="line">        display: block;</div><div class="line">        content: &quot;我是before&quot;;</div><div class="line">        font-size: 40px;</div><div class="line">        color: white;</div><div class="line">               &#125;</div><div class="line">    div:after&#123;</div><div class="line">        display: block;</div><div class="line">        content: &quot;我是aftre&quot;;</div><div class="line">        font-size: 40px;</div><div class="line">        color: blue;</div><div class="line">              &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div&gt;</div><div class="line">    &lt;span&gt;我是span&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">网页显示：</div><div class="line">&lt;div&gt;</div><div class="line">::before</div><div class="line">&lt;span&gt;···&lt;span&gt;</div><div class="line">::after</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="高大秀">高大秀</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>

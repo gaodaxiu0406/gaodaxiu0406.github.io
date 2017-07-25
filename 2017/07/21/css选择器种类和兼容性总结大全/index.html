@@ -1,0 +1,862 @@
+
+ <!DOCTYPE HTML>
+<html lang="中文">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>css选择器种类和兼容性总结大全 | 高大秀博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="高大秀">
+    
+
+    
+    <meta name="description" content="名称 举例 描述 详细 权重 ie6-7 ie8 ie9+ 其他     标签选择器 p{} 直接使用元素标签进行选择  1 yes yes yes    类选择器 .sum{} 类选择器最前方一定要有点 通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是元素class属性中的属性值，例如&amp;lt;p class=&amp;#39;sum&amp;#39;&amp;gt;&amp;lt;/p&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css选择器种类和兼容性总结大全">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/css选择器种类和兼容性总结大全/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="名称 举例 描述 详细 权重 ie6-7 ie8 ie9+ 其他     标签选择器 p{} 直接使用元素标签进行选择  1 yes yes yes    类选择器 .sum{} 类选择器最前方一定要有点 通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是元素class属性中的属性值，例如&amp;lt;p class=&amp;#39;sum&amp;#39;&amp;gt;&amp;lt;/p&amp;gt;">
+<meta property="og:updated_time" content="2017-07-21T08:03:05.546Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css选择器种类和兼容性总结大全">
+<meta name="twitter:description" content="名称 举例 描述 详细 权重 ie6-7 ie8 ie9+ 其他     标签选择器 p{} 直接使用元素标签进行选择  1 yes yes yes    类选择器 .sum{} 类选择器最前方一定要有点 通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是元素class属性中的属性值，例如&amp;lt;p class=&amp;#39;sum&amp;#39;&amp;gt;&amp;lt;/p&amp;gt;">
+
+    
+    <link rel="alternative" href="/atom.xml" title="高大秀博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="高大秀博客" title="高大秀博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="高大秀博客">高大秀博客</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/07/21/css选择器种类和兼容性总结大全/" title="css选择器种类和兼容性总结大全" itemprop="url">css选择器种类和兼容性总结大全</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="高大秀" target="_blank" itemprop="author">高大秀</a>
+		
+  <p class="article-time">
+    <time datetime="2017-07-21T07:57:22.000Z" itemprop="datePublished"> Published 2017-07-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			
+		
+		</div>
+		
+		<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>举例</th>
+<th>描述</th>
+<th>详细</th>
+<th>权重</th>
+<th>ie6-7</th>
+<th>ie8</th>
+<th>ie9+</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签选择器</td>
+<td>p{}</td>
+<td>直接使用元素标签进行选择</td>
+<td></td>
+<td>1</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>.sum{}</td>
+<td>类选择器最前方一定要有点</td>
+<td>通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是元素class属性中的属性值，例如<code>&lt;p class=&#39;sum&#39;&gt;&lt;/p&gt;</code></td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>#tytle{color:red;}</td>
+<td>id在html中具有唯一性,这个属性值前面加一个“#”</td>
+<td>一个html元素，id属性值只能用一次</td>
+<td>100</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>*{key:value}</td>
+<td>匹配全部html元素</td>
+<td>一般不使用，因为全部匹配耗性能</td>
+<td>0&lt;通配符选择器&lt;1</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>(标签)属性选择器</td>
+<td>[type]或[type=text]</td>
+<td>[标签属性名]{}或[标签属性名=属性值]{}</td>
+<td>利用标签的属性名和属性值来选择html元素</td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>属性选择器在使用的时候，如果一个元素有两个类名，那么是不生效的</td>
+</tr>
+<tr>
+<td>分组选择器</td>
+<td>.box,li,.p1{color: red};</td>
+<td>选择器1，选择器2，选择器3{}</td>
+<td>同一份css样式，可以一次性的添加给多个不同的html元素</td>
+<td>分组选择器将不同的html分为一组，权重计算的时候都是独立计算，不会叠加。</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td>h2[title]{}</td>
+<td></td>
+<td>两种选择器同属于一个元素的时候，我们可以使用交集选择器来进行元素的准确选择</td>
+<td>所有组合选择器权重之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>作用：精确查找元素，增加选择器的权重</td>
+</tr>
+<tr>
+<td>子级选择器</td>
+<td>ul&gt;li{color:red;}</td>
+<td>父级选择器&gt;子级选择器{}</td>
+<td>存在包含关系的元素选择，通过父级确定选择子级</td>
+<td>所有选择器之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>子级选择器必须是紧邻的父子关系</td>
+</tr>
+<tr>
+<td>后代选择器(派生选择器)</td>
+<td>.div1 ul span{}</td>
+<td>祖辈选择器 要查找的后代选择器{},中间用空格连接</td>
+<td>后代选择器在写的时候尽量控制在３个左右</td>
+<td></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>在一个根元素的范围内，查找到它的后代元素，选择器过多浪费性能，不建议使用</td>
+</tr>
+<tr>
+<td>相邻兄弟选择器</td>
+<td>.list1+li{color: red;}</td>
+<td>哥哥选择器+弟弟选择器{}</td>
+<td>通过各个元素选择弟弟选择器，两个选择器之间用“+”连接</td>
+<td>选择器之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td><code>a:hover{color: red}鼠标经过的状态,或a:link{color: blue}默认状态,或a：active{color: green}鼠标点击的状态,或a:visited{color: blanchedalmond}鼠标点击后的状态</code></td>
+<td></td>
+<td></td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>.input:focus{border-color: blue};input:focus 鼠标聚焦后的状态，input独有的属性</td>
+</tr>
+<tr>
+<td>伪元素</td>
+<td>div:before{}；或div:after{}</td>
+<td>通过css代码向指定元素<strong>内</strong>添加假的（html中不存在的）元素</td>
+<td>before 会出现在div所有内容之前，after 会出现在div所有内容之后</td>
+<td></td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>使用伪元素的时候要保证两个前提：1.要有display这个属性2.要有content这个属性，这个属性的属性值可以为空，但是引号不能少<code>content:&quot;&quot;</code></td>
+</tr>
+<tr>
+<td></td>
+<td>visited</td>
+<td></td>
+<td></td>
+<td></td>
+<td>security issue</td>
+<td>yes</td>
+<td>yes</td>
+<td>security issue</td>
+</tr>
+<tr>
+<td></td>
+<td>c</td>
+<td>s</td>
+<td>s</td>
+<td>3</td>
+<td>选</td>
+<td>择</td>
+<td>器</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>E[attr~=value]{}</td>
+<td></td>
+<td>指定属性名,并且具有属性值,此属性值是一个此列表(类名),并且以空格隔开,其中词列表中包含了一个value词,并且等号前的~不能省略.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>E[attr^=value]{}</td>
+<td></td>
+<td>^ 表示以谁为开头的,value可以是首字母或者类名</td>
+<td>必须是第一个类名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>E[attr$=value]{}</td>
+<td></td>
+<td>$ 表示以谁为结尾,value可以是末尾字母或者类名</td>
+<td>必须是最后一个类名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>E[attr</td>
+<td>=value]{}</td>
+<td>如果只有一个类名,没有”-“,也可以选中</td>
+<td>value必须后面带”-“，value必须是第一个类名</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+</tr>
+<tr>
+<td>1.</td>
+<td>.dome p:nth-child(3){background: red;}选择dome下的第三个p标签为背景色红色</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>2.</td>
+<td>.dome p:first-child{background: yellow;}选择dome下的第一个p标签为背景色黄色</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>almost</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>3.</td>
+<td>.dome p:last-child{background: black;}选择dome下的最后一个p标签为背景色黑色</td>
+<td></td>
+<td>伪类选择器是针对列表或者很多同级的标签使用,img下是没有效果的也用不到伪类选择器</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>.dome p:nth-child(nlength){}；选择dome下所有的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>.dome p:nth-child(2n){}；选择dome下的所有偶数个的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>.dome p:nth-child(3n)选择dome下的所有3的倍数的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>.dome p:nth-child(n+length)</td>
+<td>从第length个开始改变,包括第length个(n是从0开始取值的)</td>
+<td>选择大于length后面的元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>8.</td>
+<td>.dome p:nth-child(-n+length)</td>
+<td>包括length，length是从0开始的</td>
+<td>选择小于length前面的元素及length元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>9.</td>
+<td>p:nth-last-child(3)</td>
+<td>选择倒数第三个元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>10.</td>
+<td>p:nth-child(n)</td>
+<td>从大盒子的第一个元素开始</td>
+<td>nth-child选择同级元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>11.</td>
+<td>p:nth-of-type(n)</td>
+<td>从大盒子的第一个p元素开始</td>
+<td>nth-of-type 选择指定的元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>12.</td>
+<td>p:nth-last-of-type(n)</td>
+<td>倒数第n个</td>
+<td>在同级元素中</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>13.</td>
+<td>p:first-of-type{}</td>
+<td>同类型的第一个</td>
+<td>选择一个上级元素下的同类子元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>14.</td>
+<td>p:last-of-type{}</td>
+<td>同类型的最后一个</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>15.</td>
+<td>p:only-child{}</td>
+<td>在父元素中,里面的子元素是唯一的</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>16.</td>
+<td>p:only-of-type{}</td>
+<td>在父元素中,里面有很多的子元素,但是有一个子元素是唯一的</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>空标签</td>
+<td>p:empty{display:none;}</td>
+<td>empty 隐藏空标签</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>否定选择器</td>
+<td>not input:not([type=submit]){}</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>根元素</td>
+<td>root :root{}</td>
+<td>选择文档的根元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>目标元素</td>
+<td>:target{}</td>
+<td>选择器可用于选取当前活动的目标元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2017/07/21/css选择器种类和兼容性总结大全/" data-title="css选择器种类和兼容性总结大全 | 高大秀博客" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/06/30/Vuejs基础/"  title="Vuejs基础">
+ <strong>下一篇：</strong><br/> 
+ <span>Vuejs基础
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="高大秀">高大秀</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
