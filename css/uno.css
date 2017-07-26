@@ -946,9 +946,11 @@ body {
   background: #fae3df; }
 
 .panel-cover__title a{
+  text-shadow: 2px 2px 2px rgba(255,255,255,.8);
   font-size: 2.5rem;}
 .panel-cover__title a:hover {
-  color: orangered;
+  text-shadow: -1px -1px 2px rgba(255,165,0,.8);
+  color: orange;
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
@@ -1238,6 +1240,11 @@ hr {
 .panel-cover__logo {
   margin-bottom: .2em; }
 
+.icon-avatar{
+  width: 200px;
+  height: 200px;
+}
+
 .panel-cover__description {
   margin: 0 30px; }
 
@@ -1388,12 +1395,15 @@ nav {
     display: block;
     position: relative;
     border-color: #FFF;
+    box-shadow: 2px 2px 2px rgba(255,255,255,.8);
     color: #FFF;
     opacity: .8; }
     .navigation__item a:hover {
-      color: #FFF;
-      border-color: #FFF;
-      opacity: 1; }
+      color: orange;
+      border-color: coral;
+      font-weight: bold;
+      box-shadow: -1px -1px 2px rgba(255,165,0,.8);
+      opacity: .9; }
 
 .navigation--social {
   margin-left: 0em; }
