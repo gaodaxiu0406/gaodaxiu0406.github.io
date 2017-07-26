@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      自定义属性和引用数据类型的赋值 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="自定义属性:- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值  只要是引用数据类型都可以加自定义属性 特别注意：函数也可以加  对于引用数据类型: 对象:  浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存 把所有的键值对（属性名：属性值）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义属性和引用数据类型的赋值 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/04/29/JS自定义属性和引用数据类型的赋值/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="自定义属性:- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值  只要是引用数据类型都可以加自定义属性 特别注意：函数也可以加  对于引用数据类型: 对象:  浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存 把所有的键值对（属性名：属性值）">
+<meta property="og:updated_time" content="2017-06-09T07:35:26.052Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义属性和引用数据类型的赋值 | 高大秀博客">
+<meta name="twitter:description" content="自定义属性:- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值  只要是引用数据类型都可以加自定义属性 特别注意：函数也可以加  对于引用数据类型: 对象:  浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存 把所有的键值对（属性名：属性值）">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">自定义属性和引用数据类型的赋值</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-04-29" class="post-meta__date date">2017-04-29</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h6 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性:"></a>自定义属性:</h6><pre><code>- 一般都是给某些元素增加一个自己起的属性名（不能是内置属性），来存储一些值的比如说我们在选项卡中用自定义属性来存储他的索引值，不用全局变量的好处：只有自己可以修改  元素.自定义属性名=值
+</code></pre><ul>
+<li>只要是引用数据类型都可以加自定义属性</li>
+<li>特别注意：函数也可以加</li>
+</ul>
+<h6 id="对于引用数据类型"><a href="#对于引用数据类型" class="headerlink" title="对于引用数据类型:"></a>对于引用数据类型:</h6><ul>
+<li><p>对象:</p>
+<ul>
+<li>浏览器先看是什么数据类型的，是对象的话，浏览器给对象开辟一个堆内存</li>
+<li>把所有的键值对（属性名：属性值）放到这个堆内存里，如果属性值遇到变量名，是把变量代表的值存起来</li>
+<li>把这个地址赋给对象</li>
+</ul>
+</li>
+<li><p>函数</p>
+<ul>
+<li>浏览器检测他是什么数据类型，是函数的话就给他开辟一个堆内存</li>
+<li>将函数当做字符串存起来</li>
+<li>将地址赋给函数名</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章所有权归作者所有,如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

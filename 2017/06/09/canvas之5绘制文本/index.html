@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      canvas之5绘制文本 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="1.阴影 cvs.shadowOffsetX//阴影的横向偏移量，默认值是0 cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0 cvs.shadowColor//阴影的颜色 cvs.shadowBlur//阴影的模糊范围（值越大越模糊）   案例 123456789function draw1()&amp;#123;	cvs.shadowColor=&amp;apos;#000fff&amp;apos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas之5绘制文本 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/06/09/canvas之5绘制文本/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="1.阴影 cvs.shadowOffsetX//阴影的横向偏移量，默认值是0 cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0 cvs.shadowColor//阴影的颜色 cvs.shadowBlur//阴影的模糊范围（值越大越模糊）   案例 123456789function draw1()&amp;#123;	cvs.shadowColor=&amp;apos;#000fff&amp;apos">
+<meta property="og:updated_time" content="2017-06-09T08:49:59.784Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas之5绘制文本 | 高大秀博客">
+<meta name="twitter:description" content="1.阴影 cvs.shadowOffsetX//阴影的横向偏移量，默认值是0 cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0 cvs.shadowColor//阴影的颜色 cvs.shadowBlur//阴影的模糊范围（值越大越模糊）   案例 123456789function draw1()&amp;#123;	cvs.shadowColor=&amp;apos;#000fff&amp;apos">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">canvas之5绘制文本</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-09" class="post-meta__date date">2017-06-09</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li>1.阴影<ul>
+<li>cvs.shadowOffsetX//阴影的横向偏移量，默认值是0</li>
+<li>cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0</li>
+<li>cvs.shadowColor//阴影的颜色</li>
+<li>cvs.shadowBlur//阴影的模糊范围（值越大越模糊）</li>
+</ul>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">	cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">	cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">	cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">	cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">	cvs.fillRect(50,50,100,100);//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.绘制文本</p>
+<ul>
+<li>设置字体样式 cvs.font=’字体大小font-size 字体样式font-family’</li>
+<li>水平对齐方式 cvs.textAlign(start,end,right,center);</li>
+<li>垂直对齐方式 cvs.textBaseline=’’</li>
+<li>属性值:top,middle,hangle,bottom,alphabetic,ideographic</li>
+<li>计算文本长度<ul>
+<li>var text=’dfbzbh’</li>
+<li>console.log(cvs.measureText(text));//width:40.453125</li>
+</ul>
+</li>
+<li>填充文字<ul>
+<li>cvs.fillText(text,x,y,maxWidth);</li>
+<li>1) text:文本内容</li>
+<li>2) x:文字起始点的横坐标</li>
+<li>3) y:文字起始点的纵坐标</li>
+</ul>
+</li>
+<li>绘制文字轮廓<ul>
+<li>cvs.strokeText(text,x,y,maxWidth);</li>
+<li>1) text:文本内容</li>
+<li>2) x:文字起始点的横坐标</li>
+<li>3) y:文字起始点的纵坐标</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>案例1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">		cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">		cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">		cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">		cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">		cvs.fillRect(50,50,100,100);</div><div class="line">		//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">	&#125;</div><div class="line">	draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">	cvs.fillStyle=&apos;yellow&apos;;//设置填充样式颜色</div><div class="line">	cvs.font=&apos;40px verdana&apos;;//设置字体样式</div><div class="line">	cvs.textAlign=&apos;start&apos;;//设置字体的水平对齐方式</div><div class="line">	cvs.textBaseline=&apos;top&apos;;//设置字体的垂直对齐方式</div><div class="line">	cvs.fillText(text,10,10);</div><div class="line">	//设置填充文字 文本内容text 文本起始点坐标10,10</div><div class="line">	var length=cvs.measureText(text);</div><div class="line">	//获取文本宽度(长度)length</div><div class="line">	console.dir(length);</div><div class="line">	//TextMetrics--&gt;width:241.171875</div><div class="line">	//==&gt;length.width字体的宽度</div><div class="line">	cvs.fillText(&quot;字体长度为&quot;+length.width,10,60);</div><div class="line">	//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,60</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3:文本线性渐变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">		var CLG=cvs.createLinearGradient(0,0,300,100);</div><div class="line">		//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标300,100</div><div class="line">		CLG.addColorStop(0,&apos;skyblue&apos;);//设置渐变的偏移量0% 天空蓝</div><div class="line">		CLG.addColorStop(0.25,&apos;plum&apos;);//设置渐变的偏移量25% 紫色</div><div class="line">		CLG.addColorStop(0.5,&apos;lightblue&apos;);//设置渐变的偏移量50% 蓝</div><div class="line">		CLG.addColorStop(0.75,&apos;skyblue&apos;);//设置渐变的偏移量75% 天空蓝</div><div class="line">		CLG.addColorStop(1,&apos;plum&apos;);//设置渐变的偏移量100% 紫色</div><div class="line">		var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">		cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">		cvs.shadowOffsetX=5;//设置阴影的横向偏移量5px</div><div class="line">		cvs.shadowOffsetY=4;//设置阴影的纵向偏移量4px</div><div class="line">		cvs.shadowColor=&apos;#ffb6c1&apos;;//设置阴影的颜色</div><div class="line">		cvs.shadowBlur=5;//设置阴影的模糊度</div><div class="line">		cvs.font=&apos;40px cursive&apos;;//设置字体样式</div><div class="line">		cvs.textAlign=&apos;top&apos;;//设置字体的水平对齐方式</div><div class="line">		cvs.fillText(text,50,150);</div><div class="line">		//设置填充文字text 文本起始点坐标50,150</div><div class="line">		var width=cvs.measureText(text).width;//获取文本宽度(长度)length</div><div class="line">		cvs.fillText(&quot;字体长度为：&quot;+width,10,200);</div><div class="line">		//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,200</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	draw3();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例4:文本径向渐变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var CRG=cvs.createLinearGradient(0,0,600,0,0,20);</div><div class="line">	//创建一个径向渐变 渐变开始的坐标0,0 开始渐变的半径600px 渐变结束的坐标0,0 渐变结束的半径20px</div><div class="line">	CRG.addColorStop(0,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.25,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(0.5,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.75,&apos;plum&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;skyblue&apos;);</div><div class="line">		var text=&apos;I WANT EAT&apos;;</div><div class="line">		cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">		cvs.font=&apos;80px simsun&apos;;//设置字体样式</div><div class="line">  		cvs.textAlign=&apos;start&apos;;//设置文本横向对齐方式</div><div class="line">		cvs.textBaseline=&apos;top&apos;;//设置文本纵向对齐方式</div><div class="line">		cvs.shadowColor=&apos;lightblue&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowBlur=10;//设置阴影的模糊范围10px</div><div class="line">		cvs.fillText(text,10,10);//设置填充文字text 文本起始点坐标10,10</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章所有权归作者所有,如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
