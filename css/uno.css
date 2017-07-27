@@ -5,6 +5,7 @@
    License: none (public domain)
 */
 @import url(../css/animate.css);
+/*@import url(../../source/images);*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -1241,10 +1242,31 @@ hr {
   margin-bottom: .2em; }
 
 .icon-avatar{
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 8rem;
 }
-
+.icon-avatar .icon{
+  position: absolute;
+  left: calc(50% - 4rem);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 8rem;
+  height: 8rem;
+  box-shadow: 2px 2px 2px rgba(255,255,255,.8);
+  border-radius: 50%;
+  background: url("../images/favicon.jpg") no-repeat;
+  background-size: 100% 100%;
+  transition: border-radius 1s;
+  -webkit-transition: border-radius 1s;
+}
+.icon-avatar .icon:hover{
+  box-shadow: -2px 2px 2px rgba(255,255,255,.8);
+  border-radius: 30%;
+  -o-transition: .5s;
+  -ms-transition:  .5s;
+  -moz-transition: .5s;
+  -webkit-transition:.5s;
+}
 .panel-cover__description {
   margin: 0 30px; }
 
@@ -1384,26 +1406,30 @@ nav {
   display: inline-block;
   float: left;
   position: relative;
-  margin: 0;
+  margin: 1.5rem;
   list-style-type: none; }
 
 .navigation__item {
   display: inline-block;
   margin: 3px 3px;
-  line-height: 1em; }
+  line-height: 1em;
+
+}
   .navigation__item a {
     display: block;
     position: relative;
     border-color: #FFF;
     box-shadow: 2px 2px 2px rgba(255,255,255,.8);
     color: #FFF;
-    opacity: .8; }
+    opacity: .8;
+    font-weight: bold;}
     .navigation__item a:hover {
       color: orange;
       border-color: coral;
       font-weight: bold;
       box-shadow: -1px -1px 2px rgba(255,165,0,.8);
-      opacity: .9; }
+      opacity: .9;
+    }
 
 .navigation--social {
   margin-left: 0em; }
