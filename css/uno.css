@@ -40,7 +40,6 @@ q:before, q:after {
 body {
   width: 100%;
   background-color: #333;
-  /*background: url("../images/bg.jpg") 100%;*/
   *zoom: 1; }
   body:before, body:after {
     content: "";
@@ -1121,10 +1120,19 @@ code {
   max-width: 960px;
   margin-left: 32%; }
 
+#post-content{
+  color: #c7c7c7;
+}
 .content-wrapper__inner {
   margin: 0 10%;
   padding: 50px 0; }
-
+.post-container h1{
+  font-size:2.6rem;
+  text-shadow: 4px 4px 4px rgba(255,0,0,.3);
+}
+.post-container h2{
+  font-size:2rem
+}
 .footer {
   display: block;
   padding: 2em 0 0 0;
@@ -1268,11 +1276,28 @@ hr {
 }
 .icon-avatar .icon:hover{
   box-shadow: -2px 2px 2px rgba(255,255,255,.8);
-  border-radius: 30%;
+  border-radius: 45%;
   -o-transition: .5s;
   -ms-transition:  .5s;
   -moz-transition: .5s;
   -webkit-transition:.5s;
+  animation: flip 1s linear;
+}
+.icon-avatar-bg{
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: -0.2rem;
+  bottom: -0.1rem;
+  left: 0;
+  border-radius: 50%;
+  background-color: rgba(68, 68, 68, 0.2);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(68, 68, 68, 0.6)), color-stop(100%, rgba(0, 0, 0, 0.8)));
+  background-image: -webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.4));
+  background-image: linear-gradient(140deg,rgba(68, 68, 68, 0.4) 20%, rgba(0, 0, 0, 0.2)); }
+.icon-avatar-bg:hover{
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(68, 68, 68, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
 }
 .panel-cover__description {
   margin: 0 30px; }
@@ -1496,9 +1521,18 @@ i {
   font-weight: bold;
   line-height: 1.3em; }
   .post-list__post-title a {
+    display: block;
+    padding: .8rem;
+    -webkit-box-shadow: -2px -2px 2px #333;
+    -moz-box-shadow: -2px -2px 2px #333;
+    box-shadow: -2px -2px 2px #333;
     color: #eee; }
     .post-list__post-title a:hover {
-      color: #FF4500; }
+      color: #FF4500;
+      -webkit-box-shadow: 2px 2px 2px #eee;
+      -moz-box-shadow: 2px 2px 2px #eee;
+      box-shadow: 2px 2px 2px #eee;
+    }
 
 .post-list__meta {
   display: block;
