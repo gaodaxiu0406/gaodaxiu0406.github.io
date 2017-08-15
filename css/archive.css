@@ -37,7 +37,7 @@
  }
 .icon-shangyin .text{
     position: absolute;
-    /*display: none;*/
+    display: none;
     top: -300px;
     left: -170px;
     width: 400px;
