@@ -4,7 +4,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(../css/animate.css);
+/*@import url(../css/animate.css);*/
 /*@import url(../../source/images);*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -41,7 +41,7 @@ body {
   width: 100%;
   /*background-color: rgba(225,189,162,1);*/
   /*background-color: rgba(255,245,225,1);*/
-  background-color: rgba(255,250,240,1);
+  background-color: rgba(255,250,245,1);
   *zoom: 1; }
   body:before, body:after {
     content: "";
@@ -1299,7 +1299,9 @@ hr {
 .panel-main {
   display: table;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0,1);
+}
 
 
 .panel-main__inner {
@@ -1508,7 +1510,7 @@ i {
   .post-list__post-title a {
     display: block;
     padding: .8rem;
-    color: #999;
+    color: #777;
   }
     .post-list__post-title a:hover {
       color: #666;
