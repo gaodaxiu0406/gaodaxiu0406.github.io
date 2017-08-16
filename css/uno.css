@@ -982,32 +982,37 @@ h5,
 h5 {
   margin-top: .8em;
   margin-bottom: .4em;
-  /*font-family: "Roboto Slab", serif;*/
   font-family: "Raleway",Verdana,sans-serif,宋体, serif, "Droid Serif", Helvetica Neue, Helvetica, Arial;
-  font-weight: lighter;
   color: #777;
   -webkit-font-smoothing: antialiased; }
 
 h1 {
   margin-top: 0;
-  font-size: 3.2em;
-  line-height: 1.2em;
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 1.4em;
   letter-spacing: .05em; }
 
 h2 {
-  font-size: 2.2em; }
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
 
 h3 {
-  font-size: 1.8em; }
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
 
 h4 {
-  font-size: 1.4em; }
-
-h4 {
-  font-size: 1.2em; }
+  font-size: 1em;
+  line-height: 1em;
+}
 
 h5 {
-  font-size: 1em; }
+  font-size: .8em;
+  line-height: .8em;
+}
 
 p {
   margin-bottom: 1.3em;
@@ -1025,7 +1030,6 @@ blockquote {
   background: #f8f8f8;
   border: 1px solid #eeeeee;
   border-radius: 3px;
-  /*font-family: "Roboto Slab", serif;*/
   font-family:  "Raleway",Verdana,sans-serif,宋体, serif, "Droid Serif", Helvetica Neue, Helvetica, Arial;
   font-weight: lighter;
   font-style: italic;
@@ -1037,10 +1041,11 @@ blockquote {
 ol, ul {
   margin: 0 0 1.3em 2.5em; }
   ol li, ul li {
-    margin: 0 0 .2em 0;
+    margin: 0 0 .2em 0em;
+    color: #777;
     line-height: 1.6em; }
   ol ol, ol ul, ul ol, ul ul {
-    margin: .1em 0 .2em 2em; }
+    margin: .1em 0 .1em 1em; }
 
 ol {
   list-style-type: decimal; }
@@ -1128,8 +1133,9 @@ code {
   margin: 0 10%;
   padding: 50px 0; }
 .post-container h1{
-  font-size:2.6rem;
-  text-shadow: 4px 4px 4px rgba(255,0,0,.3);
+  font-size:2.4rem;
+  text-align: center;
+  color: #666;
 }
 .post-container h2{
   font-size:2rem
