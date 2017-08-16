@@ -54,13 +54,13 @@ body {
     box-shadow: 4px 4px 4px rgba(0,0,0,0.9);
     transition: box-shadow 1s;
   }
-/*.main-post-list:hover{
+.main-post-list:hover{
   box-shadow: -4px -4px 4px rgba(0,0,0,0.9);
   -o-transition: 1s;
   -ms-transition:  1s;
   -moz-transition: 1s;
   -webkit-transition:1s;
-}*/
+}
 
 /*
  * Foundation Icons v 3.0
@@ -1523,15 +1523,10 @@ i {
   .post-list__post-title a {
     display: block;
     padding: .8rem;
-    -webkit-box-shadow: -2px -2px 2px #333;
-    -moz-box-shadow: -2px -2px 2px #333;
-    box-shadow: -2px -2px 2px #333;
-    color: #eee; }
+    color: #eee;
+  }
     .post-list__post-title a:hover {
       color: #FF4500;
-      -webkit-box-shadow: 2px 2px 2px #eee;
-      -moz-box-shadow: 2px 2px 2px #eee;
-      box-shadow: 2px 2px 2px #eee;
     }
 
 .post-list__meta {
@@ -1649,12 +1644,6 @@ input[type="tel"] {
 @media all and (min-width: 1300px) {
   .content-wrapper {
     margin-left: 430px;
-  }
-  .content-wrapper a{
-    font-size: 30px;
-  }
-  .main-post-list{
-    padding: 1.2rem;
   }
 }
 @media all and (max-width: 1100px) {
