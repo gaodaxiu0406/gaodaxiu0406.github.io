@@ -16,17 +16,17 @@
     
     
 
-    <meta name="description" content="用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要) 先将整个文件写在一个文件中,1.画结构 新建一个components文件夹 components文件夹下新建Slider.js文件和Slider.less文件(Slider.less文件是用来给Slider.js写样式的)  2.在indix.js中引入组件 渲染到页面中 打开src文件夹中的in">
+    <meta name="description" content="关于react轮播图的源码,无缝版已上传至github,https://github.com/gaodaxiu0406/React-Slider  用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要) 先将整个文件写在一个文件中,1.画结构 新建一个components文件夹 components文件夹下新建Slider.js文件和Slider.l">
 <meta name="keywords" content="react轮播图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2.react轮播图项目开写 | 高大秀博客">
 <meta property="og:url" content="http://yoursite.com/2017/07/31/2-react轮播图项目开写/index.html">
 <meta property="og:site_name" content="高大秀博客">
-<meta property="og:description" content="用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要) 先将整个文件写在一个文件中,1.画结构 新建一个components文件夹 components文件夹下新建Slider.js文件和Slider.less文件(Slider.less文件是用来给Slider.js写样式的)  2.在indix.js中引入组件 渲染到页面中 打开src文件夹中的in">
-<meta property="og:updated_time" content="2017-08-16T15:20:03.244Z">
+<meta property="og:description" content="关于react轮播图的源码,无缝版已上传至github,https://github.com/gaodaxiu0406/React-Slider  用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要) 先将整个文件写在一个文件中,1.画结构 新建一个components文件夹 components文件夹下新建Slider.js文件和Slider.l">
+<meta property="og:updated_time" content="2017-08-18T13:08:08.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2.react轮播图项目开写 | 高大秀博客">
-<meta name="twitter:description" content="用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要) 先将整个文件写在一个文件中,1.画结构 新建一个components文件夹 components文件夹下新建Slider.js文件和Slider.less文件(Slider.less文件是用来给Slider.js写样式的)  2.在indix.js中引入组件 渲染到页面中 打开src文件夹中的in">
+<meta name="twitter:description" content="关于react轮播图的源码,无缝版已上传至github,https://github.com/gaodaxiu0406/React-Slider  用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要) 先将整个文件写在一个文件中,1.画结构 新建一个components文件夹 components文件夹下新建Slider.js文件和Slider.l">
     
     
     
@@ -183,7 +183,10 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="用react-webpack写一个的轮播图项目-项目配置请看上篇react轮播图项目配置及原理概要"><a href="#用react-webpack写一个的轮播图项目-项目配置请看上篇react轮播图项目配置及原理概要" class="headerlink" title="用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)"></a>用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)</h2><ul>
+    <blockquote>
+<p>关于react轮播图的源码,无缝版已上传至github,<a href="https://github.com/gaodaxiu0406/React-Slider" target="_blank" rel="external">https://github.com/gaodaxiu0406/React-Slider</a></p>
+</blockquote>
+<h2 id="用react-webpack写一个的轮播图项目-项目配置请看上篇react轮播图项目配置及原理概要"><a href="#用react-webpack写一个的轮播图项目-项目配置请看上篇react轮播图项目配置及原理概要" class="headerlink" title="用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)"></a>用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)</h2><ul>
 <li>先将整个文件写在一个文件中,<h2 id="1-画结构"><a href="#1-画结构" class="headerlink" title="1.画结构"></a>1.画结构</h2></li>
 <li>新建一个components文件夹</li>
 <li>components文件夹下新建Slider.js文件和Slider.less文件(Slider.less文件是用来给Slider.js写样式的)</li>
@@ -356,7 +359,8 @@ classes that you can use:
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.active&#123;</div><div class="line">    background-color: #999999;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>给span标签添加active属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span className=&#123;&quot;dot &quot;+(index==this.state.pos?&apos;active&apos;:&apos;&apos;)&#125; key=&#123;index&#125; onClick=&#123;()=&gt;this.turn(index-this.state.pos)&#125;&gt;&lt;/span&gt;</div></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span className=&#123;&quot;dot &quot;+(index==this.state.pos?&apos;active&apos;:&apos;&apos;)&#125; key=&#123;index&#125; onClick=&#123;()=&gt;this.turn(index-this.state.pos)&#125;&gt;&lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
   </section>
