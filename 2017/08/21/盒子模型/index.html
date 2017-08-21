@@ -28,7 +28,9 @@
 <meta property="og:image" content="http://yoursite.com/img/margin-top传递问题2.png">
 <meta property="og:image" content="http://yoursite.com/img/margin-top传递问题3.png">
 <meta property="og:image" content="http://yoursite.com/img/margin-top传递问题4.png">
-<meta property="og:updated_time" content="2017-08-21T13:08:35.434Z">
+<meta property="og:image" content="http://yoursite.com/img/margin-top传递问题7.png">
+<meta property="og:image" content="http://yoursite.com/img/margin-top传递问题8.png">
+<meta property="og:updated_time" content="2017-08-21T13:54:55.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS盒子模型(border画三角形)及常见兼容问题解决方案 | 高大秀博客">
 <meta name="twitter:description" content="每一个元素在html中都是一个盒子,用来装其他盒子或者是内容  可以将html页面看做是一个仓库,仓库中从上到下摆了很多箱子,易碎品(盒子和盒子之间要有间距 内容和盒子之间要有填充 盒子本身要有厚度)   宽高属性 1.height: 100%; 指的是继承父级元素内容的高度   2.width: 100%; 指的是继承父级元素内容的宽度    特性 1.父子关系的时候,在设置margin值的时">
@@ -246,12 +248,14 @@ classes that you can use:
 ![Alt margin-top传递问题](/img/margin-top传递问题5.png)
 - IE7~11及谷歌浏览器中,父级盒子的高度都增加了20px;
 ![Alt margin-top传递问题](/img/margin-top传递问题6.png)
-</code></pre><h5 id="方法三-给父级元素上添加一个透明的border处理"><a href="#方法三-给父级元素上添加一个透明的border处理" class="headerlink" title="方法三). 给父级元素上添加一个透明的border处理"></a>方法三). 给父级元素上添加一个透明的border处理</h5><pre><code>- 弊端:
-- 在IE5~7中确实解决了问题
-![Alt margin-top传递问题](/img/margin-top传递问题7.png)
-- 但是在IE8~11及谷歌浏览器中仍然存在margin-top的传递问题
-![Alt margin-top传递问题](/img/margin-top传递问题8.png)
-</code></pre><h3 id="3-margin-left-margin-right-在ie6中会双倍"><a href="#3-margin-left-margin-right-在ie6中会双倍" class="headerlink" title="3.margin-left/margin-right 在ie6中会双倍"></a>3.margin-left/margin-right 在ie6中会双倍</h3><ul>
+</code></pre><h5 id="方法三-给父级元素上添加一个透明的border处理"><a href="#方法三-给父级元素上添加一个透明的border处理" class="headerlink" title="方法三). 给父级元素上添加一个透明的border处理"></a>方法三). 给父级元素上添加一个透明的border处理</h5><ul>
+<li>弊端:<ul>
+<li>在IE5~7中确实解决了问题<br><img src="/img/margin-top传递问题7.png" alt="Alt margin-top传递问题"></li>
+<li>但是在IE8~11及谷歌浏览器中仍然存在margin-top的传递问题<br><img src="/img/margin-top传递问题8.png" alt="Alt margin-top传递问题"></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-margin-left-margin-right-在ie6中会双倍"><a href="#3-margin-left-margin-right-在ie6中会双倍" class="headerlink" title="3.margin-left/margin-right 在ie6中会双倍"></a>3.margin-left/margin-right 在ie6中会双倍</h3><ul>
 <li>当元素浮动的时候,有左右的外边距,有时候ie6会出现双倍边距的问题</li>
 </ul>
 <h4 id="解决方案-解决双边距这个方法叫css-hack"><a href="#解决方案-解决双边距这个方法叫css-hack" class="headerlink" title="解决方案:解决双边距这个方法叫css hack"></a>解决方案:解决双边距这个方法叫css hack</h4><h5 id="方案一-给这个元素添加overflow-hidden"><a href="#方案一-给这个元素添加overflow-hidden" class="headerlink" title="方案一). 给这个元素添加overflow:hidden;"></a>方案一). 给这个元素添加<code>overflow:hidden;</code></h5><h5 id="方案二-写ie6的兼容方式-例如"><a href="#方案二-写ie6的兼容方式-例如" class="headerlink" title="方案二). 写ie6的兼容方式,例如:"></a>方案二). 写ie6的兼容方式,例如:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">float:left;</div><div class="line">margin-left:10px !important;</div><div class="line">_margin-left:5px;</div><div class="line">&lt;!-- 当浏览器是ie6的时候 读取_margin-left:5px;这句话 --&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
