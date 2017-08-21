@@ -13,6 +13,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
+#busuanzi_container_page_pv{
+  font-size: .8em;
+  margin-left: 1em;
+}
+#busuanzi_value_page_pv{
+  color: #666;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
