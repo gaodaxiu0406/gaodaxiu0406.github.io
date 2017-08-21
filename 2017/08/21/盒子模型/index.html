@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="每一个元素在html中都是一个盒子,用来装其他盒子或者是内容  可以将html页面看做是一个仓库,仓库中从上到下摆了很多箱子,易碎品(盒子和盒子之间要有间距 内容和盒子之间要有填充 盒子本身要有厚度)   宽高属性 1.height: 100%; 指的是继承父级元素内容的高度   2.width: 100%; 指的是继承父级元素内容的宽度    特性 1.父子关系的时候,在设置margin值的时">
 <meta property="og:image" content="http://yoursite.com/img/三角形.png">
-<meta property="og:updated_time" content="2017-08-21T10:51:10.773Z">
+<meta property="og:updated_time" content="2017-08-21T10:53:03.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS盒子模型(border画三角形)及常见兼容问题解决方案 | 高大秀博客">
 <meta name="twitter:description" content="每一个元素在html中都是一个盒子,用来装其他盒子或者是内容  可以将html页面看做是一个仓库,仓库中从上到下摆了很多箱子,易碎品(盒子和盒子之间要有间距 内容和盒子之间要有填充 盒子本身要有厚度)   宽高属性 1.height: 100%; 指的是继承父级元素内容的高度   2.width: 100%; 指的是继承父级元素内容的宽度    特性 1.父子关系的时候,在设置margin值的时">
@@ -223,9 +223,9 @@ classes that you can use:
 <blockquote>
 <p>解决方法:</p>
 <ul>
-<li>方法1)给父级元素一个属性,overflow:hidden;</li>
-<li>方法2)将子级元素的margin-top值去掉,改成父级元素的padding-top值 (<strong>建议使用这个方法</strong>,因为overflow:hidden;有溢出隐藏的含义,若给父级元素添加这个属性,子级元素超出父级盒子部分将不能显示,例如子级元素的阴影)</li>
-<li>方法3)给父级元素上添加一个透明的border处理</li>
+<li>方法1). 给父级元素一个属性,overflow:hidden;</li>
+<li>方法2). 将子级元素的margin-top值去掉,改成父级元素的padding-top值 (<strong>建议使用这个方法</strong>,因为overflow:hidden;有溢出隐藏的含义,若给父级元素添加这个属性,子级元素超出父级盒子部分将不能显示,例如子级元素的阴影)</li>
+<li>方法3). 给父级元素上添加一个透明的border处理</li>
 </ul>
 </blockquote>
 <h3 id="3-margin-left-margin-right-在ie6中会双倍"><a href="#3-margin-left-margin-right-在ie6中会双倍" class="headerlink" title="3.margin-left/margin-right 在ie6中会双倍"></a>3.margin-left/margin-right 在ie6中会双倍</h3><ul>
@@ -234,8 +234,8 @@ classes that you can use:
 <blockquote>
 <p>解决方案:解决双边距这个方法叫css hack</p>
 <ul>
-<li>方案1)给这个元素添加<code>overflow:hidden;</code></li>
-<li>方案2)写ie6的兼容方式,例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">float:left;</div><div class="line">margin-left:10px !important;</div><div class="line">_margin-left:5px;</div><div class="line">&lt;!-- 当浏览器是ie6的时候 读取_margin-left:5px;这句话 --&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>方案1). 给这个元素添加<code>overflow:hidden;</code></li>
+<li>方案2). 写ie6的兼容方式,例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div&#123;</div><div class="line">float:left;</div><div class="line">margin-left:10px !important;</div><div class="line">_margin-left:5px;</div><div class="line">&lt;!-- 当浏览器是ie6的时候 读取_margin-left:5px;这句话 --&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
