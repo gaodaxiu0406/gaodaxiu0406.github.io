@@ -152,6 +152,122 @@ classes that you can use:
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">canvas之6绘制图片</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-09" class="post-meta__date date">2017-06-09</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/canvas/">canvas</a>
+            </font>
+          
+      </span>
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h5 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h5><ul>
+<li><ol>
+<li>cvs.drawImage(Image,x,y,w,h);<ul>
+<li>Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的</li>
+<li>x,y 图片放入画布,在画布左上角的坐标</li>
+<li>w,h 绘制图片的宽高</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>案例:将图片放在画布上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	var img=new Image;//动态创建一个img</div><div class="line">	img.src=&apos;default.gif&apos;;//添加图片链接</div><div class="line">	img.onload=function()&#123;//如果图片地址真实存在 执行这个函数</div><div class="line">		cvs.drawImage(this,0,100,100,90);</div><div class="line">		//将图片放在画布上 图片左上角的坐标0,100 图片宽100px 高90px</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li><p>cvs.drawImage(img_elem,sx,sy,sw,sh,dx,dy,dw,dh);</p>
+<ul>
+<li>sx,sy 图片左上角的坐标</li>
+<li>sw,sh  矩形区域的宽高 用来截取图片</li>
+<li>dx,dy  截取出来放在画布canvas上的坐标</li>
+<li><p>dw,dh  画在canvas上的宽高</p>
+</li>
+<li><p>总结:</p>
+<ul>
+<li>sw,sy,sx,sy 是用来截取图片的过程</li>
+<li>dx,dy,dw,dh 把截取出来的图片放在canvas上的过程</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>案例:截取图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	function draw2()&#123;</div><div class="line">		var img=new Image;//动态创建一个img</div><div class="line">		img.src=&apos;1.jpg&apos;;//添加图片链接</div><div class="line">		img.onload=function()&#123;//如果图片地址真实存在 执行这个函数</div><div class="line">			cvs.drawImage(this,480,150,440,410,0,0,200,200);</div><div class="line">			//this就是img 将图片放在画布上 需要截取的图片在原图片左上角的坐标480,150  截取图片的大小为440px*410px 截取出来的图片放入画布的坐标0,0 截取出来的图片画在画布canvas的宽200px 高200px</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">//	draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>设置平铺</li>
+</ol>
+</li>
+<li><p>cvs.creatPattern(image,type)</p>
+<ul>
+<li>Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的</li>
+<li>type:<ul>
+<li>no-repeat 不平铺</li>
+<li>repeat 全方向平铺</li>
+<li>repeat-x x轴方向平铺</li>
+<li>repeat-y y轴方向平铺</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var img=new Image;</div><div class="line">	img.src=&apos;default.gif&apos;;</div><div class="line">	img.onload=function()&#123;</div><div class="line">		var rep=cvs.createPattern(this,&apos;repeat&apos;);//设置图片平铺</div><div class="line">		cvs.fillStyle=rep;//设置填充样式为图片平铺</div><div class="line">		cvs.fillRect(0,0,draw.width,draw.height);</div><div class="line">		//draw.width画布的宽 draw.height画布的高</div><div class="line">		//设置填充矩形 矩形左上角坐标0,0 矩形的宽为画布的宽 矩形的高为画布的高</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//draw3();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+
+    </div>
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次

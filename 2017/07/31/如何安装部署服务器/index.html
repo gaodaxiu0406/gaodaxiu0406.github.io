@@ -152,6 +152,170 @@ classes that you can use:
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">如何安装部署服务器</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-07-31" class="post-meta__date date">2017-07-31</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/服务器/">服务器</a>
+            </font>
+          
+      </span>
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="购买机器https-www-aliyun-com"><a href="#购买机器https-www-aliyun-com" class="headerlink" title="购买机器https://www.aliyun.com/"></a>购买机器<code>https://www.aliyun.com/</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">116.62.9.168</div><div class="line">用户名:root</div><div class="line">密码:Zfpx2017</div></pre></td></tr></table></figure>
+<h2 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh root@116.62.9.168</div></pre></td></tr></table></figure>
+<h2 id="更新操作系统"><a href="#更新操作系统" class="headerlink" title="更新操作系统"></a>更新操作系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
+<h2 id="安装-npm"><a href="#安装-npm" class="headerlink" title="安装 npm"></a>安装 npm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install npm</div></pre></td></tr></table></figure>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install npm</div></pre></td></tr></table></figure>
+<h2 id="安装node版本管理器n-n是node的管理器-可以通过他管理node的版本"><a href="#安装node版本管理器n-n是node的管理器-可以通过他管理node的版本" class="headerlink" title="安装node版本管理器n n是node的管理器 可以通过他管理node的版本"></a>安装node版本管理器n n是node的管理器 可以通过他管理node的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install n -g</div></pre></td></tr></table></figure>
+<h2 id="安装node7-5版本"><a href="#安装node7-5版本" class="headerlink" title="安装node7.5版本"></a>安装node7.5版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">n 7.5</div></pre></td></tr></table></figure>
+<ul>
+<li>出现<code>node-v7.5.0</code>就安装成功了</li>
+</ul>
+<h2 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install mongodb</div></pre></td></tr></table></figure>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install git</div></pre></td></tr></table></figure>
+<h2 id="克隆爬虫的地址"><a href="#克隆爬虫的地址" class="headerlink" title="克隆爬虫的地址"></a>克隆爬虫的地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/zhufengnodejs/201704crawl.git</div></pre></td></tr></table></figure>
+<h2 id="进入目录201704crawl"><a href="#进入目录201704crawl" class="headerlink" title="进入目录201704crawl"></a>进入目录201704crawl</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd 201704crawl</div></pre></td></tr></table></figure>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<h2 id="启动server-js"><a href="#启动server-js" class="headerlink" title="启动server.js"></a>启动server.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node server.js</div></pre></td></tr></table></figure>
+<h2 id="执行脚本main-js-先进入main-js所在的文件夹"><a href="#执行脚本main-js-先进入main-js所在的文件夹" class="headerlink" title="执行脚本main.js(先进入main.js所在的文件夹)"></a>执行脚本main.js(先进入main.js所在的文件夹)</h2><ul>
+<li><p>1.进入main.js所在的文件夹执行main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd tasks</div><div class="line">node main.js</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.ctrl+c结束掉之前的任务,再启动server.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node server.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="访问-格式–-gt-ip-端口号"><a href="#访问-格式–-gt-ip-端口号" class="headerlink" title="访问(格式–&gt;ip:端口号)"></a>访问(格式–&gt;ip:端口号)</h2><ul>
+<li>在浏览器输入地址<code>116.62.9.168:8080</code>访问<ul>
+<li><code>http://116.62.9.168:8080/</code></li>
+</ul>
+</li>
+<li>此时还是静态网页 别人无法访问</li>
+</ul>
+<h2 id="在电脑上安装程序Xftp-5"><a href="#在电脑上安装程序Xftp-5" class="headerlink" title="在电脑上安装程序Xftp 5"></a>在电脑上安装程序<code>Xftp 5</code></h2><h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><ul>
+<li><p>Nginx是一个高性能的HTTP和反向代理服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install nginx</div></pre></td></tr></table></figure>
+</li>
+<li><p>此时就可以上传自己的项目,访问自己的服务器</p>
+</li>
+<li>但是一旦窗口关掉,就无法访问</li>
+</ul>
+<h3 id="nginx命令"><a href="#nginx命令" class="headerlink" title="nginx命令"></a>nginx命令</h3><ul>
+<li>启动 nginx nginx -c /etc/nginx/nginx.conf</li>
+<li>关闭 nginx nginx -s stop</li>
+<li>重读配置文件 nginx -s reload kill -HUP nginx</li>
+<li>常用命令 service nginx {start|stop|status|restart|reload|configtest|}</li>
+</ul>
+<h3 id="配置nginx反向代理和负载均衡"><a href="#配置nginx反向代理和负载均衡" class="headerlink" title="配置nginx反向代理和负载均衡"></a>配置nginx反向代理和负载均衡</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">upstream crawl&#123;</div><div class="line">    ip_hash;</div><div class="line">    server 127.0.0.1:3000 weight=10;</div><div class="line">    server 127.0.0.1:4000 weight=1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">        listen 80;</div><div class="line">        server_name www.gdxiu.cn;</div><div class="line"></div><div class="line">        location / &#123;</div><div class="line">           proxy_pass http://crawl;</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="安装pm2"><a href="#安装pm2" class="headerlink" title="安装pm2"></a>安装pm2</h2><ul>
+<li><p>强大的进程管理器 进程异常退出时pm2会尝试重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install pm2 -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入201704crawl文件夹,在根目录下执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /root</div><div class="line">cd 201704crawl</div></pre></td></tr></table></figure>
+</li>
+<li><p>切换到server.js文件所在目录,启动pm2应用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 start server.js --name &quot;crawl&quot;</div><div class="line">//即pm2 start server.js --name &apos;自己取名字&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="如何停止pm2上的项目"><a href="#如何停止pm2上的项目" class="headerlink" title="如何停止pm2上的项目"></a>如何停止pm2上的项目</h2><h3 id="1-查看node进程号"><a href="#1-查看node进程号" class="headerlink" title="1.查看node进程号"></a>1.查看node进程号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep node</div></pre></td></tr></table></figure>
+<h3 id="2-停止"><a href="#2-停止" class="headerlink" title="2.停止"></a>2.停止</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 stop crawl</div></pre></td></tr></table></figure>
+<h3 id="3-杀死进程"><a href="#3-杀死进程" class="headerlink" title="3.杀死进程"></a>3.杀死进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kill 8796(进程号)</div></pre></td></tr></table></figure>
+<h2 id="复活-如何重新建立连接"><a href="#复活-如何重新建立连接" class="headerlink" title="复活:如何重新建立连接"></a>复活:如何重新建立连接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start server.js --name &quot;crawl&quot;</div></pre></td></tr></table></figure>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start crawl</div></pre></td></tr></table></figure>
+<h2 id="pm2常用命令"><a href="#pm2常用命令" class="headerlink" title="pm2常用命令"></a>pm2常用命令</h2><ul>
+<li>用pm2启动node</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pm2 start app.js –name “crawl”</td>
+<td>启动应用</td>
+</tr>
+<tr>
+<td>pm2 list</td>
+<td>查看所有应用</td>
+</tr>
+<tr>
+<td>pm2 restart crawl</td>
+<td>重启应用</td>
+</tr>
+<tr>
+<td>pm2 stop crawl</td>
+<td>停止应用</td>
+</tr>
+<tr>
+<td>pm2 delete crawl</td>
+<td>删除应用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关于scp命令"><a href="#关于scp命令" class="headerlink" title="关于scp命令"></a>关于scp命令</h3><ul>
+<li>网址<code>http://www.cnblogs.com/hitwtx/archive/2011/11/16/2251254.html</code></li>
+</ul>
+<p>cat 查看文件内容</p>
+<h2 id="vi命令"><a href="#vi命令" class="headerlink" title="vi命令"></a>vi命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi crawl</div><div class="line">1000dd//删除1000行  vi的一个命令</div></pre></td></tr></table></figure>
+<h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure>
+<h2 id="推荐视频地址"><a href="#推荐视频地址" class="headerlink" title="推荐视频地址"></a>推荐视频地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.ablesky.com/kecheng/detail_926049</div></pre></td></tr></table></figure>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+
+    </div>
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次

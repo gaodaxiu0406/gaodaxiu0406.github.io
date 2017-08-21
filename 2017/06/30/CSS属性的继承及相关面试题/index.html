@@ -152,6 +152,105 @@ classes that you can use:
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">CSS属性的继承及相关面试题</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-30" class="post-meta__date date">2017-06-30</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/CSS/">CSS</a>
+            </font>
+          
+      </span>
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="CSS属性的继承"><a href="#CSS属性的继承" class="headerlink" title="CSS属性的继承"></a>CSS属性的继承</h2><ul>
+<li>子级元素从父级元素身上继承的一些可继承的css属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">div&#123;color:red;&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p&gt;woshiyige[biaoqian&lt;/p&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>根据 CSS，子元素从父元素继承属性。看看下面这条规则：<ul>
+<li>body {font-family: Verdana, sans-serif;}<ul>
+<li>根据上面这条规则，站点的 body 元素将使用 Verdana 字体（假如访问者的系统中存在该字体的话）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>继承的权重较小，可被其他选择器的样式覆盖</li>
+</ul>
+<h2 id="面试题："><a href="#面试题：" class="headerlink" title="面试题："></a>面试题：</h2><ul>
+<li>哪些css样式可以被继承：和文字有关的css样式 和列表有关的css样式<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3></li>
+<li>1.可继承属性</li>
+<li><p>1)可以继承的文本相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)可以继承的列表相关属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;azimuth&gt;&lt;border-collapse&gt;&lt;border-spacing&gt;&lt;caption-side&gt;&lt;color&gt;&lt;cursor&gt;&lt;direction&gt;&lt;elevation&gt;&lt;empty-cells&gt;&lt;font-family&gt;&lt;font-size&gt;&lt;font-style&gt;&lt;font-variant&gt;&lt;font-weight&gt;&lt;font&gt;&lt;letter-spacing&gt;&lt;line-height&gt;&lt;list-style-image&gt;&lt;list-style-position&gt;&lt;list-style-type&gt;&lt;list-style&gt;&lt;orphans&gt;&lt;pitch-range&gt;&lt;pitch&gt;&lt;quotes&gt;&lt;richness&gt;&lt;speak-header&gt;&lt;speaknumeral&gt;&lt;speak-punctuation&gt;&lt;speak&gt;&lt;speechrate&gt;&lt;stress&gt;&lt;text-align&gt;&lt;text-indent&gt;&lt;texttransform&gt;&lt;visibility&gt;&lt;voice-family&gt;&lt;volume&gt;&lt;whitespace&gt;&lt;widows&gt;&lt;word-spacing&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.不可继承属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;display&gt;&lt;margin&gt;&lt;border&gt;&lt;padding&gt;&lt;background&gt;&lt;height&gt;&lt;min-height&gt;&lt;max-height&gt;&lt;width&gt;&lt;min-width&gt;&lt;max-width&gt;&lt;overflow&gt;&lt;position&gt;&lt;left&gt;&lt;right&gt;&lt;top&gt;&lt;bottom&gt;&lt;z-index&gt;&lt;float&gt;&lt;clear&gt;&lt;table-layout&gt;&lt;vertical-align&gt;&lt;page-break-after&gt;&lt;page-bread-before&gt;和&lt;unicode-bidi&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.所有元素可继承：</p>
+</li>
+<li><p><code>&lt;visibility&gt;（可见性）和&lt;cursor&gt;(光标)</code></p>
+</li>
+<li><p>4.终端块状元素可继承：</p>
+</li>
+<li><code>&lt;text-indent&gt;和&lt;text-align&gt;</code></li>
+</ul>
+<ul>
+<li>5.如果css属性不带有继承性，如何继承父级身上的属性，可以将要继承的属性的属性值写上inherit<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ul&#123;float:left;&#125;</div><div class="line">li&#123;float:inherit;&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+
+    </div>
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次

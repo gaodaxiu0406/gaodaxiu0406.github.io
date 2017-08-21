@@ -152,6 +152,100 @@ classes that you can use:
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">canvas之4渐变</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-09" class="post-meta__date date">2017-06-09</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/canvas/">canvas</a>
+            </font>
+          
+      </span>
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li>1.线性渐变</li>
+<li>var CLG=cvs.createLinearGradient(x0,y0,x1,y1);<ul>
+<li>x0:渐变开始的x坐标</li>
+<li>y0:渐变开始的y坐标</li>
+<li>x1:渐变结束的x坐标</li>
+<li>y1:渐变结束的y坐标</li>
+</ul>
+</li>
+<li><p>CLG.addColorStop(n,m);</p>
+<ul>
+<li>n:设置颜色的偏移量</li>
+<li>m:颜色</li>
+</ul>
+</li>
+<li><p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	var CLG=cvs.createLinearGradient(0,0,200,200);</div><div class="line">	//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标200,200 (即从左上角到右下角渐变)</div><div class="line">	CLG.addColorStop(0,&apos;red&apos;);//设置渐变的偏移量0% 颜色红色</div><div class="line">	CLG.addColorStop(0.25,&apos;yellow&apos;);//设置渐变的偏移量25% 颜色黄色</div><div class="line">	CLG.addColorStop(0.5,&apos;skyblue&apos;);//设置渐变的偏移量50% 颜色天空蓝</div><div class="line">	CLG.addColorStop(0.75,&apos;orange&apos;);//设置渐变的偏移量75% 颜色橘黄</div><div class="line">	CLG.addColorStop(1,&apos;pink&apos;);//设置渐变的偏移量100% 颜色粉色</div><div class="line">	cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">	cvs.fillRect(0,0,200,200);//设置填充矩形 左上角坐标0,0  宽200px  高200px</div><div class="line">	cvs.fill();//设置样式为填充样式</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.径向渐变(发散性渐变)</p>
+</li>
+<li>cvs.createRadialGradient(x0,y0,x1,y1,r1);<ul>
+<li>x0:发散渐变开始中心的x坐标</li>
+<li>y0：发散渐变开始中心的y坐标</li>
+<li>r0:发散渐变开始的半径</li>
+<li>x1:发散渐变结束中心的x坐标</li>
+<li>y1：发散渐变结束中心的y坐标</li>
+<li>r1:发散渐变结束的半径</li>
+</ul>
+</li>
+<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var CRG=cvs.createRadialGradient(200,200,200,200,200,10);</div><div class="line">	//创建一个径向/发散性渐变 渐变开始的坐标200,200 渐变开始的半径200px 渐变结束的坐标200,200 渐变结束的半径10px</div><div class="line">	CRG.addColorStop(0,&apos;purple&apos;);</div><div class="line">	CRG.addColorStop(0.2,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.4,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.6,&apos;lightblue&apos;);</div><div class="line">	CRG.addColorStop(0.8,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;white&apos;);</div><div class="line">	cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">	cvs.fillRect(100,100,200,200);</div><div class="line">	//设置填充矩形 左上角坐标100,100  宽200px  高200px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+
+    </div>
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次

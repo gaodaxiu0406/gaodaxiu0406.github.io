@@ -152,6 +152,92 @@ classes that you can use:
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">canvas之7变形</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-09" class="post-meta__date date">2017-06-09</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/canvas/">canvas</a>
+            </font>
+          
+      </span>
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li><ol>
+<li>平移translate(x,y);<br>x:坐标原点向x轴平移的距离<br>y:坐标原点向y轴平移的距离</li>
+</ol>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.fillStyle=&apos;skyblue&apos;;</div><div class="line">	//设置填充颜色天空蓝</div><div class="line">	cvs.fillRect(0,0,200,100);</div><div class="line">	//矩形左上角坐标0,0 宽200px 高100px</div><div class="line">	cvs.translate(50,50);</div><div class="line">	//设置平移 坐标原点向x轴(向右)平移50px 坐标原点向y轴(向下)偏移50px</div><div class="line">	//--&gt;这个平移只会对后面的矩形造成影响 不会影响前面的</div><div class="line">	cvs.fillStyle=&apos;pink&apos;;</div><div class="line">	//设置填充颜色粉色</div><div class="line">	cvs.fillRect(0,0,180,80);</div><div class="line">	//矩形左上角坐标0,0 宽180px 高80px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>缩放 vas.scale(x0,y0);<br>x0:x轴按照x0的比例缩放<br>y0:y轴按照x0的比例缩放</li>
+</ol>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	cvs.scale(1,2);//设置缩放 x轴不变 y轴是之前的2倍</div><div class="line">	cvs.fillStyle=&apos;plum&apos;;//设置填充样式为颜色填充</div><div class="line">	cvs.fillRect(0,0,200,100);</div><div class="line">	//矩形左上角坐标0,0 宽200px 高100px</div><div class="line">	//--&gt;那么转化后的矩形宽200px 高200px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.旋转 vas.rotate(angle);<br>  angle:坐标轴转的角度 他是一个弧度(和画圆的计算是一样的)</p>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.rotate(Math.PI/4);//设置旋转  旋转角度为45度</div><div class="line">	cvs.fillStyle=&apos;lightblue&apos;;</div><div class="line">	cvs.fillRect(100,100,200,100);</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="注意：平移、缩放、旋转都是对原始坐标（画布）操作的"><a href="#注意：平移、缩放、旋转都是对原始坐标（画布）操作的" class="headerlink" title="注意：平移、缩放、旋转都是对原始坐标（画布）操作的"></a>注意：平移、缩放、旋转都是对原始坐标（画布）操作的</h4><ul>
+<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.translate(200,0);//此时的原点已经变到200,0的位置</div><div class="line">	cvs.rotate(Math.PI/4);//设置旋转  旋转角度为45度</div><div class="line">	cvs.fillStyle=&apos;lightblue&apos;;</div><div class="line">	cvs.fillRect(100,100,200,100);</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure></li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+
+    </div>
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次

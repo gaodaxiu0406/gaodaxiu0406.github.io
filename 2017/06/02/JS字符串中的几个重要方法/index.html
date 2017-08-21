@@ -152,6 +152,106 @@ classes that you can use:
     <div class="content-wrapper">
         <div class="content-wrapper__inner entry">
             
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">字符串中的几个重要方法</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-02" class="post-meta__date date">2017-06-02</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Javascript/">Javascript</a>
+            </font>
+          
+      </span>
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>1.通过索引查找字符串<br>1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变<br>2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.charAt(0),str);</div><div class="line">//&quot;a&quot; &quot;addias&quot; 原字符串不变</div><div class="line">console.log(str.charCodeAt(0),str);</div><div class="line">//97 &quot;addias&quot;  原字符串不变</div></pre></td></tr></table></figure></p>
+<p>2.检取字符串</p>
+<blockquote>
+<ol>
+<li>substr(n,m); 从索引n开始截取m个</li>
+</ol>
+<ul>
+<li>返回值为截取的字符串</li>
+<li>原有字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(1, 2),str);//&quot;dd&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>1). str.substr();// 复制字符串</li>
+<li>2). str.substr(0);// 复制字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div><div class="line">console.log(str.substr(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>subString(n,m) 从索引n找到索引m之前，不包含m处;原字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(3, 4),str);</div><div class="line">//&quot;i&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li>substring(0); 克隆字符串</li>
+<li>substring(); 克隆字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div><div class="line">console.log(str.substring(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>slice  字符串也可以使用slice<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.slice(-1+str.length));//s</div><div class="line">console.log(str.slice(-1)); //s 同数组的使用方法一样</div><div class="line">console.log(str.slice(-2)); //as 同数组的使用方法一样</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>4.indexOf();字符串中当前字符出现的第一个索引;<br>lastIndexOf();字符串中当前字符出现的最后一个索引;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.indexOf(&apos;f&apos;));//-1</div><div class="line">console.log(str.lastIndexOf(&apos;a&apos;));//4</div></pre></td></tr></table></figure></p>
+<p>5.toUpperCase();字符串转化成大写;<br>toLowerCase();字符串转化成小写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.toUpperCase(), str);</div><div class="line">// &quot;ADDIAS&quot; &quot;addias&quot; 字符串转化成大写</div><div class="line">var str = &apos;ADDIAS&apos;;</div><div class="line">console.log(str.toLowerCase(), str);</div><div class="line">//&quot;addias&quot; &quot;ADDIAS&quot; 字符串转化成小写</div></pre></td></tr></table></figure></p>
+<p>6.replace 替换字符串中的字符;原字符串不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str1.replace(&apos;珠&apos;, &apos;zhu&apos;), str1);</div><div class="line">//&quot;zhu,峰,珠,训&quot;    &quot;珠,峰,珠,训&quot;</div></pre></td></tr></table></figure></p>
+<p>6.split 将字符串拆分成数组;将字符串以字符串中存在的指定分隔符拆分成数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str2.split(&apos;a&apos;));</div><div class="line">//(5) [&quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;]</div><div class="line">console.log(str2.split());</div><div class="line">//[&quot;sdasdasdasdasd&quot;]</div><div class="line">console.log(str1.split(&apos;,&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;峰&quot;, &quot;珠&quot;, &quot;训&quot;]</div><div class="line">console.log(str1.split(&apos;&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;,&quot;, &quot;峰&quot;, &quot;,&quot;, &quot;珠&quot;, &quot;,&quot;, &quot;训&quot;]</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+
+    </div>
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
