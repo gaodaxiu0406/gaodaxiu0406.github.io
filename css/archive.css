@@ -44,7 +44,7 @@
     width: 400px;
     height: 280px;
     text-align: center;
-    background-color: #683cff;
+    background-color: rgb(245,225,215);
 }
 .post-comments .text .footer{
     position: absolute;
@@ -53,7 +53,7 @@
     width: 0;
     border: 20px solid;
     height: 0;
-    border-color: #683cff transparent transparent transparent;
+    border-color: rgb(245,225,215) transparent transparent transparent;
 }
 .icon-shangyin div span{
     float: left;
