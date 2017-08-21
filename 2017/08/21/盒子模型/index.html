@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://yoursite.com/img/margin-top传递问题6.png">
 <meta property="og:image" content="http://yoursite.com/img/margin-top传递问题7.png">
 <meta property="og:image" content="http://yoursite.com/img/margin-top传递问题8.png">
-<meta property="og:updated_time" content="2017-08-21T12:58:28.598Z">
+<meta property="og:updated_time" content="2017-08-21T13:07:13.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS盒子模型(border画三角形)及常见兼容问题解决方案 | 高大秀博客">
 <meta name="twitter:description" content="每一个元素在html中都是一个盒子,用来装其他盒子或者是内容  可以将html页面看做是一个仓库,仓库中从上到下摆了很多箱子,易碎品(盒子和盒子之间要有间距 内容和盒子之间要有填充 盒子本身要有厚度)   宽高属性 1.height: 100%; 指的是继承父级元素内容的高度   2.width: 100%; 指的是继承父级元素内容的宽度    特性 1.父子关系的时候,在设置margin值的时">
@@ -243,24 +243,21 @@ classes that you can use:
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>解决方法:</p>
-<ul>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h4><ul>
 <li>方法一). 给父级元素一个属性,overflow:hidden;<ul>
 <li>弊端:</li>
 <li>overflow:hidden;有溢出隐藏的含义,若给父级元素添加这个属性,子级元素超出父级盒子部分将不能显示,例如子级元素的阴影</li>
 </ul>
 </li>
-<li>方法二). 将子级元素的margin-top值去掉,改成父级元素的padding-top值 (<strong>建议使用这个方法</strong>)<ul>
+<li><p>方法二). 将子级元素的margin-top值去掉,改成父级元素的padding-top值 (<strong>建议使用这个方法</strong>)</p>
+<ul>
 <li>但是此方法也有弊端:</li>
 <li>IE5中父级盒子的高度并没有改变<br><img src="/img/margin-top传递问题5.png" alt="Alt margin-top传递问题"></li>
 <li>IE7~11及谷歌浏览器中,父级盒子的高度都增加了20px;<br><img src="/img/margin-top传递问题6.png" alt="Alt margin-top传递问题"></li>
 </ul>
 </li>
-</ul>
-</blockquote>
+<li><p>方法三). 给父级元素上添加一个透明的border处理</p>
 <ul>
-<li>方法三). 给父级元素上添加一个透明的border处理<ul>
 <li>弊端:</li>
 <li>在IE5~7中确实解决了问题<br><img src="/img/margin-top传递问题7.png" alt="Alt margin-top传递问题"></li>
 <li>但是在IE8~11及谷歌浏览器中仍然存在margin-top的传递问题<br><img src="/img/margin-top传递问题8.png" alt="Alt margin-top传递问题"></li>
