@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      解决Chrome动画”卡顿”的办法 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="解决Chrome动画”卡顿”的办法,为动画DOM元素添加CSS3样式 123-webkit-transform:transition3d(0,0,0);//或-webkit-transform:translateZ(0);  这两个属性都会开启GPU硬件加速模式，从而让览器在渲染动画时从CPU转向GPU;  其实说白了这是一个小伎俩，也可以算是一个Hack，-webkit-transform:t">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决Chrome动画”卡顿”的办法 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/08/31/解决Chrome动画”卡顿”的办法/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="解决Chrome动画”卡顿”的办法,为动画DOM元素添加CSS3样式 123-webkit-transform:transition3d(0,0,0);//或-webkit-transform:translateZ(0);  这两个属性都会开启GPU硬件加速模式，从而让览器在渲染动画时从CPU转向GPU;  其实说白了这是一个小伎俩，也可以算是一个Hack，-webkit-transform:t">
+<meta property="og:updated_time" content="2017-08-31T15:36:14.422Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解决Chrome动画”卡顿”的办法 | 高大秀博客">
+<meta name="twitter:description" content="解决Chrome动画”卡顿”的办法,为动画DOM元素添加CSS3样式 123-webkit-transform:transition3d(0,0,0);//或-webkit-transform:translateZ(0);  这两个属性都会开启GPU硬件加速模式，从而让览器在渲染动画时从CPU转向GPU;  其实说白了这是一个小伎俩，也可以算是一个Hack，-webkit-transform:t">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">解决Chrome动画”卡顿”的办法</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-08-31" class="post-meta__date date">2017-08-31</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/CSS/">CSS</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li><p>解决Chrome动画”卡顿”的办法,为动画DOM元素添加CSS3样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-webkit-transform:transition3d(0,0,0);</div><div class="line">//或</div><div class="line">-webkit-transform:translateZ(0);</div></pre></td></tr></table></figure>
+</li>
+<li><p>这两个属性都会开启GPU硬件加速模式，从而让览器在渲染动画时从CPU转向GPU;</p>
+</li>
+<li><p>其实说白了这是一个小伎俩，也可以算是一个Hack，-webkit-transform:transition3d和-webkit-transform:translateZ其实是为了渲染3D样式，但我们设置值为0后，并没有真正使用3D效果，但浏览器却因此开启了GPU硬件加速模式。</p>
+</li>
+<li><p>这种GPU硬件加速在当今PC机及移动设备上都已普及，在移动端的性能提升是相当显著地，所以建议大家在做动画时可以尝试一下开启GPU硬件加速。</p>
+</li>
+<li><p>当然也可以这样开启所有浏览器的GPU硬件加速：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webkit-transform: translateZ(0);</div><div class="line">-moz-transform: translateZ(0);</div><div class="line">-ms-transform: translateZ(0);</div><div class="line">-o-transform: translateZ(0);</div><div class="line">transform: translateZ(0);</div></pre></td></tr></table></figure>
+</li>
+<li><p>或者:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">webkit-transform: translate3d(0,0,0);</div><div class="line">-moz-transform: translate3d(0,0,0);</div><div class="line">-ms-transform: translate3d(0,0,0);</div><div class="line">-o-transform: translate3d(0,0,0);</div><div class="line">transform: translate3d(0,0,0);</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用-webkit-transform:transition3d(0,0,0)开启GPU硬件加速的chrome中渲染动画性能明显顺畅了许多</p>
+</li>
+</ul>
+<h3 id="chrome诡异的Bug"><a href="#chrome诡异的Bug" class="headerlink" title="chrome诡异的Bug"></a>chrome诡异的Bug</h3><ul>
+<li><p>对所有动画DOM元素添加-webkit-transform:transition3d(0,0,0)开启GPU硬件加速之后，又出现了一个chrome诡异的Bug</p>
+</li>
+<li><p>当你有多个position:absolute;元素添加-webkit-transform:transition3d(0,0,0);开启GPU硬件加速之后，会有几个元素凭空消失</p>
+</li>
+<li><p>这可能是跟添加-webkit-transform之后chrome尝试使用GPU硬件加速有关系，最后还是要等待Chrome官方更新解决了，当前Chrome版本是33。如果谁发现比较好的解决办法，欢迎提出^_^</p>
+</li>
+</ul>
+<h4 id="如何避免这个问题"><a href="#如何避免这个问题" class="headerlink" title="如何避免这个问题"></a>如何避免这个问题</h4><ul>
+<li><p>在使用-webkit-transform尝试对很多DOM元素编写3D动画时，尽量不要对这些元素及他们的父元素使用position:absolute/fixed。(其实这种情况很难避免)</p>
+</li>
+<li><p>临时解决办法是,减少使用-webkit-transform:transition3d(0,0,0)的DOM元素数量，例如从9个减至6个就没有元素消失的现象了。</p>
+</li>
+</ul>
+<h3 id="开启GPU硬件加速可能触发的问题："><a href="#开启GPU硬件加速可能触发的问题：" class="headerlink" title="开启GPU硬件加速可能触发的问题："></a>开启GPU硬件加速可能触发的问题：</h3><ul>
+<li>通过-webkit-transform:transition3d/translateZ开启GPU硬件加速之后，有些时候可能会导致浏览器频繁闪烁或抖动，可以尝试以下办法解决之:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-webkit-backface-visibility:hidden;</div><div class="line">-webkit-perspective:1000;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="如何监测动画帧速率"><a href="#如何监测动画帧速率" class="headerlink" title="如何监测动画帧速率"></a>如何监测动画帧速率</h3><ul>
+<li>推荐两种实时监测网页渲染帧速率的方法：<ul>
+<li>1.Chrome的DevTool中TimeLine的Frame模块</li>
+<li>2.地址栏输入”chrome:flags”搜索”fps”，将”FPS计数器”开启，浏览器重启后右上角会实时显示帧速率。</li>
+</ul>
+</li>
+</ul>
+<h3 id="通过-webkit-transform-transition3d-translateZ开启GPU硬件加速的适用范围："><a href="#通过-webkit-transform-transition3d-translateZ开启GPU硬件加速的适用范围：" class="headerlink" title="通过-webkit-transform:transition3d/translateZ开启GPU硬件加速的适用范围："></a>通过-webkit-transform:transition3d/translateZ开启GPU硬件加速的适用范围：</h3><ul>
+<li>使用很多大尺寸图片(尤其是PNG24图)进行动画的页面。</li>
+<li>页面有很多大尺寸图片并且进行了css缩放处理，页面可以滚动时。</li>
+<li>使用background-size:cover设置大尺寸背景图，并且页面可以滚动时。(详见:<a href="https://coderwall.com/p/j5udlw" target="_blank" rel="external">https://coderwall.com/p/j5udlw</a>)</li>
+<li>编写大量DOM元素进行CSS3动画时(transition/transform/keyframes/absTop&amp;Left)</li>
+<li><p>使用很多PNG图片拼接成CSS Sprite时</p>
+<ul>
+<li><strong>暂时只有这五种情况，欢迎大家补充</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="通过开启GPU硬件加速虽然可以提升动画渲染性能或解决一些棘手问题，但使用仍需谨慎，使用前一定要进行严谨的测试，否则它反而会大量占用浏览网页用户的系统资源，尤其是在移动端，肆无忌惮的开启GPU硬件加速会导致大量消耗设备电量，降低电池寿命等问题。"><a href="#通过开启GPU硬件加速虽然可以提升动画渲染性能或解决一些棘手问题，但使用仍需谨慎，使用前一定要进行严谨的测试，否则它反而会大量占用浏览网页用户的系统资源，尤其是在移动端，肆无忌惮的开启GPU硬件加速会导致大量消耗设备电量，降低电池寿命等问题。" class="headerlink" title="通过开启GPU硬件加速虽然可以提升动画渲染性能或解决一些棘手问题，但使用仍需谨慎，使用前一定要进行严谨的测试，否则它反而会大量占用浏览网页用户的系统资源，尤其是在移动端，肆无忌惮的开启GPU硬件加速会导致大量消耗设备电量，降低电池寿命等问题。"></a>通过开启GPU硬件加速虽然可以提升动画渲染性能或解决一些棘手问题，但使用仍需谨慎，使用前一定要进行严谨的测试，否则它反而会大量占用浏览网页用户的系统资源，尤其是在移动端，肆无忌惮的开启GPU硬件加速会导致大量消耗设备电量，降低电池寿命等问题。</h4><h5 id="参考地址-http-blog-bingo929-com-transform-translate3d-translatez-transition-gpu-hardware-acceleration-html"><a href="#参考地址-http-blog-bingo929-com-transform-translate3d-translatez-transition-gpu-hardware-acceleration-html" class="headerlink" title="参考地址:http://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html"></a>参考地址:<code>http://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html</code></h5>
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
