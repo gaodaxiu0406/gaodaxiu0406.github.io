@@ -16,16 +16,17 @@
     
     
 
-    <meta name="description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Dav">
+    <meta name="description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Da">
+<meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="getter&amp;setter | 高大秀博客">
 <meta property="og:url" content="http://yoursite.com/2017/09/05/getter-setter/index.html">
 <meta property="og:site_name" content="高大秀博客">
-<meta property="og:description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Dav">
-<meta property="og:updated_time" content="2017-09-05T10:17:53.542Z">
+<meta property="og:description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Da">
+<meta property="og:updated_time" content="2017-09-05T10:19:37.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="getter&amp;setter | 高大秀博客">
-<meta name="twitter:description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Dav">
+<meta name="twitter:description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Da">
     
     
     
@@ -167,6 +168,11 @@ classes that you can use:
           
 
           
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Javascript/">Javascript</a>
+            </font>
+          
       </span>
 
 
@@ -180,7 +186,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="一般在书上看到都解释都是-把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？"><a href="#一般在书上看到都解释都是-把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？" class="headerlink" title="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？"></a>一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和seter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？</h2><ul>
+    <h2 id="一般在书上看到都解释都是-把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？"><a href="#一般在书上看到都解释都是-把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？" class="headerlink" title="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？"></a>一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？</h2><ul>
 <li>的确可以暴露，如果<ul>
 <li><ol>
 <li>所有内外代码都是你自己写；</li>
