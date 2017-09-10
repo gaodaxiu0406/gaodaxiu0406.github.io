@@ -7,7 +7,7 @@
     
 
     <title>
-      page 6 | 高大秀博客 
+      HTTP缓存机制详解(转载) | 高大秀博客 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,17 +15,16 @@
       <meta name="author" content="高大秀">
     
     
-      <meta name="description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
-    
 
     <meta name="description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
-<meta property="og:type" content="website">
-<meta property="og:title" content="page 6 | 高大秀博客">
-<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP缓存机制详解(转载) | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/HTTP缓存机制详解-转载/index.html">
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
+<meta property="og:updated_time" content="2017-09-10T13:42:31.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page 6 | 高大秀博客">
+<meta name="twitter:title" content="HTTP缓存机制详解(转载) | 高大秀博客">
 <meta name="twitter:description" content="本站内容涉及前端开发的相关内容,如Javascript、CSS、HTML、CSS3、较为简单的Node、jQuery插件等,为作者高大秀本人根据自己多年经验总结写成，如有异议欢迎留言，愿与大家共同进步。作者qq号:1260833716">
     
     
@@ -46,8 +45,8 @@
     </span>
 
     
- 
-<header class="panel-cover">
+
+<header class="panel-cover panel-cover--collapsed">
 
 
   <div class="panel-main">
@@ -153,194 +152,61 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">HTTP缓存机制详解(转载)</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/06/08/canvas之2画圆/" title="link to Canvas之2画圆">Canvas之2画圆</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-06-08" class="post-list__meta--date date">2017-06-08</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/" title="link to Canvas之1绘制线条的有关属性和步骤">Canvas之1绘制线条的有关属性和步骤</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-06-08" class="post-list__meta--date date">2017-06-08</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/06/02/JS字符串中的几个重要方法/" title="link to 字符串中的几个重要方法">字符串中的几个重要方法</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-06-02" class="post-list__meta--date date">2017-06-02</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/04/29/JS中的作用域/" title="link to JS中的作用域">JS中的作用域</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-04-29" class="post-list__meta--date date">2017-04-29</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/04/29/JS中的预解释/" title="link to JS中的预解释">JS中的预解释</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-04-29" class="post-list__meta--date date">2017-04-29</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/04/29/JS自定义属性和引用数据类型的赋值/" title="link to 自定义属性和引用数据类型的赋值">自定义属性和引用数据类型的赋值</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-04-29" class="post-list__meta--date date">2017-04-29</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/04/25/基于GitHub创建自己的博客/" title="link to 基于GitHub创建自己hexo的博客">基于GitHub创建自己hexo的博客</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-04-25" class="post-list__meta--date date">2017-04-25</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/04/25/JS数组中的方法/" title="link to 数组中的方法">数组中的方法</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-04-25" class="post-list__meta--date date">2017-04-25</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/04/25/hello-world/" title="link to Hello World">Hello World</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-04-25" class="post-list__meta--date date">2017-04-25</time>
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-    	
-          <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="/page/5/">&larr; Prev </a>
-        
     
 
-    <span class="pagination__page-number"> 6 / 6</span>
-    
-    
-</nav>
+    <div class="post-meta">
+      <time datetime="2017-09-10" class="post-meta__date date">2017-09-10</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+      </span>
 
 
-</div>
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
             <footer class="footer">
 <span id="busuanzi_container_site_pv">
     本站总访问量<span id="busuanzi_value_site_pv"></span>次
@@ -379,6 +245,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->
