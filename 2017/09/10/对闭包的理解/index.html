@@ -7,7 +7,7 @@
     
 
     <title>
-      HTTP缓存机制详解(转载) | 高大秀博客 
+      对闭包的理解 | 高大秀博客 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,17 +16,17 @@
     
     
 
-    <meta name="description" content="原文链接`">
+    <meta name="description" content="当函数执行的时候，会形成一个私有的作用域，保护里面的私有变量不受外界干扰，我们把这种机制叫做“闭包”闭包 闭包是一种”机制”:函数执行形成私有的作用域(不管销毁还是不销毁),保护了里面的私有变量不受外界的干扰 然而,社会上很多人都认为”闭包”指的是:函数执行形成的那个不销毁的私有作用域才是闭包. 123456var fn = (function () &amp;#123;    var num = 12">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP缓存机制详解(转载) | 高大秀博客">
-<meta property="og:url" content="http://yoursite.com/2017/09/10/HTTP缓存机制详解-转载/index.html">
+<meta property="og:title" content="对闭包的理解 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/09/10/对闭包的理解/index.html">
 <meta property="og:site_name" content="高大秀博客">
-<meta property="og:description" content="原文链接`">
-<meta property="og:updated_time" content="2017-09-10T14:45:47.147Z">
+<meta property="og:description" content="当函数执行的时候，会形成一个私有的作用域，保护里面的私有变量不受外界干扰，我们把这种机制叫做“闭包”闭包 闭包是一种”机制”:函数执行形成私有的作用域(不管销毁还是不销毁),保护了里面的私有变量不受外界的干扰 然而,社会上很多人都认为”闭包”指的是:函数执行形成的那个不销毁的私有作用域才是闭包. 123456var fn = (function () &amp;#123;    var num = 12">
+<meta property="og:updated_time" content="2017-09-10T15:59:31.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP缓存机制详解(转载) | 高大秀博客">
-<meta name="twitter:description" content="原文链接`">
+<meta name="twitter:title" content="对闭包的理解 | 高大秀博客">
+<meta name="twitter:description" content="当函数执行的时候，会形成一个私有的作用域，保护里面的私有变量不受外界干扰，我们把这种机制叫做“闭包”闭包 闭包是一种”机制”:函数执行形成私有的作用域(不管销毁还是不销毁),保护了里面的私有变量不受外界的干扰 然而,社会上很多人都认为”闭包”指的是:函数执行形成的那个不销毁的私有作用域才是闭包. 123456var fn = (function () &amp;#123;    var num = 12">
     
     
     
@@ -157,7 +157,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">HTTP缓存机制详解(转载)</h1>
+    <h1 class="post-title">对闭包的理解</h1>
 
     
 
@@ -186,7 +186,23 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h5 id="原文链接"><a href="#原文链接" class="headerlink" title="原文链接`"></a>原文链接`</h5>
+    <ul>
+<li>当函数执行的时候，会形成一个私有的作用域，保护里面的私有变量不受外界干扰，我们把这种机制叫做“闭包”<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2></li>
+<li>闭包是一种”机制”:函数执行形成私有的作用域(不管销毁还是不销毁),保护了里面的私有变量不受外界的干扰</li>
+<li><p>然而,社会上很多人都认为”闭包”指的是:函数执行形成的那个不销毁的私有作用域才是闭包.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var fn = (function () &#123;</div><div class="line">    var num = 12;</div><div class="line">    return function () &#123;</div><div class="line">        console.log(++num);</div><div class="line">    &#125;</div><div class="line">&#125;)();//-&gt;JS高阶编程技巧之一：&quot;惰性思想&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>1、利用可以形成不销毁的私有的作用域的原理，把我们需要保存的内容，存储到这个不销毁的作用域中</p>
+</li>
+<li>2、避免全局变量之间的冲突，保护里面的变量不受外界的干扰 -&gt;所有框架/类库的源码都是写在一个闭包函数中的,目的就是为了不和别人的代码冲突<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var name = &quot;china&quot;;</div><div class="line">var age = 5000;</div><div class="line">(function () &#123;</div><div class="line">    var name = &quot;zhuFeng&quot;;</div><div class="line">    var age = 7;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="[jQuery]"></a>[jQuery]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(function (global, factory) &#123;</div><div class="line">               //&lt;JS CODE&gt;</div><div class="line">               var jQuery = function () &#123;</div><div class="line"></div><div class="line">               &#125;;</div><div class="line">               window.jQuery = window.$ = jQuery;//-&gt;让私有的变量在全局下依然可以使用,我们可以使用window.xxx=xxx来进行处理</div><div class="line">               //-&gt;当前的这个作用域是不销毁的,因为函数里面的jQuery对应的地址被window下的jQuery和$给占用了</div><div class="line">           &#125;)();</div><div class="line">           jQuery();</div></pre></td></tr></table></figure>
+<h2 id="使用闭包的注意点"><a href="#使用闭包的注意点" class="headerlink" title="使用闭包的注意点"></a>使用闭包的注意点</h2><ul>
+<li>（1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</li>
+<li>（2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</li>
+</ul>
+
   </section>
 
   <section class="post-comments">
