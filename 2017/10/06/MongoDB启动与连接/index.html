@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      MongoDB启动与连接 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="什么是MongoDB MongoDB是一个基于分布式文件存储的开源数据库系统 MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。  MongoDB安装windows安装 Windows官方安装指南 绿色版就是解压之后就可以用  mongodb32位绿色版 http://pan">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB启动与连接 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/10/06/MongoDB启动与连接/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="什么是MongoDB MongoDB是一个基于分布式文件存储的开源数据库系统 MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。  MongoDB安装windows安装 Windows官方安装指南 绿色版就是解压之后就可以用  mongodb32位绿色版 http://pan">
+<meta property="og:image" content="http://yoursite.com/img/MongoDB安装目录.png">
+<meta property="og:image" content="http://yoursite.com/img/新建data文件夹.png">
+<meta property="og:image" content="http://yoursite.com/img/启动MongoDB服务器端.png">
+<meta property="og:image" content="http://yoursite.com/img/MongoDB安装目录.png">
+<meta property="og:image" content="http://yoursite.com/img/MongoDB启动客户端连接服务器.png">
+<meta property="og:image" content="http://yoursite.com/img/MongoDB基本概念.png">
+<meta property="og:updated_time" content="2017-10-07T11:22:15.065Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB启动与连接 | 高大秀博客">
+<meta name="twitter:description" content="什么是MongoDB MongoDB是一个基于分布式文件存储的开源数据库系统 MongoDB 将数据存储为一个文档，数据结构由键值(key=&amp;gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。  MongoDB安装windows安装 Windows官方安装指南 绿色版就是解压之后就可以用  mongodb32位绿色版 http://pan">
+<meta name="twitter:image" content="http://yoursite.com/img/MongoDB安装目录.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">MongoDB启动与连接</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-10-06" class="post-meta__date date">2017-10-06</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/数据库/">数据库</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="什么是MongoDB"><a href="#什么是MongoDB" class="headerlink" title="什么是MongoDB"></a>什么是MongoDB</h2><ul>
+<li>MongoDB是一个基于分布式文件存储的开源数据库系统</li>
+<li>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</li>
+</ul>
+<h2 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h2><h3 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h3><blockquote>
+<p>Windows官方安装指南 绿色版就是解压之后就可以用</p>
+<ul>
+<li>mongodb32位绿色版 <a href="http://pan.baidu.com/s/1pLe3vM7" target="_blank" rel="external">http://pan.baidu.com/s/1pLe3vM7</a></li>
+<li>MongoDB64位绿色版 <a href="http://pan.baidu.com/s/1cMM9oq" target="_blank" rel="external">http://pan.baidu.com/s/1cMM9oq</a></li>
+<li>mongo客户端绿色版 <a href="http://pan.baidu.com/s/1kUIQlUZ" target="_blank" rel="external">http://pan.baidu.com/s/1kUIQlUZ</a></li>
+</ul>
+</blockquote>
+<h3 id="Mac官方安装指南"><a href="#Mac官方安装指南" class="headerlink" title="Mac官方安装指南"></a>Mac官方安装指南</h3><ul>
+<li><p>1.先安装homebrew</p>
+<ul>
+<li><p>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://brew.sh/</div></pre></td></tr></table></figure>
+</li>
+<li><p>Homebrew的安装非常简单，打开终端复制、粘贴以下命令，回车，搞定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2.使用brew安装mongodb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.创建数据存放目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /data/db</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>如果提示输入密码请输入正确的密码</p>
+</blockquote>
+<ul>
+<li>4.启动mongodb<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mongod &amp;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Mac可视化工具可安装Robomongo"><a href="#Mac可视化工具可安装Robomongo" class="headerlink" title="Mac可视化工具可安装Robomongo"></a>Mac可视化工具可安装Robomongo</h4><h2 id="mongodb启动与连接"><a href="#mongodb启动与连接" class="headerlink" title="mongodb启动与连接"></a>mongodb启动与连接</h2><h3 id="1-windows启动服务器端"><a href="#1-windows启动服务器端" class="headerlink" title="1.windows启动服务器端"></a>1.windows启动服务器端</h3><ul>
+<li>1).找到mongodb安装目录,一般是 C:\Program Files\MongoDB 2.6 Standard\bin (这里我下载到了C:\Users\Gao\Downloads\数据库\MongoDB这个目录)<br><img src="/img/MongoDB安装目录.png" alt="Alt MongoDB安装目录">“MongoDB安装目录”</li>
+<li><p>2).按下Shift+鼠标右键,选择在此处打开命令窗口</p>
+<ul>
+<li>3)在除C盘外的盘符新建一个空目录,例如 D:\Mongodb\data(由于我的电脑没有分盘,所以我就建在C盘下了)<br><img src="/img/新建data文件夹.png" alt="Alt 新建data文件夹">“新建data文件夹”</li>
+<li><p>在命令行中输入mongod –dbpath=刚创建的空目录,如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath=C:\data</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>注意：–dbpath后的值表示数据库文件的存储路径,而且后面的路径必须事先创建好，必须已经存在，否则服务开启失败<blockquote>
+<p>如果是windows32的系统用户，请加参数 –storageEngine=mmapv1</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>如 <code>mongod --dbpath=C:\data --storageEngine=mmapv1</code></p>
+</blockquote>
+</li>
+<li><p>4)再按回车键<br><img src="/img/启动MongoDB服务器端.png" alt="Alt 启动MongoDB服务器端">“启动MongoDB服务器端”</p>
+<ul>
+<li><ol>
+<li>如果出现waiting for connections on port 27017就表示启动成功,已经在27017端口上监听了客户端的请求</li>
+</ol>
+</li>
+<li><ol>
+<li>注意：这个命令窗体绝对不能关,关闭这个窗口就相当于停止了mongodb服务</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ol>
+<li><strong>如果mongoVUE客户端报错 “MongoDB.Bson.BsonObjectId”的类型初始值设定项引发异常</strong><blockquote>
+<p>解决方案如下：在window中打开功能里输入regedit,回车打开注册器。然后进入如下路径中 HKEY_LOCAL_MACHINE\system\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy 将enable设置为0 即可。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-启动客户端连接服务器"><a href="#2-启动客户端连接服务器" class="headerlink" title="2.启动客户端连接服务器"></a>2.启动客户端连接服务器</h3><ul>
+<li>1)找到mongodb安装目录,一般是 C:\Program Files\MongoDB 2.6 Standard\bin</li>
+<li>2)按下Shift+鼠标右键,选择在此处打开命令窗口<br><img src="/img/MongoDB安装目录.png" alt="Alt MongoDB安装目录">“MongoDB安装目录”</li>
+<li>3)命令窗体中输入 mongo –host=127.0.0.1 或者 mongo 按回车键</li>
+<li>4)命令窗体中输入 db 按回车键可进入测试<br><img src="/img/MongoDB启动客户端连接服务器.png" alt="Alt MongoDB启动客户端连接服务器">“MongoDB启动客户端连接服务器”</li>
+</ul>
+<blockquote>
+<p>备注：–host后的值表示服务器的ip地址,–host=127.0.0.1 表示的就是本地服务器,每次数据库都会默认连接test数据库</p>
+</blockquote>
+<h2 id="MongoDB基本概念"><a href="#MongoDB基本概念" class="headerlink" title="MongoDB基本概念"></a>MongoDB基本概念</h2><ul>
+<li>数据库 MongoDB的单个实例可以容纳多个独立的数据库，比如一个学生管理系统就可以对应一个数据库实例</li>
+<li>集合 数据库是由集合组成的,一个集合用来表示一个实体,如学生集合</li>
+<li>文档 集合是由文档组成的，一个文档表示一条记录,比如一位同学张三就是一个文档<br><img src="/img/MongoDB基本概念.png" alt="Alt MongoDB基本概念">“MongoDB基本概念”</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
