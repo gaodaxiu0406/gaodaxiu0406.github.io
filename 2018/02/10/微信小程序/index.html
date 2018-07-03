@@ -23,10 +23,12 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/10/微信小程序/index.html">
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
-<meta property="og:updated_time" content="2018-07-03T04:17:24.338Z">
+<meta property="og:image" content="http://yoursite.com/img/tabBarErr.jpg">
+<meta property="og:updated_time" content="2018-07-03T04:18:28.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 | 高大秀博客">
 <meta name="twitter:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
+<meta name="twitter:image" content="http://yoursite.com/img/tabBarErr.jpg">
     
     
     
@@ -385,6 +387,20 @@ classes that you can use:
 <h3 id="更改子级页面的title"><a href="#更改子级页面的title" class="headerlink" title="更改子级页面的title"></a>更改子级页面的title</h3><ul>
 <li>内部/子级页面没有pages属性，只有window属性<h4 id="1-home-json"><a href="#1-home-json" class="headerlink" title="1.home.json"></a>1.home.json</h4></li>
 <li>子页面不需要写window了<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;green&quot;,</div><div class="line">    &quot;navigationBarTextStyle&quot;: &quot;yellow&quot;,</div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;主页&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="主页的tab键"><a href="#主页的tab键" class="headerlink" title="主页的tab键"></a>主页的tab键</h3><h4 id="1-app-json"><a href="#1-app-json" class="headerlink" title="1.app.json"></a>1.app.json</h4><ul>
+<li>tabBar配置文档地址<code>https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html</code></li>
+<li><p>tabBar(tab的列表最少2个，最多5个)<br><img src="/img/tabBarErr.jpg" alt="Alt 伪元素选择器">“当tab列表不足2个的时候会报错”</p>
+</li>
+<li><p>tabBar列表有两个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&quot;tabBar&quot;: &#123;</div><div class="line">    &quot;borderStyle&quot;: &quot;white&quot;,//tab盒子的border-top，有两个值black（黑色）、white（白色）</div><div class="line">    &quot;color&quot;: &quot;red&quot;,//字体颜色</div><div class="line">    &quot;selectedColor&quot;: &quot;orange&quot;,//激活的字体颜色</div><div class="line">    &quot;list&quot;: [&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/home/home&quot;,//页面路径(跳转的对应路径)，只能使用相对路径</div><div class="line">      &quot;text&quot;: &quot;首页&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo.png&quot;,//页面默认的icon路径，只能使用相对路径</div><div class="line">      &quot;selectedIconPath&quot;: &quot;images/anhoo1.png&quot;</div><div class="line">    &#125;,&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pagePath&quot;,</div><div class="line">      &quot;text&quot;: &quot;text&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo.png&quot;,</div><div class="line">      &quot;selectedIconPath&quot;: &quot;selectedIconPath&quot;</div><div class="line">    &#125;]</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>此处有坑</strong></p>
+<ul>
+<li>升级到1.2版本后，如果有tabBar，只能使用switchTab方式切换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//保留当前页面，跳转到应用内的某个页面 navigateTo只适合导航跳转</div><div class="line">    // wx.navigateTo(&#123;</div><div class="line">    //   url: &apos;../home/home&apos;,</div><div class="line">    // &#125;);</div><div class="line">    //跳转到tabBar页面,并关闭其他所有非tabBary页面</div><div class="line">    //如果有tabBar，只能使用switchTab方式切换</div><div class="line">    wx.switchTab(&#123;</div><div class="line">      url: &apos;&apos;,</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 </ul>
 
