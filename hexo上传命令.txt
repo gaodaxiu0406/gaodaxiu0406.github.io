@@ -1,0 +1,5 @@
+hexo add .   //将所有修改的文件全部增加到暂存区中
+hexo commit -m'xx'  //提交增加到版本库中
+hexo d -g  //推送到服务器上
+HEXO 常用命令总结  https://segmentfault.com/a/1190000002632530
+Git 常用命令总结  http://blog.csdn.net/tomatozaitian/article/details/73515849

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31d8c6a2-7aa1-4889-b1eb-5778c78a53bb" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/04/25/JS数组中的方法/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/04/25/hello-world/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/04/25/基于GitHub创建自己的博客/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/04/29/JS中的作用域/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/04/29/JS中的预解释/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/04/29/JS自定义属性和引用数据类型的赋值/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/02/JS字符串中的几个重要方法/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/08/canvas之1绘制线条的有关属性和步骤/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/08/canvas之2画圆/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas之3绘制矩形/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas之4渐变/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas之5绘制文本/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas之6绘制图片/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas之7变形/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas之8图形组合/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/canvas动态案例/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/09/服务器及相关知识/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/20/DOS基本命令大全/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/20/IE版本条件注释语句-全/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/20/网站如何发布/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/23/JS中的同步异步编程思想/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/26/JS中的caller和callee/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/27/Nodejs的全局对象和全局变量/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/CSS中常用的HTML元素及标签/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/CSS中的form表单与table表格/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/CSS属性的继承及相关面试题/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/CSS常用选择器/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/CSS标签语义化/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/CSS的引入方式/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/HTML基本结构/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/HTML标签分类/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/Vuejs基础/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/Window快捷键整理/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/markdown的简单使用/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/“前端三层”/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/06/30/相对路径与绝对路径/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/05/IP分类/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/21/css选择器种类和兼容性总结大全/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/26/React Native/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/28/移动端click300-380ms延迟问题/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/31/1-react轮播图项目配置及原理概要/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/31/2-react轮播图项目开写/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/31/HEXO主题设置/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/07/31/如何安装部署服务器/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/01/关于png24格式的图片背景在IE6下显示不透明的解决方法/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/20/box-shadow/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/20/display/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/21/CSS盒子模型(border画三角形)及常见兼容问题解决方案/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/21/为HEXO博客中每篇文章的浏览量统计/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/21/盒子模型/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/08/31/解决Chrome动画”卡顿”的办法/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/01/vertical-align/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/03/ios和android-浏览器适配问题总结/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/05/getter-setter/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/05/函数内部的-scope-属性/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/05/正则基础/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/09/JavaScript中toStirng-与Object-prototype-toString-call-方法浅谈/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/09/React-createClass和extends-Component的区别/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/09/模块化与组件化/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/10/HTTP缓存机制详解-转载/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/10/对闭包的理解/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/09/10/秒懂Vuejs、Angular、React原理和前端发展历史(转载)/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/10/06/MongoDB启动与连接/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2017/10/07/浏览器的跨域问题以及解决方案-转载/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2018/01/24/ReactNative环境搭建/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/2018/01/26/HTML中特殊符号总结/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/about/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archive/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/04/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/06/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/06/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/06/page/3/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/07/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/08/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/09/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/09/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/10/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/page/3/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/page/4/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/page/5/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/page/6/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2017/page/7/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2018/01/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/2018/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/page/3/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/page/4/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/page/5/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/page/6/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/archives/page/7/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/content.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/animate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/archive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/china-social-icon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/highlight.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/uno.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/china-social/china-social.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/china-social/china-social.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/china-social/china-social.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/china-social/china-social.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/china-social/readme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/foundation-icons/foundation-icons.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/foundation-icons/foundation-icons.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/foundation-icons/foundation-icons.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/foundation-icons/foundation-icons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/foundation-icons/foundation-icons.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gitHub/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/background-cover.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/favicon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/totop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/weixin.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/zhifubao.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/EO~FX6Q(5@$]7F8)$7F$DG6_看图王.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/JSX语法设置.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/MVC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/MVVM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/MongoDB启动客户端连接服务器.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/MongoDB基本概念.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/MongoDB安装目录.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/margin-top传递问题8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/webstore打开设置窗口.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/三角形.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/启动MongoDB服务器端.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/新建data文件夹.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/awesome-toc.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.githubRepoWidget.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/scale.fix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/3/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/4/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/5/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/6/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/page/7/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/CSS/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/CSS/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/CSS/page/3/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/HTML/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/Javascript/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/Javascript/page/2/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/Markdown/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/Nodejs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/React/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/ReactNative/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/Vuejs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/前端常识/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/前端框架/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/基于GitHub创建自己的hexo博客/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/数据库/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/服务器/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tags/跨域问题/index.html" afterPath="" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="db.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1022">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".npmignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.npmignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-13" />
+    <option name="y" value="-13" />
+    <option name="width" value="2762" />
+    <option name="height" value="1770" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gaodaxiu0406.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gaodaxiu0406.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31d8c6a2-7aa1-4889-b1eb-5778c78a53bb" name="Default" comment="" />
+      <created>1530542043160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530542043160</updated>
+      <workItem from="1530542044607" duration="1244000" />
+      <workItem from="1530585861627" duration="84000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1328000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-13" y="-13" width="2762" height="1770" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3552">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1022">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.npmignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
