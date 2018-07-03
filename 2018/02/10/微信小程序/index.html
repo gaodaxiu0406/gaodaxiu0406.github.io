@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/10/微信小程序/index.html">
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
-<meta property="og:updated_time" content="2018-07-03T04:11:28.148Z">
+<meta property="og:updated_time" content="2018-07-03T04:13:48.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 | 高大秀博客">
 <meta name="twitter:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
@@ -289,6 +289,61 @@ classes that you can use:
 </table>
 <ul>
 <li><strong>注：除上表之外的其他组件自定义事件如无特殊声明都是非冒泡事件，如<code>&lt;form/&gt;</code>的submit事件，<code>&lt;input/&gt;</code>的input事件，<code>&lt;scroll-view/&gt;</code>的scroll事件，(详见各个组件)</strong></li>
+</ul>
+<h3 id="welcome-wxss"><a href="#welcome-wxss" class="headerlink" title="welcome.wxss"></a>welcome.wxss</h3><ul>
+<li>小程序开发文档地址：<code>https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html</code>，WXSS样式中有介绍</li>
+<li>目前支持的选择器有：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>样例</th>
+<th>样例描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.class</td>
+<td><code>.intro</code></td>
+<td>选择所有拥有 class=”intro” 的组件</td>
+</tr>
+<tr>
+<td>#id</td>
+<td><code>#firstname</code></td>
+<td>选择拥有 id=”firstname” 的组件</td>
+</tr>
+<tr>
+<td>element</td>
+<td><code>view</code></td>
+<td>选择所有 view 组件</td>
+</tr>
+<tr>
+<td>element,element</td>
+<td><code>view, checkbox</code></td>
+<td>选择所有文档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td>::after</td>
+<td><code>view::after</code></td>
+<td>在 view 组件后边插入内容</td>
+</tr>
+<tr>
+<td>::before</td>
+<td><code>view::before</code></td>
+<td>在 view 组件前边插入内容</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>支持flex布局</li>
+<li>不以px为单位，因为要支持适配各种尺寸手机，用rpx为单位<ul>
+<li>1rpx=2px(在iphone6下)</li>
+<li>宽度(iphone6) 750rpx=100%</li>
+<li>高度一般采用rpx</li>
+<li>线条 1px(仍然是实际的高度);</li>
+</ul>
+</li>
 </ul>
 
   </section>
