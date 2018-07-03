@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
 <meta property="og:image" content="http://yoursite.com/img/tabBarErr.jpg">
-<meta property="og:updated_time" content="2018-07-03T04:31:02.706Z">
+<meta property="og:updated_time" content="2018-07-03T04:35:40.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 | 高大秀博客">
 <meta name="twitter:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
@@ -417,9 +417,40 @@ classes that you can use:
 <li>不能使用jQuery等，因为微信小程序中没有dom</li>
 <li>swiper内置的组件，滑动插件<ul>
 <li><code>autoplay=&#39;true&#39;</code>自动播放，默认<code>false</code>;</li>
-<li><strong>此处有坑:不能写成<code>autoplay=&#39;true&#39;</code>或者<code>autoplay=&#39;false&#39;</code>，这样写是字符串，默认转为布尔类型，即使设置为<code>false</code>，<code>&#39;false&#39;</code>转为布尔类型也是<code>true</code>，也会自动播放，所以一定要加</strong></li>
+<li><strong>此处有坑:不能写成<code>autoplay=&#39;true&#39;</code>或者<code>autoplay=&#39;false&#39;</code>，这样写是字符串，默认转为布尔类型，即使设置为<code>false</code>，<code>&#39;false&#39;</code>转为布尔类型也是<code>true</code>，也会自动播放，所以一定要加<code>双大括号</code></strong></li>
+<li>interval自动切换间隔时间</li>
+<li><code>indicator-dots=&#39;true&#39;</code>轮播图对应的小点</li>
+<li><strong>同autoplay，一定要加<code>双大括号</code></strong></li>
+<li><code>circular=&#39;true&#39;</code>循环轮播</li>
+<li><strong>同autoplay，一定要加<code>双大括号</code></strong></li>
+<li><code>vertical=&#39;true&#39;</code> 轮播图上下滚动</li>
+<li><strong>此处有坑:设置banner图的高，不能给swiper-item标签设置，要给他的父级swiper标签设置</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//设置banner图的高为600rpx,此处的style不需要加`双大括号`</div><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos; vertical=&apos;&#123;&#123;true&#125;&#125;&apos; style=&apos;height:600rpx;&apos;&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner1.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner2.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner3.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner4.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner5.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
+</ul>
+<h3 id="绑定动态数据"><a href="#绑定动态数据" class="headerlink" title="绑定动态数据"></a>绑定动态数据</h3><ul>
+<li>数据是单向绑定，数据改动了可以渲染视图，但是视图改动了不会刷新数据</li>
+<li>wx:key 静态遍历不需要</li>
+<li>1.home.js</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">    imgs:[</div><div class="line">      &apos;/images/banner1.jpg&apos;,</div><div class="line">      &apos;/images/banner2.jpg&apos;,</div><div class="line">      &apos;/images/banner3.jpg&apos;,</div><div class="line">      &apos;/images/banner4.jpg&apos;,</div><div class="line">      &apos;/images/banner5.jpg&apos;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><code> wx:for=&#39;&#39;</code></p>
+</li>
+<li><p>2.home.wxml</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt;</div><div class="line">  &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos;&gt;</div><div class="line">    &lt;image src=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>wx:for-item=&#39;num&#39;</code>可指定item叫什么名字，这里的item就叫num</p>
+</li>
+<li><p>2.home.wxml</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt;</div><div class="line">  &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos; wx:for-item=&apos;num&apos;&gt;</div><div class="line">    &lt;image src=&apos;&#123;&#123;num&#125;&#125;&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>注意:<code>wx:for-item=&#39;num&#39;</code>,num不加<code>双大括号</code></strong></li>
 </ul>
 
   </section>
