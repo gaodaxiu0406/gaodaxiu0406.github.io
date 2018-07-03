@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
 <meta property="og:image" content="http://yoursite.com/img/tabBarErr.jpg">
-<meta property="og:updated_time" content="2018-07-03T04:30:04.060Z">
+<meta property="og:updated_time" content="2018-07-03T04:30:27.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 | 高大秀博客">
 <meta name="twitter:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
@@ -417,7 +417,7 @@ classes that you can use:
 <li>不能使用jQuery等，因为微信小程序中没有dom</li>
 <li>swiper内置的组件，滑动插件<ul>
 <li><code>autoplay=&#39;true&#39;</code>自动播放，默认<code>false</code>;</li>
-<li>**此处有坑:不能写成<code>autoplay=&#39;true&#39;</code>或者<code>autoplay=&#39;false&#39;</code>，这样写是字符串，默认转为布尔类型，即使设置为<code>false</code>，</li>
+<li>**此处有坑:不能写成<code>autoplay=&#39;true&#39;</code>或者<code>autoplay=&#39;false&#39;</code>，这样写是字符串，默认转为布尔类型，即使设置为<code>false</code>，<code>&#39;false&#39;</code>转为布尔类型也是<code>true</code>，</li>
 </ul>
 </li>
 </ul>
