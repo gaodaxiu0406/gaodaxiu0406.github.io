@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/10/微信小程序/index.html">
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
-<meta property="og:updated_time" content="2018-07-03T04:13:48.989Z">
+<meta property="og:updated_time" content="2018-07-03T04:14:35.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 | 高大秀博客">
 <meta name="twitter:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
@@ -343,6 +343,41 @@ classes that you can use:
 <li>高度一般采用rpx</li>
 <li>线条 1px(仍然是实际的高度);</li>
 </ul>
+</li>
+</ul>
+<h4 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h4><ul>
+<li>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>rpx换算px(屏幕宽度/750)</th>
+<th>px换算rpx (750/屏幕宽度)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone5</td>
+<td>1rpx = 0.42px</td>
+<td>1px = 2.34rpx</td>
+</tr>
+<tr>
+<td>iPhone6</td>
+<td>1rpx = 0.5px</td>
+<td>1px = 2rpx</td>
+</tr>
+<tr>
+<td>iPhone6 Plus</td>
+<td>1rpx = 0.552px</td>
+<td>1px = 1.81rpx</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>建议： 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
+</li>
+<li><p>注意： 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
 </li>
 </ul>
 
