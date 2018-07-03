@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      正则基础 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="正则的作用 正则是来处理复杂字符串的  1.正则的匹配 test返回值=&amp;gt;true,false  2.正则的捕获 把匹配内容找出来,exec方法  1var reg=/9/g; 正则的组成 1.元字符,写在//中间的全是元字符 2.修饰符 写在//后面 g(全局匹配),i(忽略大小写),m(换行匹配)注意:一个元字符只能匹配一个字符   1-1.特殊意义的元字符  1). \  转义字符,一">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则基础 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/正则基础/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="正则的作用 正则是来处理复杂字符串的  1.正则的匹配 test返回值=&amp;gt;true,false  2.正则的捕获 把匹配内容找出来,exec方法  1var reg=/9/g; 正则的组成 1.元字符,写在//中间的全是元字符 2.修饰符 写在//后面 g(全局匹配),i(忽略大小写),m(换行匹配)注意:一个元字符只能匹配一个字符   1-1.特殊意义的元字符  1). \  转义字符,一">
+<meta property="og:updated_time" content="2017-09-05T12:51:23.349Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则基础 | 高大秀博客">
+<meta name="twitter:description" content="正则的作用 正则是来处理复杂字符串的  1.正则的匹配 test返回值=&amp;gt;true,false  2.正则的捕获 把匹配内容找出来,exec方法  1var reg=/9/g; 正则的组成 1.元字符,写在//中间的全是元字符 2.修饰符 写在//后面 g(全局匹配),i(忽略大小写),m(换行匹配)注意:一个元字符只能匹配一个字符   1-1.特殊意义的元字符  1). \  转义字符,一">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">正则基础</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-05" class="post-meta__date date">2017-09-05</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Javascript/">Javascript</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="正则的作用"><a href="#正则的作用" class="headerlink" title="正则的作用"></a>正则的作用</h2><ul>
+<li>正则是来处理复杂字符串的</li>
+</ul>
+<h3 id="1-正则的匹配"><a href="#1-正则的匹配" class="headerlink" title="1.正则的匹配"></a>1.正则的匹配</h3><ul>
+<li>test返回值=&gt;true,false</li>
+</ul>
+<h3 id="2-正则的捕获"><a href="#2-正则的捕获" class="headerlink" title="2.正则的捕获"></a>2.正则的捕获</h3><ul>
+<li>把匹配内容找出来,exec方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var reg=/9/g;</div></pre></td></tr></table></figure>
+<h2 id="正则的组成"><a href="#正则的组成" class="headerlink" title="正则的组成"></a>正则的组成</h2><ul>
+<li>1.元字符,写在//中间的全是元字符</li>
+<li>2.修饰符 写在//后面<ul>
+<li>g(全局匹配),i(忽略大小写),m(换行匹配)<br><strong>注意:一个元字符只能匹配一个字符</strong></li>
+</ul>
+</li>
+<li><p>1-1.特殊意义的元字符</p>
+<ul>
+<li><p>1). \  转义字符,一般都是把具有特殊意义的字符变成仅仅是本身意思的字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str=&apos;I\&apos;m a person&apos;;</div><div class="line">    var reg=/./;</div><div class="line">    reg.test(str);//true</div><div class="line">    var reg=/\./;</div><div class="line">    reg.test(&quot;1.1&quot;);//true</div></pre></td></tr></table></figure>
+</li>
+<li><p>2).  ^  以什么什么开始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg=/^1/;</div><div class="line">    reg.test(&quot;123445464&quot;);//true</div><div class="line">    reg.test(&quot;0001&quot;);//false</div></pre></td></tr></table></figure>
+</li>
+<li><p>3).  $  以什么什么结尾</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg=/m$/;</div><div class="line">reg.test(&quot;mq&quot;);//false</div><div class="line">reg.test(&quot;qm&quot;);//true</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>应用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var reg=/^6$/;//只匹配&quot;6&quot;</div><div class="line">var reg=/^\d$/;//只匹配一个0-9中的任意一位数的字符串</div></pre></td></tr></table></figure>
+<ul>
+<li><p>4).  \d  匹配0-9中任意一个字符</p>
+<ul>
+<li><p>5).  \D  除了\d以外任意一个字符</p>
+</li>
+<li><p>6).  \w  匹配0-9,a-z,A-Z,_这63个中的任意一个</p>
+</li>
+<li><p>7).  \W 匹配除了\w以外的任意一个</p>
+</li>
+<li><p>8).  \n 匹配一个换行符</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str=&quot;abc\nefd&quot;;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>9).   \s  匹配一个空白符(空格 制表符 换页符)</p>
+<ul>
+<li><p>10).  \S  匹配除了\s以外的任意一个字符</p>
+</li>
+<li><p>11).  \b  匹配一个边界</p>
+</li>
+<li><p>12).  \B  匹配一个非边界</p>
+</li>
+<li><p>13).   .  除了\n以外的任意一个字符</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var reg=/\d\w/;</div><div class="line">reg.test(&quot;1.2&quot;);//false</div><div class="line">reg.test(&quot;1-2&quot;);//false</div><div class="line">reg.test(&quot;1&quot;);//false</div><div class="line">reg.test(&quot;1w&quot;);//true</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg=/^\s\w\s$/;//字符串length是三</div><div class="line">reg.test(&quot; w &quot;);</div><div class="line">var reg=/^\s\s\s$/;// &quot;   &quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var reg=/\baa\B/;</div><div class="line">reg.test(&quot;a aa a aaa&quot;);//true</div></pre></td></tr></table></figure>
+<ul>
+<li>1-2. 量词元字符(量词元字符一定要写在元字符的后面)</li>
+<li>1)  *  前面的元字符出现0到多次</li>
+<li>2)  +  前面的元字符出现1到多次</li>
+<li>3)  ?  前面的元字符出现0次或者1次</li>
+<li>4) {number}   前面的元字符出现number次</li>
+<li>5) {number,}  前面的元字符出现number到多次</li>
+<li><p>6) {number,m}  前面的元字符出现number到m次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var reg=/\d*/;</div><div class="line">reg.test(&quot;&quot;);//true</div><div class="line">reg.test(&quot;1&quot;);//true</div><div class="line">reg.test(&quot;111&quot;);//true</div><div class="line">reg.test(&quot;wwww...&quot;);//true</div><div class="line"></div><div class="line">var reg=/^\w&#123;4&#125;1+$/;//length&gt;=5</div><div class="line">reg.test(&quot;111111&quot;);//true</div><div class="line">reg.test(&quot;abcd2&quot;);//false</div><div class="line">reg.test(&quot;121221&quot;);//false</div><div class="line"></div><div class="line">var reg=/^1\d&#123;10&#125;$/;</div></pre></td></tr></table></figure>
+</li>
+<li><p>1-3.中括号[]</p>
+</li>
+<li>1). x|y   x或y中的一个</li>
+<li>2). [xyz]  xyz中的一个</li>
+<li>3). [^xyz] 不是xyz中的任意一个</li>
+<li>4). [a-z] a-z中的任意一个</li>
+<li><p>在中括号中除了上面说的具有特殊意义的字符都只是代表本身的意思,但是转义字符\仍然是转义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var reg=/^[\d.]$/;//字符串的length=1</div><div class="line">reg.test(&quot;q&quot;);//false</div><div class="line">reg.test(&quot;1.&quot;);//false</div><div class="line">reg.test(&quot;.&quot;);//true</div></pre></td></tr></table></figure>
+</li>
+<li><p>在没有小括号的情况下,|最后运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var  reg=/^10|20$/;//以10开头 或者 以20结尾</div><div class="line">reg.test(&quot;1000D&quot;);//true</div><div class="line">reg.test(&quot;00020&quot;);//true</div><div class="line">reg.test(&quot;10201020&quot;);//true</div><div class="line">var reg=/^(10|20)$/;//&quot;10&quot; &quot;20&quot;   以10开头结尾  或者  以20开头结尾</div><div class="line"></div><div class="line">var reg=/^[1020]$/;//&quot;1&quot; &quot;0&quot; &quot;2&quot;</div><div class="line">var reg=/^[10-20]$/;//&quot;1&quot; &quot;0-2&quot; &quot;0&quot;</div><div class="line">var reg=/^[16-20]$/;//不对的</div></pre></td></tr></table></figure>
+</li>
+<li><p>举例</p>
+</li>
+<li><p>1.21-26的正则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var reg=/^2[1-6]$/;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.18-75的正则</p>
+</li>
+<li><p>可以将18-75差分为:18-19,20-69 70-75</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var reg=/^(1[8-9]|[2-6]\d|7[0-5])$/;</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.在正则中小括号表示分组</p>
+</li>
+<li>作用:<ul>
+<li>1)改变优先级 先计算括号里面的</li>
+<li>2)表示一个小分组 例如:\number ，表示第number个分组匹配的内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var reg=/^(\w)(\w&#123;2&#125;)\2\1$/;</div><div class="line">reg.test(&quot;_dcdc_&quot;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
