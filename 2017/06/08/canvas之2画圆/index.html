@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Canvas之2画圆 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise); x,y 圆心坐标 radius半径r startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针) endAngle  结束角 anticlokwise 是否逆时针 默认值false false表示顺时针      案例  案例1:边框半圆">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas之2画圆 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/06/08/canvas之2画圆/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise); x,y 圆心坐标 radius半径r startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针) endAngle  结束角 anticlokwise 是否逆时针 默认值false false表示顺时针      案例  案例1:边框半圆">
+<meta property="og:updated_time" content="2017-09-09T12:26:32.970Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas之2画圆 | 高大秀博客">
+<meta name="twitter:description" content="cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise); x,y 圆心坐标 radius半径r startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针) endAngle  结束角 anticlokwise 是否逆时针 默认值false false表示顺时针      案例  案例1:边框半圆">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Canvas之2画圆</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-08" class="post-meta__date date">2017-06-08</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/CSS/">CSS</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li><ol>
+<li>cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise);<ul>
+<li>x,y 圆心坐标</li>
+<li>radius半径r</li>
+<li>startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针)</li>
+<li>endAngle  结束角</li>
+<li>anticlokwise 是否逆时针 默认值false false表示顺时针</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li><p>案例</p>
+<ul>
+<li><p>案例1:边框半圆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;//边框圆</div><div class="line">	cvs.strokeStyle=&apos;#ffa50&apos;;//设置笔触样式(边框样式)颜色</div><div class="line">	cvs.beginPath();//开始一个路径</div><div class="line">	cvs.arc(500,500,100,0,Math.PI);//圆心坐标是500,500，半径是100px，起始角为0度，结束角为180度</div><div class="line">	cvs.closePath();//结束路径</div><div class="line">	cvs.lineWidth=10;//边框宽度为10px</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例2:同心圆</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	cvs.beginPath();</div><div class="line">	//开始一个新的路径</div><div class="line">	cvs.arc(200,200,60,Math.PI/2,2*Math.PI);</div><div class="line">	//圆心坐标是(200,200),半径为60px,起始角为90度,结束角为360度</div><div class="line">	cvs.closePath();</div><div class="line">	//结束一个路径</div><div class="line">	cvs.fill();</div><div class="line">	//绘制图形以填充样式绘制</div><div class="line">	cvs.strokeStyle=&apos;yellow&apos;;</div><div class="line">	//设置 笔触样式(边框样式) 为黄色</div><div class="line">	cvs.lineWidth=40;</div><div class="line">	//边框的宽度为40px</div><div class="line">	cvs.beginPath();</div><div class="line">	//开始一个新的路径</div><div class="line">	cvs.arc(200,200,80,0,2*Math.PI);</div><div class="line">	//圆心坐标是(200,200),半径为80px,起始角度为0度,结束角度为360度</div><div class="line">	cvs.closePath();//结束一个路径</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
+</li>
+<li><p>案例3:每次调用fill绘制填充图的时候，会把当次路径的起始点和结束点分别连接，填充闭合部分(如果想让每个路径互不干扰 一定要记得写结束路径–&gt;关闭路径)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.strokeStyle=&apos;pink&apos;;//设置笔触样式(边框样式)颜色为粉色</div><div class="line">	cvs.beginPath();//开始一个路径</div><div class="line">	cvs.lineWidth=2;//边框的宽度为2px</div><div class="line">	cvs.arc(100,100,100,0,Math.PI);//圆心坐标是100,100,半径为100,起始角度为0度,结束角度为180度</div><div class="line">	cvs.closePath();//结束一个路径</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">	cvs.fillStyle=&apos;gray&apos;;//设置填充颜色为灰色</div><div class="line">	cvs.arc(300,300,80,0,Math.PI/2);//圆心坐标是300,300，半径是80px，起始角度为0，结束角度为90度</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.fill();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
