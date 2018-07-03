@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      getter&amp;setter | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Da">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="getter&amp;setter | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/getter-setter/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Da">
+<meta property="og:updated_time" content="2017-09-05T10:20:34.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="getter&amp;setter | 高大秀博客">
+<meta name="twitter:description" content="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？ 的确可以暴露，如果  所有内外代码都是你自己写；    这个模块再也不改了；    不会继承它，或者继承但不改变语义。     Da">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">getter&amp;setter</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-05" class="post-meta__date date">2017-09-05</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Javascript/">Javascript</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="一般在书上看到都解释都是-把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？"><a href="#一般在书上看到都解释都是-把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？" class="headerlink" title="一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？"></a>一般在书上看到都解释都是 把成员变量直接暴露在外不符合OOP的封装性原则，不安全，应该使用getter和setter方法来取值和赋值。但是没有解释为什么不符合OOP的封装性原则，为什么不安全，一个成员变量不就是取值和赋值这么两个操作吗，还能干什么，暴露出来又怎么样？</h3><ul>
+<li>的确可以暴露，如果<ul>
+<li><ol>
+<li>所有内外代码都是你自己写；</li>
+</ol>
+</li>
+<li><ol>
+<li>这个模块再也不改了；</li>
+</ol>
+</li>
+<li><ol>
+<li>不会继承它，或者继承但不改变语义。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>David John Wheeler有一句名言：“All problems in computer science can be solved by another level of indirection(翻译:“计算机科学中的所有问题都可以通过另一种间接方式来解决).”getter、setter就是个很好的中间层。</li>
+<li>直接摘录stackoverflow上一个不错的总结：</li>
+<li>oop - Why use getters and setters?<ul>
+<li>1.这两个方法可以方便增加额外功能（比如验证）。</li>
+<li>2.内部存储和外部表现不同。</li>
+<li>3.可以保持外部接口不变的情况下，修改内部存储方式和逻辑。</li>
+<li>4.任意管理变量的生命周期和内存存储方式。提供一个debug接口。</li>
+<li>5.能够和模拟对象、序列化乃至WPF库等融合。</li>
+<li>6.允许继承者改变语义。</li>
+<li>7.可以将getter、setter用于lambda表达式。（大概即作为一个函数，参与函数传递和运算）</li>
+<li>8.getter和setter可以有不同的访问级别。</li>
+</ul>
+</li>
+<li>lambda表达式</li>
+<li>Lambda 表达式”(lambda expression)是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象(lambda abstraction)，是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（注意和数学传统意义上的不同）。<ul>
+<li>lambda  <code>[&#39;læmdə]</code>  希腊字母的第11个λ</li>
+<li>expression  <code>[ɪkˈspreʃn]</code>  表达</li>
+<li>abstraction  <code>[əb&#39;strækʃ(ə)n]</code>  抽象概念<h3 id="以下为转载"><a href="#以下为转载" class="headerlink" title="以下为转载:"></a>以下为转载:</h3><blockquote>
+<p>Compiling the list up here at the top of what seemed winners to me, from the viewpoint of a Java web dev:(从Java web开发人员的角度来看，在我看来是赢家的列表上面列出了这个列表:)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>1.When you realize you need to do more than just set and get the value, you don’t have to change every file in the codebase.当您意识到您需要做的不仅仅是设置和获取值时，您不必更改代码库中的每个文件。</li>
+<li>2.You can perform validation here.您可以在这里执行验证。</li>
+<li>3.You can change the value being set.您可以更改设置的值。</li>
+<li>4.You can hide the internal representation. getAddress() could actually be getting several fields for you.您可以隐藏内部表示。getAddress()实际上可以为您获取多个字段。</li>
+<li>5.You’ve insulated your public interface from changes under the sheets.您已经将您的公共接口与表单下的更改隔离了。</li>
+<li>6.Some libraries expect this. Reflection, serialization, mock objects.一些图书馆预计。反射,序列化,模拟对象。</li>
+<li>7.Inheriting this class, you can override default functionality.继承这个类，您可以覆盖默认的功能。</li>
+<li>8.You can have different access levels for getter and setter.对于getter和setter，您可以有不同的访问级别。</li>
+<li>9.Lazy loading.延迟加载；懒装载；懒加载</li>
+<li>10.People can easily tell you didn’t use Python.人们可以很容易地告诉您，您没有使用Python。</li>
+</ul>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h5><ul>
+<li><code>https://stackoverflow.com/questions/1568091/why-use-getters-and-setters</code></li>
+<li><code>https://www.zhihu.com/question/21401198/answer/18113707</code></li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
