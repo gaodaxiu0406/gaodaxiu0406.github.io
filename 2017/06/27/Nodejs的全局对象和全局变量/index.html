@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Nodejs的全局对象和全局变量 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="全局对象 所有模块都可以调用  global：表示Node所在的全局环境，类似于浏览器中的window对象。 你可以通过console.log(global);来输出一下global;     1-1. global全局对象里常用的变量  1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录 12 console.log(__dirname);//C:\U">
+<meta name="keywords" content="Nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs的全局对象和全局变量 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/06/27/Nodejs的全局对象和全局变量/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="全局对象 所有模块都可以调用  global：表示Node所在的全局环境，类似于浏览器中的window对象。 你可以通过console.log(global);来输出一下global;     1-1. global全局对象里常用的变量  1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录 12 console.log(__dirname);//C:\U">
+<meta property="og:updated_time" content="2017-08-16T15:28:38.300Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nodejs的全局对象和全局变量 | 高大秀博客">
+<meta name="twitter:description" content="全局对象 所有模块都可以调用  global：表示Node所在的全局环境，类似于浏览器中的window对象。 你可以通过console.log(global);来输出一下global;     1-1. global全局对象里常用的变量  1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录 12 console.log(__dirname);//C:\U">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Nodejs的全局对象和全局变量</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-06-27" class="post-meta__date date">2017-06-27</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Nodejs/">Nodejs</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h4><ul>
+<li>所有模块都可以调用</li>
+<li><ol>
+<li>global：表示Node所在的全局环境，类似于浏览器中的window对象。<ul>
+<li>你可以通过<code>console.log(global);</code>来输出一下global;</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>1-1. global全局对象里常用的变量</p>
+<ul>
+<li><p>1).   __dirname 存储的是在nodejs中执行javascript所在的绝对目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> console.log(__dirname);</div><div class="line">//C:\Users\Gao\Documents\webstore学习文件\node</div></pre></td></tr></table></figure>
+</li>
+<li><p>2).  __filename  文件名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(__filename);</div><div class="line">//C:\Users\Gao\Documents\webstore学习文件\node\global.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>process 程序所执行的一些相关的内容信息的封装对象</li>
+</ol>
+</li>
+<li>指向Node内置的process模块，允许开发者与当前进程互动。<ul>
+<li>例如你在DOS或终端窗口直接输入node，就会进入NODE的命令行方式（REPL环境）。如果要退出的话，可以输入 process.exit();</li>
+</ul>
+</li>
+<li>2-1. 和输出相关的 process.stdout/process.stderr</li>
+<li>1) process.stdout –&gt;  standard output –&gt; 标准的信息输出</li>
+<li><p>2) process.stderr –&gt;  standard error  –&gt; 标准的错误输出</p>
+<ul>
+<li>console.info和console.error这些相关的输出功能就是调用的process.stdout和process.stderr来完成的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">process.stdout.write(&quot;this is stdout&quot;);</div><div class="line">process.stderr.write(&quot;this is stderr&quot;);//红色的</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2-2. process如何去监听一些事件</p>
+</li>
+<li>1) process.stdin.on()  监听用户输入的键盘信息</li>
+<li>2)process.on()监听操作系统对node发出的一些信号</li>
+</ul>
+<ul>
+<li>2-3. 如何读取输入用户的键盘输入</li>
+<li><p>1).process.stdin</p>
+<ul>
+<li><p>在使用process.stdin之前  要先对他进行一下编码设置<br>```<br>process.stdin.setEncoding(“utf-8”);<br>//这里的编码设置和平常编写网页时候的文本编码不一样<br>//在这里如果想读取纯文本信息  只要把他的编码设置成utf-8就可以了   不需要去考虑类似jbk或者jb2312来区分是不是中文<br>//on方法来监听用户相关的输入事件<br>// process.stdin.on(“data”,function (data) {<br>//     console.log(data);<br>// });<br>process.stdin.on(“readable”,function () {<br>  var data=process.stdin.read();<br>  //回调函数没有参数 需要通过process.stdin.read来读取用户的键盘输入信息<br>  console.log(data);<br>});</p>
+<p>//exit事件<br>process.on(“exit”,function () {<br>  console.log(“programe will exit”);<br>});<br>//在程序正常退出的之前  会触发exit事件</p>
+<p>//SIGINT –&gt; signal    interrupted  信号 被中断<br>//当一个信号被中断的时候就会触发SIGINT事件(cmd 中  ctrl+c会中断信号)</p>
+<p>process.on(“SIGINT”,function () {//会改变程序默认的退出行为<br>  console.log(“programe has a sigint”);<br>  process.exit();//让程序正常退出<br>});</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><ol>
+<li>console：指向Node内置的console模块，提供命令行环境中的标准输入、标准输出功能。<br>通常是写console.log();<h4 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h4></li>
+</ol>
+</li>
+<li><ol>
+<li>定时器函数：共有4个，分别是setTimeout(), clearTimeout(), setInterval(), clearInterval()。</li>
+</ol>
+</li>
+<li><ol>
+<li>require：用于加载模块</li>
+</ol>
+</li>
+</ul>
+<h4 id="全局变量："><a href="#全局变量：" class="headerlink" title="全局变量："></a>全局变量：</h4><ul>
+<li><ol>
+<li>_filename：指向当前运行的脚本文件名。</li>
+</ol>
+</li>
+<li><ol>
+<li>_dirname：指向当前运行的脚本所在的目录</li>
+</ol>
+</li>
+</ul>
+<h4 id="准全局变量"><a href="#准全局变量" class="headerlink" title="准全局变量"></a>准全局变量</h4><ul>
+<li><p>模块内部的局部变量，指向的对象根据模块不同而不同，但是所有模块都适用，可以看作是伪全局变量，主要为module, module.exports, exports等。</p>
+</li>
+<li><p>module变量指代当前模块。module.exports变量表示当前模块对外输出的接口，其他文件加载该模块，实际上就是读取module.exports变量。</p>
+</li>
+<li><p>module.id 模块的识别符，通常是模块的文件名。</p>
+</li>
+<li>module.filename 模块的文件名。</li>
+<li>module.loaded 返回一个布尔值，表示模块是否已经完成加载。</li>
+<li>module.parent 返回使用该模块的模块。</li>
+<li><p>module.children 返回一个数组，表示该模块要用到的其他模块。</p>
+</li>
+<li><p>这里需要特别指出的是，exports变量实际上是一个指向module.exports对象的链接，等同在每个模块头部，有一行这样的命令。<br><code>var exports = module.exports;</code></p>
+</li>
+<li>这造成的结果是，在对外输出模块接口时，可以向exports对象添加方法，但是不能直接将exports变量指向一个函数：<br><code>exports = function (x){ console.log(x);};</code></li>
+<li>上面这样的写法是无效的，因为它切断了exports与module.exports之间的链接。</li>
+<li>如果你觉得，exports与module.exports之间的区别很难分清，一个简单的处理方法，就是放弃使用exports，只使用module.exports。</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
