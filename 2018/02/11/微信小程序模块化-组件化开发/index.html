@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      微信小程序模块化/组件化开发 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="将公用组件抽离出来 把一些内容抽取到一个公有的页面中 首先我们要知道，在home下可以共用模板 1.在home文件夹下新建个目录(list-tmpl) 模板中只能放两种文件:css、wxml;不支持js和json 模板的标志template标签 模板要给他起个名字，就是我们要调用这个模板的时候要用的名字&amp;lt;template name=&amp;#39;name&amp;#39;&amp;gt;&amp;lt;/templat">
+<meta name="keywords" content="微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序模块化&#x2F;组件化开发 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2018/02/11/微信小程序模块化-组件化开发/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="将公用组件抽离出来 把一些内容抽取到一个公有的页面中 首先我们要知道，在home下可以共用模板 1.在home文件夹下新建个目录(list-tmpl) 模板中只能放两种文件:css、wxml;不支持js和json 模板的标志template标签 模板要给他起个名字，就是我们要调用这个模板的时候要用的名字&amp;lt;template name=&amp;#39;name&amp;#39;&amp;gt;&amp;lt;/templat">
+<meta property="og:updated_time" content="2018-02-11T08:41:21.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序模块化&#x2F;组件化开发 | 高大秀博客">
+<meta name="twitter:description" content="将公用组件抽离出来 把一些内容抽取到一个公有的页面中 首先我们要知道，在home下可以共用模板 1.在home文件夹下新建个目录(list-tmpl) 模板中只能放两种文件:css、wxml;不支持js和json 模板的标志template标签 模板要给他起个名字，就是我们要调用这个模板的时候要用的名字&amp;lt;template name=&amp;#39;name&amp;#39;&amp;gt;&amp;lt;/templat">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">微信小程序模块化/组件化开发</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-02-11" class="post-meta__date date">2018-02-11</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/微信小程序/">微信小程序</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="将公用组件抽离出来"><a href="#将公用组件抽离出来" class="headerlink" title="将公用组件抽离出来"></a>将公用组件抽离出来</h2><ul>
+<li>把一些内容抽取到一个公有的页面中<ul>
+<li>首先我们要知道，在home下可以共用模板</li>
+<li>1.在home文件夹下新建个目录(list-tmpl)<ul>
+<li>模板中只能放两种文件:css、wxml;不支持js和json</li>
+<li>模板的标志template标签</li>
+<li>模板要给他起个名字，就是我们要调用这个模板的时候要用的名字<code>&lt;template name=&#39;name&#39;&gt;&lt;/template&gt;</code></li>
+<li>可以放多个模板，但每个模板都要有自己的名字</li>
+<li>同样css样式也要公有化</li>
+</ul>
+</li>
+<li>2.导入模板(使用相对路径)<ul>
+<li><code>&lt;import src=&#39;list-tmpl/list-tmpl.wxml&#39;/&gt;</code></li>
+<li>is-&gt;模板名字,data-&gt;传入数据;<code>&lt;template is=&#39;list&#39; data=&#39;&#39;&gt;&lt;/template&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="此时home-wxml文件"><a href="#此时home-wxml文件" class="headerlink" title="此时home.wxml文件"></a>此时home.wxml文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;import src=&apos;list-tmpl/list-tmpl.wxml&apos;/&gt;</div><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt;</div><div class="line">  &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos;&gt;</div><div class="line">    &lt;image src=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div><div class="line">&lt;block wx:for=&quot;&#123;&#123;lists&#125;&#125;&quot;&gt;</div><div class="line">  &lt;template is=&apos;list&apos; data=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/template&gt;</div><div class="line">&lt;/block&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-引入css样式-此时home-wxss文件"><a href="#3-引入css样式-此时home-wxss文件" class="headerlink" title="3.引入css样式,此时home.wxss文件"></a>3.引入css样式,此时home.wxss文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@import &apos;list-tmpl/list-tmpl.wxss&apos;;</div><div class="line">swiper&#123;</div><div class="line">  height: 400rpx;</div><div class="line">&#125;</div><div class="line">swiper image&#123;</div><div class="line">  width: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="点击跳转详情页"><a href="#点击跳转详情页" class="headerlink" title="点击跳转详情页"></a>点击跳转详情页</h2><ul>
+<li>事件不能直接绑在template标签上，因为在编译的过程中，最终会直接用一个模板将template替换掉。<ul>
+<li>解决方案:在template标签外面包一层view标签，在view标签上绑定bindtap点击事件</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

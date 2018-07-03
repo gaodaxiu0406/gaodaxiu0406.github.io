@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      为HEXO博客中每篇文章的浏览量统计 | 高大秀博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="高大秀">
+    
+    
+
+    <meta name="description" content="静态网站建站现在有很多快速的技术和平台，但静态是优点也有缺点，由于是静态的，一些动态的内容如评论、计数等等模块就需要借助外来平台，评论有”多说”，计数有”不蒜”！（多说即将关闭，不蒜子还活着涅，这是程序员对程序员的承诺。）  “不蒜子”与百度统计谷歌分析等有区别：”不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，”不蒜子”允许您初始化首次数据。。  普通用户只">
+<meta name="keywords" content="基于GitHub创建自己的HEXO博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为HEXO博客中每篇文章的浏览量统计 | 高大秀博客">
+<meta property="og:url" content="http://yoursite.com/2017/08/21/为HEXO博客中每篇文章的浏览量统计/index.html">
+<meta property="og:site_name" content="高大秀博客">
+<meta property="og:description" content="静态网站建站现在有很多快速的技术和平台，但静态是优点也有缺点，由于是静态的，一些动态的内容如评论、计数等等模块就需要借助外来平台，评论有”多说”，计数有”不蒜”！（多说即将关闭，不蒜子还活着涅，这是程序员对程序员的承诺。）  “不蒜子”与百度统计谷歌分析等有区别：”不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，”不蒜子”允许您初始化首次数据。。  普通用户只">
+<meta property="og:updated_time" content="2017-08-21T10:26:49.603Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为HEXO博客中每篇文章的浏览量统计 | 高大秀博客">
+<meta name="twitter:description" content="静态网站建站现在有很多快速的技术和平台，但静态是优点也有缺点，由于是静态的，一些动态的内容如评论、计数等等模块就需要借助外来平台，评论有”多说”，计数有”不蒜”！（多说即将关闭，不蒜子还活着涅，这是程序员对程序员的承诺。）  “不蒜子”与百度统计谷歌分析等有区别：”不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，”不蒜子”允许您初始化首次数据。。  普通用户只">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.jpg">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">高大秀博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <div class="icon-avatar">
+            <span class="icon">
+                <div class="icon-avatar-bg"></div>
+            </span>
+
+        </div>
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">为HEXO博客中每篇文章的浏览量统计</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-08-21" class="post-meta__date date">2017-08-21</time>
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/基于GitHub创建自己的HEXO博客/">基于GitHub创建自己的HEXO博客</a>
+            </font>
+          
+      </span>
+
+
+      <span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <ul>
+<li><p>静态网站建站现在有很多快速的技术和平台，但静态是优点也有缺点，由于是静态的，一些动态的内容如评论、计数等等模块就需要借助外来平台，评论有”多说”，计数有”不蒜”！（多说即将关闭，不蒜子还活着涅，这是程序员对程序员的承诺。）</p>
+</li>
+<li><p>“不蒜子”与百度统计谷歌分析等有区别：”不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，”不蒜子”允许您初始化首次数据。。</p>
+</li>
+<li><p>普通用户只需两步走：一行脚本+一行标签，搞定一切。追求极致的用户可以进行任意DIY。</p>
+</li>
+</ul>
+<h2 id="一、安装脚本（必选）"><a href="#一、安装脚本（必选）" class="headerlink" title="一、安装脚本（必选）"></a>一、安装脚本（必选）</h2><ul>
+<li><p>要使用不蒜子必须在页面中引入busuanzi.js，目前最新版如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>不蒜子可以给任何类型的个人站点使用，如果你是用的hexo，打开themes/你的主题/layout/_partial/footer.ejs添加上述脚本即可，当然你也可以添加到 header 中。</p>
+</li>
+</ul>
+<h2 id="二、安装标签（可选）"><a href="#二、安装标签（可选）" class="headerlink" title="二、安装标签（可选）"></a>二、安装标签（可选）</h2><ul>
+<li>只需要复制相应的html标签到你的网站要显示访问量的位置即可。您可以随意更改不蒜子标签为自己喜欢的显示效果，内容参考第三部分扩展开发。根据你要显示内容的不同，这分几种情况。</li>
+</ul>
+<h4 id="1、显示站点总访问量"><a href="#1、显示站点总访问量" class="headerlink" title="1、显示站点总访问量"></a>1、显示站点总访问量</h4><blockquote>
+<p>要显示站点总访问量，复制以下代码添加到你需要显示的位置。有两种算法可选：</p>
+</blockquote>
+<ul>
+<li><p>算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;</div><div class="line">    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>算法b：uv的方式，单个用户连续点击n篇文章，只记录1次访客数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;</div><div class="line">  本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人次</div><div class="line">&lt;/span&gt;</div><div class="line">如果你是用的hexo，打开themes/你的主题/layout/_partial/footer.ejs添加即可。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2、显示单页面访问量"><a href="#2、显示单页面访问量" class="headerlink" title="2、显示单页面访问量"></a>2、显示单页面访问量</h4><ul>
+<li><p>要显示每篇文章的访问量，复制以下代码添加到你需要显示的位置。</p>
+</li>
+<li><p>算法：pv的方式，单个用户点击1篇文章，本篇文章记录1次阅读量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;</div><div class="line">  本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>代码中文字是可以修改的，只要保留id正确即可。</p>
+</li>
+<li><p><strong>注意</strong>：不蒜子为保持极简，暂不支持在站点文章摘要列表中（如首页）逐个显示每篇文章的阅读次数，如果您非常需要这一功能，可以留言。根据需要程度再考虑开发相应的功能。</p>
+</li>
+</ul>
+<h4 id="3、显示站点总访问量和单页面访问量"><a href="#3、显示站点总访问量和单页面访问量" class="headerlink" title="3、显示站点总访问量和单页面访问量"></a>3、显示站点总访问量和单页面访问量</h4><p>你懂的吧，上面两种标签代码都安装。</p>
+<h4 id="4、只计数不显示"><a href="#4、只计数不显示" class="headerlink" title="4、只计数不显示"></a>4、只计数不显示</h4><ul>
+<li>只安装脚本代码，不安装标签代码。</li>
+</ul>
+<blockquote>
+<p>至此，不蒜子已经可以正常运行，如果你还要自定义一些内容或有疑问，请继续阅读。</p>
+</blockquote>
+<h3 id="附录：扩展开发（自定义）"><a href="#附录：扩展开发（自定义）" class="headerlink" title="附录：扩展开发（自定义）"></a>附录：扩展开发（自定义）</h3><ul>
+<li><p>不蒜子之所以称为极客的算子，正是因为不蒜子自身只提供标签+数字，至于显示的style和css动画效果，任你发挥。</p>
+</li>
+<li><p><code>busuanzi_value_site_pv</code>的作用是异步回填访问数，这个id一定要正确。</p>
+</li>
+<li><code>busuanzi_container_site_pv</code>的作用是为防止计数服务访问出错或超时（3秒）的情况下，使整个标签自动隐藏显示，带来更好的体验。这个id可以省略。</li>
+</ul>
+<h4 id="极简模式："><a href="#极简模式：" class="headerlink" title="极简模式："></a>极简模式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</div><div class="line">本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人次</div><div class="line">本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次</div></pre></td></tr></table></figure>
+<h4 id="个性化一下："><a href="#个性化一下：" class="headerlink" title="个性化一下："></a>个性化一下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Total &lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt; views.</div><div class="line">您是xxx的第&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;个小伙伴</div><div class="line">&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt; Hits</div></pre></td></tr></table></figure>
+<h3 id="问题及解答"><a href="#问题及解答" class="headerlink" title="问题及解答"></a>问题及解答</h3><ul>
+<li><p>1、我只要统计不显示？</p>
+<ul>
+<li>只引入busuanzi.js，不引入显示标签即可。</li>
+</ul>
+</li>
+<li><p>2、你的标签太丑了，我想美化一下可以么？</p>
+<ul>
+<li>可以的，您可以用自己站点的css进行控制，只要内层span的id正确以便回填访问次数即可，甚至标签都可以不是span。</li>
+</ul>
+</li>
+<li><p>3、中文字体太丑了，我的主题不适合？</p>
+<ul>
+<li>您可以将本站总访问量xxx次改成view xxx times等英文以获得更和谐的显示效果。</li>
+</ul>
+</li>
+<li><p>4、在访问量数据未取回来之前，我不想让页面显示为诸如“本站总访问量 次”，显得太low，怎么办？</p>
+<ul>
+<li>只需要如下css，不蒜子执行完毕会自动将标签显示出来，其他以此类推：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;span id=&quot;busuanzi_container_site_pv&quot; style=&apos;display:none&apos;&gt;</div><div class="line">    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次</div><div class="line">&lt;/span&gt;</div></pre></td></tr></table></figure>
+<h5 id="原文地址-http-ibruce-info-2015-04-04-busuanzi"><a href="#原文地址-http-ibruce-info-2015-04-04-busuanzi" class="headerlink" title="原文地址:http://ibruce.info/2015/04/04/busuanzi/"></a>原文地址:<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">http://ibruce.info/2015/04/04/busuanzi/</a></h5><h5 id="参考链接-https-www-zhihu-com-question-33919028"><a href="#参考链接-https-www-zhihu-com-question-33919028" class="headerlink" title="参考链接:https://www.zhihu.com/question/33919028"></a>参考链接:<a href="https://www.zhihu.com/question/33919028" target="_blank" rel="external">https://www.zhihu.com/question/33919028</a></h5>
+  </section>
+
+  <section class="post-comments">
+    <div class="icon-shangyin">
+        赏
+        <div class="text">
+            <span class="weixin">
+                <i></i>
+                <b>微信</b>
+            </span>
+            <span class="zhifubao">
+                <i></i>
+                <b>支付宝</b>
+            </span>
+            <b>感谢赏我一个棒棒糖哦~~</b>
+            <i class="footer"></i>
+        </div>
+    </div>
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+</section>
+
+
+
+</article>
+
+
+            <footer class="footer">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+    <span class="footer__copyright">
+        &copy; 作者 : 高大秀 |
+        主题:<a href="https://github.com/someus/huno">Huno</a>
+        <span>&nbsp;&nbsp;文章如需引用,请标明出处。</span>
+    </span>
+    
+</footer>
+<script>
+    var bszCaller,bszTag;!function(){var c,d,e,a=!1,b=[];ready=function(c){return a||"interactive"===document.readyState||"complete"===document.readyState?c.call(document):b.push(function(){return c.call(this)}),this},d=function(){for(var a=0,c=b.length;c>a;a++)b[a].apply(document);b=[]},e=function(){a||(a=!0,d.call(window),document.removeEventListener?document.removeEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.detachEvent("onreadystatechange",e),window==window.top&&(clearInterval(c),c=null)))},document.addEventListener?document.addEventListener("DOMContentLoaded",e,!1):document.attachEvent&&(document.attachEvent("onreadystatechange",function(){/loaded|complete/.test(document.readyState)&&e()}),window==window.top&&(c=setInterval(function(){try{a||document.documentElement.doScroll("left")}catch(b){return}e()},5)))}(),bszCaller={fetch:function(a,b){var c="BusuanziCallback_"+Math.floor(1099511627776*Math.random());window[c]=this.evalCall(b),a=a.replace("=BusuanziCallback","="+c),scriptTag=document.createElement("SCRIPT"),scriptTag.type="text/javascript",scriptTag.defer=!0,scriptTag.src=a,document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)},evalCall:function(a){return function(b){ready(function(){try{a(b),scriptTag.parentElement.removeChild(scriptTag)}catch(c){bszTag.hides()}})}}},bszCaller.fetch("//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback",function(a){bszTag.texts(a),bszTag.shows()}),bszTag={bszs:["site_pv","page_pv","site_uv"],texts:function(a){this.bszs.map(function(b){var c=document.getElementById("busuanzi_value_"+b);c&&(c.innerHTML=a[b])})},hides:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="none")})},shows:function(){this.bszs.map(function(a){var b=document.getElementById("busuanzi_container_"+a);b&&(b.style.display="inline")})}};
+</script>
+<!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+</script>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
