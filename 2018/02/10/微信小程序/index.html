@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="高大秀博客">
 <meta property="og:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
 <meta property="og:image" content="http://yoursite.com/img/tabBarErr.jpg">
-<meta property="og:updated_time" content="2018-07-03T04:19:06.636Z">
+<meta property="og:updated_time" content="2018-07-03T04:20:53.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序 | 高大秀博客">
 <meta name="twitter:description" content="app文件 app.json全局的配置样式 app.wxss全局的css样式 app.js全局的js样式  app.json 在该文件中不能使用‘//’来注释信息，否则报错  12345678910111213&amp;#123;  &amp;quot;pages&amp;quot;: [    &amp;quot;pages/welcome/welcome&amp;quot;  ],  &amp;quot;window&amp;quot;: &amp;#12">
@@ -404,6 +404,13 @@ classes that you can use:
 </li>
 <li><p>此时app.json文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;pages&quot;: [</div><div class="line">    &quot;pages/welcome/welcome&quot;,</div><div class="line">    &quot;pages/home/home&quot;,</div><div class="line">    &quot;pages/notes/notes&quot;,</div><div class="line">    &quot;pages/event/event&quot;</div><div class="line">  ],</div><div class="line">  &quot;window&quot;: &#123;</div><div class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;#b0b0b0&quot;,</div><div class="line">    &quot;navigationBarTextStyle&quot;: &quot;green&quot;,</div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;Welcome&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;tabBar&quot;: &#123;</div><div class="line">    &quot;borderStyle&quot;: &quot;white&quot;,</div><div class="line">    &quot;color&quot;: &quot;red&quot;,</div><div class="line">    &quot;selectedColor&quot;: &quot;orange&quot;,</div><div class="line">    &quot;list&quot;: [&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/home/home&quot;,</div><div class="line">      &quot;text&quot;: &quot;首页&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo1.png&quot;,</div><div class="line">      &quot;selectedIconPath&quot;: &quot;images/anhoo.png&quot;</div><div class="line">    &#125;,&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/notes/notes&quot;,</div><div class="line">      &quot;text&quot;: &quot;笔记&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo1.png&quot;,</div><div class="line">      &quot;selectedIconPath&quot;: &quot;images/anhoo.png&quot;</div><div class="line">    &#125;]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="主页banner制作"><a href="#主页banner制作" class="headerlink" title="主页banner制作"></a>主页banner制作</h3><ul>
+<li><p>为了开发方便，将app.json中的pages配置调换一下位置，将home文件的配置放在最上面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;pages&quot;: [</div><div class="line">   &quot;pages/home/home&quot;,</div><div class="line">   &quot;pages/notes/notes&quot;,</div><div class="line">   &quot;pages/event/event&quot;,</div><div class="line">   &quot;pages/welcome/welcome&quot;</div><div class="line"> ]</div></pre></td></tr></table></figure>
+</li>
+<li><p>此时默认打开的就是首页</p>
 </li>
 </ul>
 
