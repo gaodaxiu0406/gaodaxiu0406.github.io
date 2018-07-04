@@ -374,19 +374,82 @@
       
         
           
-          box-shadow 属性向框添加一个或多个阴影
-相关小项目地址:https://github.com/gaodaxiu0406/HEXOcase(CSS/小项目练习)
+            <h2 id="box-shadow-属性向框添加一个或多个阴影"><a href="#box-shadow-属性向框添加一个或多个阴影" class="headerlink" title="box-shadow 属性向框添加一个或多个阴影"></a>box-shadow 属性向框添加一个或多个阴影</h2><ul>
+<li>相关小项目地址:<a href="https://github.com/gaodaxiu0406/HEXOcase(CSS/小项目练习" target="_blank" rel="external">https://github.com/gaodaxiu0406/HEXOcase(CSS/小项目练习</a>)</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="CSS语法"><a href="#CSS语法" class="headerlink" title="CSS语法"></a>CSS语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-shadow: h-shadow v-shadow blur spread color inset;</div></pre></td></tr></table></figure>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ul>
+<li>box-shadow 向框添加一个或多个阴影。该属性是由逗号分隔的阴影列表，每个阴影由 2-4 个长度值、可选的颜色值以及可选的 inset 关键词来规定。省略长度的值是 0。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h-shadow</td>
+<td>必需。水平阴影的位置。允许负值。</td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需。垂直阴影的位置。允许负值。</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选。模糊距离。</td>
+</tr>
+<tr>
+<td>spread</td>
+<td>可选。阴影的尺寸。</td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选。阴影的颜色。请参阅 CSS 颜色值。</td>
+</tr>
+<tr>
+<td>inset</td>
+<td>可选。将外部阴影 (outset) 改为内部阴影。</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-shadow: 10px 20px 30px 40px #000 inset;</div></pre></td></tr></table></figure>
+<h4 id="JavaScript语法"><a href="#JavaScript语法" class="headerlink" title="JavaScript语法"></a>JavaScript语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.style.boxShadow=&quot;10px 10px 5px #888888&quot;</div></pre></td></tr></table></figure>
+<h2 id="text-shadow"><a href="#text-shadow" class="headerlink" title="text-shadow"></a>text-shadow</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><h4 id="CSS语法-1"><a href="#CSS语法-1" class="headerlink" title="CSS语法"></a>CSS语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-shadow: h-shadow v-shadow blur color;</div></pre></td></tr></table></figure>
+<h5 id="注释-1"><a href="#注释-1" class="headerlink" title="注释"></a>注释</h5><ul>
+<li>text-shadow 属性向文本添加一个或多个阴影。该属性是逗号分隔的阴影列表，每个阴影有两个或三个长度值和一个可选的颜色值进行规定。省略的长度是 0。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h-shadow</td>
+<td>必需。水平阴影的位置。允许负值。</td>
+</tr>
+<tr>
+<td>v-shadow</td>
+<td>必需。垂直阴影的位置。允许负值。</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>可选。模糊的距离。</td>
+</tr>
+<tr>
+<td>color</td>
+<td>可选。阴影的颜色。参阅 CSS 颜色值。</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-shadow: 10px 20px 30px #000;</div></pre></td></tr></table></figure>
 
-语法CSS语法1box-shadow: h-shadow v-shadow blur spread color inset;
-注
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/20/box-shadow/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -515,19 +578,93 @@
       
         
           
-          
-根据这个属性可以将元素分成不同的类型,也会显示出不同的状态,例如属性值为block的时候,这个元素会独占一行,如果属性值为inline的时候,所有这个属性值得元素都会在一行显示,属性值为none,元素会在页面上消失.
-所有元素都有天生自带的display属性和属性值,叫做内置属性
+            <ul>
+<li>根据这个属性可以将元素分成不同的类型,也会显示出不同的状态,例如属性值为block的时候,这个元素会独占一行,如果属性值为inline的时候,所有这个属性值得元素都会在一行显示,属性值为none,元素会在页面上消失.</li>
+<li>所有元素都有天生自带的display属性和属性值,叫做内置属性</li>
+</ul>
+<h2 id="display-block-块级元素-块状元素"><a href="#display-block-块级元素-块状元素" class="headerlink" title="display:block; 块级元素(块状元素)"></a>display:block; 块级元素(块状元素)</h2><blockquote>
+<p>　特点:</p>
+<ul>
+<li>独占一行,在所在父元素内依次向下排列,从左上角开始</li>
+<li>宽度在不设置的情况下,宽度继承父级元素内容的宽,高度由本身内容决定</li>
+<li>可以直接设置盒子模型的所有属性(width,height,padding,border,margin)</li>
+<li>可以嵌套其他元素(p,dt,h1-h6不能嵌套块级)<ul>
+<li>dt/p 不能嵌套其他块级元素,可以嵌套行内元素等</li>
+</ul>
+</li>
+<li>永远会在父级盒子的左上角开始排布,从上到下排.</li>
+</ul>
+<p>人为设置的样式要比自带的样式权重高<br>块级元素这些特点,我们将其称作<strong>BFC(Block Fomatting Context</strong>–&gt;块级盒子在上下文中的渲染模式)</p>
+</blockquote>
+<h2 id="display-inline-行内元素"><a href="#display-inline-行内元素" class="headerlink" title="display:inline; 行内元素"></a>display:inline; 行内元素</h2><blockquote>
+<p>　特点:</p>
+<ul>
+<li>在一行显示</li>
+<li>不能设置宽度 高度</li>
+<li>padding margin的上下值设置不生效,左右值生效</li>
+<li>默认宽度高度是本身内容的宽高</li>
+<li>几个行内元素默认的垂直方向的对齐方式是基线对齐</li>
+<li>在编辑代码时,如果行内元素之间有<strong>回车或者空格</strong>,那么在页面显示的时候,就会默认有间隙()<ul>
+<li><strong>将父级的font-size设置为0,可以解决这个问题</strong>.</li>
+</ul>
+</li>
+<li><strong>行内元素不能嵌套块级元素</strong></li>
+</ul>
+</blockquote>
+<h2 id="display-inline-block-行内块级元素"><a href="#display-inline-block-行内块级元素" class="headerlink" title="display:inline-block; 行内块级元素"></a>display:inline-block; 行内块级元素</h2><blockquote>
+<p>特点:</p>
+<ul>
+<li>在一行显示</li>
+<li>可以直接设置宽度高度padding、margin值</li>
+<li>默认宽度高度是本身内容的宽高</li>
+<li>几个行内元素默认的垂直方向对齐方式是基线对齐</li>
+<li>在编辑代码时,如果行内元素之间有回车或者空格,那么在页面显示的时候,就会默认有间隙<ul>
+<li>将父级的font-size设置为0,可以解决这个问题.</li>
+</ul>
+</li>
+<li>行内元素不能嵌套块级元素</li>
+</ul>
+</blockquote>
+<h2 id="vertical-align改变行内元素和行内块级元素的基线对其方式"><a href="#vertical-align改变行内元素和行内块级元素的基线对其方式" class="headerlink" title="vertical-align改变行内元素和行内块级元素的基线对其方式"></a>vertical-align改变行内元素和行内块级元素的基线对其方式</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>top</td>
+<td>所有平级元素,去找最高(高度最高)元素的顶部进行对齐</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>所有平级元素,去找最高(高度最高)元素的底部进行对齐</td>
+</tr>
+<tr>
+<td>middle</td>
+<td>所有平级元素,去找最高(高度最高)元素的中部进行对齐</td>
+</tr>
+<tr>
+<td>length(数值)</td>
+<td>px 或 %</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>　改变对齐方式的时候,所有元素都要添加vertical-align这个属性</p>
+</blockquote>
+<h2 id="display-none-将这个元素在页面上隐藏起来"><a href="#display-none-将这个元素在页面上隐藏起来" class="headerlink" title="display:none; 将这个元素在页面上隐藏起来"></a>display:none; 将这个元素在页面上隐藏起来</h2><blockquote>
+<p>如何再让设置display:none;的元素显示出来?</p>
+<ul>
+<li>将none用其他的属性替换<ul>
+<li>例如:重新设置display属性为==&gt;display:block;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 
-display
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/20/display/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -656,16 +793,65 @@ display
       
         
           
+            <ul>
+<li>图片透明，锯齿问题是重构人员很头疼的问题:png8格式的透明背景图片，会让浏览器在先显示的过程中图片边缘会有一些锯齿情况，png24可以解决这些锯齿问题，但是ie6不支持png24透明，不过<h2 id="利用ie6的hack问题有两种解决的办法："><a href="#利用ie6的hack问题有两种解决的办法：" class="headerlink" title="利用ie6的hack问题有两种解决的办法："></a>利用ie6的hack问题有两种解决的办法：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;pwdTipsBg&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;div class=&quot;pwdTips&quot;&gt;</div><div class="line">    &lt;span class=&quot;closeBtn&quot;&gt;&lt;/span&gt;</div><div class="line">    &lt;i class=&quot;pwdTipsIcon&quot;&gt;&lt;/i&gt;</div><div class="line">    验证码错误，请填写最新获取的验证码！</div><div class="line"></div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1-利用ie6的hack问题，用两种格式的图片来表示；一种其他浏览器用png24格式的图片显示，ie6用png8格式的显示"><a href="#1-利用ie6的hack问题，用两种格式的图片来表示；一种其他浏览器用png24格式的图片显示，ie6用png8格式的显示" class="headerlink" title="1.利用ie6的hack问题，用两种格式的图片来表示；一种其他浏览器用png24格式的图片显示，ie6用png8格式的显示"></a>1.利用ie6的hack问题，用两种格式的图片来表示；一种其他浏览器用png24格式的图片显示，ie6用png8格式的显示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">.pwdTipsBg&#123;</div><div class="line">    height:100%;</div><div class="line">    background:#000;</div><div class="line">    opacity:0.5;</div><div class="line">    position: absolute;</div><div class="line">    left:0;</div><div class="line">    top:0;</div><div class="line">    z-index:1001;</div><div class="line">    filter:  alpha(opacity=50);</div><div class="line">    width:100%;</div><div class="line">    zoom:1;</div><div class="line">    &#125;</div><div class="line">.pwdTips&#123;</div><div class="line">    position:absolute;</div><div class="line">    left:40%;</div><div class="line">    top:40%;</div><div class="line">    z-index:1009;</div><div class="line">    width:285px;</div><div class="line">    background:#ececec;</div><div class="line">    height:55px;</div><div class="line">    padding:45px 20px 10px 80px;</div><div class="line">    &#125;</div><div class="line">.pwdTips i&#123;</div><div class="line">    position:absolute;</div><div class="line">    left:40px;</div><div class="line">    top:40px;</div><div class="line">    background-position:-152px -68px; width:26px;       height:26px;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">.pwdTips span&#123;</div><div class="line">    position:absolute;</div><div class="line">    top:-10px;</div><div class="line">    right:-15px;</div><div class="line">    width:33px;</div><div class="line">    height:33px;</div><div class="line">    background:url(closebtn.png) no-repeat 0 0;</div><div class="line">    _background:url(scsprites.png) no-repeat -119px -63px;</div><div class="line">    cursor:pointer;</div><div class="line">    display:block;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="2-利用filter滤镜解决图片问题"><a href="#2-利用filter滤镜解决图片问题" class="headerlink" title="2.利用filter滤镜解决图片问题"></a>2.利用filter滤镜解决图片问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.pwdTips span&#123;</div><div class="line">    position:absolute;</div><div class="line">    top:-10px;</div><div class="line">    right:-15px;</div><div class="line">    width:33px;</div><div class="line">    height:33px;</div><div class="line">    background:url(closebtn.png) no-repeat 0 0;</div><div class="line">    _background:none;</div><div class="line">    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&quot;css/safecenter/closebtn.png&quot;);</div><div class="line">    cursor:pointer;</div><div class="line">    display:block;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>1、书写正常的CSS代码，通过background导入图片，这样所有的浏览器均使用了此PNG图片；<br><code>background:url(closebtn.png) no-repeat 0 0;</code></li>
+<li>2、通过滤镜对引入图片，滤镜引入图片的时候是相对于HTML文件，而不是相对于CSS文件，语法如下：<br><code>filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&quot;css/safecenter/closebtn.png&quot;)</code></li>
+<li>代码写到这里，我们放到IE6下测试后发现IE6还是没有透明，因为我们虽然设置了滤镜引入图片，但是background也同样加载了此图片，又因为background的图层比滤镜设置的高，所以才没有显示出来</li>
+<li>所以最终的代码设置为：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">pwdTips span&#123;</div><div class="line">    position:absolute;</div><div class="line">    top:-10px;</div><div class="line">    right:-15px;</div><div class="line">    width:33px;</div><div class="line">    height:33px;</div><div class="line">    background:url(closebtn.png) no-repeat 0 0;</div><div class="line">    _background:none;</div><div class="line">    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&quot;css/safecenter/closebtn.png&quot;);</div><div class="line">    cursor:pointer;</div><div class="line">    display:block;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
+<li>1、绿色无插件；</li>
+<li>2、效率高，速度快；</li>
+<li>3、网速慢的时候，不会出现先灰底再透明的情况，支持远程图片；</li>
+<li>4、支持Hover等伪类，但是得使用两张图片，网速慢的情况下，会导致第二张图片暂时无法显示，因为还没有完全载入；</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li>1、不支持平铺，虽然filter有sizingMethod=”scale”, 拉伸缩放模式，但是图片会变形，如果单纯的颜色或简单的渐变色还能横向平铺；</li>
+<li>2、不支持Img标签；</li>
+<li>3、不支持CSS Sprite；</li>
+</ul>
+<ul>
+<li>看到很多人的logo有在ie6下面显示显示不透明，有一层淡蓝色的底，其它浏览器下都是好，这个是因为用了png24格式的图片。</li>
+<li><p>那我们在制作图标的时候应该注意什么呢？（格式，透明，毛边）</p>
+<h2 id="如何把png24透明logo转换png8格式"><a href="#如何把png24透明logo转换png8格式" class="headerlink" title="如何把png24透明logo转换png8格式"></a>如何把png24透明logo转换png8格式</h2></li>
+<li><p>1.用photoshop软件打开 你要处理的格式为png24的logo</p>
+</li>
+<li><p>2.photoshop菜单 文件—存储为web和设备所用格式（或者快捷键 Alt+Shift+Ctrl+S）</p>
+</li>
+<li><p>3.在png24那选择png8格式，最重要的一点是“杂色”颜色的选项，如果这边没有设置好就会毛刺边出现<br>这边应该怎么设置呢？</p>
+</li>
+<li><p>4.“杂色”选项的颜色应该选择和logo背景颜色最接近的</p>
+</li>
+<li><p>5.保存一下就可以了。</p>
+</li>
+</ul>
+<h2 id="png8和png24的区别"><a href="#png8和png24的区别" class="headerlink" title="png8和png24的区别"></a>png8和png24的区别</h2><ul>
+<li>1.PNG-8 与 PNG-24 对IE6的支持程度<ul>
+<li>PNG-24是支持alpha通道透明的格式，支持半透明，IE6不支持PNG-24,但是他完全支持PNG-8。</li>
+<li>如果是不透明的PNG-24,IE6也是完美支持,之所以说IE6不支持PNG-24是因为PNG-24的半透明会在IE6里显示不正常。</li>
+</ul>
+</li>
+<li>2.PNG-8 与 PNG-24 的透明区别<ul>
+<li>PNG-8 和 gif 有一些相似之处，模式都是索引颜色，只支持像素级的纯透明，不支持 alpha 透明。我们通常说的“IE6 不支持 PNG 透明”，是指不支持 PNG-24 的透明（将透明区域显示为灰色）。但是 IE6 支持 PNG-8 的透明，就像支持 gif 的透明一样。</li>
+</ul>
+</li>
+<li>3.PNG-8 的高压缩比<ul>
+<li>切图时，有时选择 PNG-8 可以获得更高的压缩比。注意，是 PNG-8，不是 PNG-24。不过有些情况下还是 gif 或 jpg 会小一些，需要根据实际情况调试以选择最佳方案。</li>
+</ul>
+</li>
+</ul>
+<h2 id="PNG-8-与-GIF"><a href="#PNG-8-与-GIF" class="headerlink" title="PNG-8 与 GIF"></a>PNG-8 与 GIF</h2><ul>
+<li>PNG-8跟GIF一样支持单色透明。GIF有的PNG-8都有，GIF没有的PNG-8还有，比如:同样的文件PNG-8格式的却比GIF要小</li>
+</ul>
+
           
-图片透明，锯齿问题是重构人员很头疼的问题:png8格式的透明背景图片，会让浏览器在先显示的过程中图片边缘会有一些锯齿情况，png24可以解决这些锯齿问题，但是ie6不支持png24透明，不过利用ie6的hack问题有两种解决的办法：1234567&lt;div class=&quot;pwdTip
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/01/关于png24格式的图片背景在IE6下显示不透明的解决方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -794,18 +980,33 @@ display
       
         
           
+            <ul>
+<li>目前使用的主题是：next</li>
+<li>当前文章所述主题为：huno</li>
+<li>在博客的根目录下（即上一篇文章基于GitHub创建自己的博客<code>https://gaodaxiu0406.github.io/2017/04/25/%E5%9F%BA%E4%BA%8EGitHub%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</code>中提到的 HEXO 文件夹下） 克隆主题</li>
+</ul>
+<h2 id="克隆主题"><a href="#克隆主题" class="headerlink" title="克隆主题"></a>克隆主题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/someus/huno.git themes/huno</div></pre></td></tr></table></figure>
+<ul>
+<li><p>提示:huno的github地址:<a href="https://github.com/gaodaxiu0406/huno" target="_blank" rel="external">https://github.com/gaodaxiu0406/huno</a></p>
+<h3 id="执行："><a href="#执行：" class="headerlink" title="执行："></a>执行：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim _config.yml</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行此命令后可以对此文档进行编辑 输入o进入编辑状态</p>
+<h3 id="将-theme-对应的值进行修改"><a href="#将-theme-对应的值进行修改" class="headerlink" title="将 theme 对应的值进行修改"></a>将 theme 对应的值进行修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: huno</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改完成 按esc键退出编辑状态 再输入:wq退出编辑窗口模式</p>
+<h2 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure>
+<ul>
+<li>稍等片刻看一下自己的博客主页，你想要的效果就出现了。也可以在github或百度中搜索更多主题，挑选自己喜欢的主题进行修改，只要你快乐就好</li>
+</ul>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><ul>
+<li>现在主题是更改过来了，但还有许多细节需要处理，比如说你需要修改头像等等。</li>
+<li>每个人的设置风格不同,但基本的设置在你下载的主题中的README文件中都有介绍,你可以按照文件中的介绍配置属于自己的博客。动气手来，让你的博客亮起来</li>
+</ul>
+<h5 id="返回上篇-基于GitHub创建自己的博客https-gaodaxiu0406-github-io-2017-04-25-E5-9F-BA-E4-BA-8EGitHub-E5-88-9B-E5-BB-BA-E8-87-AA-E5-B7-B1-E7-9A-84-E5-8D-9A-E5-AE-A2"><a href="#返回上篇-基于GitHub创建自己的博客https-gaodaxiu0406-github-io-2017-04-25-E5-9F-BA-E4-BA-8EGitHub-E5-88-9B-E5-BB-BA-E8-87-AA-E5-B7-B1-E7-9A-84-E5-8D-9A-E5-AE-A2" class="headerlink" title="返回上篇:基于GitHub创建自己的博客https://gaodaxiu0406.github.io/2017/04/25/%E5%9F%BA%E4%BA%8EGitHub%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"></a>返回上篇:基于GitHub创建自己的博客<code>https://gaodaxiu0406.github.io/2017/04/25/%E5%9F%BA%E4%BA%8EGitHub%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</code></h5>
           
-目前使用的主题是：next
-当前文章所述主题为：huno
-在博客的根目录下（即上一篇文章基于GitHub创建自己的博客https://gaodaxiu0406.github.io/2017/04/25/%E5%9F%BA%E4%BA%8EGitHub%E5%88%9B%E5%BB%BA%E8%87
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/31/HEXO主题设置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -934,19 +1135,110 @@ display
       
         
           
-          购买机器https://www.aliyun.com/123116.62.9.168用户名:root密码:Zfpx2017
-连接服务器1ssh root@116.62.9.168
-更新操作系统1apt-get update
-安装 npm1apt-get install npm
-安装node1apt-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/31/如何安装部署服务器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h2 id="购买机器https-www-aliyun-com"><a href="#购买机器https-www-aliyun-com" class="headerlink" title="购买机器https://www.aliyun.com/"></a>购买机器<code>https://www.aliyun.com/</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">116.62.9.168</div><div class="line">用户名:root</div><div class="line">密码:Zfpx2017</div></pre></td></tr></table></figure>
+<h2 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh root@116.62.9.168</div></pre></td></tr></table></figure>
+<h2 id="更新操作系统"><a href="#更新操作系统" class="headerlink" title="更新操作系统"></a>更新操作系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
+<h2 id="安装-npm"><a href="#安装-npm" class="headerlink" title="安装 npm"></a>安装 npm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install npm</div></pre></td></tr></table></figure>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install npm</div></pre></td></tr></table></figure>
+<h2 id="安装node版本管理器n-n是node的管理器-可以通过他管理node的版本"><a href="#安装node版本管理器n-n是node的管理器-可以通过他管理node的版本" class="headerlink" title="安装node版本管理器n n是node的管理器 可以通过他管理node的版本"></a>安装node版本管理器n n是node的管理器 可以通过他管理node的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install n -g</div></pre></td></tr></table></figure>
+<h2 id="安装node7-5版本"><a href="#安装node7-5版本" class="headerlink" title="安装node7.5版本"></a>安装node7.5版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">n 7.5</div></pre></td></tr></table></figure>
+<ul>
+<li>出现<code>node-v7.5.0</code>就安装成功了</li>
+</ul>
+<h2 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install mongodb</div></pre></td></tr></table></figure>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install git</div></pre></td></tr></table></figure>
+<h2 id="克隆爬虫的地址"><a href="#克隆爬虫的地址" class="headerlink" title="克隆爬虫的地址"></a>克隆爬虫的地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/zhufengnodejs/201704crawl.git</div></pre></td></tr></table></figure>
+<h2 id="进入目录201704crawl"><a href="#进入目录201704crawl" class="headerlink" title="进入目录201704crawl"></a>进入目录201704crawl</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd 201704crawl</div></pre></td></tr></table></figure>
+<h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<h2 id="启动server-js"><a href="#启动server-js" class="headerlink" title="启动server.js"></a>启动server.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node server.js</div></pre></td></tr></table></figure>
+<h2 id="执行脚本main-js-先进入main-js所在的文件夹"><a href="#执行脚本main-js-先进入main-js所在的文件夹" class="headerlink" title="执行脚本main.js(先进入main.js所在的文件夹)"></a>执行脚本main.js(先进入main.js所在的文件夹)</h2><ul>
+<li><p>1.进入main.js所在的文件夹执行main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd tasks</div><div class="line">node main.js</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.ctrl+c结束掉之前的任务,再启动server.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node server.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="访问-格式–-gt-ip-端口号"><a href="#访问-格式–-gt-ip-端口号" class="headerlink" title="访问(格式–&gt;ip:端口号)"></a>访问(格式–&gt;ip:端口号)</h2><ul>
+<li>在浏览器输入地址<code>116.62.9.168:8080</code>访问<ul>
+<li><code>http://116.62.9.168:8080/</code></li>
+</ul>
+</li>
+<li>此时还是静态网页 别人无法访问</li>
+</ul>
+<h2 id="在电脑上安装程序Xftp-5"><a href="#在电脑上安装程序Xftp-5" class="headerlink" title="在电脑上安装程序Xftp 5"></a>在电脑上安装程序<code>Xftp 5</code></h2><h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><ul>
+<li><p>Nginx是一个高性能的HTTP和反向代理服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install nginx</div></pre></td></tr></table></figure>
+</li>
+<li><p>此时就可以上传自己的项目,访问自己的服务器</p>
+</li>
+<li>但是一旦窗口关掉,就无法访问</li>
+</ul>
+<h3 id="nginx命令"><a href="#nginx命令" class="headerlink" title="nginx命令"></a>nginx命令</h3><ul>
+<li>启动 nginx nginx -c /etc/nginx/nginx.conf</li>
+<li>关闭 nginx nginx -s stop</li>
+<li>重读配置文件 nginx -s reload kill -HUP nginx</li>
+<li>常用命令 service nginx {start|stop|status|restart|reload|configtest|}</li>
+</ul>
+<h3 id="配置nginx反向代理和负载均衡"><a href="#配置nginx反向代理和负载均衡" class="headerlink" title="配置nginx反向代理和负载均衡"></a>配置nginx反向代理和负载均衡</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">upstream crawl&#123;</div><div class="line">    ip_hash;</div><div class="line">    server 127.0.0.1:3000 weight=10;</div><div class="line">    server 127.0.0.1:4000 weight=1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">        listen 80;</div><div class="line">        server_name www.gdxiu.cn;</div><div class="line"></div><div class="line">        location / &#123;</div><div class="line">           proxy_pass http://crawl;</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="安装pm2"><a href="#安装pm2" class="headerlink" title="安装pm2"></a>安装pm2</h2><ul>
+<li><p>强大的进程管理器 进程异常退出时pm2会尝试重启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install pm2 -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>进入201704crawl文件夹,在根目录下执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /root</div><div class="line">cd 201704crawl</div></pre></td></tr></table></figure>
+</li>
+<li><p>切换到server.js文件所在目录,启动pm2应用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pm2 start server.js --name &quot;crawl&quot;</div><div class="line">//即pm2 start server.js --name &apos;自己取名字&apos;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="如何停止pm2上的项目"><a href="#如何停止pm2上的项目" class="headerlink" title="如何停止pm2上的项目"></a>如何停止pm2上的项目</h2><h3 id="1-查看node进程号"><a href="#1-查看node进程号" class="headerlink" title="1.查看node进程号"></a>1.查看node进程号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep node</div></pre></td></tr></table></figure>
+<h3 id="2-停止"><a href="#2-停止" class="headerlink" title="2.停止"></a>2.停止</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 stop crawl</div></pre></td></tr></table></figure>
+<h3 id="3-杀死进程"><a href="#3-杀死进程" class="headerlink" title="3.杀死进程"></a>3.杀死进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kill 8796(进程号)</div></pre></td></tr></table></figure>
+<h2 id="复活-如何重新建立连接"><a href="#复活-如何重新建立连接" class="headerlink" title="复活:如何重新建立连接"></a>复活:如何重新建立连接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start server.js --name &quot;crawl&quot;</div></pre></td></tr></table></figure>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pm2 start crawl</div></pre></td></tr></table></figure>
+<h2 id="pm2常用命令"><a href="#pm2常用命令" class="headerlink" title="pm2常用命令"></a>pm2常用命令</h2><ul>
+<li>用pm2启动node</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pm2 start app.js –name “crawl”</td>
+<td>启动应用</td>
+</tr>
+<tr>
+<td>pm2 list</td>
+<td>查看所有应用</td>
+</tr>
+<tr>
+<td>pm2 restart crawl</td>
+<td>重启应用</td>
+</tr>
+<tr>
+<td>pm2 stop crawl</td>
+<td>停止应用</td>
+</tr>
+<tr>
+<td>pm2 delete crawl</td>
+<td>删除应用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="关于scp命令"><a href="#关于scp命令" class="headerlink" title="关于scp命令"></a>关于scp命令</h3><ul>
+<li>网址<code>http://www.cnblogs.com/hitwtx/archive/2011/11/16/2251254.html</code></li>
+</ul>
+<p>cat 查看文件内容</p>
+<h2 id="vi命令"><a href="#vi命令" class="headerlink" title="vi命令"></a>vi命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vi crawl</div><div class="line">1000dd//删除1000行  vi的一个命令</div></pre></td></tr></table></figure>
+<h2 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure>
+<h2 id="推荐视频地址"><a href="#推荐视频地址" class="headerlink" title="推荐视频地址"></a>推荐视频地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://www.ablesky.com/kecheng/detail_926049</div></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -1075,20 +1367,187 @@ display
       
         
           
-          
-关于react轮播图的源码,无缝版已上传至github,https://github.com/gaodaxiu0406/React-Slider
+            <blockquote>
+<p>关于react轮播图的源码,无缝版已上传至github,<a href="https://github.com/gaodaxiu0406/React-Slider" target="_blank" rel="external">https://github.com/gaodaxiu0406/React-Slider</a></p>
+</blockquote>
+<h2 id="用react-webpack写一个的轮播图项目-项目配置请看上篇react轮播图项目配置及原理概要"><a href="#用react-webpack写一个的轮播图项目-项目配置请看上篇react轮播图项目配置及原理概要" class="headerlink" title="用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)"></a>用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)</h2><ul>
+<li>先将整个文件写在一个文件中,<h2 id="1-画结构"><a href="#1-画结构" class="headerlink" title="1.画结构"></a>1.画结构</h2></li>
+<li>新建一个components文件夹</li>
+<li>components文件夹下新建Slider.js文件和Slider.less文件(Slider.less文件是用来给Slider.js写样式的)</li>
+</ul>
+<h2 id="2-在indix-js中引入组件-渲染到页面中"><a href="#2-在indix-js中引入组件-渲染到页面中" class="headerlink" title="2.在indix.js中引入组件 渲染到页面中"></a>2.在indix.js中引入组件 渲染到页面中</h2><ul>
+<li><p>打开src文件夹中的index.html文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>2-1).在这个id为root的标签中渲染元素</p>
+</li>
+<li><p>2-2).回到index.js中,写一个轮播图组件，渲染到index.html中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import ReactDOM from &apos;react-dom&apos;;</div><div class="line">import Slider from &apos;./components/Slider&apos;;</div><div class="line">let images=[</div><div class="line">    &#123;src:require(&apos;./images/1.jpg&apos;)&#125;,</div><div class="line">    &#123;src:require(&apos;./images/2.jpg&apos;)&#125;,</div><div class="line">    &#123;src:require(&apos;./images/3.jpg&apos;)&#125;,</div><div class="line">    &#123;src:require(&apos;./images/4.jpg&apos;)&#125;</div><div class="line">];</div><div class="line">ReactDOM.render(&lt;Slider images=&#123;images&#125;/&gt;,document.querySelector(&apos;#root&apos;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>解释1)引入React，引入ReactDOM，引入Slider组件 然后通过ReactDOM.render将Slider组件渲染到index.html的id为root的div标签中</p>
+</li>
+<li>解释2)Slider组件需要图片参数<ul>
+<li>src文件夹下新建一个images文件夹，存入轮播的图片</li>
+<li>将图片路径通过require存入images数组中</li>
+<li>通过组件Slider标签将所需的images参数传入组件Slider(让images参数变量等于images数组)</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-开始写Slider-js中的代码"><a href="#3-开始写Slider-js中的代码" class="headerlink" title="3.开始写Slider.js中的代码"></a>3.开始写Slider.js中的代码</h2><ul>
+<li><p>需要默认导出一个组件Slider供外面文件(index.js)调用;还需要接收一个images属性进行轮播</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">import ReactDOM from &apos;react-dom&apos;;</div><div class="line">require(&apos;./Slider.less&apos;);</div><div class="line">export default class Slider extends React.Component&#123;</div><div class="line">    render()&#123;</div><div class="line">        let images=this.props.images;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;slider-wrapper&quot;&gt;</div><div class="line">                &lt;ul className=&quot;sliders&quot;&gt;</div><div class="line">                    &#123;       images.map((image,index)=&gt;(</div><div class="line">                    &lt;li className=&quot;slider&quot;&gt;</div><div class="line">                    &lt;img src=&#123;image.src&#125;/&gt;</div><div class="line">                    &lt;/li&gt;</div><div class="line">                        ))</div><div class="line">                    &#125;</div><div class="line">                &lt;/ul&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>1)<code>require(&#39;./Slider.less&#39;);</code>–&gt;这里引入Slider.less用import和require都是一样的效果，都是加载一个模块的意思,模块可能是图片，可能是less/css/js/json文件,都可以–&gt;在webpack中一切皆模块,不管是什么资源，都可以作为模块来加载</p>
+</li>
+<li>2)li的数量取决于images数据,images中有几张图片，就有几个li<ul>
+<li>在render中let一个变量images来接收index.js传入的images,然后用map方法遍历整个数组</li>
+</ul>
+</li>
+<li><p>在Slider.less中写好轮播图的样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">*&#123;</div><div class="line">  padding: 0;</div><div class="line">  margin: 0;</div><div class="line">&#125;</div><div class="line">ul,li&#123;</div><div class="line">  list-style: none;</div><div class="line">&#125;</div><div class="line">.wrapper&#123;</div><div class="line">  width: 400px;</div><div class="line">  height: 400px;</div><div class="line">  position: relative;</div><div class="line">  margin: 30px auto;</div><div class="line">  .sliders&#123;</div><div class="line">    height: 400px;</div><div class="line">    position: absolute;</div><div class="line">    left:0;</div><div class="line">    .slider&#123;</div><div class="line">      float: left;</div><div class="line">      width: 400px;</div><div class="line">      height: 400px;</div><div class="line">      img&#123;</div><div class="line">        width: 100%;</div><div class="line">        height: 100%;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>宽高为400px的轮播图</p>
+</li>
+</ul>
+<h2 id="4-写配置文件"><a href="#4-写配置文件" class="headerlink" title="4.写配置文件"></a>4.写配置文件</h2><ul>
+<li><p>在webpack.config.js中加loaders</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">module:&#123;</div><div class="line">        loaders:[</div><div class="line">            &#123;test:/\.js$/,loader:&apos;babel-loader&apos;,exclude:/node_modules/&#125;,</div><div class="line">            &#123;test:/\.less$/,loader:&apos;style-loader!css-loader!less-loader&apos;&#125;,</div><div class="line">            &#123;test:/\.(jpg|png|gif)$/,loader:&apos;url-loader&apos;&#125;</div><div class="line">        ]</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>babel默认情况下什么都不做，需要一个配置文件.babelrc文件</p>
+<ul>
+<li>新建一个.babelrc配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;presets&quot;: [&quot;es2015&quot;,&quot;stage-0&quot;,&quot;react&quot;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>presets预设,”es2015”将es6编译成es5,”stage-0”将es7编译成es5,”react”将react编译成es5</p>
+</li>
+<li>原理1:<code>{test:/\.js$/,loader:&#39;babel-loader&#39;,exclude:/node_modules/}</code>–&gt;处理(编译)js文件:如果发现文件是js,用babel-loader加载,加载的时候需要读配置文件.babelrc,如果代码时es6/es7/react都要通过babel转成es5;同时通过exclude将node_modules文件夹下的所有js文件排除掉</li>
+<li>原理2:<code>{test:/\.less$/,loader:&#39;style-loader!css-loader!less-loader&#39;}</code>–&gt;如果发现文件以.less结尾的,第一步通过less-loader将less编译成css,然后通过css-loader进行加载,然后通过style-loader将他通过style标签的形式插入到页面中去，变成一个行内样式</li>
+<li>原理3:<code>{test:/\.(jpg|png|gif)$/,loader:&#39;url-loader&#39;}</code>–&gt;凡是资源文件都可以用url-loader来加载,不论是图片、图标、字体、视频、音频;后面可以通过问号传参,有个参数limit(例如:<code>{test:/\.(jpg|png|gif)$/,loader:&#39;url-loader?limit=8192&#39;}</code>–&gt;小于8K的资源文件将直接以base64的形式内联在代码中，可以减少一次http请求)</li>
+</ul>
+<h3 id="此时执行npm-run-build-将代码打包到出口文件中-打开build文件夹下的index-html文件就可以直接预览效果了"><a href="#此时执行npm-run-build-将代码打包到出口文件中-打开build文件夹下的index-html文件就可以直接预览效果了" class="headerlink" title="此时执行npm run build,将代码打包到出口文件中,打开build文件夹下的index.html文件就可以直接预览效果了"></a>此时执行<code>npm run build</code>,将代码打包到出口文件中,打开build文件夹下的index.html文件就可以直接预览效果了</h3><ul>
+<li><p>此时会发现控制台有个报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Warning: Each child in an array or iterator should have a unique &quot;key&quot; prop. Check the render method of `Slider`. See https://fb.me/react-warning-keys for more information.</div><div class="line">    in li (created by Slider)</div><div class="line">    in Slider</div></pre></td></tr></table></figure>
+</li>
+<li><p>需要唯一的key属性,在Slider.js文件中的li需要唯一的key属性，给li标签加上key属性即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;li className=&quot;slider&quot; key=&#123;index&#125;&gt;                  &lt;img src=&#123;image.src&#125;/&gt;        &lt;/li&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>关掉浏览器,重新执行<code>npm run build</code>，再打开build文件夹下的index.html文件预览,控制台就没有报错了</p>
+</li>
+</ul>
+<h2 id="5-写功能"><a href="#5-写功能" class="headerlink" title="5.写功能"></a>5.写功能</h2><ul>
+<li><p>让图片动起来,需要给Slider.js加个状态,需要有个定时器让他动起来 写在周期函数componentDidMount中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">constructor()&#123;</div><div class="line">        super();</div><div class="line">        this.state=&#123;pos:0&#125;;//默认索引</div><div class="line">    &#125;</div><div class="line">    componentDidMount()&#123;</div><div class="line">        this.$timer=setInterval(()=&gt;&#123;</div><div class="line">            let pos=this.state.pos;</div><div class="line">            pos++;//每隔2s让pos加1，pos值影响ul的左偏移量left的值 所以ul应该有个style属性 left值应该变化</div><div class="line">            this.setState(&#123;pos:pos&#125;)</div><div class="line"></div><div class="line">        &#125;,this.props.interval*1000)</div></pre></td></tr></table></figure>
+</li>
+<li><p>pos++;–&gt;每隔2s让pos加1，pos值影响ul的左偏移量left的值 所以ul应该有个style属性 left值应该变化</p>
+<ul>
+<li>ul应该有个style属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">render()&#123;</div><div class="line">        let images=this.props.images;</div><div class="line">        let style=&#123;</div><div class="line">            width:400*images.length,</div><div class="line">            left:this.state.pos*-400</div><div class="line">        &#125;;</div><div class="line">        return(</div><div class="line">            &lt;div className=&quot;slider-wrapper&quot;&gt;</div><div class="line">                &lt;ul style=&#123;style&#125; className=&quot;sliders&quot;&gt;</div><div class="line">                    &#123;</div><div class="line">                        images.map((image,index)=&gt;(</div><div class="line">                            &lt;li className=&quot;slider&quot; key=&#123;index&#125;&gt;</div><div class="line">                                &lt;img src=&#123;image.src&#125;/&gt;</div><div class="line">                            &lt;/li&gt;</div><div class="line">                        ))</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                &lt;/ul&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>this.props.interval*1000–&gt;每隔2s轮播一次,需要有变量传进来–&gt;在index.js中新增一个interval变量(间隔时间让外面可以控制)</p>
+<ul>
+<li>1).这里通过this.props获取index.js中传递进来的的interval变量<code>this.props.interval*1000</code></li>
+<li>2).index.js中新增一个interval变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(</div><div class="line">    &lt;Slider</div><div class="line">        images=&#123;images&#125;</div><div class="line">        interval=&#123;2&#125;</div><div class="line">    /&gt;,document.querySelector(&apos;#root&apos;));</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="写功能步骤总结"><a href="#写功能步骤总结" class="headerlink" title="写功能步骤总结:"></a>写功能步骤总结:</h3><ul>
+<li>第一步:定义一个默认索引pos,默认值是0</li>
+<li>第二步:在组件加载完成之后创建定时器setInterval赋给this.$timer</li>
+<li>第三步:每隔2s让图片向左偏移一个宽度的距离(interval是外界传进来的,是图片轮播的间隔时间),在index中要给组件Slider传进来一个2,2*1000意味着2s变一次</li>
+<li>this.$timer中先取出老的pos值，第一次轮播pos就是0，然后pos++，pos变成1，然后setState重新设置pos值,让pos值往上</li>
+<li>pos会影响ul的left值，一张图片的宽度是400px，向左偏移400，就是*-400</li>
+<li>ul的宽度应该是宽度400乘以图片的数量images.length,4张图就是1600px<h3 id="执行npm-run-dev"><a href="#执行npm-run-dev" class="headerlink" title="执行npm run dev"></a>执行<code>npm run dev</code></h3></li>
+<li>注意,执行<code>npm run dev</code>可自动将文件编译更新打包到出口文件index.html中，并且只要更改文件，页面就会自动刷新,但是如果更改配置文件,需要重新启动<code>npm run dev</code>服务</li>
+<li>此时执行<code>npm run dev</code>命令,轮播图就动起来了，但是越界了,因为此时还没有做边界处理</li>
+</ul>
+<h2 id="7-完善功能"><a href="#7-完善功能" class="headerlink" title="7.完善功能"></a>7.完善功能</h2><ul>
+<li><p>将Slider需要的属性(可外界控制的)，在index.js的Slider组件标签中传入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(</div><div class="line">    &lt;Slider</div><div class="line">        images=&#123;images&#125;//图片</div><div class="line">        interval=&#123;2&#125;//多长时间轮播一次</div><div class="line">        speed=&#123;1&#125;//每次轮播的速度</div><div class="line">        pause=&#123;true&#125;//当鼠标移动上去之后自动暂停</div><div class="line">        autoplay=&#123;true&#125;//是否启用自动轮播，false不自动轮播</div><div class="line">                                  - 在Slider.js中</div><div class="line">        dots=&#123;true&#125;//是否有点状导航</div><div class="line">        arrows=&#123;true&#125;//是否有箭头导航</div><div class="line">    /&gt;,document.querySelector(&apos;#root&apos;));</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加<code>transitionDuration</code>–&gt;规定完成过渡效果需要花费的时间 speed默认值是1 这里就是1s</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let style=&#123;</div><div class="line">            width:400*images.length,</div><div class="line">            left:this.state.pos*-400,</div><div class="line">            transitionDuration:this.props.speed+&apos;s&apos;</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Slider.js的周期函数中添加一个判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">componentDidMount()&#123;</div><div class="line">    if(this.props.autoPlay)&#123;</div><div class="line">        this.$timer=setInterval(()=&gt;&#123;</div><div class="line">            let pos=this.state.pos;</div><div class="line">            pos++;</div><div class="line">            this.setState(&#123;pos:pos&#125;)</div><div class="line">        &#125;,this.props.interval*1000)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>this.props.autoPlay 是否自动轮播 如果外界传入true就是自动轮播，传入false就是不自动轮播</p>
+</li>
+</ul>
+<h2 id="8-将轮播切换单独拎出来写成一个方法turn"><a href="#8-将轮播切换单独拎出来写成一个方法turn" class="headerlink" title="8.将轮播切换单独拎出来写成一个方法turn"></a>8.将轮播切换单独拎出来写成一个方法turn</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">turn(n)&#123;</div><div class="line">    let pos=this.state.pos;</div><div class="line">    pos+=n;</div><div class="line">    this.setState(&#123;pos:pos&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>或者使用es6的箭头函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">turn=(n)=&gt;&#123;</div><div class="line">        let pos=this.state.pos;</div><div class="line">        pos+=n;</div><div class="line">        this.setState(&#123;pos:pos&#125;)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>let pos=this.state.pos;</code>获取旧索引</p>
+</li>
+<li>turn表示切换,n表示切换的步长,方便以后操作:例如往左走传1进来即可，往右走传-1进来即可</li>
+<li>那么此时在周期函数中,直接调用这个turn方法即可,默认往右轮播，传入-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">componentDidMount()&#123;</div><div class="line">    if(this.props.autoplay)&#123;</div><div class="line">        this.timer=setInterval(()=&gt;&#123;</div><div class="line">            this.turn(1);</div><div class="line">        &#125;,this.props.interval*1000)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="9-实现鼠标移上去停止轮播"><a href="#9-实现鼠标移上去停止轮播" class="headerlink" title="9.实现鼠标移上去停止轮播"></a>9.实现鼠标移上去停止轮播</h2><ul>
+<li>给div加onMouseOver和onMouseOut事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;ul onMouseOver=&#123;()=&gt;clearInterval(this.timer)&#125; onMouseOut=&#123;this.play&#125; style=&#123;style&#125; className=&quot;sliders&quot;&gt;</div><div class="line">...</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="10-自动轮播部分也封装成一个函数play"><a href="#10-自动轮播部分也封装成一个函数play" class="headerlink" title="10.自动轮播部分也封装成一个函数play"></a>10.自动轮播部分也封装成一个函数play</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">play=()=&gt;&#123;</div><div class="line">        this.timer=setInterval(()=&gt;&#123;</div><div class="line">            this.turn(1);</div><div class="line">        &#125;,this.props.interval*1000)</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>play表示开启定时器进行自动轮播</li>
+<li>那么此时在周期函数中直接调用<code>this.play()</code>即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">componentDidMount()&#123;</div><div class="line">    if(this.props.autoplay)&#123;</div><div class="line">        this.play();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="11-边界判断"><a href="#11-边界判断" class="headerlink" title="11.边界判断"></a>11.边界判断</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">turn=(n)=&gt;&#123;</div><div class="line">        let pos=this.state.pos;</div><div class="line">        pos+=n;</div><div class="line">        if(pos&gt;=this.props.images.length)&#123;</div><div class="line">            pos=0;</div><div class="line">        &#125;</div><div class="line">        this.setState(&#123;pos:pos&#125;)</div><div class="line">    &#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li>当索引为图片总张数的时候 让索引变为0<h2 id="12-写左右箭头"><a href="#12-写左右箭头" class="headerlink" title="12.写左右箭头"></a>12.写左右箭头</h2></li>
+<li><p>在ul下加一个div</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div className=&quot;arrows&quot;&gt;</div><div class="line">                    &lt;span className=&quot;arrow-left&quot;&gt;&amp;lt;&lt;/span&gt;</div><div class="line">                    &lt;span className=&quot;arrow-right&quot;&gt;&amp;gt;&lt;/span&gt;</div><div class="line">                &lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Slider.less中写样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">.arrows&#123;</div><div class="line">  position: absolute;</div><div class="line">  width: 100%;</div><div class="line">  height: 20px;</div><div class="line">  top:50%;</div><div class="line">  margin-top:-10px;</div><div class="line">  .arrow&#123;</div><div class="line">    width: 20px;</div><div class="line">    height: 20px;</div><div class="line">    line-height: 20px;</div><div class="line">    text-align: center;</div><div class="line">    cursor: pointer;</div><div class="line">    font-size: 30px;</div><div class="line">    background-color: #eee;</div><div class="line">    &amp;:hover&#123;</div><div class="line">      background-color: #999;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  .arrow-left&#123;</div><div class="line">    margin-left: 5px;</div><div class="line">    float: left;</div><div class="line">  &#125;</div><div class="line">  .arrow-right&#123;</div><div class="line">    margin-right: 5px;</div><div class="line">    float: right;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>给左右arrow绑定事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div className=&quot;arrows&quot;&gt;</div><div class="line">    &lt;span onClick=&#123;()=&gt;this.turn(-1)&#125; className=&quot;arrow arrow-left&quot;&gt;&amp;lt;&lt;/span&gt;</div><div class="line">    &lt;span onClick=&#123;()=&gt;this.turn(1)&#125; className=&quot;arrow arrow-right&quot;&gt;&amp;gt;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="13-处理左边界"><a href="#13-处理左边界" class="headerlink" title="13.处理左边界"></a>13.处理左边界</h2><ul>
+<li><p>在turn中做个判断</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">turn=(n)=&gt;&#123;</div><div class="line">    let pos=this.state.pos;</div><div class="line">    pos+=n;</div><div class="line">    if(pos&gt;=this.props.images.length)&#123;</div><div class="line">        pos=0;</div><div class="line">    &#125;</div><div class="line">    if(pos&lt;0)&#123;</div><div class="line">        pos=this.props.images.length-1;</div><div class="line">    &#125;</div><div class="line">    this.setState(&#123;pos:pos&#125;)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当索引小于0的时候,让索引等于images的长度-1</p>
+</li>
+</ul>
+<h2 id="14-根据传进来的arrows值判断是否有左右箭头切换效果"><a href="#14-根据传进来的arrows值判断是否有左右箭头切换效果" class="headerlink" title="14.根据传进来的arrows值判断是否有左右箭头切换效果"></a>14.根据传进来的arrows值判断是否有左右箭头切换效果</h2><ul>
+<li><p>第一种方法(看着比较乱)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">                    this.props.arrows?&lt;div className=&quot;arrows&quot;&gt;</div><div class="line">                        &lt;span onClick=&#123;()=&gt;this.turn(-1)&#125; className=&quot;arrow arrow-left&quot;&gt;&amp;lt;&lt;/span&gt;</div><div class="line">                        &lt;span onClick=&#123;()=&gt;this.turn(1)&#125; className=&quot;arrow arrow-right&quot;&gt;&amp;gt;&lt;/span&gt;</div><div class="line">                    &lt;/div&gt;:null</div><div class="line">                &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>第二种,在render中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let arrows=null;</div><div class="line">        if(this.props.arrows)&#123;</div><div class="line">            arrows=(</div><div class="line">                &lt;div className=&quot;arrows&quot;&gt;</div><div class="line">                    &lt;span onClick=&#123;()=&gt;this.turn(-1)&#125; className=&quot;arrow arrow-left&quot;&gt;&amp;lt;&lt;/span&gt;</div><div class="line">                    &lt;span onClick=&#123;()=&gt;this.turn(1)&#125; className=&quot;arrow arrow-right&quot;&gt;&amp;gt;&lt;/span&gt;</div><div class="line">                &lt;/div&gt;</div><div class="line">            )</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>那么ul下面就可以直接用{arrows}代替了(看着很清晰明了)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div className=&quot;slider-wrapper&quot;&gt;</div><div class="line">                &lt;ul onMouseOver=&#123;()=&gt;clearInterval(this.timer)&#125; onMouseOut=&#123;this.play&#125; style=&#123;style&#125; className=&quot;sliders&quot;&gt;</div><div class="line">                    &#123;</div><div class="line">                        images.map((image,index)=&gt;(</div><div class="line">                            &lt;li className=&quot;slider&quot; key=&#123;index&#125;&gt;</div><div class="line">                                &lt;img src=&#123;image.src&#125;/&gt;</div><div class="line">                            &lt;/li&gt;</div><div class="line">                        ))</div><div class="line">                    &#125;</div><div class="line">                &lt;/ul&gt;</div><div class="line">            &#123;arrows&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="15-根据传进来的dots值判断是否有点状导航"><a href="#15-根据传进来的dots值判断是否有点状导航" class="headerlink" title="15.根据传进来的dots值判断是否有点状导航"></a>15.根据传进来的dots值判断是否有点状导航</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">let dots=null;</div><div class="line">        if(this.props.dots)&#123;</div><div class="line">            dots=(</div><div class="line">                &lt;div className=&quot;dots&quot;&gt;</div><div class="line">                    &#123;</div><div class="line">                        images.map((image,index)=&gt;(</div><div class="line">                            &lt;span className=&quot;dot&quot; key=&#123;index&#125;&gt;&lt;/span&gt;</div><div class="line">                        ))</div><div class="line">                    &#125;</div><div class="line">                &lt;/div&gt;</div><div class="line">            )</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>dots直接放到最下面即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">&#123;arrows&#125;</div><div class="line">&#123;dots&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="15-1-在Slider-less中写dots的样式"><a href="#15-1-在Slider-less中写dots的样式" class="headerlink" title="15-1.在Slider.less中写dots的样式"></a>15-1.在Slider.less中写dots的样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.dots&#123;</div><div class="line">  width: 100%;</div><div class="line">  height: 20px;</div><div class="line">  position: absolute;</div><div class="line">  bottom: 10px;</div><div class="line">  text-align: center;</div><div class="line">  .dot&#123;</div><div class="line">    display: inline-block;</div><div class="line">    width: 20px;</div><div class="line">    height: 20px;</div><div class="line">    border-radius: 50%;</div><div class="line">    margin-left: 5px;</div><div class="line">    background-color: #abcdef;</div><div class="line">    cursor: pointer;</div><div class="line">    &amp;:hover&#123;</div><div class="line">      background-color: #999999;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="16-点状导航的点击跟随事件"><a href="#16-点状导航的点击跟随事件" class="headerlink" title="16.点状导航的点击跟随事件"></a>16.点状导航的点击跟随事件</h2><ul>
+<li>给span加onClick事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">···</div><div class="line">&lt;span className=&quot;dot&quot; key=&#123;index&#125; onClick=&#123;()=&gt;this.turn(index-this.props.pos)&#125;&gt;&lt;/span&gt;</div><div class="line">···</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="16-1-轮播点状导航自动跟随事件"><a href="#16-1-轮播点状导航自动跟随事件" class="headerlink" title="16-1.轮播点状导航自动跟随事件"></a>16-1.轮播点状导航自动跟随事件</h3><ul>
+<li><p>在Slider.less中加一个active样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.active&#123;</div><div class="line">    background-color: #999999;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>给span标签添加active属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span className=&#123;&quot;dot &quot;+(index==this.state.pos?&apos;active&apos;:&apos;&apos;)&#125; key=&#123;index&#125; onClick=&#123;()=&gt;this.turn(index-this.state.pos)&#125;&gt;&lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
-用react+webpack写一个的轮播图项目(项目配置请看上篇react轮播图项目配置及原理概要)
-先将整个文件写在一个文件中,1.画结构
-新建一个
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/31/2-react轮播图项目开写/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1217,19 +1676,67 @@ display
       
         
           
-          项目配置及原理概要1.初始化项目1npm init -y
+            <h2 id="项目配置及原理概要"><a href="#项目配置及原理概要" class="headerlink" title="项目配置及原理概要"></a>项目配置及原理概要</h2><h2 id="1-初始化项目"><a href="#1-初始化项目" class="headerlink" title="1.初始化项目"></a>1.初始化项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init -y</div></pre></td></tr></table></figure>
+<ul>
+<li>生成package.json文件</li>
+</ul>
+<h2 id="2-安装依赖包-开发依赖"><a href="#2-安装依赖包-开发依赖" class="headerlink" title="2.安装依赖包 开发依赖"></a>2.安装依赖包 开发依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install webpack webpack-dev-server babel-core babel-loader babel-preset-react babel-preset-es2015 babel-preset-stage-0 style-loader css-loader less-loader less file-loader url-loader html-webpack-plugin -D</div></pre></td></tr></table></figure>
+<ul>
+<li>webpack 打包</li>
+<li>webpack-dev-server 用来启动一个HTTP服务器预览我们的项目</li>
+<li>babel-core babel-loader 进行转译 把es6和react代码转译成es5</li>
+<li>babel-preset-react 用来转译react</li>
+<li>babel-preset-es2015 用来转译es6</li>
+<li>babel-preset-stage-0 用来转译es7</li>
+<li>style-loader css-loader 用来处理css</li>
+<li>less-loader less 编译less</li>
+<li>file-loader url-loader 用来处理资源文件</li>
+<li>html-webpack-plugin 用来自动产出html文件</li>
+<li>open-browser-webpack-plugin 自动打开浏览器</li>
+</ul>
+<h2 id="3-安装生产依赖"><a href="#3-安装生产依赖" class="headerlink" title="3.安装生产依赖"></a>3.安装生产依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install react react-dom -S</div></pre></td></tr></table></figure>
+<h2 id="4-配置文件的出入口路径"><a href="#4-配置文件的出入口路径" class="headerlink" title="4.配置文件的出入口路径"></a>4.配置文件的出入口路径</h2><ul>
+<li>新建一个webpack.config.js文件，在文件中配置入口文件和出口路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">let path=require(&apos;path&apos;);</div><div class="line">module.exports=&#123;</div><div class="line">    entry:&apos;./src/index.js&apos;,//入口文件</div><div class="line">    output:&#123;//出口配置</div><div class="line">        path:path.resolve(&apos;build&apos;),//出口文件路径</div><div class="line">        filename:&apos;bundle.js&apos;//出口文件名称</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-启动安装的模块文件夹node-modules–-gt-bin–-gt-webpack-cmd和webpack-dev-server-cmd文件"><a href="#5-启动安装的模块文件夹node-modules–-gt-bin–-gt-webpack-cmd和webpack-dev-server-cmd文件" class="headerlink" title="5.启动安装的模块文件夹node_modules–&gt;.bin–&gt;webpack.cmd和webpack-dev-server.cmd文件"></a>5.启动安装的模块文件夹node_modules–&gt;.bin–&gt;webpack.cmd和webpack-dev-server.cmd文件</h2><ul>
+<li>在package.json文件中的scripts标签进行匹配<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">    &quot;build&quot;: &quot;webpack&quot;,</div><div class="line">    &quot;dev&quot;:&quot;webpack-dev-server&quot;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-1-启动webpack和webpack-dev"><a href="#5-1-启动webpack和webpack-dev" class="headerlink" title="5-1.启动webpack和webpack-dev"></a>5-1.启动webpack和webpack-dev</h2><ul>
+<li><p>在cmd中执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm run build</div></pre></td></tr></table></figure>
+</li>
+<li><p>1)在cmd窗口中显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    Asset     Size  Chunks             Chunk Names</div><div class="line">bundle.js  2.52 kB       0  [emitted]  main</div><div class="line">   [0] ./src/index.js 43 bytes &#123;0&#125; [built]</div></pre></td></tr></table></figure>
+</li>
+<li><p>表示生成bundle.js一个文件</p>
+</li>
+<li>2)在当前项目文件夹下会自动生成一个build文件夹，同时在build文件夹下会自动生成bundle.js文件，我们的入口文件(src文件夹下的index.js)会自动打包到出口文件bundle.js中</li>
+</ul>
+<h2 id="6-自动产出html文件"><a href="#6-自动产出html文件" class="headerlink" title="6.自动产出html文件"></a>6.自动产出html文件</h2><h3 id="6-1-现在我们需要在build文件夹中新建一个index-html文件，然后引入bundle-js进行预览-但是现在我们希望这个文件不要手动创建了，希望他可以自动生成，要做到这一点，我们需要引入插件html-webpack-plugin-此插件在最初已经安装过-如果没有安装需安装后才可使用"><a href="#6-1-现在我们需要在build文件夹中新建一个index-html文件，然后引入bundle-js进行预览-但是现在我们希望这个文件不要手动创建了，希望他可以自动生成，要做到这一点，我们需要引入插件html-webpack-plugin-此插件在最初已经安装过-如果没有安装需安装后才可使用" class="headerlink" title="6-1.现在我们需要在build文件夹中新建一个index.html文件，然后引入bundle.js进行预览;但是现在我们希望这个文件不要手动创建了，希望他可以自动生成，要做到这一点，我们需要引入插件html-webpack-plugin(此插件在最初已经安装过,如果没有安装需安装后才可使用)"></a>6-1.现在我们需要在build文件夹中新建一个index.html文件，然后引入bundle.js进行预览;但是现在我们希望这个文件不要手动创建了，希望他可以自动生成，要做到这一点，我们需要引入插件<code>html-webpack-plugin</code>(此插件在最初已经安装过,如果没有安装需安装后才可使用)</h3><ul>
+<li><p>1) 在webpack.config.js中引入html-webpack-plugin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let HtmlWebPackPlugin=require(&apos;html-webpack-plugin&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>2) 同时给插件再添加个配置项plugins,plugins是个数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">plugins:[</div><div class="line">    new HtmlWebPackPlugin(&#123;</div><div class="line">        template:&apos;./src/index.html&apos;</div><div class="line">    &#125;)</div><div class="line">]</div></pre></td></tr></table></figure>
+</li>
+<li><p>3) template 模板 配置到时候会按照哪个模板来自动产出html文件 并且把它自动放到配置目录下–&gt;一般会在src文件夹下新建一个模板叫index.html</p>
+</li>
+<li>4) 执行<code>npm run build</code></li>
+<li>4-1).原理:此时如果再执行<code>npm run build</code>的话，就会执行上面配置的plugins插件,插件会读取src文件夹下的index.html模板文件，把他自动插入到打包后的bundle.js，并且把bundle.js保存到build目录下(每次执行<code>npm run build</code>命令，都会重新生成bundle.js和index.html两个文件)</li>
+<li><p>4-2).在cmd命令行执行<code>npm run build</code>,命令行显示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">     Asset       Size  Chunks             Chunk Names</div><div class="line"> bundle.js    2.52 kB       0  [emitted]  main</div><div class="line">index.html  188 bytes          [emitted]</div><div class="line">   [0] ./src/index.js 43 bytes &#123;0&#125; [built]</div></pre></td></tr></table></figure>
+</li>
+<li><p>表示生成bundle.js和index.html两个文件,与之前执行<code>npm run build</code>相比多了一个html文件</p>
+</li>
+<li>4-3).打开我们的项目文件夹下的build文件会发现，已经自动生成了一个出口index.html出口文件,打开这个index.html出口文件会发现,index.html中已经自动引入了bundle.js文件</li>
+</ul>
+<blockquote>
+<p>关于react轮播图的源码,无缝版已上传至github,<a href="https://github.com/gaodaxiu0406/React-Slider" target="_blank" rel="external">https://github.com/gaodaxiu0406/React-Slider</a></p>
+</blockquote>
 
-生成package.json文件
-
-2.安装依赖包 开发依赖1npm install webpack webpack-dev-server babel-core babel-loader babel-preset-react babel-p
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/31/1-react轮播图项目配置及原理概要/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1358,16 +1865,20 @@ display
       
         
           
-          移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。历史原因
-来源一个公司内一个同事的分享:2007年苹果发布首款iphone上iOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/28/移动端click300-380ms延迟问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。"><a href="#移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。" class="headerlink" title="移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。"></a>移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。</h1><h2 id="历史原因"><a href="#历史原因" class="headerlink" title="历史原因"></a>历史原因</h2><ul>
+<li>来源一个公司内一个同事的分享:2007年苹果发布首款iphone上iOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。 双击缩放是指用手指在屏幕上快速点击两次，ios 自带的 Safari 浏览器会将网页缩放至原始比例。 原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1-tap-js解决方案"><a href="#1-tap-js解决方案" class="headerlink" title="1.tap.js解决方案"></a>1.tap.js解决方案</h3><ul>
+<li>使用 zepto.js 的 tap 事件，通过 singleTap 和 doubleTap 来区分单击和双击。但是会出现点击穿透，而且对于已经使用 click 的文件，改动成本太大。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;tap.js&quot;&gt;&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;container&quot;&gt;</div><div class="line">  &lt;button id=&quot;button-1&quot;&gt;Click event&lt;/button&gt;</div><div class="line">  &lt;button id=&quot;button-2&quot;&gt;Tap event&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;div id=&quot;output&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">  var container = document.getElementById(&apos;container&apos;)</div><div class="line">  var button1 = document.getElementById(&apos;button-1&apos;);</div><div class="line">  var button2 = document.getElementById(&apos;button-2&apos;);</div><div class="line">  var output = document.getElementById(&apos;output&apos;);</div><div class="line"></div><div class="line">  var tap = new Tap(container);</div><div class="line"></div><div class="line">  button1.addEventListener(&apos;click&apos;, callback, false);</div><div class="line">  button2.addEventListener(&apos;tap&apos;, callback, false);</div><div class="line"></div><div class="line">  function callback (e) &#123;</div><div class="line">      e.preventDefault();</div><div class="line">      var p = document.createElement(&apos;p&apos;);</div><div class="line">      p.textContent = &apos;event: &apos; + e.type;</div><div class="line">      output.insertBefore(p, output.firstChild);</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-对于高版本chrome和firefox，可以通过禁用伸缩，即在-head-上的-meta-标签添加-user-scalable-no。如下："><a href="#2-对于高版本chrome和firefox，可以通过禁用伸缩，即在-head-上的-meta-标签添加-user-scalable-no。如下：" class="headerlink" title="2.对于高版本chrome和firefox，可以通过禁用伸缩，即在 head 上的 meta 标签添加 user-scalable = no。如下："></a>2.对于高版本chrome和firefox，可以通过禁用伸缩，即在 head 上的 meta 标签添加 user-scalable = no。如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
+<h3 id="3-chrome32-可以将-viewport-的宽度设置成-device-width"><a href="#3-chrome32-可以将-viewport-的宽度设置成-device-width" class="headerlink" title="3.chrome32+ 可以将 viewport 的宽度设置成 device-width."></a>3.chrome32+ 可以将 viewport 的宽度设置成 device-width.</h3><h3 id="4-IE10-，可以使用-pointerEvents。可以让特定的元素或者整个文档中的元素移除点击延迟的问题，同时不会影响-pinch-zooming"><a href="#4-IE10-，可以使用-pointerEvents。可以让特定的元素或者整个文档中的元素移除点击延迟的问题，同时不会影响-pinch-zooming" class="headerlink" title="4.IE10+，可以使用 pointerEvents。可以让特定的元素或者整个文档中的元素移除点击延迟的问题，同时不会影响 pinch-zooming"></a>4.IE10+，可以使用 pointerEvents。可以让特定的元素或者整个文档中的元素移除点击延迟的问题，同时不会影响 pinch-zooming</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a, button, .myelements</div><div class="line">&#123;</div><div class="line">-ms-touch-action: manipulation;    /* IE10  */</div><div class="line">touch-action: manipulation;        /* IE11+ */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="5-通过-touchend-事件代替-click-事件。"><a href="#5-通过-touchend-事件代替-click-事件。" class="headerlink" title="5.通过 touchend 事件代替 click 事件。"></a>5.通过 touchend 事件代替 click 事件。</h3><h3 id="6-fastclick-js解决方法"><a href="#6-fastclick-js解决方法" class="headerlink" title="6.fastclick.js解决方法"></a>6.fastclick.js解决方法</h3><ul>
+<li>终极大 boss。 fastclick。上面的几种方法都是针对某些浏览器，或者某些浏览器的某些版本，或者会影响到我们平常使用方式的解决方案。使用起来不方便且考虑的细节很多，实践难度比较大。fastclick 作为一个终极的解决方案，使用方便，文件大小压缩后只有 3.3k。对于交互相对复杂的移动端web页面或应用是一个相对不错的解决方案。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">    &lt;style&gt;</div><div class="line">        *</div><div class="line">        &#123;</div><div class="line">            margin: 0;</div><div class="line">        &#125;</div><div class="line">        body</div><div class="line">        &#123;</div><div class="line">        &#125;</div><div class="line">        .button</div><div class="line">        &#123;</div><div class="line">            background-color: #3d3d3d;</div><div class="line">            border: 0px;</div><div class="line">            height: 80px;</div><div class="line">            width: 80%;</div><div class="line">            font-size: 50px;</div><div class="line">            margin: 10% 0% 0% 10%;</div><div class="line">            color: #fff;</div><div class="line">        &#125;</div><div class="line">        .fu</div><div class="line">        &#123;</div><div class="line">            min-height: 100%;</div><div class="line">            min-width: 100%;</div><div class="line">            background-color: Black;</div><div class="line">            background: rgba(0,0,0,0.4);</div><div class="line">            position: absolute;</div><div class="line">            top: 0;</div><div class="line">            text-align: center;</div><div class="line">            display: none;</div><div class="line">        &#125;</div><div class="line">        .ts</div><div class="line">        &#123;</div><div class="line">            margin: 8% auto;</div><div class="line">            width: 400px;</div><div class="line">            height: 400px;</div><div class="line">            top: 59%;</div><div class="line">            background-color: #fff;</div><div class="line">            text-align: center;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">    &lt;script src=&quot;fastclick.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;jquery-1.7.2.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div><div class="line">    //javascript:</div><div class="line">    &lt;script type=&quot;application/javascript&quot;&gt;</div><div class="line">        window.addEventListener(&apos;load&apos;, function () &#123;</div><div class="line">            FastClick.attach(document.body);</div><div class="line">        &#125;, false);</div><div class="line">        function xian() &#123;</div><div class="line">            $(&quot;.fu&quot;).show().hide(350);</div><div class="line">        &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">    //jQuery:</div><div class="line">    &lt;script&gt;</div><div class="line">        window.addEventListener(&apos;load&apos;, function () &#123;</div><div class="line">$(function() &#123;</div><div class="line">        FastClick.attach(document.body);</div><div class="line">    &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    //CommonJS:</div><div class="line">attachFastClick = require(&apos;fastclick&apos;);</div><div class="line">    attachFastClick(document.body);</div><div class="line">    AMD:</div><div class="line">    var FastClick = require(&apos;fastclick&apos;);</div><div class="line">    FastClick.attach(document.body, options);</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;div class=&quot;but&quot;&gt;</div><div class="line">            &lt;input class=&quot;button&quot; type=&quot;button&quot; value=&quot;点击我&quot; onclick=&quot;xian()&quot; /&gt;&lt;/div&gt;</div><div class="line">        &lt;div class=&quot;fu&quot; &gt;</div><div class="line">            &lt;div class=&quot;ts&quot;&gt;</div><div class="line">                我是浮层</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></li>
+</ul>
+
+          
         
       
     </div>
@@ -1496,45 +2007,470 @@ display
       
         
           
-          css5选择器
+            <h2 id="css5选择器"><a href="#css5选择器" class="headerlink" title="css5选择器"></a>css5选择器</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>举例</th>
+<th>描述</th>
+<th>详细</th>
+<th>权重</th>
+<th>ie6-7</th>
+<th>ie8</th>
+<th>ie9+</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签选择器</td>
+<td>p{}</td>
+<td>直接使用元素标签进行选择</td>
+<td></td>
+<td>1</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>.sum{}</td>
+<td>类选择器最前方一定要有点</td>
+<td>通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是元素class属性中的属性值，例如<code>&lt;p class=&#39;sum&#39;&gt;&lt;/p&gt;</code></td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>#tytle{color:red;}</td>
+<td>id在html中具有唯一性,这个属性值前面加一个“#”</td>
+<td>一个html元素，id属性值只能用一次</td>
+<td>100</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>*{key:value}</td>
+<td>匹配全部html元素</td>
+<td>一般不使用，因为全部匹配耗性能</td>
+<td>0&lt;通配符选择器&lt;1</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>(标签)属性选择器</td>
+<td>[type]或[type=text]</td>
+<td>[标签属性名]{}或[标签属性名=属性值]{}</td>
+<td>利用标签的属性名和属性值来选择html元素</td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>属性选择器在使用的时候，如果一个元素有两个类名，那么是不生效的</td>
+</tr>
+<tr>
+<td>分组选择器</td>
+<td>.box,li,.p1{color: red};</td>
+<td>选择器1，选择器2，选择器3{}</td>
+<td>同一份css样式，可以一次性的添加给多个不同的html元素</td>
+<td>分组选择器将不同的html分为一组，权重计算的时候都是独立计算，不会叠加。</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td>h2[title]{}</td>
+<td></td>
+<td>两种选择器同属于一个元素的时候，我们可以使用交集选择器来进行元素的准确选择</td>
+<td>所有组合选择器权重之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>作用：精确查找元素，增加选择器的权重</td>
+</tr>
+<tr>
+<td>子级选择器</td>
+<td>ul&gt;li{color:red;}</td>
+<td>父级选择器&gt;子级选择器{}</td>
+<td>存在包含关系的元素选择，通过父级确定选择子级</td>
+<td>所有选择器之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>子级选择器必须是紧邻的父子关系</td>
+</tr>
+<tr>
+<td>后代选择器(派生选择器)</td>
+<td>.div1 ul span{}</td>
+<td>祖辈选择器 要查找的后代选择器{},中间用空格连接</td>
+<td>后代选择器在写的时候尽量控制在３个左右</td>
+<td></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>在一个根元素的范围内，查找到它的后代元素，选择器过多浪费性能，不建议使用</td>
+</tr>
+<tr>
+<td>相邻兄弟选择器</td>
+<td>.list1+li{color: red;}</td>
+<td>哥哥选择器+弟弟选择器{}</td>
+<td>通过各个元素选择弟弟选择器，两个选择器之间用“+”连接</td>
+<td>选择器之和</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td><code>a:hover{color: red}鼠标经过的状态,或a:link{color: blue}默认状态,或a：active{color: green}鼠标点击的状态,或a:visited{color: blanchedalmond}鼠标点击后的状态</code></td>
+<td></td>
+<td></td>
+<td>10</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>.input:focus{border-color: blue};input:focus 鼠标聚焦后的状态，input独有的属性</td>
+</tr>
+<tr>
+<td>伪元素</td>
+<td>div:before{}；或div:after{}</td>
+<td>通过css代码向指定元素<strong>内</strong>添加假的（html中不存在的）元素</td>
+<td>before 会出现在div所有内容之前，after 会出现在div所有内容之后</td>
+<td></td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>使用伪元素的时候要保证两个前提：1.要有display这个属性2.要有content这个属性，这个属性的属性值可以为空，但是引号不能少<code>content:&quot;&quot;</code></td>
+</tr>
+<tr>
+<td></td>
+<td>visited</td>
+<td></td>
+<td></td>
+<td></td>
+<td>security issue</td>
+<td>yes</td>
+<td>yes</td>
+<td>security issue</td>
+</tr>
+</tbody>
+</table>
+<h1 id="css3选择器"><a href="#css3选择器" class="headerlink" title="css3选择器"></a>css3选择器</h1><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>举例</th>
+<th>描述</th>
+<th>详细</th>
+<th>权重</th>
+<th>ie6-7</th>
+<th>ie8</th>
+<th>ie9+</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>属性选择器</td>
+<td><code>E[attr~=value]{}</code></td>
+<td></td>
+<td>指定属性名,并且具有属性值,此属性值是一个此列表(类名),并且以空格隔开,其中词列表中包含了一个value词,并且等号前的~不能省略.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>E[attr^=value]{}</code></td>
+<td></td>
+<td>^ 表示以谁为开头的,value可以是首字母或者类名</td>
+<td>必须是第一个类名</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>E[attr$=value]{}</code></td>
+<td></td>
+<td>$ 表示以谁为结尾,value可以是末尾字母或者类名</td>
+<td>必须是最后一个类名</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><code>E[attr\=value]{}</code>(由于编辑呈现问题，此处用斜杠代替竖杠,正确写法是<code>E[attr竖杠=value]{}</code>)</td>
+<td>如果只有一个类名,没有”-“,也可以选中</td>
+<td>value必须后面带”-“，value必须是第一个类名</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>伪类选择器1.</td>
+<td>.dome p:nth-child(3){background: red;}选择dome下的第三个p标签为背景色红色</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>2.</td>
+<td>.dome p:first-child{background: yellow;}选择dome下的第一个p标签为背景色黄色</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>almost</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>3.</td>
+<td>.dome p:last-child{background: black;}选择dome下的最后一个p标签为背景色黑色</td>
+<td></td>
+<td>伪类选择器是针对列表或者很多同级的标签使用,img下是没有效果的也用不到伪类选择器</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>.dome p:nth-child(nlength){}；选择dome下所有的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>.dome p:nth-child(2n){}；选择dome下的所有偶数个的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>.dome p:nth-child(3n)选择dome下的所有3的倍数的p标签</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>.dome p:nth-child(n+length)</td>
+<td>从第length个开始改变,包括第length个(n是从0开始取值的)</td>
+<td>选择大于length后面的元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>8.</td>
+<td>.dome p:nth-child(-n+length)</td>
+<td>包括length，length是从0开始的</td>
+<td>选择小于length前面的元素及length元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>9.</td>
+<td>p:nth-last-child(3)</td>
+<td>选择倒数第三个元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>10.</td>
+<td>p:nth-child(n)</td>
+<td>从大盒子的第一个元素开始</td>
+<td>nth-child选择同级元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>11.</td>
+<td>p:nth-of-type(n)</td>
+<td>从大盒子的第一个p元素开始</td>
+<td>nth-of-type 选择指定的元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>12.</td>
+<td>p:nth-last-of-type(n)</td>
+<td>倒数第n个</td>
+<td>在同级元素中</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>13.</td>
+<td>p:first-of-type{}</td>
+<td>同类型的第一个</td>
+<td>选择一个上级元素下的同类子元素</td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>14.</td>
+<td>p:last-of-type{}</td>
+<td>同类型的最后一个</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>15.</td>
+<td>p:only-child{}</td>
+<td>在父元素中,里面的子元素是唯一的</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>16.</td>
+<td>p:only-of-type{}</td>
+<td>在父元素中,里面有很多的子元素,但是有一个子元素是唯一的</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>空标签</td>
+<td>p:empty{display:none;}</td>
+<td>empty 隐藏空标签</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>否定选择器</td>
+<td>not input:not([type=submit]){}</td>
+<td></td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>根元素</td>
+<td>root :root{}</td>
+<td>选择文档的根元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>目标元素</td>
+<td>:target{}</td>
+<td>选择器可用于选取当前活动的目标元素</td>
+<td></td>
+<td></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="CSS选择器优先级"><a href="#CSS选择器优先级" class="headerlink" title="CSS选择器优先级"></a>CSS选择器优先级</h1><ul>
+<li>当两个规则都作用到了同一个html元素上时，如果定义的属性有冲突，那么应该用谁的值的，CSS有一套优先级的定义</li>
+</ul>
+<h3 id="不同级别"><a href="#不同级别" class="headerlink" title="不同级别"></a>不同级别</h3><ul>
+<li>1.在属性后面使用important会覆盖页面内任何位置定义的元素样式</li>
+<li>2.作为style属性写在元素内的样式</li>
+<li>3.id选择器</li>
+<li>4.类选择器</li>
+<li>5.标签选择器</li>
+<li>6.通配符选择器</li>
+<li>7.浏览器自定义或继承</li>
+</ul>
+<h2 id="总结CSS选择器优先级排序"><a href="#总结CSS选择器优先级排序" class="headerlink" title="总结CSS选择器优先级排序:"></a>总结CSS选择器优先级排序:</h2><blockquote>
+<p>!important&gt;行内样式&gt;ID选择器&gt;类选择器&gt;标签&gt;通配符&gt;继承&gt;浏览器默认属性</p>
+</blockquote>
+<h2 id="CSS样式应用，有个简单的计算方式-权值实际并不是按照十进制，用数字表示只是说明思想，一万个class可能也不如一个id权值高"><a href="#CSS样式应用，有个简单的计算方式-权值实际并不是按照十进制，用数字表示只是说明思想，一万个class可能也不如一个id权值高" class="headerlink" title="CSS样式应用，有个简单的计算方式(权值实际并不是按照十进制，用数字表示只是说明思想，一万个class可能也不如一个id权值高)"></a>CSS样式应用，有个简单的计算方式(权值实际并不是按照十进制，用数字表示只是说明思想，一万个class可能也不如一个id权值高)</h2><ul>
+<li>内联样式表的权值为 1000</li>
+<li>ID选择器的权值为 100</li>
+<li>Class类选择器的权值为 10</li>
+<li>HTML标签选择器的权值为 1</li>
+</ul>
 
-
-名称
-举例
-描述
-详细
-权重
-ie6-7
-ie8
-ie9+
-其他
-
-
-
-
-标签选择器
-p{}
-直接使用元素标签进行选择
-
-1
-yes
-yes
-yes
-
-
-
-类选择器
-.sum{}
-类选择器最前方一定要有点
-通过元素的类名，来选择元素，一个元素可以有多个类名，都代表这个元素,类名是
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/21/css选择器种类和兼容性总结大全/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1663,16 +2599,63 @@ yes
       
         
           
-          每个IP地址包括两个标识码（ID），即网络ID和主机ID。同一个物理网络上的所有主机都使用同一个网络ID，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。IP地址根据网络ID的不同分为5种类型，A类地址、B类地址、C类地址、D类地址和E类地址A类ip地址
-A:0-127
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/IP分类/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h3 id="每个IP地址包括两个标识码（ID），即网络ID和主机ID。同一个物理网络上的所有主机都使用同一个网络ID，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。"><a href="#每个IP地址包括两个标识码（ID），即网络ID和主机ID。同一个物理网络上的所有主机都使用同一个网络ID，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。" class="headerlink" title="每个IP地址包括两个标识码（ID），即网络ID和主机ID。同一个物理网络上的所有主机都使用同一个网络ID，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。"></a>每个IP地址包括两个标识码（ID），即网络ID和主机ID。同一个物理网络上的所有主机都使用同一个网络ID，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。</h3><h3 id="IP地址根据网络ID的不同分为5种类型，A类地址、B类地址、C类地址、D类地址和E类地址"><a href="#IP地址根据网络ID的不同分为5种类型，A类地址、B类地址、C类地址、D类地址和E类地址" class="headerlink" title="IP地址根据网络ID的不同分为5种类型，A类地址、B类地址、C类地址、D类地址和E类地址"></a>IP地址根据网络ID的不同分为5种类型，A类地址、B类地址、C类地址、D类地址和E类地址</h3><h2 id="A类ip地址"><a href="#A类ip地址" class="headerlink" title="A类ip地址"></a>A类ip地址</h2><ul>
+<li>A:0-127 <strong>A类ip地址的第一组数字为1～126。</strong></li>
+<li>其中0代表任何地址，127为回环测试地址<ul>
+<li><strong>注意，数字0和 127不作为A类地址，数字127保留给内部回送函数，而数字0则表示该地址是本地宿主机，不能传送。</strong></li>
+</ul>
+</li>
+<li>A类地址的表示范围为：0.0.0.0~126.255.255.255,默认网络掩码为：255.0.0.0；A类地址分配给规模特别大的网络使用。A类网络用第一组数字表示网络本身的地址，后面三组数字作为连接于网络上的主机的地址。分配给具有大量主机（直接个人用户）而局域网络个数较少的大型网络。例如IBM公司的网络。</li>
+</ul>
+<blockquote>
+<p>一个A类IP地址由1字节的网络地址和3字节主机地址组成，网络地址的最高位必须是“0”， 地址范围从1.0.0.0 到126.0.0.0。可用的A类网络有126个，每个网络能容纳1亿多个主机。</p>
+</blockquote>
+<h2 id="B类ip地址"><a href="#B类ip地址" class="headerlink" title="B类ip地址"></a>B类ip地址</h2><ul>
+<li><strong>B类地址的第一组数字为128～191。</strong></li>
+<li>其中128.0.0.0和191.255.0.0为保留ip。</li>
+<li>B类地址的表示范围为:128.0.0.0~191.255.255.255，默认网络掩码为:255.255.0.0;实际范围是128.1.0.0–191.254.0.0;B类地址分配给一般的中型网络。B类网络用第一、二组数字表示网络的地址，后面两组数字代表网络上的主机地址。</li>
+</ul>
+<blockquote>
+<p>一个B类IP地址由2个字节的网络地址和2个字节的主机地址组成，网络地址的最高位必须是“10”，地址范围从128.0.0.0到191.255.255.255。可用的B类网络有16382个，每个网络能容纳6万多个主机 。</p>
+</blockquote>
+<h2 id="C类ip地址"><a href="#C类ip地址" class="headerlink" title="C类ip地址"></a>C类ip地址</h2><ul>
+<li><strong>C类地址的第一组数字为192～223。</strong></li>
+<li>其中192.0.0.0和223.255.255.0为保留ip</li>
+<li>C类地址的表示范围为:192.0.0.0~223.255.255.255,默认网络掩码为：255.255.255.0;实际范围是192.0.1.0–223.255.254.0;C类地址分配给小型网络，如一般的局域网和校园网，它可连接的主机数量是最少的，采用把所属的用户分为若干的网段进行管理。C类网络用前三组数字表示网络的地址，最后一组数字作为网络上的主机地址。</li>
+</ul>
+<blockquote>
+<p>一个C类IP地址由3字节的网络地址和1字节的主机地址组成，网络地址的最高位必须是“110”。范围从192.0.0.0到223.255.255.255。C类网络可达209万余个，每个网络能容纳254个主机。</p>
+</blockquote>
+<h2 id="D类ip地址"><a href="#D类ip地址" class="headerlink" title="D类ip地址"></a>D类ip地址</h2><ul>
+<li>224.0.0.0到239.255.255.255用于多点广播</li>
+</ul>
+<blockquote>
+<p>D类IP地址第一个字节以“lll0”开始，它是一个专门保留的地址。它并不指向特定的网络，目前这一类地址被用在多点广播（Multicast）中。多点广播地址用来一次寻址一组计算机，它标识共享同一协议的一组计算机。</p>
+</blockquote>
+<ul>
+<li>D类地址称为广播地址，供特殊协议向选定的节点发送信息时用</li>
+</ul>
+<h2 id="E类ip地址"><a href="#E类ip地址" class="headerlink" title="E类ip地址"></a>E类ip地址</h2><ul>
+<li>240.0.0.0到255.255.255.254</li>
+<li>255.255.255.255用于广播地址</li>
+</ul>
+<blockquote>
+<p>以“llll0”开始，为将来使用保留。</p>
+</blockquote>
+<ul>
+<li>E类地址保留给将来使用。</li>
+</ul>
+<h3 id="全零（“0．0．0．0”）地址对应于当前主机。全“1”的IP地址（“255．255．255．255”）是当前子网的广播地址。"><a href="#全零（“0．0．0．0”）地址对应于当前主机。全“1”的IP地址（“255．255．255．255”）是当前子网的广播地址。" class="headerlink" title="全零（“0．0．0．0”）地址对应于当前主机。全“1”的IP地址（“255．255．255．255”）是当前子网的广播地址。"></a>全零（“0．0．0．0”）地址对应于当前主机。全“1”的IP地址（“255．255．255．255”）是当前子网的广播地址。</h3><h2 id="保留地址的分配"><a href="#保留地址的分配" class="headerlink" title="保留地址的分配"></a>保留地址的分配</h2><p>一个机构网络要连入Internet，必须申请公用IP地址。但是考虑到网络安全和内部实验等特殊情况，在IP地址中专门保留了三个区域作为私有地址，其地址范围如下：<br>10.0.0.0/8:10.0.0.0-10.255.255.255<br>172.16.0.0/12:172.16.0.0-172.31.255.255<br>192.168.0.0/16:192.168.0.0-192.168.255.255<br>使用保留地址的网络只能在内部进行通信，而不能与其他网络互连。因为本网络中的保留地址同样也可能被其它网络使用，如果进行网络互连，那么寻找路由时就会因为地址的不唯一而出现问题。但是这些使用保留地址的网络可以通过将本网络内的保留地址翻译转换成公共地址的方式实现与外部网络的互连。这也是保证网络安全的重要方法之一。</p>
+<h2 id="特殊IP地址-保留IP地址-介绍"><a href="#特殊IP地址-保留IP地址-介绍" class="headerlink" title="特殊IP地址(保留IP地址)介绍"></a>特殊IP地址(保留IP地址)介绍</h2><h3 id="就像我们每个人都有一个身份证号码一样，网络里的每台电脑-更确切地说，是每一个设备的网络接口-都有一个IP地址用于标示自己。我们可能都知道这些地址由四个字节组成，用点分十进制表示以及它们的A，B，C分类等，然而，在总数大约为四十多亿个可用IP-地址里，你知道下面一些常见的有特殊意义地址吗？我们一起来看看吧："><a href="#就像我们每个人都有一个身份证号码一样，网络里的每台电脑-更确切地说，是每一个设备的网络接口-都有一个IP地址用于标示自己。我们可能都知道这些地址由四个字节组成，用点分十进制表示以及它们的A，B，C分类等，然而，在总数大约为四十多亿个可用IP-地址里，你知道下面一些常见的有特殊意义地址吗？我们一起来看看吧：" class="headerlink" title="就像我们每个人都有一个身份证号码一样，网络里的每台电脑(更确切地说，是每一个设备的网络接口)都有一个IP地址用于标示自己。我们可能都知道这些地址由四个字节组成，用点分十进制表示以及它们的A，B，C分类等，然而，在总数大约为四十多亿个可用IP 地址里，你知道下面一些常见的有特殊意义地址吗？我们一起来看看吧："></a>就像我们每个人都有一个身份证号码一样，网络里的每台电脑(更确切地说，是每一个设备的网络接口)都有一个IP地址用于标示自己。我们可能都知道这些地址由四个字节组成，用点分十进制表示以及它们的A，B，C分类等，然而，在总数大约为四十多亿个可用IP 地址里，你知道下面一些常见的有特殊意义地址吗？我们一起来看看吧：</h3><ul>
+<li>一、0.0.0.0<br>严格说来，0.0.0.0已经不是一个真正意义上的IP地址了。它表示的是这样一个集合：所有不清楚的主机和目的网络。这里的“不清楚”是指在本机的路由表里没有特定条目指明如何到达。对本机来说，它就是一个“收容所”，所有不认识的“三无”人员，一 律送进去。如果你在网络设置中设置了缺省网关，那么Windows系统会自动产生一个目的地址为0.0.0.0的缺省路由。</li>
+<li>二、255.255.255.255<br>限制广播地址。对本机来说，这个地址指本网段内(同一广播域)的所有主机。如果翻译成人类的语言，应该是这样：“这个房间里的所有人都注意了！”这个地址不能被路由器转发。</li>
+<li>三、127.0.0.1<br>本机地址，主要用于测试。用汉语表示，就是“我自己”。在Windows系统中，这个地址有一个别名“Localhost”。寻址这样一个地址，是不能把它发到网络接口的。除非出错，否则在传输介质上永远不应该出现目的地址为“127.0.0.1”的 数据包。</li>
+<li>四、224.0.0.1<br>组播地址，注意它和广播的区别。从224.0.0.0到239.255.255.255都是这样的地址。224.0.0.1特指所有主机，224.0.0.2特指所有路由器。这样的地址多用于一些特定的程序以及多媒体程序。如果你的主机开启了IRDP (Internet路由发现协议，使用组播功能)功能，那么你的主机路由表中应该有这样一条路由。</li>
+<li>五、169.254.x.x<br>如果你的主机使用了DHCP功能自动获得一个IP地址，那么当你的DHCP服务器发生故障，或响应时间太长而超出了一个系统规定的时间，Wingdows系统会为你分配这样一个地址。如果你发现你的主机IP地址是一个诸如此类的地址，很不幸，十有八九 是你的网络不能正常运行了。</li>
+<li>六、10.x.x.x、172.16。x。x～172.31。x。x、192.168。x。x<br>私有地址，这些地址被大量用于企业内部网络中。一些宽带路由器，也往往使用192.168.1.1作为缺省地址。私有网络由于不与外部互连，因而可能使用随意的IP地址。保留这样的地址供其使用是为了避免以后接入公网时引起地址混乱。使用私有地址的私 有网络在接入Internet时，要使用地址翻译(NAT)，将私有地址翻译成公用合法地址。在Internet上，这类地址是不能出现的。<br>对一台网络上的主机来说，它可以正常接收的合法目的网络地址有三种：本机的IP地址、广播地址以及组播地址。</li>
+</ul>
+
+          
         
       
     </div>

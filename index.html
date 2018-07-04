@@ -374,21 +374,35 @@
       
         
           
-          将公用组件抽离出来
-把一些内容抽取到一个公有的页面中
-首先我们要知道，在home下可以共用模板
-1.在home文件夹下新建个目录(list-tmpl)
-模板中只能放两种文件:css、wxml;不支持js和json
-模板的标志template标签
-模板要给他起个名字，就是我们要调用这个模板的时候要用的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/11/微信小程序模块化-组件化开发/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h2 id="将公用组件抽离出来"><a href="#将公用组件抽离出来" class="headerlink" title="将公用组件抽离出来"></a>将公用组件抽离出来</h2><ul>
+<li>把一些内容抽取到一个公有的页面中<ul>
+<li>首先我们要知道，在home下可以共用模板</li>
+<li>1.在home文件夹下新建个目录(list-tmpl)<ul>
+<li>模板中只能放两种文件:css、wxml;不支持js和json</li>
+<li>模板的标志template标签</li>
+<li>模板要给他起个名字，就是我们要调用这个模板的时候要用的名字<code>&lt;template name=&#39;name&#39;&gt;&lt;/template&gt;</code></li>
+<li>可以放多个模板，但每个模板都要有自己的名字</li>
+<li>同样css样式也要公有化</li>
+</ul>
+</li>
+<li>2.导入模板(使用相对路径)<ul>
+<li><code>&lt;import src=&#39;list-tmpl/list-tmpl.wxml&#39;/&gt;</code></li>
+<li>is-&gt;模板名字,data-&gt;传入数据;<code>&lt;template is=&#39;list&#39; data=&#39;&#39;&gt;&lt;/template&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="此时home-wxml文件"><a href="#此时home-wxml文件" class="headerlink" title="此时home.wxml文件"></a>此时home.wxml文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;import src=&apos;list-tmpl/list-tmpl.wxml&apos;/&gt;</div><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt;</div><div class="line">  &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos;&gt;</div><div class="line">    &lt;image src=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div><div class="line">&lt;block wx:for=&quot;&#123;&#123;lists&#125;&#125;&quot;&gt;</div><div class="line">  &lt;template is=&apos;list&apos; data=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/template&gt;</div><div class="line">&lt;/block&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-引入css样式-此时home-wxss文件"><a href="#3-引入css样式-此时home-wxss文件" class="headerlink" title="3.引入css样式,此时home.wxss文件"></a>3.引入css样式,此时home.wxss文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@import &apos;list-tmpl/list-tmpl.wxss&apos;;</div><div class="line">swiper&#123;</div><div class="line">  height: 400rpx;</div><div class="line">&#125;</div><div class="line">swiper image&#123;</div><div class="line">  width: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="点击跳转详情页"><a href="#点击跳转详情页" class="headerlink" title="点击跳转详情页"></a>点击跳转详情页</h2><ul>
+<li>事件不能直接绑在template标签上，因为在编译的过程中，最终会直接用一个模板将template替换掉。<ul>
+<li>解决方案:在template标签外面包一层view标签，在view标签上绑定bindtap点击事件</li>
+</ul>
+</li>
+</ul>
+
+          
         
       
     </div>
@@ -517,23 +531,272 @@
       
         
           
-          app文件
-app.json全局的配置样式
-app.wxss全局的css样式
-app.js全局的js样式
+            <h2 id="app文件"><a href="#app文件" class="headerlink" title="app文件"></a>app文件</h2><ul>
+<li>app.json全局的配置样式</li>
+<li>app.wxss全局的css样式</li>
+<li>app.js全局的js样式</li>
+</ul>
+<h3 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h3><ul>
+<li>在该文件中不能使用‘//’来注释信息，否则报错</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;pages&quot;: [</div><div class="line">    &quot;pages/welcome/welcome&quot;</div><div class="line">  ],</div><div class="line">  &quot;window&quot;: &#123;</div><div class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;#b0b0b0&quot;,   //导航条的颜色</div><div class="line">    &quot;navigationBarTextStyle&quot;: &quot;#fff&quot;,   //文字的样式</div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;Welcome&quot;,  //标题</div><div class="line">    &quot;backgroundColor&quot;: &quot;#eeeeee&quot;,   //下拉样式的背景色</div><div class="line">    &quot;backgroundTextStyle&quot;: &quot;light&quot;, //light和dark两个值，下拉样式中三个点的颜色，dark代表白色，light代表黑色</div><div class="line">    &quot;enablePullDownRefresh&quot;: true   //是否可见下拉刷新</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>pages的第一个参数就是默认打开的页面</li>
+<li>微信开发者工具，一个开发者只能一次打开一个页面，不能同时开多个页面</li>
+</ul>
+<h3 id="welcome-wxml"><a href="#welcome-wxml" class="headerlink" title="welcome.wxml"></a>welcome.wxml</h3><ul>
+<li>view替代div，view相当于一个盒子、一个视图框、一个容器</li>
+<li>text标签替换span/p标签，text标签是我们所谓的文本标签</li>
+<li>image标签，图片标签，src图片路径可以使用绝对路径/相对路径</li>
+<li>文本不套text标签，在手机端是无法被选中的(无法复制)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;view class=&apos;container&apos;&gt;</div><div class="line">  &lt;image src=&apos;../../images/touxiang.jpg&apos; class=&apos;avatar&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;text class=&apos;title&apos;&gt;one&lt;/text&gt;</div><div class="line">  &lt;text class=&apos;content&apos;&gt;hello world&lt;/text&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure>
+<h4 id="1-事件-https-mp-weixin-qq-com-debug-wxadoc-dev-framework-view-wxml-event-html"><a href="#1-事件-https-mp-weixin-qq-com-debug-wxadoc-dev-framework-view-wxml-event-html" class="headerlink" title="1.事件(https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html)"></a>1.事件(<code>https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxml/event.html</code>)</h4><ul>
+<li><p>事件分为冒泡事件和非冒泡事件：</p>
+<ul>
+<li>冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。<ul>
+<li>bindtap 绑定点击事件  会冒泡</li>
+</ul>
+</li>
+<li>非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。<ul>
+<li>catchtap 不会冒泡</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>WXML的冒泡事件列表：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>触发条件</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>touchstart</code></td>
+<td>手指触摸动作开始</td>
+<td></td>
+</tr>
+<tr>
+<td><code>touchmove</code></td>
+<td>手指触摸后移动</td>
+<td></td>
+</tr>
+<tr>
+<td><code>touchcancel</code></td>
+<td>手指触摸动作被打断，如来电提醒，弹窗</td>
+<td></td>
+</tr>
+<tr>
+<td><code>touchend</code></td>
+<td>手指触摸动作结束</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tap</code></td>
+<td>手指触摸后马上离开</td>
+<td></td>
+</tr>
+<tr>
+<td><code>longpress</code></td>
+<td>手指触摸后，超过350ms再离开，如果指定了事件回调函数并触发了这个事件，tap事件将不被触发</td>
+<td><code>1.5.0</code></td>
+</tr>
+<tr>
+<td><code>longtap</code></td>
+<td>手指触摸后，超过350ms再离开（推荐使用longpress事件代替）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>transitionend</code></td>
+<td>会在 WXSS transition 或 wx.createAnimation 动画结束后触发</td>
+<td></td>
+</tr>
+<tr>
+<td><code>animationstart</code></td>
+<td>会在一个 WXSS animation 动画开始时触发</td>
+<td></td>
+</tr>
+<tr>
+<td><code>animationiteration</code></td>
+<td>会在一个 WXSS animation 一次迭代结束时触发</td>
+<td></td>
+</tr>
+<tr>
+<td><code>animationend</code></td>
+<td>会在一个 WXSS animation 动画完成时触发</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>注：除上表之外的其他组件自定义事件如无特殊声明都是非冒泡事件，如<code>&lt;form/&gt;</code>的submit事件，<code>&lt;input/&gt;</code>的input事件，<code>&lt;scroll-view/&gt;</code>的scroll事件，(详见各个组件)</strong></li>
+</ul>
+<h3 id="welcome-wxss"><a href="#welcome-wxss" class="headerlink" title="welcome.wxss"></a>welcome.wxss</h3><ul>
+<li>小程序开发文档地址：<code>https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html</code>，WXSS样式中有介绍</li>
+<li>目前支持的选择器有：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>样例</th>
+<th>样例描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.class</td>
+<td><code>.intro</code></td>
+<td>选择所有拥有 class=”intro” 的组件</td>
+</tr>
+<tr>
+<td>#id</td>
+<td><code>#firstname</code></td>
+<td>选择拥有 id=”firstname” 的组件</td>
+</tr>
+<tr>
+<td>element</td>
+<td><code>view</code></td>
+<td>选择所有 view 组件</td>
+</tr>
+<tr>
+<td>element,element</td>
+<td><code>view, checkbox</code></td>
+<td>选择所有文档的 view 组件和所有的 checkbox 组件</td>
+</tr>
+<tr>
+<td>::after</td>
+<td><code>view::after</code></td>
+<td>在 view 组件后边插入内容</td>
+</tr>
+<tr>
+<td>::before</td>
+<td><code>view::before</code></td>
+<td>在 view 组件前边插入内容</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>支持flex布局</li>
+<li>不以px为单位，因为要支持适配各种尺寸手机，用rpx为单位<ul>
+<li>1rpx=2px(在iphone6下)</li>
+<li>宽度(iphone6) 750rpx=100%</li>
+<li>高度一般采用rpx</li>
+<li>线条 1px(仍然是实际的高度);</li>
+</ul>
+</li>
+</ul>
+<h4 id="尺寸单位"><a href="#尺寸单位" class="headerlink" title="尺寸单位"></a>尺寸单位</h4><ul>
+<li>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>rpx换算px(屏幕宽度/750)</th>
+<th>px换算rpx (750/屏幕宽度)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iPhone5</td>
+<td>1rpx = 0.42px</td>
+<td>1px = 2.34rpx</td>
+</tr>
+<tr>
+<td>iPhone6</td>
+<td>1rpx = 0.5px</td>
+<td>1px = 2rpx</td>
+</tr>
+<tr>
+<td>iPhone6 Plus</td>
+<td>1rpx = 0.552px</td>
+<td>1px = 1.81rpx</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>建议： 开发微信小程序时设计师可以用 iPhone6 作为视觉稿的标准。</p>
+</li>
+<li><p>注意： 在较小的屏幕上不可避免的会有一些毛刺，请在开发时尽量避免这种情况。</p>
+</li>
+</ul>
+<h3 id="app-wxss中设置公用样式-如字体"><a href="#app-wxss中设置公用样式-如字体" class="headerlink" title="app.wxss中设置公用样式(如字体)"></a>app.wxss中设置公用样式(如字体)</h3><h3 id="点击跳转页面"><a href="#点击跳转页面" class="headerlink" title="点击跳转页面"></a>点击跳转页面</h3><h4 id="1-welcome-js"><a href="#1-welcome-js" class="headerlink" title="1.welcome.js"></a>1.welcome.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">// pages/welcome/welcome.js</div><div class="line">Page(&#123;</div><div class="line">  /*页面的初始数据*/</div><div class="line">  data: &#123;</div><div class="line">  &#125;,</div><div class="line">  bindToHome()&#123;</div><div class="line">    //关闭当前页面,跳转到应用内的某个页面，所有的方法都是异步的</div><div class="line">    //redirectTo 重定向 跳到下页，下页无返回按钮</div><div class="line">    wx.redirectTo(&#123;</div><div class="line">      url: &apos;../home/home&apos;,</div><div class="line">      success:function()&#123;</div><div class="line"></div><div class="line">      &#125;,</div><div class="line">      fail:function()&#123;</div><div class="line"></div><div class="line">      &#125;,</div><div class="line">      complete:function()&#123;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">    //navigateTo保留当前页面，跳转到应用内的某个页面 只适合导航跳转</div><div class="line">    wx.navigateTo(&#123;</div><div class="line">      url: &apos;../home/home&apos;,</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="2-welcome-wxml"><a href="#2-welcome-wxml" class="headerlink" title="2.welcome.wxml"></a>2.welcome.wxml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;view class=&apos;container&apos;&gt;</div><div class="line">  &lt;image src=&apos;../../images/touxiang.jpg&apos; class=&apos;avatar&apos; bindtap=&apos;bindToHome&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;text class=&apos;title&apos;&gt;one&lt;/text&gt;</div><div class="line">  &lt;text class=&apos;content&apos;&gt;hello world&lt;/text&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure>
+<h3 id="更改子级页面的title"><a href="#更改子级页面的title" class="headerlink" title="更改子级页面的title"></a>更改子级页面的title</h3><ul>
+<li>内部/子级页面没有pages属性，只有window属性<h4 id="1-home-json"><a href="#1-home-json" class="headerlink" title="1.home.json"></a>1.home.json</h4></li>
+<li>子页面不需要写window了<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;green&quot;,</div><div class="line">    &quot;navigationBarTextStyle&quot;: &quot;yellow&quot;,</div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;主页&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="主页的tab键"><a href="#主页的tab键" class="headerlink" title="主页的tab键"></a>主页的tab键</h3><h4 id="1-app-json"><a href="#1-app-json" class="headerlink" title="1.app.json"></a>1.app.json</h4><ul>
+<li>tabBar配置文档地址<code>https://mp.weixin.qq.com/debug/wxadoc/dev/framework/config.html</code></li>
+<li><p>tabBar(tab的列表最少2个，最多5个)<br><img src="/img/tabBarErr.jpg" alt="Alt 伪元素选择器">“当tab列表不足2个的时候会报错”</p>
+</li>
+<li><p>tabBar列表有两个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&quot;tabBar&quot;: &#123;</div><div class="line">    &quot;borderStyle&quot;: &quot;white&quot;,//tab盒子的border-top，有两个值black（黑色）、white（白色）</div><div class="line">    &quot;color&quot;: &quot;red&quot;,//字体颜色</div><div class="line">    &quot;selectedColor&quot;: &quot;orange&quot;,//激活的字体颜色</div><div class="line">    &quot;list&quot;: [&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/home/home&quot;,//页面路径(跳转的对应路径)，只能使用相对路径</div><div class="line">      &quot;text&quot;: &quot;首页&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo.png&quot;,//页面默认的icon路径，只能使用相对路径</div><div class="line">      &quot;selectedIconPath&quot;: &quot;images/anhoo1.png&quot;</div><div class="line">    &#125;,&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pagePath&quot;,</div><div class="line">      &quot;text&quot;: &quot;text&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo.png&quot;,</div><div class="line">      &quot;selectedIconPath&quot;: &quot;selectedIconPath&quot;</div><div class="line">    &#125;]</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>此处有坑</strong></p>
+<ul>
+<li>升级到1.2版本后，如果有tabBar，只能使用switchTab方式切换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//保留当前页面，跳转到应用内的某个页面 navigateTo只适合导航跳转</div><div class="line">    // wx.navigateTo(&#123;</div><div class="line">    //   url: &apos;../home/home&apos;,</div><div class="line">    // &#125;);</div><div class="line">    //跳转到tabBar页面,并关闭其他所有非tabBary页面</div><div class="line">    //如果有tabBar，只能使用switchTab方式切换</div><div class="line">    wx.switchTab(&#123;</div><div class="line">      url: &apos;&apos;,</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>此时app.json文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;pages&quot;: [</div><div class="line">    &quot;pages/welcome/welcome&quot;,</div><div class="line">    &quot;pages/home/home&quot;,</div><div class="line">    &quot;pages/notes/notes&quot;,</div><div class="line">    &quot;pages/event/event&quot;</div><div class="line">  ],</div><div class="line">  &quot;window&quot;: &#123;</div><div class="line">    &quot;navigationBarBackgroundColor&quot;: &quot;#b0b0b0&quot;,</div><div class="line">    &quot;navigationBarTextStyle&quot;: &quot;green&quot;,</div><div class="line">    &quot;navigationBarTitleText&quot;: &quot;Welcome&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;tabBar&quot;: &#123;</div><div class="line">    &quot;borderStyle&quot;: &quot;white&quot;,</div><div class="line">    &quot;color&quot;: &quot;red&quot;,</div><div class="line">    &quot;selectedColor&quot;: &quot;orange&quot;,</div><div class="line">    &quot;list&quot;: [&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/home/home&quot;,</div><div class="line">      &quot;text&quot;: &quot;首页&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo1.png&quot;,</div><div class="line">      &quot;selectedIconPath&quot;: &quot;images/anhoo.png&quot;</div><div class="line">    &#125;,&#123;</div><div class="line">      &quot;pagePath&quot;: &quot;pages/notes/notes&quot;,</div><div class="line">      &quot;text&quot;: &quot;笔记&quot;,</div><div class="line">      &quot;iconPath&quot;: &quot;images/anhoo1.png&quot;,</div><div class="line">      &quot;selectedIconPath&quot;: &quot;images/anhoo.png&quot;</div><div class="line">    &#125;]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="主页banner制作"><a href="#主页banner制作" class="headerlink" title="主页banner制作"></a>主页banner制作</h3><ul>
+<li><p>为了开发方便，将app.json中的pages配置调换一下位置，将home文件的配置放在最上面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;pages&quot;: [</div><div class="line">   &quot;pages/home/home&quot;,</div><div class="line">   &quot;pages/notes/notes&quot;,</div><div class="line">   &quot;pages/event/event&quot;,</div><div class="line">   &quot;pages/welcome/welcome&quot;</div><div class="line"> ]</div></pre></td></tr></table></figure>
+</li>
+<li><p>此时默认打开的就是首页</p>
+</li>
+</ul>
+<h4 id="1-home-wxml"><a href="#1-home-wxml" class="headerlink" title="1.home.wxml"></a>1.home.wxml</h4><ul>
+<li>不能使用jQuery等，因为微信小程序中没有dom</li>
+<li>swiper内置的组件，滑动插件<ul>
+<li><code>autoplay=&#39;true&#39;</code>自动播放，默认<code>false</code>;</li>
+<li><strong>此处有坑:不能写成<code>autoplay=&#39;true&#39;</code>或者<code>autoplay=&#39;false&#39;</code>，这样写是字符串，默认转为布尔类型，即使设置为<code>false</code>，<code>&#39;false&#39;</code>转为布尔类型也是<code>true</code>，也会自动播放，所以一定要加<code>双大括号</code></strong></li>
+<li>interval自动切换间隔时间</li>
+<li><code>indicator-dots=&#39;true&#39;</code>轮播图对应的小点</li>
+<li><strong>同autoplay，一定要加<code>双大括号</code></strong></li>
+<li><code>circular=&#39;true&#39;</code>循环轮播</li>
+<li><strong>同autoplay，一定要加<code>双大括号</code></strong></li>
+<li><code>vertical=&#39;true&#39;</code> 轮播图上下滚动</li>
+<li><strong>此处有坑:设置banner图的高，不能给swiper-item标签设置，要给他的父级swiper标签设置</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//设置banner图的高为600rpx,此处的style不需要加`双大括号`</div><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos; vertical=&apos;&#123;&#123;true&#125;&#125;&apos; style=&apos;height:600rpx;&apos;&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner1.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner2.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner3.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner4.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">  &lt;swiper-item&gt;</div><div class="line">    &lt;image src=&apos;/images/banner5.jpg&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="绑定动态数据"><a href="#绑定动态数据" class="headerlink" title="绑定动态数据"></a>绑定动态数据</h3><ul>
+<li>数据是单向绑定，数据改动了可以渲染视图，但是视图改动了不会刷新数据</li>
+<li>wx:key 静态遍历不需要</li>
+<li>1.home.js</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">    imgs:[</div><div class="line">      &apos;/images/banner1.jpg&apos;,</div><div class="line">      &apos;/images/banner2.jpg&apos;,</div><div class="line">      &apos;/images/banner3.jpg&apos;,</div><div class="line">      &apos;/images/banner4.jpg&apos;,</div><div class="line">      &apos;/images/banner5.jpg&apos;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><code> wx:for=&#39;&#39;</code></p>
+</li>
+<li><p>2.home.wxml</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt;</div><div class="line">  &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos;&gt;</div><div class="line">    &lt;image src=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>wx:for-item=&#39;num&#39;</code>可指定item叫什么名字，这里的item就叫num</p>
+</li>
+<li><p>2.home.wxml</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt;</div><div class="line">  &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos; wx:for-item=&apos;num&apos;&gt;</div><div class="line">    &lt;image src=&apos;&#123;&#123;num&#125;&#125;&apos;&gt;&lt;/image&gt;</div><div class="line">  &lt;/swiper-item&gt;</div><div class="line">&lt;/swiper&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>注意:<code>wx:for-item=&#39;num&#39;</code>,num不加<code>双大括号</code></strong></li>
+</ul>
 
-app.json
-在该文件中不能使用‘//’来注释信息，否则报错
-
-12345678910111213&#123;  &quot;pages&quot;: [    &quot;pages/w
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/10/微信小程序/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -662,44 +925,1294 @@ app.json
       
         
           
+            <table>
+<thead>
+<tr>
+<th></th>
+<th>符号</th>
+<th></th>
+<th>符号</th>
+<th></th>
+<th>符号</th>
+<th></th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;aacute;</code></td>
+<td>&aacute;</td>
+<td><code>&amp;hArr;</code></td>
+<td>&hArr;</td>
+<td><code>&amp;para;</code></td>
+<td>&para;</td>
+<td><code>&amp;yacute;</code></td>
+<td>&yacute;</td>
+</tr>
+<tr>
+<td><code>&amp;Aacute;</code></td>
+<td>&Aacute;</td>
+<td><code>&amp;harr;</code></td>
+<td>&harr;</td>
+<td><code>&amp;part;</code></td>
+<td>&part;</td>
+<td><code>&amp;yen;</code></td>
+<td>&yen;</td>
+</tr>
+<tr>
+<td><code>&amp;Acirc;</code></td>
+<td>&Acirc;</td>
+<td><code>&amp;hearts;</code></td>
+<td>&hearts;</td>
+<td><code>&amp;permil;</code></td>
+<td>&permil;</td>
+<td><code>&amp;yuml;</code></td>
+<td>&yuml;</td>
+</tr>
+<tr>
+<td><code>&amp;acirc;</code></td>
+<td>&acirc;</td>
+<td><code>&amp;hellip;</code></td>
+<td>&hellip;</td>
+<td><code>&amp;perp;</code></td>
+<td>&perp;</td>
+<td><code>&amp;Yacute;</code></td>
+<td>&Yacute;</td>
+</tr>
+<tr>
+<td><code>&amp;acute;</code></td>
+<td>&acute;</td>
+<td></td>
+<td></td>
+<td><code>&amp;phi;</code></td>
+<td>&phi;</td>
+<td><code>&amp;Yuml;</code></td>
+<td>&Yuml;</td>
+</tr>
+<tr>
+<td><code>&amp;AElig;</code></td>
+<td>&AElig;</td>
+<td></td>
+<td></td>
+<td><code>&amp;pi;</code></td>
+<td>&pi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;aelig;</code></td>
+<td>&aelig;</td>
+<td></td>
+<td></td>
+<td><code>&amp;piv;</code></td>
+<td>&piv;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Agrave;</code></td>
+<td>&Agrave;</td>
+<td></td>
+<td></td>
+<td><code>&amp;plusmn;</code></td>
+<td>&plusmn;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;agrave;</code></td>
+<td>&agrave;</td>
+<td></td>
+<td></td>
+<td><code>&amp;pound;</code></td>
+<td>&pound;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;alefsym;</code></td>
+<td>&alefsym;</td>
+<td></td>
+<td></td>
+<td><code>&amp;prime;</code></td>
+<td>&prime;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;alpha;</code></td>
+<td>&alpha;</td>
+<td></td>
+<td></td>
+<td><code>&amp;prod;</code></td>
+<td>&prod;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Alpha;</code></td>
+<td>&Alpha;</td>
+<td></td>
+<td></td>
+<td><code>&amp;prop;</code></td>
+<td>&prop;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td>&amp;</td>
+<td></td>
+<td></td>
+<td><code>&amp;psi;</code></td>
+<td>&psi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;and;</code></td>
+<td>&and;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Phi;</code></td>
+<td>&Phi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;ang;</code></td>
+<td>&ang;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Pi;</code></td>
+<td>&Pi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;aring;</code></td>
+<td>&aring;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Prime;</code></td>
+<td>&Prime;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Aring;</code></td>
+<td>&Aring;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Psi;</code></td>
+<td>&Psi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;bdquo;</code></td>
+<td>&bdquo;</td>
+<td><code>&amp;iacute;</code></td>
+<td>&iacute;</td>
+<td><code>&amp;quot;</code></td>
+<td>&quot;</td>
+<td><code>&amp;zeta;</code></td>
+<td>&zeta;</td>
+</tr>
+<tr>
+<td><code>&amp;beta;</code></td>
+<td>&beta;</td>
+<td><code>&amp;icirc;</code></td>
+<td>&icirc;</td>
+<td></td>
+<td></td>
+<td><code>&amp;zwj;</code></td>
+<td>&zwj;</td>
+</tr>
+<tr>
+<td><code>&amp;brvbar;</code></td>
+<td>&brvbar;</td>
+<td><code>&amp;iexcl;</code></td>
+<td>&iexcl;</td>
+<td></td>
+<td></td>
+<td><code>&amp;zwnj;</code></td>
+<td>&zwnj;</td>
+</tr>
+<tr>
+<td><code>&amp;bull;</code></td>
+<td>&bull;</td>
+<td><code>&amp;igrave;</code></td>
+<td>&igrave;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Zeta;</code></td>
+<td>&Zeta;</td>
+</tr>
+<tr>
+<td><code>&amp;Beta;</code></td>
+<td>&Beta;</td>
+<td><code>&amp;image;</code></td>
+<td>&image;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;infin;</code></td>
+<td>&infin;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;int;</code></td>
+<td>&int;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;iota;</code></td>
+<td>&iota;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;iquest;</code></td>
+<td>&iquest;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;isin;</code></td>
+<td>&isin;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;iuml;</code></td>
+<td>&iuml;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Iacute;</code></td>
+<td>&Iacute;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Icirc;</code></td>
+<td>&Icirc;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Igrave;</code></td>
+<td>&Igrave;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Iota;</code></td>
+<td>&Iota;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Iuml;</code></td>
+<td>&Iuml;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;clubs;</code></td>
+<td>&clubs;</td>
+<td><code>&amp;kappa;</code></td>
+<td>&kappa;</td>
+<td><code>&amp;radic;</code></td>
+<td>&radic;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;cap;</code></td>
+<td>&cap;</td>
+<td><code>&amp;Kappa;</code></td>
+<td>&Kappa;</td>
+<td><code>&amp;rang;</code></td>
+<td>&rang;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;ccedil;</code></td>
+<td>&ccedil;</td>
+<td><code>&amp;lambda;</code></td>
+<td>&lambda;</td>
+<td><code>&amp;raquo;</code></td>
+<td>&raquo;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;cedil;</code></td>
+<td>&cedil;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rarr;</code></td>
+<td>&rarr;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;cent;</code></td>
+<td>&cent;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rArr;</code></td>
+<td>&rArr;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;chi;</code></td>
+<td>&chi;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rceil;</code></td>
+<td>&rceil;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;circ;</code></td>
+<td>&circ;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rdquo;</code></td>
+<td>&rdquo;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;clubs;</code></td>
+<td>&clubs;</td>
+<td></td>
+<td></td>
+<td><code>&amp;real;</code></td>
+<td>&real;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;cong;</code></td>
+<td>&cong;</td>
+<td></td>
+<td></td>
+<td><code>&amp;reg;</code></td>
+<td>&reg;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>&copy;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rfloor;</code></td>
+<td>&rfloor;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;crarr;</code></td>
+<td>&crarr;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rho;</code></td>
+<td>&rho;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;cup;</code></td>
+<td>&cup;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rlm;</code></td>
+<td>&rlm;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;curren;</code></td>
+<td>&curren;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rsaquo;</code></td>
+<td>&rsaquo;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Ccedil;</code></td>
+<td>&Ccedil;</td>
+<td></td>
+<td></td>
+<td><code>&amp;rsquo;</code></td>
+<td>&rsquo;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Chi;</code></td>
+<td>&Chi;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Rho;</code></td>
+<td>&Rho;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;dagger;</code></td>
+<td>&dagger;</td>
+<td><code>&amp;lang;</code></td>
+<td>&lang;</td>
+<td><code>&amp;sbquo;</code></td>
+<td>&sbquo;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;dArr;</code></td>
+<td>&dArr;</td>
+<td><code>&amp;laquo;</code></td>
+<td>&laquo;</td>
+<td><code>&amp;scaron;</code></td>
+<td>&scaron;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;darr;</code></td>
+<td>&darr;</td>
+<td><code>&amp;lArr;</code></td>
+<td>&lArr;</td>
+<td><code>&amp;sdot;</code></td>
+<td>&sdot;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;deg;</code></td>
+<td>&deg;</td>
+<td><code>&amp;larr;</code></td>
+<td>&larr;</td>
+<td><code>&amp;sect;</code></td>
+<td>&sect;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;delta;</code></td>
+<td>&delta;</td>
+<td><code>&amp;lceil;</code></td>
+<td>&lceil;</td>
+<td><code>&amp;shy;</code></td>
+<td>&shy;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;divide;</code></td>
+<td>&divide;</td>
+<td><code>&amp;ldquo;</code></td>
+<td>&ldquo;</td>
+<td><code>&amp;sigma;</code></td>
+<td>&sigma;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Dagger;</code></td>
+<td>&Dagger;</td>
+<td><code>&amp;le;</code></td>
+<td>&le;</td>
+<td><code>&amp;sigmaf;</code></td>
+<td>&sigmaf;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Delta;</code></td>
+<td>&Delta;</td>
+<td><code>&amp;lfloor;</code></td>
+<td>&lfloor;</td>
+<td><code>&amp;sim;</code></td>
+<td>&sim;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;lowast;</code></td>
+<td>&lowast;</td>
+<td><code>&amp;spades;</code></td>
+<td>&spades;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;loz;</code></td>
+<td>&loz;</td>
+<td><code>&amp;sub;</code></td>
+<td>&sub;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;lrm;</code></td>
+<td>&lrm;</td>
+<td><code>&amp;sube;</code></td>
+<td>&sube;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;lsaquo;</code></td>
+<td>&lsaquo;</td>
+<td><code>&amp;sum;</code></td>
+<td>&sum;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;lsquo;</code></td>
+<td>&lsquo;</td>
+<td><code>&amp;sup1;</code></td>
+<td>&sup1;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;lt;</code></td>
+<td>&lt;</td>
+<td><code>&amp;sup2;</code></td>
+<td>&sup2;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Lambda;</code></td>
+<td>&Lambda;</td>
+<td><code>&amp;sup3;</code></td>
+<td>&sup3;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;sup;</code></td>
+<td>&sup;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;supe;</code></td>
+<td>&supe;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;szlig;</code></td>
+<td>&szlig;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;Scaron;</code></td>
+<td>&Scaron;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;Sigma;</code></td>
+<td>&Sigma;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;eacute;</code></td>
+<td>&eacute;</td>
+<td><code>&amp;macr;</code></td>
+<td>&macr;</td>
+<td><code>&amp;tau;</code></td>
+<td>&tau;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;ecirc;</code></td>
+<td>&ecirc;</td>
+<td><code>&amp;mdash;</code></td>
+<td>&mdash;</td>
+<td><code>&amp;there4;</code></td>
+<td>&there4;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;egrave;</code></td>
+<td>&egrave;</td>
+<td><code>&amp;micro;</code></td>
+<td>&micro;</td>
+<td><code>&amp;theta;</code></td>
+<td>&theta;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;empty;</code></td>
+<td>&empty;</td>
+<td><code>&amp;middot;</code></td>
+<td>&middot;</td>
+<td><code>&amp;thetasym;</code></td>
+<td>&thetasym;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;emsp;</code></td>
+<td>&emsp;</td>
+<td><code>&amp;minus;</code></td>
+<td>&minus;</td>
+<td><code>&amp;thinsp;</code></td>
+<td>&thinsp;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;ensp;</code></td>
+<td>&ensp;</td>
+<td><code>&amp;mu;</code></td>
+<td>&mu;</td>
+<td><code>&amp;thorn;</code></td>
+<td>&thorn;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;epsilon;</code></td>
+<td>&epsilon;</td>
+<td><code>&amp;Mu;</code></td>
+<td>&Mu;</td>
+<td><code>&amp;tilde;</code></td>
+<td>&tilde;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;equiv;</code></td>
+<td>&equiv;</td>
+<td></td>
+<td></td>
+<td><code>&amp;times;</code></td>
+<td>&times;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;eta;</code></td>
+<td>&eta;</td>
+<td></td>
+<td></td>
+<td><code>&amp;trade;</code></td>
+<td>&trade;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;eth;</code></td>
+<td>&eth;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Tau;</code></td>
+<td>&Tau;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;euml;</code></td>
+<td>&euml;</td>
+<td></td>
+<td></td>
+<td><code>&amp;Theta;</code></td>
+<td>&Theta;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;euro;</code></td>
+<td>&euro;</td>
+<td></td>
+<td></td>
+<td><code>&amp;THORN;</code></td>
+<td>&THORN;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;exist;</code></td>
+<td>&exist;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Eacute;</code></td>
+<td>&Eacute;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Ecirc;</code></td>
+<td>&Ecirc;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Egrave;</code></td>
+<td>&Egrave;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Epsilon;</code></td>
+<td>&Epsilon;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Eta;</code></td>
+<td>&Eta;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;ETH;</code></td>
+<td>&ETH;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Euml;</code></td>
+<td>&Euml;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;fnof;</code></td>
+<td>&fnof;</td>
+<td><code>&amp;nabla;</code></td>
+<td>&nabla;</td>
+<td><code>&amp;uacute;</code></td>
+<td>&uacute;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;forall;</code></td>
+<td>&forall;</td>
+<td><code>&amp;nbsp;</code></td>
+<td>&nbsp;</td>
+<td><code>&amp;uarr;</code></td>
+<td>&uarr;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;frac12;</code></td>
+<td>&frac12;</td>
+<td><code>&amp;ndash;</code></td>
+<td>&ndash;</td>
+<td><code>&amp;uArr;</code></td>
+<td>&uArr;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;frac14;</code></td>
+<td>&frac14;</td>
+<td><code>&amp;ne;</code></td>
+<td>&ne;</td>
+<td><code>&amp;ucirc;</code></td>
+<td>&ucirc;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;frac34;</code></td>
+<td>&frac34;</td>
+<td><code>&amp;ni;</code></td>
+<td>&ni;</td>
+<td><code>&amp;ugrave;</code></td>
+<td>&ugrave;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;frasl;</code></td>
+<td>&frasl;</td>
+<td><code>&amp;not;</code></td>
+<td>&not;</td>
+<td><code>&amp;uml;</code></td>
+<td>&uml;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;notin;</code></td>
+<td>&notin;</td>
+<td><code>&amp;upsih;</code></td>
+<td>&upsih;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;nsub;</code></td>
+<td>&nsub;</td>
+<td><code>&amp;upsilon;</code></td>
+<td>&upsilon;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;ntilde;</code></td>
+<td>&ntilde;</td>
+<td><code>&amp;uuml;</code></td>
+<td>&uuml;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;nu;</code></td>
+<td>&nu;</td>
+<td><code>&amp;Uacute;</code></td>
+<td>&Uacute;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Ntilde;</code></td>
+<td>&Ntilde;</td>
+<td><code>&amp;Ucirc;</code></td>
+<td>&Ucirc;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Nu;</code></td>
+<td>&Nu;</td>
+<td><code>&amp;Ugrave;</code></td>
+<td>&Ugrave;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;Upsilon;</code></td>
+<td>&Upsilon;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><code>&amp;Uuml;</code></td>
+<td>&Uuml;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;gamma;</code></td>
+<td>&gamma;</td>
+<td><code>&amp;oacute;</code></td>
+<td>&oacute;</td>
+<td><code>&amp;weierp;</code></td>
+<td>&weierp;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;ge;</code></td>
+<td>&ge;</td>
+<td><code>&amp;ocirc;</code></td>
+<td>&ocirc;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>&gt;</td>
+<td><code>&amp;oelig;</code></td>
+<td>&oelig;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>&amp;Gamma;</code></td>
+<td>&Gamma;</td>
+<td><code>&amp;ograve;</code></td>
+<td>&ograve;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;oline;</code></td>
+<td>&oline;</td>
+<td><code>&amp;xi;</code></td>
+<td>&xi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;omega;</code></td>
+<td>&omega;</td>
+<td><code>&amp;Xi;</code></td>
+<td>&Xi;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;omicron;</code></td>
+<td>&omicron;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;oplus;</code></td>
+<td>&oplus;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;or;</code></td>
+<td>&or;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;ordf;</code></td>
+<td>&ordf;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;ordm;</code></td>
+<td>&ordm;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;oslash;</code></td>
+<td>&oslash;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;otilde;</code></td>
+<td>&otilde;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;otimes;</code></td>
+<td>&otimes;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;ouml;</code></td>
+<td>&ouml;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Oacute;</code></td>
+<td>&Oacute;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Ocirc;</code></td>
+<td>&Ocirc;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;OElig;</code></td>
+<td>&OElig;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Ograve;</code></td>
+<td>&Ograve;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Omega;</code></td>
+<td>&Omega;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Omicron;</code></td>
+<td>&Omicron;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Oslash;</code></td>
+<td>&Oslash;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Oslash;</code></td>
+<td>&Oslash;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Otilde;</code></td>
+<td>&Otilde;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>&amp;Ouml;</code></td>
+<td>&Ouml;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
           
-
-
-
-符号
-
-符号
-
-符号
-
-符号
-
-
-
-
-&amp;aacute;
-&aacute;
-&amp;hArr;
-&hArr;
-&amp;para;
-&para;
-&amp;yacute;
-&yacute;
-
-
-&amp;Aacute;
-&Aacute;
-&amp;harr;
-&harr;
-&amp;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/26/HTML中特殊符号总结/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -828,21 +2341,141 @@ app.json
       
         
           
+            <blockquote>
+<p>官方中文文档地址’<a href="https://reactnative.cn/docs/0.51/getting-started.html" target="_blank" rel="external">https://reactnative.cn/docs/0.51/getting-started.html</a>‘</p>
+</blockquote>
+<ul>
+<li>如果是ios并不长，如果是安卓相对繁琐一些</li>
+<li>操作系统分为:macOS/Linux/Windows</li>
+<li>在macOS下可以开发ios和安卓的，但是Linux/Windows只能开发安卓的(如果工作中老板要你用ReactNative，你尽量和老板申请个mac本)</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-安装Node-js-Homebrew"><a href="#1-安装Node-js-Homebrew" class="headerlink" title="1.安装Node.js/Homebrew"></a>1.安装Node.js/Homebrew</h3><ul>
+<li>百度搜索Node.js</li>
+<li>Mac环境(百度搜索Homebrew)</li>
+</ul>
+<h3 id="1-1-Node-js安装"><a href="#1-1-Node-js安装" class="headerlink" title="1-1.Node.js安装"></a>1-1.Node.js安装</h3><ul>
+<li><p>安装后需要配置一下环境变量(我的电脑-属性-高级系统设置-环境变量(path中的数据新增nodejs路径))</p>
+</li>
+<li><p>1-1-1.nodejs安装提示</p>
+<ul>
+<li>window配置环境变量参考:<code>https://jingyan.baidu.com/article/f3e34a128dc9aff5eb6535dc.html</code></li>
+<li>ReactNative和很多开发工具一样，会大量使用命令行工具，建议学习一些基本windows/unix/linux指令(mac和linux下是比较相似的，在windows下是不一样的)<ul>
+<li>参考:windows下的.bat文件、unix/linux下的.sh文件(dir/ls 列出文件;copy/cp 拷贝;cd/cd 切换目录)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>1-1-2.关于Node.js版本(建议使用6以上的版本)</p>
+</li>
+<li><p>1-1-3.npm的作用和package.json</p>
+<ul>
+<li>npm是nodejs的包管理器，nodejs是一个开源的环境，所谓包管理器就是取之于开源贡献者的代码，用之于开发者，这样一个桥梁的一个作用。</li>
+<li>包管理器主要源自于国外，国内做的比较好的就是淘宝(淘宝镜像)。</li>
+</ul>
+</li>
+<li><p>1-1-4.关于淘宝镜像的问题</p>
+<ul>
+<li>有时候会有一定的同步问题，如果npm install的时候非常慢，建议安装，安装后先移除项目目录下node_modules文件夹<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org --global</div><div class="line">npm config set disturl https://npm.taobao.org/list --global</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-Homebrew安装"><a href="#1-2-Homebrew安装" class="headerlink" title="1-2.Homebrew安装"></a>1-2.Homebrew安装</h3><ul>
+<li>macOS需要安装Homebrew，前提是有Ruby，一般mac自带Ruby(可参考reactnative.cn官方中文文档)</li>
+<li>通常情况下Homebrew已经有了，不需要安装</li>
+</ul>
+<h3 id="1-3-JDK安装"><a href="#1-3-JDK安装" class="headerlink" title="1-3.JDK安装"></a>1-3.JDK安装</h3><ul>
+<li><p>安卓的版是需要JAVA的，所以要安装JDK</p>
+</li>
+<li><p>1-3-1.JDK小贴士</p>
+<ul>
+<li>目前jdk有两个版本(OPENJDK/Oracle Java JDK)，使用Android Studio开发需要JDK</li>
+</ul>
+</li>
+<li><p>1-3-2.注意事项</p>
+<ul>
+<li>版本差别不大，1.7/1.8应该都可以</li>
+<li>JAVA安装成功之后通常需要设置一个JAVA_HOME的环境变量，window参考:<code>https://jingyan.baidu.com/article/f3e34a128dc9aff5eb6535dc.html</code>;MacOS/Linux/Unix通常需要export JAVA_HOME=(java路径) 具体可以百度下。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-开发工具"><a href="#2-开发工具" class="headerlink" title="2.开发工具"></a>2.开发工具</h2><ul>
+<li><p>2-1.安装Xcode、Android Studio</p>
+<ul>
+<li>Mac(Xcode):开发ios用Xcode，必须用Mac开发。</li>
+<li>Android Studio比较麻烦一些<ul>
+<li>官方做法：<a href="https://developer.android.com" target="_blank" rel="external">https://developer.android.com</a> (在不翻墙的情况下到该地址下载Android Studio)</li>
+<li>非官方做法：百度Android Studio，即可下载</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2-2.工具任意以下其中之一</p>
+<ul>
+<li>webstore(推荐使用，代码跟踪、代码提示做的比较好)</li>
+<li>Visual Studio Code</li>
+<li>Atom</li>
+</ul>
+</li>
+<li><p>2-3.语法设置</p>
+<ul>
+<li>会用react的人都知道，react是使用JSX语法，而ReactNative也是使用JSX语法，在webstore中需要设置成react JSX，否则会有很多报错<br><img src="/img/webstore打开设置窗口.png" alt="Alt webstore打开设置窗口">“webstore打开设置窗口”<br><img src="/img/JSX语法设置.png" alt="Alt JSX语法设置">“JSX语法设置”</li>
+</ul>
+</li>
+<li><p>2-4.推荐使用Vim编辑器</p>
+<ul>
+<li>可结合webstore/Visual Studio Code/Atom 这三款工具使用，特点就是快。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-难点"><a href="#3-难点" class="headerlink" title="3.难点"></a>3.难点</h2><ul>
+<li><p>3-1.什么是Android SDK</p>
+</li>
+<li><p>3-2.SDK安装步骤</p>
+<ul>
+<li>1) 在AndroidStudio中点开偏好</li>
+<li>2) 在搜索框中输入Android SDK</li>
+<li>3) 然后勾选需要安装的SDK工具</li>
+<li>4) 在SDK Platforms窗口中，选择Show Package Details,然后在Android6.0(Marshmallow)中勾选Google Apis、Android SDK Platform 23、Intel x86 Atom64 System Image以及Google APIs intel x86 Atom64 System Image</li>
+<li>5) 在SDK Tools窗口中，选择Show Package Details，然后在Android SDK Build Tools中勾选Android SDK Build-Tools 23.0.1</li>
+<li><p>6) 配置ANDROID_HOME环境变量</p>
+<ul>
+<li><p>在MacOS下，在~/.bash_profile中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export ANDROID_HOME=~/Library/Android/sdk</div><div class="line">export PATH=$&#123;PATH&#125;:$&#123;ANDROID_HOME&#125;/tools</div><div class="line">export PATH=$&#123;PATH&#125;:$&#123;ANDROID_HOME&#125;/platform-tools</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Linux下需要在.bashrc中添加相应内容</p>
+</li>
+<li>在windows下参考<code>https://jingyan.baidu.com/article/f3e34a128dc9aff5eb6535dc.html</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3-3.Android模拟器</p>
+<ul>
+<li>建议使用Genymotion(建议)<ul>
+<li>建议使用Genymotion官网注册一个账号(注意:qq邮箱不好使，他不认数字的邮箱，必须是字母的)</li>
+<li>下载一个genymotion软件</li>
+<li><strong>个人版是免费的，企业版收费</strong></li>
+<li><strong>Genymotio实际用的是virtualbox</strong></li>
+</ul>
+</li>
+<li>Android Studio自带的AVD(不建议)<ul>
+<li>如果要在Android Studio中使用AVD必须安装HAXM否则会慢，可以在Android Studio中配置，首先需要安装(配置过程及其复杂)<ul>
+<li>大概需要安装的有:Android SDK、Android SDK Platform、Performance (Intel &reg; HAXM)、Android Virtual Device</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3-4.windows下配置特别提醒</p>
+<ul>
+<li>windows下配置较为困难，如果配置完成后发现红屏幕，有各种各样的原因，其中在windows7下通常需要设置Virtualbox的网络最为棘手</li>
+</ul>
+</li>
+</ul>
+
           
-官方中文文档地址’https://reactnative.cn/docs/0.51/getting-started.html‘
-
-
-如果是ios并不长，如果是安卓相对繁琐一些
-操作系统分为:macOS/Linux/Windows
-在macOS下可以开发ios和安卓的，但是Linux/Windows
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/24/ReactNative环境搭建/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -971,17 +2604,176 @@ app.json
       
         
           
-          解决跨域一:Cookie如何实现跨域
-Cookie是服务器写入浏览器的一段信息，只有同源的网页才能共享，但是，两个网页一级域名相同，只是二级域名不同，浏览器允许通过设置document.domain共Cookie。
-举例来说，A网站是:http:weibo.qq.com;B网站是:http:lol.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/07/浏览器的跨域问题以及解决方案-转载/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h2 id="解决跨域一-Cookie如何实现跨域"><a href="#解决跨域一-Cookie如何实现跨域" class="headerlink" title="解决跨域一:Cookie如何实现跨域"></a>解决跨域一:Cookie如何实现跨域</h2><ul>
+<li>Cookie是服务器写入浏览器的一段信息，只有同源的网页才能共享，但是，两个网页一级域名相同，只是二级域名不同，浏览器允许通过设置document.domain共Cookie。</li>
+<li><p>举例来说，A网站是:http:weibo.qq.com;B网站是:http:lol.qq.com;那么只需设置相同的document.domain,两个网页就可共享Cookie。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.domain = &apos;qq.com&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>现在，A网页通过脚本设置一个Cookie。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.Cookie = &quot;test1=hello&quot;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>B网页就能读到这个Cookie。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var getCookie = document.cookie;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意：这种方法只适用于Cookie和iframe窗口，LocalStorage和IndexDB无法通过这种方法规避，而要使用下文将介绍的PostMessage API。<br>另外，服务器也可以在设置Cookie的时候，指定Cookie的所属域名为一级域名,比如：.qq.com</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Set-Cookie:key=value;domain=&lt;span style=&quot;color:#cc0000;&quot;&gt;.qq.com&lt;/span&gt;;path=/</div></pre></td></tr></table></figure>
+<ul>
+<li>这样的话，二级域名和三级域名不用做任何设置，都可以读取这个Cookie。</li>
+</ul>
+<h2 id="解决跨域问题二-如何跨域获取DOM。"><a href="#解决跨域问题二-如何跨域获取DOM。" class="headerlink" title="解决跨域问题二:如何跨域获取DOM。"></a>解决跨域问题二:如何跨域获取DOM。</h2><ul>
+<li>如果两个网页不同源，就无法拿到对方的DOM。典型的例子是iframe窗口和window.open方法打开的窗口，它们与父窗口无法通信。</li>
+<li><p>比如,父窗口运行下面的命令，如果iframe窗口不是同源将会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.getElementById(&quot;iframe&quot;).contentWindow.document</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面命令中，父窗口想获取子窗口的DOM，应为跨源导致报错。反之亦然，子窗口获取主窗口的DOM也会报错。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.parent.document.body</div></pre></td></tr></table></figure>
+<ul>
+<li>如果两个窗口一级域名相同，只是二级域名不同，那么设置4-1介绍的document.domain属性，就可规避同源政策，拿到DOM。</li>
+<li>对于完全不相同的网站，目前有三种方法，可以解决跨域窗口的通信问题。<ul>
+<li>(1)片段识别符(fragment identifier)</li>
+<li>(2)window.name</li>
+<li>(3)跨文档通信API(Cross-document messaging)</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-片段识别符"><a href="#1-片段识别符" class="headerlink" title="1)片段识别符"></a>1)片段识别符</h3><ul>
+<li><p>片段识别符指的是，URL的#号后面的部分，比如<code>http://qq.com/x.html#fragment</code>的#fragment。如果只是改变片段标识符，页面将不会重新刷新、父窗口可以把信息，写入子窗口的片段标识符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var src = originURL+&apos;#&apos;+data;</div><div class="line">document.getElementById(&apos;iframe&apos;).src = src;</div></pre></td></tr></table></figure>
+</li>
+<li><p>子窗口通过监听hashchange事件得到通知</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">window.onhashchange = checkMessage;</div><div class="line">  function checkMessage()&#123;</div><div class="line">  var message = window.location.hash;</div><div class="line">  //...</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>同样的，子窗口也可以改变父窗口的片段标识符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parent.location.href = target+&quot;#&quot;+hash;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-window-name"><a href="#2-window-name" class="headerlink" title="2)window.name"></a>2)window.name</h3><ul>
+<li>浏览器窗口有window.name属性。这个属性的最大特点是，无论是否同源，只要在同一个窗口里，前一个网页设置这个属性，后一个网页就可以读取它。</li>
+<li><p>父窗口先发开一个子窗口，载入一个不同源的网页，该网页将信息写入window.name属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.name = data;</div></pre></td></tr></table></figure>
+</li>
+<li><p>接着，子窗口跳回一个与主窗口同域的网址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location = &apos;http://parent.url.com/xxx.html&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后，主窗口就可以读取子窗口的window.name了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var data = document.getElementById(&apos;iframe&apos;).contentWindow.name;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>window.name容量很大，可以防止非常长的字符串；<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4></li>
+<li>必须监听子窗口window.name属性的变化，会影响网页性能。</li>
+</ul>
+<h3 id="3-跨文档消息传输window-postMessage："><a href="#3-跨文档消息传输window-postMessage：" class="headerlink" title="3)跨文档消息传输window.postMessage："></a>3)跨文档消息传输window.postMessage：</h3><ul>
+<li>上面两种方法都属于破解，HTML5为解决这个问题，引入一个全新的API：跨文档消息传输Cross Document Messaging。</li>
+<li>下一代浏览器都将支持这个功能:Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 。</li>
+<li>Facebook已经使用了这个功能，用postMessage支持基于web的实时消息传递。</li>
+</ul>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>otherWindow.postMessage(message, targetOrigin);<ul>
+<li>otherWindow: 对接收信息页面的window的引用。可以是页面中iframe的contentWindow属性;window.open的返回值；<br>通过name或下标从window.frames取到的值。</li>
+<li>message: 具体的信息内容，string类型。<br>targetOrigin: 接受消息的窗口的源(origin)，即“协议+域名+端口”。也可以设为“*”，表示不限制域名，向所有窗口发送。</li>
+<li>message事件的事件对象event，提供一下三个属性:<ul>
+<li>(1).event.source:发送消息的窗口</li>
+<li>(2).event.origin:消息发向的网站</li>
+<li>(3).event.data:消息内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="具体实例："><a href="#具体实例：" class="headerlink" title="具体实例："></a>具体实例：</h4><ul>
+<li><p>a.com/index.html中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;iframe id=&quot;ifr&quot; src=&quot;b.com/index.html&quot;&gt;&lt;/iframe&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">window.onload = function() &#123;</div><div class="line">    var ifr = document.getElementById(&apos;ifr&apos;);</div><div class="line">    var targetOrigin = &apos;http://b.com&apos;;  // 若写成&apos;http://b.com/c/proxy.html&apos;效果一样</div><div class="line">                                        // 若写成&apos;http://c.com&apos;就不会执行postMessage了</div><div class="line">    ifr.contentWindow.postMessage(&apos;I was there!&apos;, targetOrigin);</div><div class="line">&#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>b.com/index.html中的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    window.addEventListener(&apos;message&apos;, function(event)&#123;</div><div class="line">        // 通过origin属性判断消息来源地址</div><div class="line">        if (event.origin == &apos;http://a.com&apos;) &#123;</div><div class="line">            alert(event.data);    // 弹出&quot;I was there!&quot;</div><div class="line">            alert(event.source);  // 对a.com、index.html中window对象的引用</div><div class="line">                                  // 但由于同源策略，这里event.source不可以访问window对象</div><div class="line">        &#125;</div><div class="line">    &#125;, false);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="如何解决跨域LocalStorage。"><a href="#如何解决跨域LocalStorage。" class="headerlink" title="如何解决跨域LocalStorage。"></a>如何解决跨域LocalStorage。</h2><ul>
+<li><p>通过window.postMessage,读写其他窗口的LocalStorage也成为了可能。下面是一个例子，主窗口写入iframe子窗口的LocalStorage。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">window.onmessage = function(e)&#123;</div><div class="line">  if(e.origin !== &apos;http://bbb.com&apos;)&#123;</div><div class="line">    return ;</div><div class="line"> &#125;</div><div class="line">  var payload = JSON.parse(e.data);</div><div class="line">  localStorage.setItem(payload.key,JSON.stringify(payload.data));</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码中，子窗口将父窗口发送来的消息，写入自己的LocalStorage。</p>
+</li>
+<li><p>父窗口发送消息的代码如下.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var win = document.getElementsByTagName(&apos;iframe&apos;)[0].contentWindow;</div><div class="line">var obj = &#123;name:&apos;Jack&apos;&#125;;</div><div class="line">win.postMessage(JSON.stringify(&#123;key:&apos;storage&apos;,data:obj&#125;),&apos;http://bbb.com&apos;);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>加强版的子窗口接受消息的代码如下。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">window.onmessage = function(e) &#123;</div><div class="line">  if (e.origin !== &apos;http://bbb.com&apos;) return;</div><div class="line">  var payload = JSON.parse(e.data);</div><div class="line">  switch (payload.method) &#123;</div><div class="line">    case &apos;set&apos;:</div><div class="line">      localStorage.setItem(payload.key, JSON.stringify(payload.data));</div><div class="line">      break;</div><div class="line">    case &apos;get&apos;:</div><div class="line">      var parent = window.parent;</div><div class="line">      var data = localStorage.getItem(payload.key);</div><div class="line">      parent.postMessage(data, &apos;http://aaa.com&apos;);</div><div class="line">      break;</div><div class="line">    case &apos;remove&apos;:</div><div class="line">      localStorage.removeItem(payload.key);</div><div class="line">      break;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>加强版的父窗口发送消息代码如下:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var win = document.getElementsByTagName(&apos;iframe&apos;)[0].contentWindow;</div><div class="line">var obj = &#123; name: &apos;Jack&apos; &#125;;</div><div class="line">// 存入对象</div><div class="line">win.postMessage(JSON.stringify(&#123;key: &apos;storage&apos;, method: &apos;set&apos;, data: obj&#125;), &apos;http://bbb.com&apos;);</div><div class="line">// 读取对象</div><div class="line">win.postMessage(JSON.stringify(&#123;key: &apos;storage&apos;, method: &quot;get&quot;&#125;), &quot;*&quot;);</div><div class="line">window.onmessage = function(e) &#123;</div><div class="line">  if (e.origin != &apos;http://aaa.com&apos;) return;</div><div class="line">  // &quot;Jack&quot;</div><div class="line">  console.log(JSON.parse(e.data).name);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="如何解决AJAX的跨域："><a href="#如何解决AJAX的跨域：" class="headerlink" title="如何解决AJAX的跨域："></a>如何解决AJAX的跨域：</h2><ul>
+<li>同源政策规定，AJAX请求只能发给同源的网址，否则就报错。</li>
+<li>除了架设服务器代理（浏览器请求同源服务器，再由后者请求外部服务），有三种方法规避这个限制。<ul>
+<li>(1)JSONP</li>
+<li>(2)WebSocket</li>
+<li>(3)CORS</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-JSONP解决AJAX跨域问题："><a href="#1-JSONP解决AJAX跨域问题：" class="headerlink" title="1)JSONP解决AJAX跨域问题："></a>1)JSONP解决AJAX跨域问题：</h3><ul>
+<li>JSONP是服务器与客户端跨源通信的常用方法。最大特点就是简单适用，老式浏览器全部支持，服务器改造非常小。</li>
+<li>它的基本思想是，网页通过添加一个<code>&lt;script&gt;</code>元素，向服务器请求JSON数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。</li>
+<li><p>首先，网页动态插入<code>&lt;script&gt;</code>元素，由它向跨源网址发出请求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function addScriptTag(src) &#123;</div><div class="line">  var script = document.createElement(&apos;script&apos;);</div><div class="line">  script.setAttribute(&quot;type&quot;,&quot;text/javascript&quot;);</div><div class="line">  script.src = src;</div><div class="line">  document.body.appendChild(script);</div><div class="line">&#125;</div><div class="line"></div><div class="line">window.onload = function () &#123;</div><div class="line">  addScriptTag(&apos;http://example.com/ip?callback=foo&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function foo(data) &#123;</div><div class="line">  console.log(&apos;Your public IP address is: &apos; + data.ip);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码通过动态添加<code>&lt;script&gt;</code>元素，向服务器example.com发出请求。注意，该请求的查询字符串有一个callback参数，用来指定回调函数的名字，这对于JSONP是必需的。</p>
+</li>
+<li><p>服务器收到这个请求以后，会将数据放在回调函数的参数位置返回。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">foo(&#123;</div><div class="line">  &quot;ip&quot;: &quot;8.8.8.8&quot;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>由于<code>&lt;script&gt;</code>元素请求的脚本，直接作为代码运行。这时，只要浏览器定义了foo函数，该函数就会立即调用。作为参数的JSON数据被视为JavaScript对象，而不是字符串，因此避免了使用JSON.parse的步骤。</p>
+</li>
+</ul>
+<h3 id="2-通过webSocket解决AJAX跨域"><a href="#2-通过webSocket解决AJAX跨域" class="headerlink" title="2)通过webSocket解决AJAX跨域"></a>2)通过webSocket解决AJAX跨域</h3><ul>
+<li>WebSocket是一种通信协议，使用<code>ws://</code>（非加密）和<code>wss://</code>（加密）作为协议前缀。该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。</li>
+<li><p>下面是一个例子，浏览器发出的WebSocket请求的头信息（摘自维基百科）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">GET /chat HTTP/1.1</div><div class="line">Host: server.example.com</div><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div><div class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==</div><div class="line">Sec-WebSocket-Protocol: chat, superchat</div><div class="line">Sec-WebSocket-Version: 13</div><div class="line">Origin: http://example.com</div></pre></td></tr></table></figure>
+</li>
+<li><p>上面代码中，有一个字段是Origin，表示该请求的请求源（origin），即发自哪个域名。<br>正是因为有了Origin这个字段，所以WebSocket才没有实行同源政策。因为服务器可以根据这个字段，判断是否许可本次通信。如果该域名在白名单内，服务器就会做出如下回应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 101 Switching Protocols</div><div class="line">Upgrade: websocket</div><div class="line">Connection: Upgrade</div><div class="line">Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=</div><div class="line">Sec-WebSocket-Protocol: chat</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-通过CORS解决AJAX跨域"><a href="#3-通过CORS解决AJAX跨域" class="headerlink" title="3)通过CORS解决AJAX跨域"></a>3)通过CORS解决AJAX跨域</h3><ul>
+<li>CORS是跨源资源分享（Cross-Origin Resource Sharing）的缩写。它是W3C标准，是跨源AJAX请求的根本解决方法。相比JSONP只能发GET请求，CORS允许任何类型的请求。<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4></li>
+<li>CORS其实出现时间不短了，它在维基百科上的定义是：跨域资源共享（CORS）是一种网络浏览器的技术规范，它为Web服务器定义了一种方式，允许网页从不同的域访问其资源。而这种访问是被同源策略所禁止的。CORS系统定义了一种浏览器和服务器交互的方式来确定是否允许跨域请求。 它是一个妥协，有更大的灵活性，但比起简单地允许所有这些的要求来说更加安全。而W3C的官方文档目前还是工作草案，但是正在朝着W3C推荐的方向前进。</li>
+<li>简言之，CORS就是为了让AJAX可以实现可控的跨域访问而生的。</li>
+</ul>
+<h4 id="以往的解决方案："><a href="#以往的解决方案：" class="headerlink" title="以往的解决方案："></a>以往的解决方案：</h4><ul>
+<li>以前要实现跨域访问，可以通过JSONP、Flash或者服务器中转的方式来实现，但是现在我们有了CORS。</li>
+<li>CORS与JSONP相比，无疑更为先进、方便和可靠。<ul>
+<li>1.JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。</li>
+<li>2.使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。</li>
+<li>3.JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS（这部分会在后文浏览器支持部分介绍）。<h4 id="详细内容："><a href="#详细内容：" class="headerlink" title="详细内容："></a>详细内容：</h4></li>
+</ul>
+</li>
+<li>要使用CORS，我们需要了解前端和服务器端的使用方法。</li>
+<li><p>1.前端</p>
+<ul>
+<li>以前我们使用Ajax，代码类似于如下的方式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(&quot;GET&quot;, &quot;/relativeHref&quot;, true);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>这里的“/relativeHref”是本域的相对路径。</p>
+</li>
+<li><p>如果我们要使用CORS，相关Ajax代码可能如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(&quot;GET&quot;, &quot;http://blog.csdn.net/hfahe&quot;, true);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+</li>
+<li><p>请注意，代码与之前的区别就在于相对路径换成了其他域的绝对路径，也就是你要跨域访问的接口地址。</p>
+</li>
+<li>我们还必须提供浏览器回退功能检测和支持，避免浏览器不支持的情况。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function createCORSRequest(method, url) &#123;</div><div class="line">  var xhr = new XMLHttpRequest();</div><div class="line">  if (&quot;withCredentials&quot; in xhr) &#123;</div><div class="line">    // 此时即支持CORS的情况</div><div class="line">    // 检查XMLHttpRequest对象是否有“withCredentials”属性</div><div class="line">    // “withCredentials”仅存在于XMLHTTPRequest2对象里</div><div class="line">    xhr.open(method, url, true);</div><div class="line">  &#125; else if (typeof!= &quot;undefined&quot;) &#123;</div><div class="line">    // 否则检查是否支持XDomainRequest，IE8和IE9支持</div><div class="line">    // XDomainRequest仅存在于IE中，是IE用于支持CORS请求的方式</div><div class="line">    xhr = new XDomainRequest();</div><div class="line">    xhr.open(method, url);</div><div class="line">  &#125; else &#123;</div><div class="line">    // 否则，浏览器不支持CORS</div><div class="line">    xhr = null;</div><div class="line">  &#125;</div><div class="line">  return xhr;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var xhr = createCORSRequest(&apos;GET&apos;, url);</div><div class="line">if (!xhr) &#123;</div><div class="line">  throw new Error(&apos;CORS not supported&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="原文链接http-blog-csdn-net-u013084331-article-details-51114288"><a href="#原文链接http-blog-csdn-net-u013084331-article-details-51114288" class="headerlink" title="原文链接http://blog.csdn.net/u013084331/article/details/51114288"></a>原文链接<code>http://blog.csdn.net/u013084331/article/details/51114288</code></h5>
+          
         
       
     </div>
@@ -1110,20 +2902,99 @@ Cookie是服务器写入浏览器的一段信息，只有同源的网页才能�
       
         
           
-          什么是MongoDB
-MongoDB是一个基于分布式文件存储的开源数据库系统
-MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。
+            <h2 id="什么是MongoDB"><a href="#什么是MongoDB" class="headerlink" title="什么是MongoDB"></a>什么是MongoDB</h2><ul>
+<li>MongoDB是一个基于分布式文件存储的开源数据库系统</li>
+<li>MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</li>
+</ul>
+<h2 id="MongoDB安装"><a href="#MongoDB安装" class="headerlink" title="MongoDB安装"></a>MongoDB安装</h2><h3 id="windows安装"><a href="#windows安装" class="headerlink" title="windows安装"></a>windows安装</h3><blockquote>
+<p>Windows官方安装指南 绿色版就是解压之后就可以用</p>
+<ul>
+<li>mongodb32位绿色版 <a href="http://pan.baidu.com/s/1pLe3vM7" target="_blank" rel="external">http://pan.baidu.com/s/1pLe3vM7</a></li>
+<li>MongoDB64位绿色版 <a href="http://pan.baidu.com/s/1cMM9oq" target="_blank" rel="external">http://pan.baidu.com/s/1cMM9oq</a></li>
+<li>mongo客户端绿色版 <a href="http://pan.baidu.com/s/1kUIQlUZ" target="_blank" rel="external">http://pan.baidu.com/s/1kUIQlUZ</a></li>
+</ul>
+</blockquote>
+<h3 id="Mac官方安装指南"><a href="#Mac官方安装指南" class="headerlink" title="Mac官方安装指南"></a>Mac官方安装指南</h3><ul>
+<li><p>1.先安装homebrew</p>
+<ul>
+<li><p>Homebrew简称brew，是Mac OSX上的软件包管理工具，能在Mac中方便的安装软件或者卸载软件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://brew.sh/</div></pre></td></tr></table></figure>
+</li>
+<li><p>Homebrew的安装非常简单，打开终端复制、粘贴以下命令，回车，搞定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>2.使用brew安装mongodb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mongodb</div></pre></td></tr></table></figure>
+</li>
+<li><p>3.创建数据存放目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir -p /data/db</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>如果提示输入密码请输入正确的密码</p>
+</blockquote>
+<ul>
+<li>4.启动mongodb<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mongod &amp;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Mac可视化工具可安装Robomongo"><a href="#Mac可视化工具可安装Robomongo" class="headerlink" title="Mac可视化工具可安装Robomongo"></a>Mac可视化工具可安装Robomongo</h4><h2 id="mongodb启动与连接"><a href="#mongodb启动与连接" class="headerlink" title="mongodb启动与连接"></a>mongodb启动与连接</h2><h3 id="1-windows启动服务器端"><a href="#1-windows启动服务器端" class="headerlink" title="1.windows启动服务器端"></a>1.windows启动服务器端</h3><ul>
+<li>1).找到mongodb安装目录,一般是 C:\Program Files\MongoDB 2.6 Standard\bin (这里我下载到了C:\Users\Gao\Downloads\数据库\MongoDB这个目录)<br><img src="/img/MongoDB安装目录.png" alt="Alt MongoDB安装目录"></li>
+<li><p>2).按下Shift+鼠标右键,选择在此处打开命令窗口</p>
+<ul>
+<li>3)在除C盘外的盘符新建一个空目录,例如 D:\Mongodb\data(由于我的电脑没有分盘,所以我就建在C盘下了)<br><img src="/img/新建data文件夹.png" alt="Alt 新建data文件夹"></li>
+<li><p>在命令行中输入mongod –dbpath=刚创建的空目录,如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath=C:\data</div></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>注意：–dbpath后的值表示数据库文件的存储路径,而且后面的路径必须事先创建好，必须已经存在，否则服务开启失败<blockquote>
+<p>如果是windows32的系统用户，请加参数 –storageEngine=mmapv1</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>如 <code>mongod --dbpath=C:\data --storageEngine=mmapv1</code></p>
+</blockquote>
+</li>
+<li><p>4)再按回车键<br><img src="/img/启动MongoDB服务器端.png" alt="Alt 启动MongoDB服务器端"></p>
+<ul>
+<li><ol>
+<li>如果出现waiting for connections on port 27017就表示启动成功,已经在27017端口上监听了客户端的请求</li>
+</ol>
+</li>
+<li><ol>
+<li>注意：这个命令窗体绝对不能关,关闭这个窗口就相当于停止了mongodb服务</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ol>
+<li><strong>如果mongoVUE客户端报错 “MongoDB.Bson.BsonObjectId”的类型初始值设定项引发异常</strong><blockquote>
+<p>解决方案如下：在window中打开功能里输入regedit,回车打开注册器。然后进入如下路径中 HKEY_LOCAL_MACHINE\system\CurrentControlSet\Control\Lsa\FipsAlgorithmPolicy 将enable设置为0 即可。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-启动客户端连接服务器"><a href="#2-启动客户端连接服务器" class="headerlink" title="2.启动客户端连接服务器"></a>2.启动客户端连接服务器</h3><ul>
+<li>1)找到mongodb安装目录,一般是 C:\Program Files\MongoDB 2.6 Standard\bin</li>
+<li>2)按下Shift+鼠标右键,选择在此处打开命令窗口<br><img src="/img/MongoDB安装目录.png" alt="Alt MongoDB安装目录"></li>
+<li>3)命令窗体中输入 mongo –host=127.0.0.1 或者 mongo 按回车键</li>
+<li>4)命令窗体中输入 db 按回车键可进入测试<br><img src="/img/MongoDB启动客户端连接服务器.png" alt="Alt MongoDB启动客户端连接服务器"></li>
+</ul>
+<blockquote>
+<p>备注：–host后的值表示服务器的ip地址,–host=127.0.0.1 表示的就是本地服务器,每次数据库都会默认连接test数据库</p>
+</blockquote>
+<h2 id="MongoDB基本概念"><a href="#MongoDB基本概念" class="headerlink" title="MongoDB基本概念"></a>MongoDB基本概念</h2><ul>
+<li>数据库 MongoDB的单个实例可以容纳多个独立的数据库，比如一个学生管理系统就可以对应一个数据库实例</li>
+<li>集合 数据库是由集合组成的,一个集合用来表示一个实体,如学生集合</li>
+<li>文档 集合是由文档组成的，一个文档表示一条记录,比如一位同学张三就是一个文档<br><img src="/img/MongoDB基本概念.png" alt="Alt MongoDB基本概念"></li>
+</ul>
 
-MongoDB安装windows安装
-Win
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/06/MongoDB启动与连接/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1252,19 +3123,24 @@ Win
       
         
           
-          
-当函数执行的时候，会形成一个私有的作用域，保护里面的私有变量不受外界干扰，我们把这种机制叫做“闭包”闭包
-闭包是一种”机制”:函数执行形成私有的作用域(不管销毁还是不销毁),保护了里面的私有变量不受外界的干扰
-然而,社会上很多人都认为”闭包”指的是:函数执行形成的那个不销毁的私有作用域才是闭包.
+            <ul>
+<li>当函数执行的时候，会形成一个私有的作用域，保护里面的私有变量不受外界干扰，我们把这种机制叫做“闭包”<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2></li>
+<li>闭包是一种”机制”:函数执行形成私有的作用域(不管销毁还是不销毁),保护了里面的私有变量不受外界的干扰</li>
+<li><p>然而,社会上很多人都认为”闭包”指的是:函数执行形成的那个不销毁的私有作用域才是闭包.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var fn = (function () &#123;</div><div class="line">    var num = 12;</div><div class="line">    return function () &#123;</div><div class="line">        console.log(++num);</div><div class="line">    &#125;</div><div class="line">&#125;)();//-&gt;JS高阶编程技巧之一：&quot;惰性思想&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>1、利用可以形成不销毁的私有的作用域的原理，把我们需要保存的内容，存储到这个不销毁的作用域中</p>
+</li>
+<li>2、避免全局变量之间的冲突，保护里面的变量不受外界的干扰 -&gt;所有框架/类库的源码都是写在一个闭包函数中的,目的就是为了不和别人的代码冲突<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var name = &quot;china&quot;;</div><div class="line">var age = 5000;</div><div class="line">(function () &#123;</div><div class="line">    var name = &quot;中国&quot;;</div><div class="line">    var age = 100;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="[jQuery]"></a>[jQuery]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(function (global, factory) &#123;</div><div class="line">               //&lt;JS CODE&gt;</div><div class="line">               var jQuery = function () &#123;</div><div class="line"></div><div class="line">               &#125;;</div><div class="line">               window.jQuery = window.$ = jQuery;//-&gt;让私有的变量在全局下依然可以使用,我们可以使用window.xxx=xxx来进行处理</div><div class="line">               //-&gt;当前的这个作用域是不销毁的,因为函数里面的jQuery对应的地址被window下的jQuery和$给占用了</div><div class="line">           &#125;)();</div><div class="line">           jQuery();</div></pre></td></tr></table></figure>
+<h2 id="使用闭包的注意点"><a href="#使用闭包的注意点" class="headerlink" title="使用闭包的注意点"></a>使用闭包的注意点</h2><ul>
+<li>（1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</li>
+<li>（2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</li>
+</ul>
 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/10/对闭包的理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1393,15 +3269,8 @@ Win
       
         
           
-          原文链接http://www.cnblogs.com/chenqf/p/6386163.html
+            <h5 id="原文链接http-www-cnblogs-com-chenqf-p-6386163-html"><a href="#原文链接http-www-cnblogs-com-chenqf-p-6386163-html" class="headerlink" title="原文链接http://www.cnblogs.com/chenqf/p/6386163.html"></a>原文链接<code>http://www.cnblogs.com/chenqf/p/6386163.html</code></h5>
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/10/HTTP缓存机制详解-转载/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1530,17 +3399,80 @@ Win
       
         
           
-          前端程序发展的历史
-现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。
-回顾一下前端发展的历史阶段,引用了 廖雪峰老师网站总结的一段话:123456789在上个世纪的1989年，欧洲核子研究中心的物理学家Ti
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/10/秒懂Vuejs、Angular、React原理和前端发展历史(转载)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h2 id="前端程序发展的历史"><a href="#前端程序发展的历史" class="headerlink" title="前端程序发展的历史"></a>前端程序发展的历史</h2><ul>
+<li>现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。</li>
+<li>回顾一下前端发展的历史阶段,引用了 廖雪峰老师网站总结的一段话:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">在上个世纪的1989年，欧洲核子研究中心的物理学家Tim Berners-Lee发明了超文本标记语言（HyperText Markup Language），简称HTML，并在1993年成为互联网草案。从此，互联网开始迅速商业化，诞生了一大批商业网站。</div><div class="line">最早的HTML页面是完全静态的网页，它们是预先编写好的存放在Web服务器上的html文件。</div><div class="line">浏览器请求某个URL时，Web服务器把对应的html文件扔给浏览器，就可以显示html文件的内容了。</div><div class="line">如果要针对不同的用户显示不同的页面，显然不可能给成千上万的用户准备好成千上万的不同的html文件，所以，服务器就需要针对不同的用户，动态生成不同的html文件。一个最直接的想法就是利用C、C++这些编程语言，直接向浏览器输出拼接后的字符串。这种技术被称为CGI：Common Gateway Interface。</div><div class="line">很显然，像新浪首页这样的复杂的HTML是不可能通过拼字符串得到的。于是，人们又发现，其实拼字符串的时候，大多数字符串都是HTML片段，是不变的，变化的只有少数和用户相关的数据，所以，又出现了新的创建动态HTML的方式：ASP、JSP和PHP等——分别由微软、SUN和开源社区开发。</div><div class="line">在以前：</div><div class="line">在ASP中，一个asp文件就是一个HTML，但是，需要替换的变量用特殊的&lt;%=var%&gt;标记出来了，再配合循环、条件判断，创建动态HTML就比CGI要容易得多。</div><div class="line">但是，一旦浏览器显示了一个HTML页面，要更新页面内容，唯一的方法就是重新向服务器获取一份新的HTML内容。如果浏览器想要自己修改HTML页面的内容，怎么办？那就需要等到1995年年底，Java被引入到浏览器。</div><div class="line">有了Java后，浏览器就可以运行Java，然后，对页面进行一些修改。Java还可以通过修改HTML的DOM结构和CSS来实现一些动画效果，而这些功能没法通过服务器完成，必须在浏览器实现。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="揭开MVVM原理"><a href="#揭开MVVM原理" class="headerlink" title="揭开MVVM原理"></a>揭开MVVM原理</h2><ul>
+<li>Java操作HTML</li>
+<li>至于 js如何在浏览器执行，这又是另外一个资深课题了（前端真的是只是庞杂），这里我们不做研究，有兴趣的可以自己去搜资料。我们只需要知道浏览器就是也JS执行容器，执行完之后，通过页面显示结果就行了，就像java需要编译器一样原理。</li>
+<li>用Java在浏览器中操作HTML，也经历了若干发展阶段： 我们利用【小北最帅】这个案例来展示</li>
+</ul>
+<h2 id="【第一阶段】"><a href="#【第一阶段】" class="headerlink" title="【第一阶段】"></a>【第一阶段】</h2><ul>
+<li>是JS原生通过浏览器解析机制，它的原理是使用浏览器提供的原生API 结合JS语法，可以直接操作DOM，如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//HTML:</div><div class="line">&lt;divid=&quot;name&quot;style=&quot;color:#fff&quot;&gt;前端你别闹&lt;/div&gt;&lt;divid=&quot;age&quot;&gt;3&lt;/div&gt;</div><div class="line">//Java:</div><div class="line">var dom1 = document.getElementById(&apos;name&apos;);</div><div class="line">var dom2 = document.getElementById(&apos;age&apos;);</div><div class="line">dom1.innerHTML = &apos;小北&apos;;</div><div class="line">dom2.innerHTML = &apos;666&apos;;</div><div class="line">dom1.style.color = &apos;#000000&apos;; // css样式也可以操作</div><div class="line">//结果变成：</div><div class="line">&lt;divid=&quot;name&quot;style=&quot;color:#fff&quot;&gt;小北&lt;/div&gt;&lt;divid=&quot;age&quot;&gt;&apos;666&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="【第二阶段】"><a href="#【第二阶段】" class="headerlink" title="【第二阶段】"></a>【第二阶段】</h2><ul>
+<li>我用一个字总结 就是懒，就是我们上一篇说的jQuery时代，由于原生API晦涩难懂，语法很长不好用，最重要的是要考虑各种浏览器兼容性，因为他们的解析标准都不一样，造成了，写一段效果代码要写很多的兼容语法，令人沮丧，所以jQuery的出现，迅速占领了世界。</li>
+<li>上边的例子用 jQuery 是这样的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//HTML:</div><div class="line">&lt;divid=&quot;name&quot;style=&quot;color:#fff&quot;&gt;前端你别闹&lt;/div&gt;&lt;divid=&quot;age&quot;&gt;3&lt;/div&gt;</div><div class="line">//Java: jQuery 一句话就行</div><div class="line">$(&apos;#name&apos;).text(&apos;小北好帅&apos;).css(&apos;color&apos;, &apos;#000000&apos;);$(&apos;#age&apos;).text(&apos;666&apos;).css(&apos;color&apos;, &apos;#fff&apos;);</div><div class="line">//结果变成：</div><div class="line">&lt;divid=&quot;name&quot;style=&quot;color:#fff&quot;&gt;小北好帅&lt;/div&gt;&lt;divid=&quot;age&quot;&gt;666&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="【第三阶段】"><a href="#【第三阶段】" class="headerlink" title="【第三阶段】"></a>【第三阶段】</h2><h3 id="MVC模式，"><a href="#MVC模式，" class="headerlink" title="MVC模式，"></a>MVC模式，</h3><ul>
+<li>需要服务器端配合，Java可以在前端修改服务器渲染后的数据。</li>
+<li>一句话就是所有通信都是单向的： 也就是前期我们最常用的状态，提交一次反馈一次，通信一次相互制约。</li>
+<li>比如：提交表单 填写内容 → 点击提交 →业务逻辑处理 →存入数据库 → 刷新页面→服务器取数据库数据→渲染到客户端页面→ 展示上一次你提交的内容</li>
+<li>MVC:<ul>
+<li>视图（View）：用户界面。</li>
+<li>控制器（Controller）：业务逻辑</li>
+<li>模型（Model）：数据保存</li>
+<li>各部分之间的通信方式如下<br><img src="/img/MVC.png" alt="Alt MVC模式">“MVC”</li>
+<li>View 传送指令到 Controller</li>
+<li>Controller 完成业务逻辑后，要求 Model 改变状态</li>
+<li>Model 将新的数据发送到 View，用户得到反馈</li>
+</ul>
+</li>
+<li>这个模式缺点是什么呢？<ul>
+<li>缺点一：它必须等待服务器端的指示，而且如果是异步模式的话，所有html节点、数据、页面结构都是后端请求过来。<pre><code>- 浏览器只作为一个解析显示容器，Model 作用几乎是废x，Model 层面做的很少几乎前端无法控制，你前端几乎是切图仔和做轮播图的工作/哭
+</code></pre></li>
+<li>缺点二：因为你前端渲染的页面结构，几乎是后端服务器包扎一堆数据一起发送过来，前端的你只需要用拼接字符串 或者字符串拼接引擎<ul>
+<li>比如Mustache、Jade、artTemplate、tmpl、kissyTemplate、ejs等来做事，说白了纯苦力和重复工作居多，这也导致了，如果很多人认为前端并不重要，只负责美工 和 动作体验就好了。</li>
+</ul>
+</li>
+<li>缺点三：一发而动全身。数据、显示不分离！为什么这么说，因为如果业务逻辑要变，比如很简单的需求，你用jsp或者php 拼接出来的ajax数据页面，年龄这个字段我不需要了，把性别字段 区分开，男的单独显示，女的单独显示，以前是一起显示到一个表的<ul>
+<li>那么，后端先要sql查询把 男、女数据分开，然后渲染字符串时候把 年龄 这个字段去除，然后把男女分开成2个table，然后再推送给前端接收。</li>
+<li>前端收到了，然后从新在渲染一遍，在加工一次页面甚至是展示动作效果。。。（前后端一起大声喊到：加班使我快乐，呜呜呜）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="【第四阶段】"><a href="#【第四阶段】" class="headerlink" title="【第四阶段】"></a>【第四阶段】</h2><h3 id="MVVM框架模式"><a href="#MVVM框架模式" class="headerlink" title="MVVM框架模式"></a>MVVM框架模式</h3><ul>
+<li>MVVM最早由微软提出来，它借鉴了桌面应用程序的MVC思想，在前端页面中，把Model用纯Java对象表示，View负责显示，两者做到了最大限度的分离。也就是我们常说的，前后分离，真正在这里得以实现<br><img src="/img/MVVM.png" alt="Alt MVVM模式">“MVVM”</li>
+<li>它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然,model数据的变动，也自动展示给页面显示</li>
+<li>把Model和View关联起来的就是ViewModel。ViewModel负责把Model的数据同步到View显示出来，还负责把View的修改同步回Model。</li>
+<li><p>可能理论知识枯燥无味，那么我们还是实战派，来看代码不就好了吗？</p>
+<ul>
+<li>还是刚才的 【小北最帅】案例</li>
+<li>由于数据驱动模式的精髓在于【数据】和【视图】分离，所以我们首先并不关心DOM结构，而是关心数据的展现。</li>
+<li><p>最简单的数据存储方式是什么呢？显然不是mysql、数据库而是使用Java对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//HTML: 这次我不关心你了，哼哼</div><div class="line">//Java: JS基础对象/原始数据</div><div class="line">varxiaobei = &#123; name: &apos;前端你别闹&apos;, age: 3，</div><div class="line">tag：&apos;干货&apos;</div><div class="line">&#125;;</div><div class="line">//结果是：</div><div class="line">name:前端你别闹</div><div class="line">age:3</div><div class="line">tag:干货</div></pre></td></tr></table></figure>
+</li>
+<li><p>假设：我们把变量xiaobei 看作Model数据，把HTML某些DOM节点看作View，并意淫它们已经通过某种手段被关联起来了。</p>
+</li>
+<li>下面我们把name 从”前端你别闹” 改为 “小北”，把显示的age从 “3” 改为 “666”，tag变成 “最帅!”</li>
+<li>按照以前我们肯定操作DOM节点，而现在我们只需要修改Java对象：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Java:// JS基础对象// 改变的数据</div><div class="line">    varxiaobei = &#123; name: &apos;小北&apos;, age: 666，</div><div class="line">    tag：&apos;最帅&apos;</div><div class="line">    &#125;;</div><div class="line">//结果是：</div><div class="line">    name:小北</div><div class="line">    age:666</div><div class="line">    tag:最帅</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>通过实验和理论，小伙伴惊呆了，我们只要改变Java对象的内容，就会导致DOM结构作出对应的变化！</p>
+</li>
+<li>这让我们的关注点从如何操作DOM变成了如何改变Java对象的状态，而操作Java对象比获取和操作DOM简单了一个地球的距离！</li>
+<li>这也是MVVM的核心思想：关注Model的变化，让MVVM框架利用自己的机制去自动更新DOM，从而把开发者从操作DOM的繁琐中解脱出来！</li>
+<li>也就是所谓的 数据 - 视图分离，数据驱动视图， 视图不影响数据，再也不用管繁琐的DOM结构操作了，世界顿时清净，完美！</li>
+</ul>
+<h5 id="原文链接-http-www-sohu-com-a-133415335-355137-qq-pf-to-pcqq-c2c"><a href="#原文链接-http-www-sohu-com-a-133415335-355137-qq-pf-to-pcqq-c2c" class="headerlink" title="原文链接:http://www.sohu.com/a/133415335_355137?qq-pf-to=pcqq.c2c"></a>原文链接:<code>http://www.sohu.com/a/133415335_355137?qq-pf-to=pcqq.c2c</code></h5>
+          
         
       
     </div>
@@ -1669,16 +3601,59 @@ Win
       
         
           
+            <ul>
+<li>createClass本质上是一个工厂函数，extends的方式更加接近最新的ES6规范的class写法。两种方式在语法上的差别主要体现在方法的定义和静态属性的声明上。createClass方式的方法定义使用逗号,隔开，因为creatClass本质上是一个函数，传递给它的是一个Object；而class的方式定义方法时务必谨记不要使用逗号隔开，这是ES6 class的语法规范。</li>
+</ul>
+<h3 id="React-createClass和extends-Component的区别主要在于："><a href="#React-createClass和extends-Component的区别主要在于：" class="headerlink" title="React.createClass和extends Component的区别主要在于："></a>React.createClass和extends Component的区别主要在于：</h3><ul>
+<li>语法区别</li>
+<li>propType 和 getDefaultProps</li>
+<li>状态的区别</li>
+<li>this区别</li>
+<li>Mixins</li>
+</ul>
+<h2 id="1-语法区别"><a href="#1-语法区别" class="headerlink" title="1.语法区别"></a>1.语法区别</h2><ul>
+<li><p>React.createClass</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">const Contacts = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div&gt;&lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">export default Contacts;</div></pre></td></tr></table></figure>
+</li>
+<li><p>React.Component</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">class Contacts extends React.Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div&gt;&lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Contacts;</div></pre></td></tr></table></figure>
+</li>
+<li><p>后一种方法使用ES6的语法，用constructor构造器来构造默认的属性和状态。</p>
+</li>
+</ul>
+<h2 id="2-propType和getDefaultProps"><a href="#2-propType和getDefaultProps" class="headerlink" title="2.propType和getDefaultProps"></a>2.propType和getDefaultProps</h2><ul>
+<li><p>React.createClass:通过proTypes对象和getDefaultProps()方法来设置和获取props.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">const Contacts = React.createClass(&#123;</div><div class="line">  propTypes: &#123;</div><div class="line">    name: React.PropTypes.string</div><div class="line">  &#125;,</div><div class="line">  getDefaultProps() &#123;</div><div class="line">    return &#123;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line">  &#125;,</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div&gt;&lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">export default Contacts;</div></pre></td></tr></table></figure>
+</li>
+<li><p>React.Component：通过设置两个属性propTypes和defaultProps</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import React form &apos;react&apos;;</div><div class="line">class TodoItem extends React.Component&#123;</div><div class="line">    static propTypes = &#123; // as static property</div><div class="line">        name: React.PropTypes.string</div><div class="line">    &#125;;</div><div class="line">    static defaultProps = &#123; // as static property</div><div class="line">        name: &apos;&apos;</div><div class="line">    &#125;;</div><div class="line">    constructor(props)&#123;</div><div class="line">        super(props)</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        return &lt;div&gt;&lt;/div&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-状态的区别"><a href="#3-状态的区别" class="headerlink" title="3.状态的区别"></a>3.状态的区别</h2><ul>
+<li><p>React.createClass：通过getInitialState()方法返回一个包含初始值的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">   let TodoItem = React.createClass(&#123;</div><div class="line">       // return an object</div><div class="line">       getInitialState()&#123;</div><div class="line">           return &#123;</div><div class="line">               isEditing: false</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       render()&#123;</div><div class="line">           return &lt;div&gt;&lt;/div&gt;</div><div class="line">       &#125;</div><div class="line">   &#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>React.Component：通过constructor设置初始状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">  class TodoItem extends React.Component&#123;</div><div class="line">      constructor(props)&#123;</div><div class="line">          super(props);</div><div class="line">          this.state = &#123; // define this.state in constructor</div><div class="line">              isEditing: false</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">      render()&#123;</div><div class="line">          return &lt;div&gt;&lt;/div&gt;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-this区别"><a href="#4-this区别" class="headerlink" title="4.this区别"></a>4.this区别</h2><ul>
+<li><p>React.createClass：会正确绑定this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">const Contacts = React.createClass(&#123;</div><div class="line">  handleClick() &#123;</div><div class="line">    console.log(this); // React Component instance</div><div class="line">  &#125;,</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div onClick=&#123;this.handleClick&#125;&gt;&lt;/div&gt;//会切换到正确的this上下文</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">export default Contacts;</div></pre></td></tr></table></figure>
+</li>
+<li><p>React.Component：由于使用了 ES6，这里会有些微不同，属性并不会自动绑定到 React 类的实例上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line">class TodoItem extends React.Component&#123;</div><div class="line">    constructor(props)&#123;</div><div class="line">        super(props);</div><div class="line">    &#125;</div><div class="line">    handleClick()&#123;</div><div class="line">        console.log(this); // null</div><div class="line">    &#125;</div><div class="line">    handleFocus()&#123;  // manually bind this</div><div class="line">        console.log(this); // React Component Instance</div><div class="line">    &#125;</div><div class="line">    handleBlur: ()=&gt;&#123;  // use arrow function</div><div class="line">        console.log(this); // React Component Instance</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        return &lt;input onClick=&#123;this.handleClick&#125;</div><div class="line">                              onFocus=&#123;this.handleFocus.bind(this)&#125;</div><div class="line">                              onBlur=&#123;this.handleBlur&#125;/&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>我们还可以在 constructor 中来改变 this.handleClick 执行的上下文，这应该是相对上面一种来说更好的办法，万一我们需要改变语法结构，这种方式完全不需要去改动 JSX 的部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import React from &apos;react&apos;;</div><div class="line"></div><div class="line">class Contacts extends React.Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    this.handleClick = this.handleClick.bind(this);</div><div class="line">  &#125;</div><div class="line">  handleClick() &#123;</div><div class="line">    console.log(this); // React Component instance</div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div onClick=&#123;this.handleClick&#125;&gt;&lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Contacts;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-Mixins"><a href="#5-Mixins" class="headerlink" title="5.Mixins"></a>5.Mixins</h2><ul>
+<li>如果我们使用 ES6 的方式来创建组件，那么 React mixins 的特性将不能被使用了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">React.createClass：使用 React.createClass 的话，我们可以在创建组件时添加一个叫做 mixins 的属性，并将可供混合的类的集合以数组的形式赋给 mixins。</div><div class="line"></div><div class="line">import React from &apos;react&apos;;</div><div class="line">let MyMixin = &#123;</div><div class="line">    doSomething()&#123;&#125;</div><div class="line">&#125;</div><div class="line">let TodoItem = React.createClass(&#123;</div><div class="line">    mixins: [MyMixin], // add mixin</div><div class="line">    render()&#123;</div><div class="line">        return &lt;div&gt;&lt;/div&gt;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="原文链接https-segmentfault-com-a-1190000005863630"><a href="#原文链接https-segmentfault-com-a-1190000005863630" class="headerlink" title="原文链接https://segmentfault.com/a/1190000005863630"></a>原文链接<code>https://segmentfault.com/a/1190000005863630</code></h5>
           
-createClass本质上是一个工厂函数，extends的方式更加接近最新的ES6规范的class写法。两种方式在语法上的差别主要体现在方法的定义和静态属性的声明上。createClass方式的方法定义使用逗号,隔开，因为creatClass本质上是一个函数，传递给它的是一个Object；而cl
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/09/React-createClass和extends-Component的区别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
