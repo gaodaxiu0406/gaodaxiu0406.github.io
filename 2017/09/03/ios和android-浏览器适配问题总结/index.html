@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1.防止手机中网页放大和缩小1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&amp;quot; /&amp;gt; 2.安卓浏览器看背景图片,有些设备会模糊? 用同等比例的图片在PC机上很清楚，但是手机上很模糊，原因是什么">
+<meta name="description" content="1.防止手机中网页放大和缩小1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&amp;quot; /&amp;gt;">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios和android 浏览器适配问题总结">
 <meta property="og:url" content="http://yoursite.com/2017/09/03/ios和android-浏览器适配问题总结/index.html">
 <meta property="og:site_name" content="滴答">
-<meta property="og:description" content="1.防止手机中网页放大和缩小1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&amp;quot; /&amp;gt; 2.安卓浏览器看背景图片,有些设备会模糊? 用同等比例的图片在PC机上很清楚，但是手机上很模糊，原因是什么">
-<meta property="og:updated_time" content="2017-09-03T10:48:53.108Z">
+<meta property="og:description" content="1.防止手机中网页放大和缩小1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&amp;quot; /&amp;gt;">
+<meta property="og:updated_time" content="2018-07-04T09:34:41.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios和android 浏览器适配问题总结">
-<meta name="twitter:description" content="1.防止手机中网页放大和缩小1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&amp;quot; /&amp;gt; 2.安卓浏览器看背景图片,有些设备会模糊? 用同等比例的图片在PC机上很清楚，但是手机上很模糊，原因是什么">
+<meta name="twitter:description" content="1.防止手机中网页放大和缩小1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&amp;quot; /&amp;gt;">
 
 
 
@@ -375,6 +375,7 @@
 
       
         <h2 id="1-防止手机中网页放大和缩小"><a href="#1-防止手机中网页放大和缩小" class="headerlink" title="1.防止手机中网页放大和缩小"></a>1.防止手机中网页放大和缩小</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0&quot; /&gt;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2 id="2-安卓浏览器看背景图片-有些设备会模糊"><a href="#2-安卓浏览器看背景图片-有些设备会模糊" class="headerlink" title="2.安卓浏览器看背景图片,有些设备会模糊?"></a>2.安卓浏览器看背景图片,有些设备会模糊?</h2><ul>
 <li>用同等比例的图片在PC机上很清楚，但是手机上很模糊，原因是什么呢？<ul>
 <li>经过研究,发现是devicePixelRatio作怪，因为手机分辨率太小，如果按照分辨率来显示网页，这样字会非常小，所以苹果当初就把iPhone 4的960<em>640分辨率，在网页里只显示了480</em>320，这样devicePixelRatio＝2。现在android比较乱，有1.5的，有2的也有3的。 想让图片在手机里显示更为清晰，必须使用2x的背景图来代替img标签（一般情况都是用2倍）。</li>

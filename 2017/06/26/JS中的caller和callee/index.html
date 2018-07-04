@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="caller 检验函数被谁调用过 检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回nullarguments.callee 函数本身12345678910function Fn() &amp;#123;    console.log(arguments.callee.caller);//--&amp;gt;function fn() &amp;#123;Fn()&amp;#125;    //--&amp;gt;argu">
+<meta name="description" content="caller 检验函数被谁调用过 检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="caller和callee">
 <meta property="og:url" content="http://yoursite.com/2017/06/26/JS中的caller和callee/index.html">
 <meta property="og:site_name" content="滴答">
-<meta property="og:description" content="caller 检验函数被谁调用过 检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回nullarguments.callee 函数本身12345678910function Fn() &amp;#123;    console.log(arguments.callee.caller);//--&amp;gt;function fn() &amp;#123;Fn()&amp;#125;    //--&amp;gt;argu">
-<meta property="og:updated_time" content="2017-08-16T15:33:35.844Z">
+<meta property="og:description" content="caller 检验函数被谁调用过 检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null">
+<meta property="og:updated_time" content="2018-07-04T09:35:05.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="caller和callee">
-<meta name="twitter:description" content="caller 检验函数被谁调用过 检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回nullarguments.callee 函数本身12345678910function Fn() &amp;#123;    console.log(arguments.callee.caller);//--&amp;gt;function fn() &amp;#123;Fn()&amp;#125;    //--&amp;gt;argu">
+<meta name="twitter:description" content="caller 检验函数被谁调用过 检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null">
 
 
 
@@ -376,7 +376,8 @@
       
         <h3 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h3><ul>
 <li>检验函数被谁调用过</li>
-<li>检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null<h3 id="arguments-callee"><a href="#arguments-callee" class="headerlink" title="arguments.callee"></a>arguments.callee</h3></li>
+<li>检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null<a id="more"></a>
+<h3 id="arguments-callee"><a href="#arguments-callee" class="headerlink" title="arguments.callee"></a>arguments.callee</h3></li>
 <li>函数本身<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Fn() &#123;</div><div class="line">    console.log(arguments.callee.caller);//--&gt;function fn() &#123;Fn()&#125;</div><div class="line">    //--&gt;arguments.callee 函数本身</div><div class="line">    //caller:检验函数被谁调用过 返回值是调用这个函数的函数本身,没有的话返回null</div><div class="line">    console.log(Fn.prototype.constructor === arguments.callee);//--&gt;true</div><div class="line">&#125;</div><div class="line">function fn() &#123;</div><div class="line">    Fn()</div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure>
 </li>
 </ul>

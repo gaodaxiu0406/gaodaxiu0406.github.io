@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="前端程序发展的历史 现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。 回顾一下前端发展的历史阶段,引用了 廖雪峰老师网站总结的一段话:123456789在上个世纪的1989年，欧洲核子研究中心的物理学家Tim Berners-Lee发明了超文本标记语言（HyperText Markup Language）">
+<meta name="description" content="前端程序发展的历史 现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。">
 <meta name="keywords" content="前端框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="秒懂Vuejs、Angular、React原理和前端发展历史(转载)">
 <meta property="og:url" content="http://yoursite.com/2017/09/10/秒懂Vuejs、Angular、React原理和前端发展历史(转载)/index.html">
 <meta property="og:site_name" content="滴答">
-<meta property="og:description" content="前端程序发展的历史 现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。 回顾一下前端发展的历史阶段,引用了 廖雪峰老师网站总结的一段话:123456789在上个世纪的1989年，欧洲核子研究中心的物理学家Tim Berners-Lee发明了超文本标记语言（HyperText Markup Language）">
+<meta property="og:description" content="前端程序发展的历史 现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。">
 <meta property="og:image" content="http://yoursite.com/img/MVC.png">
 <meta property="og:image" content="http://yoursite.com/img/MVVM.png">
-<meta property="og:updated_time" content="2017-09-10T03:58:24.452Z">
+<meta property="og:updated_time" content="2018-07-04T09:38:49.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="秒懂Vuejs、Angular、React原理和前端发展历史(转载)">
-<meta name="twitter:description" content="前端程序发展的历史 现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。 回顾一下前端发展的历史阶段,引用了 廖雪峰老师网站总结的一段话:123456789在上个世纪的1989年，欧洲核子研究中心的物理学家Tim Berners-Lee发明了超文本标记语言（HyperText Markup Language）">
+<meta name="twitter:description" content="前端程序发展的历史 现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。">
 <meta name="twitter:image" content="http://yoursite.com/img/MVC.png">
 
 
@@ -378,7 +378,7 @@
 
       
         <h2 id="前端程序发展的历史"><a href="#前端程序发展的历史" class="headerlink" title="前端程序发展的历史"></a>前端程序发展的历史</h2><ul>
-<li>现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。</li>
+<li>现在流行的框架：Vue.Js、AngularJs、ReactJs，已经逐渐应用到各个项目和实际应用中，它们都是MVVM数据驱动框架系列的一种。<a id="more"></a></li>
 <li>回顾一下前端发展的历史阶段,引用了 廖雪峰老师网站总结的一段话:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">在上个世纪的1989年，欧洲核子研究中心的物理学家Tim Berners-Lee发明了超文本标记语言（HyperText Markup Language），简称HTML，并在1993年成为互联网草案。从此，互联网开始迅速商业化，诞生了一大批商业网站。</div><div class="line">最早的HTML页面是完全静态的网页，它们是预先编写好的存放在Web服务器上的html文件。</div><div class="line">浏览器请求某个URL时，Web服务器把对应的html文件扔给浏览器，就可以显示html文件的内容了。</div><div class="line">如果要针对不同的用户显示不同的页面，显然不可能给成千上万的用户准备好成千上万的不同的html文件，所以，服务器就需要针对不同的用户，动态生成不同的html文件。一个最直接的想法就是利用C、C++这些编程语言，直接向浏览器输出拼接后的字符串。这种技术被称为CGI：Common Gateway Interface。</div><div class="line">很显然，像新浪首页这样的复杂的HTML是不可能通过拼字符串得到的。于是，人们又发现，其实拼字符串的时候，大多数字符串都是HTML片段，是不变的，变化的只有少数和用户相关的数据，所以，又出现了新的创建动态HTML的方式：ASP、JSP和PHP等——分别由微软、SUN和开源社区开发。</div><div class="line">在以前：</div><div class="line">在ASP中，一个asp文件就是一个HTML，但是，需要替换的变量用特殊的&lt;%=var%&gt;标记出来了，再配合循环、条件判断，创建动态HTML就比CGI要容易得多。</div><div class="line">但是，一旦浏览器显示了一个HTML页面，要更新页面内容，唯一的方法就是重新向服务器获取一份新的HTML内容。如果浏览器想要自己修改HTML页面的内容，怎么办？那就需要等到1995年年底，Java被引入到浏览器。</div><div class="line">有了Java后，浏览器就可以运行Java，然后，对页面进行一些修改。Java还可以通过修改HTML的DOM结构和CSS来实现一些动画效果，而这些功能没法通过服务器完成，必须在浏览器实现。</div></pre></td></tr></table></figure>
 </li>
 </ul>

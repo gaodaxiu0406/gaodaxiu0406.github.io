@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。12345678910111213var fun1,fun2;function foo() &amp;#123;    var x = 10;    fun1 = function () &amp;#123;        console.log(++x);//11  x">
+<meta name="description" content="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数内部的[[scope]]属性">
 <meta property="og:url" content="http://yoursite.com/2017/09/05/函数内部的-scope-属性/index.html">
 <meta property="og:site_name" content="滴答">
-<meta property="og:description" content="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。12345678910111213var fun1,fun2;function foo() &amp;#123;    var x = 10;    fun1 = function () &amp;#123;        console.log(++x);//11  x">
-<meta property="og:updated_time" content="2017-09-05T10:29:47.335Z">
+<meta property="og:description" content="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。">
+<meta property="og:updated_time" content="2018-07-04T09:37:33.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数内部的[[scope]]属性">
-<meta name="twitter:description" content="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。12345678910111213var fun1,fun2;function foo() &amp;#123;    var x = 10;    fun1 = function () &amp;#123;        console.log(++x);//11  x">
+<meta name="twitter:description" content="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。">
 
 
 
@@ -374,7 +374,8 @@
       
 
       
-        <h3 id="函数内部的-scope-属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。"><a href="#函数内部的-scope-属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。" class="headerlink" title="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。"></a>函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var fun1,fun2;</div><div class="line">function foo() &#123;</div><div class="line">    var x = 10;</div><div class="line">    fun1 = function () &#123;</div><div class="line">        console.log(++x);//11  x=11</div><div class="line">    &#125;;</div><div class="line">    fun2 = function () &#123;</div><div class="line">        console.log(--x);//10  x=10</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">foo();   // 初始化了fun1,fun2函数</div><div class="line">fun1();  // 11</div><div class="line">fun2();  // 10</div></pre></td></tr></table></figure>
+        <h3 id="函数内部的-scope-属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。"><a href="#函数内部的-scope-属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。" class="headerlink" title="函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。"></a>函数内部的[[scope]]属性是虚拟出来的一个属性，我们实际访问时访问不到这个属性的，这个属性是为了让我们更好的理解函数，虚拟出来的一个属性。</h3><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var fun1,fun2;</div><div class="line">function foo() &#123;</div><div class="line">    var x = 10;</div><div class="line">    fun1 = function () &#123;</div><div class="line">        console.log(++x);//11  x=11</div><div class="line">    &#125;;</div><div class="line">    fun2 = function () &#123;</div><div class="line">        console.log(--x);//10  x=10</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">foo();   // 初始化了fun1,fun2函数</div><div class="line">fun1();  // 11</div><div class="line">fun2();  // 10</div></pre></td></tr></table></figure>
 <ul>
 <li>产生这个情况的原因是:在同一父作用域中的闭包共同同一个[[scope]]属性</li>
 </ul>
