@@ -374,28 +374,22 @@
       
         
           
-            <h4 id="图形组合"><a href="#图形组合" class="headerlink" title="图形组合"></a>图形组合</h4><ul>
-<li>cvs.globalCompositeOperation=type;</li>
-<li><p>type的值:</p>
-<ul>
-<li>1.source-over 默认值 覆盖 在原来的图形上绘制新图 新图在上</li>
-<li>2.source-out 显示新图的非交集部分</li>
-<li>3.source-in 显示新图和图形的交集，颜色是新图的颜色</li>
-<li>4.source-atop 显示旧图和交集部分 交集是新图颜色</li>
-<li>5.destination-over  在原来图形的下面绘制新图 旧图在上</li>
-<li>6.destination-out 显示旧图的非交集部分</li>
-<li>7.destination-in 显示交集 颜色是旧图颜色</li>
-<li>8.destination-atop 显示新图和交集部分 交集是旧图颜色</li>
-<li>9.lighter:全部显示 交集部分是叠加颜色</li>
-<li>10.xor:显示新旧图的非交集部分</li>
-<li>11.copy 只显示新图</li>
-</ul>
-</li>
-<li><p>案例1:在原来的图形上绘制新图 新图在上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">function draw1()&#123;</div><div class="line">	cvs.fillStyle=&apos;gold&apos;;</div><div class="line">	cvs.fillRect(10,10,100,100);</div><div class="line">       cvs.globalCompositeOperation=&apos;source-over&apos;;</div><div class="line">	cvs.fillStyle=&apos;pink&apos;;</div><div class="line">	cvs.fillRect(50,50,100,100);</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure></li>
-</ul>
+          图形组合
+cvs.globalCompositeOperation=type;
+type的值:
 
-          
+1.source-over 默认值 覆盖 在原来的图形上绘制新图 新图在上
+2.source-out 显示新图的非交集部分
+3.source-in 显示新图和图形的交集，颜色是新图的颜色
+4.sourc
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/canvas之8图形组合/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -524,32 +518,21 @@
       
         
           
-            <ul>
-<li><ol>
-<li>平移translate(x,y);<br>x:坐标原点向x轴平移的距离<br>y:坐标原点向y轴平移的距离</li>
-</ol>
-</li>
-<li><p>案例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.fillStyle=&apos;skyblue&apos;;</div><div class="line">	//设置填充颜色天空蓝</div><div class="line">	cvs.fillRect(0,0,200,100);</div><div class="line">	//矩形左上角坐标0,0 宽200px 高100px</div><div class="line">	cvs.translate(50,50);</div><div class="line">	//设置平移 坐标原点向x轴(向右)平移50px 坐标原点向y轴(向下)偏移50px</div><div class="line">	//--&gt;这个平移只会对后面的矩形造成影响 不会影响前面的</div><div class="line">	cvs.fillStyle=&apos;pink&apos;;</div><div class="line">	//设置填充颜色粉色</div><div class="line">	cvs.fillRect(0,0,180,80);</div><div class="line">	//矩形左上角坐标0,0 宽180px 高80px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li>缩放 vas.scale(x0,y0);<br>x0:x轴按照x0的比例缩放<br>y0:y轴按照x0的比例缩放</li>
-</ol>
-</li>
-<li><p>案例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	cvs.scale(1,2);//设置缩放 x轴不变 y轴是之前的2倍</div><div class="line">	cvs.fillStyle=&apos;plum&apos;;//设置填充样式为颜色填充</div><div class="line">	cvs.fillRect(0,0,200,100);</div><div class="line">	//矩形左上角坐标0,0 宽200px 高100px</div><div class="line">	//--&gt;那么转化后的矩形宽200px 高200px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>3.旋转 vas.rotate(angle);<br>  angle:坐标轴转的角度 他是一个弧度(和画圆的计算是一样的)</p>
-</li>
-<li><p>案例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.rotate(Math.PI/4);//设置旋转  旋转角度为45度</div><div class="line">	cvs.fillStyle=&apos;lightblue&apos;;</div><div class="line">	cvs.fillRect(100,100,200,100);</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="注意：平移、缩放、旋转都是对原始坐标（画布）操作的"><a href="#注意：平移、缩放、旋转都是对原始坐标（画布）操作的" class="headerlink" title="注意：平移、缩放、旋转都是对原始坐标（画布）操作的"></a>注意：平移、缩放、旋转都是对原始坐标（画布）操作的</h4><ul>
-<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.translate(200,0);//此时的原点已经变到200,0的位置</div><div class="line">	cvs.rotate(Math.PI/4);//设置旋转  旋转角度为45度</div><div class="line">	cvs.fillStyle=&apos;lightblue&apos;;</div><div class="line">	cvs.fillRect(100,100,200,100);</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure></li>
-</ul>
-
           
+
+平移translate(x,y);x:坐标原点向x轴平移的距离y:坐标原点向y轴平移的距离
+
+
+案例
+1234567891011121314function draw1()&#123;	cvs.fillStyle=&apos;skyblue&apos;;	//设置填充颜色天空蓝	cvs.fill
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/canvas之7变形/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -678,62 +661,26 @@
       
         
           
-            <h5 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h5><ul>
-<li><ol>
-<li>cvs.drawImage(Image,x,y,w,h);<ul>
-<li>Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的</li>
-<li>x,y 图片放入画布,在画布左上角的坐标</li>
-<li>w,h 绘制图片的宽高</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>案例:将图片放在画布上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	var img=new Image;//动态创建一个img</div><div class="line">	img.src=&apos;default.gif&apos;;//添加图片链接</div><div class="line">	img.onload=function()&#123;//如果图片地址真实存在 执行这个函数</div><div class="line">		cvs.drawImage(this,0,100,100,90);</div><div class="line">		//将图片放在画布上 图片左上角的坐标0,100 图片宽100px 高90px</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li><p>cvs.drawImage(img_elem,sx,sy,sw,sh,dx,dy,dw,dh);</p>
-<ul>
-<li>sx,sy 图片左上角的坐标</li>
-<li>sw,sh  矩形区域的宽高 用来截取图片</li>
-<li>dx,dy  截取出来放在画布canvas上的坐标</li>
-<li><p>dw,dh  画在canvas上的宽高</p>
-</li>
-<li><p>总结:</p>
-<ul>
-<li>sw,sy,sx,sy 是用来截取图片的过程</li>
-<li>dx,dy,dw,dh 把截取出来的图片放在canvas上的过程</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>案例:截取图片</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	function draw2()&#123;</div><div class="line">		var img=new Image;//动态创建一个img</div><div class="line">		img.src=&apos;1.jpg&apos;;//添加图片链接</div><div class="line">		img.onload=function()&#123;//如果图片地址真实存在 执行这个函数</div><div class="line">			cvs.drawImage(this,480,150,440,410,0,0,200,200);</div><div class="line">			//this就是img 将图片放在画布上 需要截取的图片在原图片左上角的坐标480,150  截取图片的大小为440px*410px 截取出来的图片放入画布的坐标0,0 截取出来的图片画在画布canvas的宽200px 高200px</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">//	draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li>设置平铺</li>
-</ol>
-</li>
-<li><p>cvs.creatPattern(image,type)</p>
-<ul>
-<li>Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的</li>
-<li>type:<ul>
-<li>no-repeat 不平铺</li>
-<li>repeat 全方向平铺</li>
-<li>repeat-x x轴方向平铺</li>
-<li>repeat-y y轴方向平铺</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>案例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var img=new Image;</div><div class="line">	img.src=&apos;default.gif&apos;;</div><div class="line">	img.onload=function()&#123;</div><div class="line">		var rep=cvs.createPattern(this,&apos;repeat&apos;);//设置图片平铺</div><div class="line">		cvs.fillStyle=rep;//设置填充样式为图片平铺</div><div class="line">		cvs.fillRect(0,0,draw.width,draw.height);</div><div class="line">		//draw.width画布的宽 draw.height画布的高</div><div class="line">		//设置填充矩形 矩形左上角坐标0,0 矩形的宽为画布的宽 矩形的高为画布的高</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">//draw3();</div></pre></td></tr></table></figure>
-</li>
-</ul>
+          绘图
 
-          
+cvs.drawImage(Image,x,y,w,h);
+Image 就是可以放在DOM中的真实图片，可以动态创建，也可以获取页面上的
+x,y 图片放入画布,在画布左上角的坐标
+w,h 绘制图片的宽高
+
+
+
+
+案例:将图片放在画布上
+123456789function draw1()&#1
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/canvas之6绘制图片/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -862,40 +809,30 @@
       
         
           
-            <ul>
-<li>1.线性渐变</li>
-<li>var CLG=cvs.createLinearGradient(x0,y0,x1,y1);<ul>
-<li>x0:渐变开始的x坐标</li>
-<li>y0:渐变开始的y坐标</li>
-<li>x1:渐变结束的x坐标</li>
-<li>y1:渐变结束的y坐标</li>
-</ul>
-</li>
-<li><p>CLG.addColorStop(n,m);</p>
-<ul>
-<li>n:设置颜色的偏移量</li>
-<li>m:颜色</li>
-</ul>
-</li>
-<li><p>例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	var CLG=cvs.createLinearGradient(0,0,200,200);</div><div class="line">	//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标200,200 (即从左上角到右下角渐变)</div><div class="line">	CLG.addColorStop(0,&apos;red&apos;);//设置渐变的偏移量0% 颜色红色</div><div class="line">	CLG.addColorStop(0.25,&apos;yellow&apos;);//设置渐变的偏移量25% 颜色黄色</div><div class="line">	CLG.addColorStop(0.5,&apos;skyblue&apos;);//设置渐变的偏移量50% 颜色天空蓝</div><div class="line">	CLG.addColorStop(0.75,&apos;orange&apos;);//设置渐变的偏移量75% 颜色橘黄</div><div class="line">	CLG.addColorStop(1,&apos;pink&apos;);//设置渐变的偏移量100% 颜色粉色</div><div class="line">	cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">	cvs.fillRect(0,0,200,200);//设置填充矩形 左上角坐标0,0  宽200px  高200px</div><div class="line">	cvs.fill();//设置样式为填充样式</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>2.径向渐变(发散性渐变)</p>
-</li>
-<li>cvs.createRadialGradient(x0,y0,x1,y1,r1);<ul>
-<li>x0:发散渐变开始中心的x坐标</li>
-<li>y0：发散渐变开始中心的y坐标</li>
-<li>r0:发散渐变开始的半径</li>
-<li>x1:发散渐变结束中心的x坐标</li>
-<li>y1：发散渐变结束中心的y坐标</li>
-<li>r1:发散渐变结束的半径</li>
-</ul>
-</li>
-<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var CRG=cvs.createRadialGradient(200,200,200,200,200,10);</div><div class="line">	//创建一个径向/发散性渐变 渐变开始的坐标200,200 渐变开始的半径200px 渐变结束的坐标200,200 渐变结束的半径10px</div><div class="line">	CRG.addColorStop(0,&apos;purple&apos;);</div><div class="line">	CRG.addColorStop(0.2,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.4,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.6,&apos;lightblue&apos;);</div><div class="line">	CRG.addColorStop(0.8,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;white&apos;);</div><div class="line">	cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">	cvs.fillRect(100,100,200,200);</div><div class="line">	//设置填充矩形 左上角坐标100,100  宽200px  高200px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+1.线性渐变
+var CLG=cvs.createLinearGradient(x0,y0,x1,y1);
+x0:渐变开始的x坐标
+y0:渐变开始的y坐标
+x1:渐变结束的x坐标
+y1:渐变结束的y坐标
+
+
+CLG.addColorStop(n,m);
+
+n:设置颜色的偏移量
+m:颜色
+
+
+例如:
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/canvas之4渐变/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1024,43 +961,28 @@
       
         
           
-            <ul>
-<li><ol>
-<li>cvs.fillRect(x,y,w,h); –&gt; 填充矩形<ul>
-<li>x,y 是这个矩形左上角的坐标</li>
-<li>w,h 是这个矩形的宽高</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>cvs.strokeRect(x,y,w,h); –&gt; 带边框的矩形<ul>
-<li>x,y 是这个矩形左上角的坐标</li>
-<li>w,h 是这个矩形的宽高<ul>
-<li>注意:如果设置边框 边框一半在里面一半在外面</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li>cvs.clearRect(x,y,w,h); –&gt; 清除填充图的某一部分，清除的还是一个矩形<ul>
-<li>x,y 是这个矩形左上角的坐标</li>
-<li>w,h 是这个矩形的宽高<h5 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h5></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>案例1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	//填充矩形</div><div class="line">	cvs.fillStyle=&apos;#fccdda&apos;;//画之前填充颜色</div><div class="line">	cvs.fillRect(10,20,100,50);//设置填充矩形,矩形的左上角坐标为10,20 宽100px 高50px</div><div class="line">	//边框矩形</div><div class="line">	cvs.strokeStyle=&apos;red&apos;;//设置边框的矩形边框颜色</div><div class="line">	cvs.lineWidth=20;//设置边框宽度20px</div><div class="line">	cvs.strokeRect(150,20,100,50);//设置边框矩形，	矩形的左上角坐标为150,20 宽100px 高50px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;//清除填充图的某一部分，清除的还是一个矩形cvs.clearRect(x,y,w,h)</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	//画之前填充颜色</div><div class="line">	cvs.fillRect(20,100,300,100);</div><div class="line">	//设置填充矩形,矩形左上角坐标为20,100 宽300px 高100px</div><div class="line">	cvs.clearRect(140,140,60,60);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标140,140 宽60px 高60px</div><div class="line">	cvs.clearRect(20,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标20,100 宽40px 高40px</div><div class="line">	cvs.clearRect(280,100,40,40);</div><div class="line">	//清除填充图的矩形 清除的这个矩形左上角坐标280,100 宽40px 高40px</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+
+cvs.fillRect(x,y,w,h); –&gt; 填充矩形
+x,y 是这个矩形左上角的坐标
+w,h 是这个矩形的宽高
+
+
+
+
+
+cvs.strokeRect(x,y,w,h); –&gt; 带边框的矩形
+x,y 是这个矩形左上角的坐标
+w,h 是这个矩形的宽高
+注意:如果设置边框 边框一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/canvas之3绘制矩形/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1189,59 +1111,24 @@
       
         
           
-            <ul>
-<li>1.阴影<ul>
-<li>cvs.shadowOffsetX//阴影的横向偏移量，默认值是0</li>
-<li>cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0</li>
-<li>cvs.shadowColor//阴影的颜色</li>
-<li>cvs.shadowBlur//阴影的模糊范围（值越大越模糊）</li>
-</ul>
-</li>
-<li><p>案例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">	cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">	cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">	cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">	cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">	cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">	cvs.fillRect(50,50,100,100);//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>2.绘制文本</p>
-<ul>
-<li>设置字体样式 cvs.font=’字体大小font-size 字体样式font-family’</li>
-<li>水平对齐方式 cvs.textAlign(start,end,right,center);</li>
-<li>垂直对齐方式 cvs.textBaseline=’’</li>
-<li>属性值:top,middle,hangle,bottom,alphabetic,ideographic</li>
-<li>计算文本长度<ul>
-<li>var text=’dfbzbh’</li>
-<li>console.log(cvs.measureText(text));//width:40.453125</li>
-</ul>
-</li>
-<li>填充文字<ul>
-<li>cvs.fillText(text,x,y,maxWidth);</li>
-<li>1) text:文本内容</li>
-<li>2) x:文字起始点的横坐标</li>
-<li>3) y:文字起始点的纵坐标</li>
-</ul>
-</li>
-<li>绘制文字轮廓<ul>
-<li>cvs.strokeText(text,x,y,maxWidth);</li>
-<li>1) text:文本内容</li>
-<li>2) x:文字起始点的横坐标</li>
-<li>3) y:文字起始点的纵坐标</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>案例1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">		cvs.shadowColor=&apos;#000fff&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowOffsetX=30;//设置阴影的横向偏移量30px</div><div class="line">		cvs.shadowOffsetY=20;//设置阴影的纵向偏移量20px</div><div class="line">		cvs.shadowBlur=20;//设置阴影的模糊范围20px</div><div class="line">		cvs.fillStyle=&apos;#449fdb&apos;;//设置填充的样式为颜色填充</div><div class="line">		cvs.fillRect(50,50,100,100);</div><div class="line">		//设置填充矩形 左上角坐标50,50 宽100px 高100px</div><div class="line">	&#125;</div><div class="line">	draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">	cvs.fillStyle=&apos;yellow&apos;;//设置填充样式颜色</div><div class="line">	cvs.font=&apos;40px verdana&apos;;//设置字体样式</div><div class="line">	cvs.textAlign=&apos;start&apos;;//设置字体的水平对齐方式</div><div class="line">	cvs.textBaseline=&apos;top&apos;;//设置字体的垂直对齐方式</div><div class="line">	cvs.fillText(text,10,10);</div><div class="line">	//设置填充文字 文本内容text 文本起始点坐标10,10</div><div class="line">	var length=cvs.measureText(text);</div><div class="line">	//获取文本宽度(长度)length</div><div class="line">	console.dir(length);</div><div class="line">	//TextMetrics--&gt;width:241.171875</div><div class="line">	//==&gt;length.width字体的宽度</div><div class="line">	cvs.fillText(&quot;字体长度为&quot;+length.width,10,60);</div><div class="line">	//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,60</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例3:文本线性渐变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">		var CLG=cvs.createLinearGradient(0,0,300,100);</div><div class="line">		//创建一个线性渐变 渐变开始的坐标0,0 渐变结束的坐标300,100</div><div class="line">		CLG.addColorStop(0,&apos;skyblue&apos;);//设置渐变的偏移量0% 天空蓝</div><div class="line">		CLG.addColorStop(0.25,&apos;plum&apos;);//设置渐变的偏移量25% 紫色</div><div class="line">		CLG.addColorStop(0.5,&apos;lightblue&apos;);//设置渐变的偏移量50% 蓝</div><div class="line">		CLG.addColorStop(0.75,&apos;skyblue&apos;);//设置渐变的偏移量75% 天空蓝</div><div class="line">		CLG.addColorStop(1,&apos;plum&apos;);//设置渐变的偏移量100% 紫色</div><div class="line">		var text=&apos;hellow word&apos;;//设置文本内容</div><div class="line">		cvs.fillStyle=CLG;//设置填充样式是线性渐变</div><div class="line">		cvs.shadowOffsetX=5;//设置阴影的横向偏移量5px</div><div class="line">		cvs.shadowOffsetY=4;//设置阴影的纵向偏移量4px</div><div class="line">		cvs.shadowColor=&apos;#ffb6c1&apos;;//设置阴影的颜色</div><div class="line">		cvs.shadowBlur=5;//设置阴影的模糊度</div><div class="line">		cvs.font=&apos;40px cursive&apos;;//设置字体样式</div><div class="line">		cvs.textAlign=&apos;top&apos;;//设置字体的水平对齐方式</div><div class="line">		cvs.fillText(text,50,150);</div><div class="line">		//设置填充文字text 文本起始点坐标50,150</div><div class="line">		var width=cvs.measureText(text).width;//获取文本宽度(长度)length</div><div class="line">		cvs.fillText(&quot;字体长度为：&quot;+width,10,200);</div><div class="line">		//设置填充文字(通过字符串拼接方式) 文本起始点坐标10,200</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	draw3();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例4:文本径向渐变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var CRG=cvs.createLinearGradient(0,0,600,0,0,20);</div><div class="line">	//创建一个径向渐变 渐变开始的坐标0,0 开始渐变的半径600px 渐变结束的坐标0,0 渐变结束的半径20px</div><div class="line">	CRG.addColorStop(0,&apos;pink&apos;);</div><div class="line">	CRG.addColorStop(0.25,&apos;skyblue&apos;);</div><div class="line">	CRG.addColorStop(0.5,&apos;yellow&apos;);</div><div class="line">	CRG.addColorStop(0.75,&apos;plum&apos;);</div><div class="line">	CRG.addColorStop(1,&apos;skyblue&apos;);</div><div class="line">		var text=&apos;I WANT EAT&apos;;</div><div class="line">		cvs.fillStyle=CRG;//设置填充样式是径向渐变</div><div class="line">		cvs.font=&apos;80px simsun&apos;;//设置字体样式</div><div class="line">  		cvs.textAlign=&apos;start&apos;;//设置文本横向对齐方式</div><div class="line">		cvs.textBaseline=&apos;top&apos;;//设置文本纵向对齐方式</div><div class="line">		cvs.shadowColor=&apos;lightblue&apos;;//设置阴影颜色</div><div class="line">		cvs.shadowBlur=10;//设置阴影的模糊范围10px</div><div class="line">		cvs.fillText(text,10,10);//设置填充文字text 文本起始点坐标10,10</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
           
+1.阴影
+cvs.shadowOffsetX//阴影的横向偏移量，默认值是0
+cvs.shadowOffsetY//阴影的纵向偏移量，默认值是0
+cvs.shadowColor//阴影的颜色
+cvs.shadowBlur//阴影的模糊范围（值越大越模糊）
+
+
+案例
+123456789functio
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/canvas之5绘制文本/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1370,26 +1257,22 @@
       
         
           
-            <h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><ul>
-<li>是具有储存功能的计算机设备（笔记本电脑本身就是一个服务器）<h5 id="服务器根据功能分类："><a href="#服务器根据功能分类：" class="headerlink" title="服务器根据功能分类："></a>服务器根据功能分类：</h5></li>
-<li>web服务器：供用户访问的 安全系数相对较低</li>
-<li>数据库服务器：放在内网的服务器，用来安装数据库</li>
-<li>应用服务器：放在内网的服务器，用来安装应用（产品）</li>
-</ul>
-<h5 id="操作系统有关"><a href="#操作系统有关" class="headerlink" title="操作系统有关"></a>操作系统有关</h5><ul>
-<li>可视操作：可以直观看到所有文件，可以直接操作这些文件（window）</li>
-<li>不可视操作：不能直观看到所有文件，需要ssh，ftp这样的工具进行连接（或者是敲命令进行）</li>
-</ul>
-<h5 id="大型机与嵌入式系统使用很多样化的操作系统。"><a href="#大型机与嵌入式系统使用很多样化的操作系统。" class="headerlink" title="大型机与嵌入式系统使用很多样化的操作系统。"></a>大型机与嵌入式系统使用很多样化的操作系统。</h5><ul>
-<li>在服务器方面Linux、UNIX和WindowsServer占据了市场的大部分份额。在超级计算机方面，Linux取代Unix成为了第一大操作系统，截止2012年6月，世界超级计算机500强排名中基于Linux的超级计算机占据了462个席位，比率高达92%。随着智能手机的发展，Android和iOS已经成为目前最流行的两大手机操作系统。</li>
-</ul>
-<h5 id="内外网："><a href="#内外网：" class="headerlink" title="内外网："></a>内外网：</h5><ul>
-<li>内网：数据库 ，产品应用——可供用户观看的页面</li>
-<li>外网：web服务器，web服务器（多个相同的web服务器，负载均衡）——可供用户访问的</li>
-<li>vpn(翻墙软件)负载均衡：内外网的连接工具</li>
-</ul>
+          服务器
+是具有储存功能的计算机设备（笔记本电脑本身就是一个服务器）服务器根据功能分类：
+web服务器：供用户访问的 安全系数相对较低
+数据库服务器：放在内网的服务器，用来安装数据库
+应用服务器：放在内网的服务器，用来安装应用（产品）
 
-          
+操作系统有关
+可视操作：可以直观看到所有文件，可以直接操作这些文
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/服务器及相关知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1518,37 +1401,22 @@
       
         
           
-            <ul>
-<li><ol>
-<li>cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise);<ul>
-<li>x,y 圆心坐标</li>
-<li>radius半径r</li>
-<li>startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针)</li>
-<li>endAngle  结束角</li>
-<li>anticlokwise 是否逆时针 默认值false false表示顺时针</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><ol>
-<li><p>案例</p>
-<ul>
-<li><p>案例1:边框半圆</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;//边框圆</div><div class="line">	cvs.strokeStyle=&apos;#ffa50&apos;;//设置笔触样式(边框样式)颜色</div><div class="line">	cvs.beginPath();//开始一个路径</div><div class="line">	cvs.arc(500,500,100,0,Math.PI);//圆心坐标是500,500，半径是100px，起始角为0度，结束角为180度</div><div class="line">	cvs.closePath();//结束路径</div><div class="line">	cvs.lineWidth=10;//边框宽度为10px</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2:同心圆</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	cvs.fillStyle=&apos;orange&apos;;</div><div class="line">	cvs.beginPath();</div><div class="line">	//开始一个新的路径</div><div class="line">	cvs.arc(200,200,60,Math.PI/2,2*Math.PI);</div><div class="line">	//圆心坐标是(200,200),半径为60px,起始角为90度,结束角为360度</div><div class="line">	cvs.closePath();</div><div class="line">	//结束一个路径</div><div class="line">	cvs.fill();</div><div class="line">	//绘制图形以填充样式绘制</div><div class="line">	cvs.strokeStyle=&apos;yellow&apos;;</div><div class="line">	//设置 笔触样式(边框样式) 为黄色</div><div class="line">	cvs.lineWidth=40;</div><div class="line">	//边框的宽度为40px</div><div class="line">	cvs.beginPath();</div><div class="line">	//开始一个新的路径</div><div class="line">	cvs.arc(200,200,80,0,2*Math.PI);</div><div class="line">	//圆心坐标是(200,200),半径为80px,起始角度为0度,结束角度为360度</div><div class="line">	cvs.closePath();//结束一个路径</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例3:每次调用fill绘制填充图的时候，会把当次路径的起始点和结束点分别连接，填充闭合部分(如果想让每个路径互不干扰 一定要记得写结束路径–&gt;关闭路径)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	cvs.strokeStyle=&apos;pink&apos;;//设置笔触样式(边框样式)颜色为粉色</div><div class="line">	cvs.beginPath();//开始一个路径</div><div class="line">	cvs.lineWidth=2;//边框的宽度为2px</div><div class="line">	cvs.arc(100,100,100,0,Math.PI);//圆心坐标是100,100,半径为100,起始角度为0度,结束角度为180度</div><div class="line">	cvs.closePath();//结束一个路径</div><div class="line">	cvs.stroke();//绘制图形以边框样式绘制</div><div class="line">	cvs.fillStyle=&apos;gray&apos;;//设置填充颜色为灰色</div><div class="line">	cvs.arc(300,300,80,0,Math.PI/2);//圆心坐标是300,300，半径是80px，起始角度为0，结束角度为90度</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.fill();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-
           
+
+cvs.arc(x,y,radius,startAngle,endAngle,anticlokwise);
+x,y 圆心坐标
+radius半径r
+startAngle 起始角 以弧度计算(钟表的3点钟方向是0度,也就是x轴的正方向是0度,默认是顺时针)
+endAngle  结束角
+anticlo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/08/canvas之2画圆/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1677,92 +1545,15 @@
       
         
           
-            <p><code>&lt;canvas id=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/canvas&gt;</code><br>canvas :H5标签 在页面上绘制图形用的（通常称他画布）<br>canvas只是一个容器，我们用js脚本来控制他<br><code>&lt;canvas id=&quot;draw&quot; width=&quot;600&quot; height=&quot;500&quot; style=&quot;border: 1px solid #ccc;&quot;&gt;&lt;/canvas&gt;</code></p>
-<h3 id="绘制线条的有关属性和步骤"><a href="#绘制线条的有关属性和步骤" class="headerlink" title="绘制线条的有关属性和步骤"></a>绘制线条的有关属性和步骤</h3><blockquote>
-<p>1.相关属性</p>
-</blockquote>
-<ul>
-<li><p>1.填充的样式</p>
-<ul>
-<li><code>cvs.fillStyle --&gt;</code>fillStyle`填充样式</li>
-<li><code>cvs.strokeStyle --&gt;</code>strokeStyle<code>笔触样式 主要用来画边框的</code></li>
-<li><code>cvs.lineWidth --&gt; 边框的宽度</code></li>
-</ul>
-</li>
-<li><p>2.绘制图形有两种方式</p>
-<ul>
-<li><code>cvs.fill(); --&gt; 填充样式</code></li>
-<li><code>cvs.stroke(); --&gt; 边框样式</code></li>
-</ul>
-</li>
-<li><p>3.颜色值的四种书写方式</p>
-<ul>
-<li>1).颜色名      –&gt;”red”</li>
-<li>2).十六进制    –&gt;”#fff”</li>
-<li>3).三色值      –&gt;rgb(0,0,0)</li>
-<li>4).四色值      –&gt;rgba(0,0,0,0.3)</li>
-</ul>
-</li>
-<li><p>4.坐标:</p>
-<ul>
-<li>1.)以画布为基准,距离画布的上边是y坐标值(top值),距离画布的左边是x坐标值(left值);</li>
-<li>cvs.moveTo(x,y);  –&gt; 起始点坐标</li>
-<li>cvs.lineTo(x,y);  –&gt; 结束点的坐标</li>
-<li>如果没有moveTo就把上一个挨着的lineTo作为起始坐标</li>
-<li>例如:假如第一个不是moveTo而是lineTo,那么lineTo就是其实坐标</li>
-</ul>
-</li>
-<li><p>5.开始和关闭一个路径</p>
-<ul>
-<li>cvs.beginPath(); –&gt; 开始一个新的路径</li>
-<li>cvs.closePath(); –&gt; 关闭当前路径</li>
-<li>注意:加上.closePath会自动闭合 会自动连接起始坐标和结束坐标</li>
-</ul>
-</li>
-<li><p>6.canvas中的圆角</p>
-<ul>
-<li>1).设置线条交汇处的样式</li>
-<li>cvs.lineJoin 他有三个属性：<ul>
-<li>1).尖角miter</li>
-<li>2).斜角bevel</li>
-<li>3).圆角round</li>
-</ul>
-</li>
-<li>2).设置一条线段两端点的样式</li>
-<li>lineCap焦点样式<ul>
-<li>1)平的butt(默认值)</li>
-<li>2.)圆角round</li>
-<li>3.)方角square</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>2.步骤及案例</p>
-</blockquote>
-<ul>
-<li>步骤1.获取出canvas标签,例如:<br><code>var draw=document.getElementById(&#39;draw&#39;);</code></li>
-<li><p>步骤2.设置绘制环境–2d 平面图,例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">//cvs 这个就是你的画板 接下来就可以在cvs上进行绘制</div></pre></td></tr></table></figure>
-</li>
-<li><p>步骤3</p>
-</li>
-<li><p>案例1:线段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function draw1()&#123;</div><div class="line">var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">cvs.beginPath();</div><div class="line">cvs.moveTo(50,50);</div><div class="line">cvs.lineTo(150,50);</div><div class="line">cvs.closePath();</div><div class="line">cvs.strokeStyle=&apos;#800080&apos;;</div><div class="line">cvs.lineWidth=5;</div><div class="line">cvs.stroke();//以边框的形式显示</div><div class="line">&#125;</div><div class="line">draw1();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例2:等腰直角三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw2()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineTo(80,120);</div><div class="line">	cvs.lineTo(80,240);</div><div class="line">	cvs.lineTo(200,240);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.strokeStyle=&apos;ec568c&apos;;</div><div class="line">	cvs.lineWidth=10;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw2();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例3:圆角矩形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function draw3()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineCap=&apos;round&apos;;</div><div class="line">	cvs.lineTo(50,50);</div><div class="line">	cvs.lineTo(250,50);</div><div class="line">	cvs.closePath();//关闭就没有圆角效果</div><div class="line">	cvs.lineWidth=100;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw3();</div></pre></td></tr></table></figure>
-</li>
-<li><p>案例4:圆角三角形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function draw4()&#123;</div><div class="line">	var draw=document.getElementById(&apos;draw&apos;);</div><div class="line">	var cvs=draw.getContext(&apos;2d&apos;);</div><div class="line">	cvs.beginPath();</div><div class="line">	cvs.lineJoin=&apos;round&apos;;//设置圆角</div><div class="line">	cvs.moveTo(200,100);</div><div class="line">	cvs.lineTo(100,250);</div><div class="line">	cvs.lineTo(300,250);</div><div class="line">	cvs.closePath();</div><div class="line">	cvs.lineWidth=50;</div><div class="line">	cvs.strokeStyle=&apos;#896446&apos;;</div><div class="line">	cvs.stroke();</div><div class="line">&#125;</div><div class="line">draw4();</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
+          &lt;canvas id=&quot;&quot; width=&quot;&quot; height=&quot;&quot;&gt;&lt;/canvas&gt;canvas :H5标签 在页面上绘制图形用的（通常称他画布）canvas只是一个容器，我们用js脚本来控制他&lt;canvas 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/08/canvas之1绘制线条的有关属性和步骤/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1891,46 +1682,15 @@
       
         
           
-            <p>1.通过索引查找字符串<br>1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变<br>2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.charAt(0),str);</div><div class="line">//&quot;a&quot; &quot;addias&quot; 原字符串不变</div><div class="line">console.log(str.charCodeAt(0),str);</div><div class="line">//97 &quot;addias&quot;  原字符串不变</div></pre></td></tr></table></figure></p>
-<p>2.检取字符串</p>
-<blockquote>
-<ol>
-<li>substr(n,m); 从索引n开始截取m个</li>
-</ol>
-<ul>
-<li>返回值为截取的字符串</li>
-<li>原有字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(1, 2),str);//&quot;dd&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<ul>
-<li>1). str.substr();// 复制字符串</li>
-<li>2). str.substr(0);// 复制字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substr(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div><div class="line">console.log(str.substr(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot; 复制字符串</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<ol>
-<li>subString(n,m) 从索引n找到索引m之前，不包含m处;原字符串不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(3, 4),str);</div><div class="line">//&quot;i&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
-<ul>
-<li>substring(0); 克隆字符串</li>
-<li>substring(); 克隆字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.substring(0),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div><div class="line">console.log(str.substring(),str);</div><div class="line">//&quot;addias&quot; &quot;addias&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<ol>
-<li>slice  字符串也可以使用slice<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.slice(-1+str.length));//s</div><div class="line">console.log(str.slice(-1)); //s 同数组的使用方法一样</div><div class="line">console.log(str.slice(-2)); //as 同数组的使用方法一样</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>4.indexOf();字符串中当前字符出现的第一个索引;<br>lastIndexOf();字符串中当前字符出现的最后一个索引;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.indexOf(&apos;f&apos;));//-1</div><div class="line">console.log(str.lastIndexOf(&apos;a&apos;));//4</div></pre></td></tr></table></figure></p>
-<p>5.toUpperCase();字符串转化成大写;<br>toLowerCase();字符串转化成小写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var str = &apos;addias&apos;;</div><div class="line">console.log(str.toUpperCase(), str);</div><div class="line">// &quot;ADDIAS&quot; &quot;addias&quot; 字符串转化成大写</div><div class="line">var str = &apos;ADDIAS&apos;;</div><div class="line">console.log(str.toLowerCase(), str);</div><div class="line">//&quot;addias&quot; &quot;ADDIAS&quot; 字符串转化成小写</div></pre></td></tr></table></figure></p>
-<p>6.replace 替换字符串中的字符;原字符串不变<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str1.replace(&apos;珠&apos;, &apos;zhu&apos;), str1);</div><div class="line">//&quot;zhu,峰,珠,训&quot;    &quot;珠,峰,珠,训&quot;</div></pre></td></tr></table></figure></p>
-<p>6.split 将字符串拆分成数组;将字符串以字符串中存在的指定分隔符拆分成数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var str1 = &apos;珠,峰,珠,训&apos;;</div><div class="line">var str2 = &apos;sdasdasdasdasd&apos;;</div><div class="line">console.log(str2.split(&apos;a&apos;));</div><div class="line">//(5) [&quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;, &quot;sd&quot;]</div><div class="line">console.log(str2.split());</div><div class="line">//[&quot;sdasdasdasdasd&quot;]</div><div class="line">console.log(str1.split(&apos;,&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;峰&quot;, &quot;珠&quot;, &quot;训&quot;]</div><div class="line">console.log(str1.split(&apos;&apos;));</div><div class="line">//[&quot;珠&quot;, &quot;,&quot;, &quot;峰&quot;, &quot;,&quot;, &quot;珠&quot;, &quot;,&quot;, &quot;训&quot;]</div></pre></td></tr></table></figure></p>
-</blockquote>
-
-          
+          1.通过索引查找字符串1) charAt(索引) 字符串上的charAt方法里边传索引值，进行搜索指定索引位置的字符，还是字符串格式;原字符串不变2) charCodeAt（索引） 返回结果对应的是ASCII码;原字符串不变例如:12345var str = &apos;addias&apos;;c
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/02/JS字符串中的几个重要方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
