@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二维数组降维成一维数组]]></title>
+    <url>%2F2018%2F07%2F15%2F%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E9%99%8D%E7%BB%B4%E6%88%90%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[把[[2,5],[7,3]]降维成[2,5,7,3] 方法一:12let arr=[[2,5],[7,3]];arr.toString().split //[2,5,7,3] 方法二:12345678function fn(arr)&#123; let a=[]; arr.map(item=&gt;&#123; a=[...a,...item] &#125;); return a&#125;fn([[2,5],[7,3]]) //[2,5,7,3]]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>javascript</tag>
+        <tag>数组</tag>
+        <tag>二维数组</tag>
+        <tag>一维数组</tag>
+        <tag>前端面试题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信小程序模块化/组件化开发]]></title>
     <url>%2F2018%2F02%2F11%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97%E5%8C%96-%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91%2F</url>
     <content type="text"><![CDATA[将公用组件抽离出来 把一些内容抽取到一个公有的页面中 首先我们要知道，在home下可以共用模板 1.在home文件夹下新建个目录(list-tmpl) 模板中只能放两种文件:css、wxml;不支持js和json 模板的标志template标签 模板要给他起个名字，就是我们要调用这个模板的时候要用的名字&lt;template name=&#39;name&#39;&gt;&lt;/template&gt; 可以放多个模板，但每个模板都要有自己的名字 同样css样式也要公有化 2.导入模板(使用相对路径) &lt;import src=&#39;list-tmpl/list-tmpl.wxml&#39;/&gt; is-&gt;模板名字,data-&gt;传入数据;&lt;template is=&#39;list&#39; data=&#39;&#39;&gt;&lt;/template&gt; 此时home.wxml文件123456789&lt;import src=&apos;list-tmpl/list-tmpl.wxml&apos;/&gt;&lt;swiper autoplay=&apos;&#123;&#123;true&#125;&#125;&apos; interval=&apos;1000&apos; indicator-dots=&apos;&#123;&#123;true&#125;&#125;&apos; circular=&apos;&#123;&#123;true&#125;&#125;&apos;&gt; &lt;swiper-item wx:for=&apos;&#123;&#123;imgs&#125;&#125;&apos;&gt; &lt;image src=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/image&gt; &lt;/swiper-item&gt;&lt;/swiper&gt;&lt;block wx:for=&quot;&#123;&#123;lists&#125;&#125;&quot;&gt; &lt;template is=&apos;list&apos; data=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/template&gt;&lt;/block&gt; 3.引入css样式,此时home.wxss文件1234567@import &apos;list-tmpl/list-tmpl.wxss&apos;;swiper&#123; height: 400rpx;&#125;swiper image&#123; width: 100%;&#125; 点击跳转详情页 事件不能直接绑在template标签上，因为在编译的过程中，最终会直接用一个模板将template替换掉。 解决方案:在template标签外面包一层view标签，在view标签上绑定bindtap点击事件]]></content>
@@ -337,9 +353,9 @@
         <category>react</category>
       </categories>
       <tags>
-        <tag>react轮播图</tag>
         <tag>react</tag>
         <tag>轮播图</tag>
+        <tag>react轮播图</tag>
       </tags>
   </entry>
   <entry>
@@ -418,9 +434,9 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>form</tag>
         <tag>table</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -443,8 +459,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>html标签</tag>
         <tag>css</tag>
+        <tag>html标签</tag>
         <tag>html标签分类</tag>
         <tag>标签分类</tag>
       </tags>
@@ -506,9 +522,9 @@
         <category>css</category>
       </categories>
       <tags>
+        <tag>css</tag>
         <tag>html元素</tag>
         <tag>html标签</tag>
-        <tag>css</tag>
       </tags>
   </entry>
   <entry>
