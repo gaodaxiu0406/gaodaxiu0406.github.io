@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[将对象转化为数组]]></title>
     <url>%2F2018%2F07%2F15%2F%E5%B0%86%E5%AF%B9%E8%B1%A1%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"><![CDATA[将对象转化为数组 方法一:]]></content>
+    <content type="text"><![CDATA[将对象转化为数组 方法一:12let obj=&#123;a:1,b:2&#125;Object.entries(obj)]]></content>
       <categories>
         <category>Javascript</category>
       </categories>
@@ -261,7 +261,7 @@
     <url>%2F2017%2F08%2F31%2F%E8%A7%A3%E5%86%B3Chrome%E5%8A%A8%E7%94%BB%E2%80%9D%E5%8D%A1%E9%A1%BF%E2%80%9D%E7%9A%84%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[解决Chrome动画”卡顿”的办法,为动画DOM元素添加CSS3样式 123-webkit-transform:transition3d(0,0,0);//或-webkit-transform:translateZ(0); 这两个属性都会开启GPU硬件加速模式，从而让览器在渲染动画时从CPU转向GPU; 其实说白了这是一个小伎俩，也可以算是一个Hack，-webkit-transform:transition3d和-webkit-transform:translateZ其实是为了渲染3D样式，但我们设置值为0后，并没有真正使用3D效果，但浏览器却因此开启了GPU硬件加速模式。 这种GPU硬件加速在当今PC机及移动设备上都已普及，在移动端的性能提升是相当显著地，所以建议大家在做动画时可以尝试一下开启GPU硬件加速。 当然也可以这样开启所有浏览器的GPU硬件加速： 12345webkit-transform: translateZ(0);-moz-transform: translateZ(0);-ms-transform: translateZ(0);-o-transform: translateZ(0);transform: translateZ(0); 或者: 12345webkit-transform: translate3d(0,0,0);-moz-transform: translate3d(0,0,0);-ms-transform: translate3d(0,0,0);-o-transform: translate3d(0,0,0);transform: translate3d(0,0,0); 使用-webkit-transform:transition3d(0,0,0)开启GPU硬件加速的chrome中渲染动画性能明显顺畅了许多 chrome诡异的Bug 对所有动画DOM元素添加-webkit-transform:transition3d(0,0,0)开启GPU硬件加速之后，又出现了一个chrome诡异的Bug 当你有多个position:absolute;元素添加-webkit-transform:transition3d(0,0,0);开启GPU硬件加速之后，会有几个元素凭空消失 这可能是跟添加-webkit-transform之后chrome尝试使用GPU硬件加速有关系，最后还是要等待Chrome官方更新解决了，当前Chrome版本是33。如果谁发现比较好的解决办法，欢迎提出^_^ 如何避免这个问题 在使用-webkit-transform尝试对很多DOM元素编写3D动画时，尽量不要对这些元素及他们的父元素使用position:absolute/fixed。(其实这种情况很难避免) 临时解决办法是,减少使用-webkit-transform:transition3d(0,0,0)的DOM元素数量，例如从9个减至6个就没有元素消失的现象了。 开启GPU硬件加速可能触发的问题： 通过-webkit-transform:transition3d/translateZ开启GPU硬件加速之后，有些时候可能会导致浏览器频繁闪烁或抖动，可以尝试以下办法解决之:12-webkit-backface-visibility:hidden;-webkit-perspective:1000; 如何监测动画帧速率 推荐两种实时监测网页渲染帧速率的方法： 1.Chrome的DevTool中TimeLine的Frame模块 2.地址栏输入”chrome:flags”搜索”fps”，将”FPS计数器”开启，浏览器重启后右上角会实时显示帧速率。 通过-webkit-transform:transition3d/translateZ开启GPU硬件加速的适用范围： 使用很多大尺寸图片(尤其是PNG24图)进行动画的页面。 页面有很多大尺寸图片并且进行了css缩放处理，页面可以滚动时。 使用background-size:cover设置大尺寸背景图，并且页面可以滚动时。(详见:https://coderwall.com/p/j5udlw) 编写大量DOM元素进行CSS3动画时(transition/transform/keyframes/absTop&amp;Left) 使用很多PNG图片拼接成CSS Sprite时 暂时只有这五种情况，欢迎大家补充 通过开启GPU硬件加速虽然可以提升动画渲染性能或解决一些棘手问题，但使用仍需谨慎，使用前一定要进行严谨的测试，否则它反而会大量占用浏览网页用户的系统资源，尤其是在移动端，肆无忌惮的开启GPU硬件加速会导致大量消耗设备电量，降低电池寿命等问题。参考地址:http://blog.bingo929.com/transform-translate3d-translatez-transition-gpu-hardware-acceleration.html]]></content>
       <categories>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
         <tag>Chrome动画”卡顿”</tag>
@@ -300,7 +300,7 @@
     <url>%2F2017%2F08%2F20%2Fbox-shadow%2F</url>
     <content type="text"><![CDATA[box-shadow 属性向框添加一个或多个阴影 相关小项目地址:https://github.com/gaodaxiu0406/HEXOcase(CSS/小项目练习) 语法CSS语法1box-shadow: h-shadow v-shadow blur spread color inset; 注释 box-shadow 向框添加一个或多个阴影。该属性是由逗号分隔的阴影列表，每个阴影由 2-4 个长度值、可选的颜色值以及可选的 inset 关键词来规定。省略长度的值是 0。 值 描述 h-shadow 必需。水平阴影的位置。允许负值。 v-shadow 必需。垂直阴影的位置。允许负值。 blur 可选。模糊距离。 spread 可选。阴影的尺寸。 color 可选。阴影的颜色。请参阅 CSS 颜色值。 inset 可选。将外部阴影 (outset) 改为内部阴影。 1box-shadow: 10px 20px 30px 40px #000 inset; JavaScript语法1object.style.boxShadow=&quot;10px 10px 5px #888888&quot; text-shadow语法CSS语法1text-shadow: h-shadow v-shadow blur color; 注释 text-shadow 属性向文本添加一个或多个阴影。该属性是逗号分隔的阴影列表，每个阴影有两个或三个长度值和一个可选的颜色值进行规定。省略的长度是 0。 值 描述 h-shadow 必需。水平阴影的位置。允许负值。 v-shadow 必需。垂直阴影的位置。允许负值。 blur 可选。模糊的距离。 color 可选。阴影的颜色。参阅 CSS 颜色值。 1text-shadow: 10px 20px 30px #000;]]></content>
       <categories>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
         <tag>box-shadow</tag>
