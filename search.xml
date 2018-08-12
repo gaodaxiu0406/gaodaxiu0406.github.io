@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[将对象转化为数组]]></title>
     <url>%2F2018%2F07%2F15%2F%E5%B0%86%E5%AF%B9%E8%B1%A1%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"><![CDATA[将对象转化为数组 方法一:12let obj=&#123;a:1,b:2&#125;Object.entries(obj)]]></content>
+    <content type="text"><![CDATA[将对象转化为数组 方法一: 1234567let obj=&#123;a:1,b:2&#125;let arr = []let x=Object.entries(obj)//[[&quot;a&quot;, 1],[&quot;b&quot;, 2]]arr=x.map(item=&gt;&#123; return item[1]&#125;)console.log(arr)//[1,2] 方法二: 1234567let obj=&#123;a:1,b:2&#125;let arr = []for (let i in obj) &#123; arr.push(obj[i]); //属性 //arr.push(obj[i]); //值&#125;console.log(arr);//[1,2]]]></content>
       <categories>
         <category>Javascript</category>
       </categories>
@@ -11,6 +11,7 @@
         <tag>js</tag>
         <tag>javascript</tag>
         <tag>对象转数组</tag>
+        <tag>entries</tag>
       </tags>
   </entry>
   <entry>
