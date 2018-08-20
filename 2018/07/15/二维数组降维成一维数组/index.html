@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="js,javascript,数组,二维数组,一维数组,前端面试题," />
+  <meta name="keywords" content="js,javascript,数组,二维数组,一维数组,前端面试题,reduce," />
 
 
 
@@ -86,13 +86,13 @@
 
 
 <meta name="description" content="把[[2,5],[7,3]]降维成[2,5,7,3]">
-<meta name="keywords" content="js,javascript,数组,二维数组,一维数组,前端面试题">
+<meta name="keywords" content="js,javascript,数组,二维数组,一维数组,前端面试题,reduce">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二维数组降维成一维数组">
 <meta property="og:url" content="http://gaodaxiu0406.github.io/2018/07/15/二维数组降维成一维数组/index.html">
 <meta property="og:site_name" content="滴答">
 <meta property="og:description" content="把[[2,5],[7,3]]降维成[2,5,7,3]">
-<meta property="og:updated_time" content="2018-07-15T11:18:15.809Z">
+<meta property="og:updated_time" content="2018-08-20T14:44:12.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二维数组降维成一维数组">
 <meta name="twitter:description" content="把[[2,5],[7,3]]降维成[2,5,7,3]">
@@ -414,6 +414,7 @@
         <h2 id="把-2-5-7-3-降维成-2-5-7-3"><a href="#把-2-5-7-3-降维成-2-5-7-3" class="headerlink" title="把[[2,5],[7,3]]降维成[2,5,7,3]"></a>把<code>[[2,5],[7,3]]</code>降维成<code>[2,5,7,3]</code></h2><a id="more"></a>
 <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a>方法一:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let arr=[[2,5],[7,3]];</div><div class="line">arr.toString().split  //[2,5,7,3]</div></pre></td></tr></table></figure>
 <h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二:"></a>方法二:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function fn(arr)&#123;</div><div class="line">    let a=[];</div><div class="line">    arr.map(item=&gt;&#123;</div><div class="line">        a=[...a,...item]</div><div class="line">    &#125;);</div><div class="line">    return a</div><div class="line">&#125;</div><div class="line">fn([[2,5],[7,3]])  //[2,5,7,3]</div></pre></td></tr></table></figure>
+<h3 id="方法三-reduce"><a href="#方法三-reduce" class="headerlink" title="方法三:reduce"></a>方法三:reduce</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let arr=[[1,2,3],[4,5,6],[7,8,9]].reduce(function(prev,next)&#123;</div><div class="line">    return prev.concat(next)</div><div class="line">&#125;)</div><div class="line">console.log(arr)//[1,2,3,4,5,6,7,8,9]</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -471,6 +472,8 @@
           
             <a href="/tags/前端面试题/" rel="tag"># 前端面试题</a>
           
+            <a href="/tags/reduce/" rel="tag"># reduce</a>
+          
         </div>
       
 
@@ -482,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/11/微信小程序模块化-组件化开发/" rel="next" title="微信小程序模块化/组件化开发">
-                <i class="fa fa-chevron-left"></i> 微信小程序模块化/组件化开发
+              <a href="/2018/04/25/JS数组中的方法1/" rel="next" title="数组中的方法1">
+                <i class="fa fa-chevron-left"></i> 数组中的方法1
               </a>
             
           </div>
@@ -606,7 +609,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +631,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">148</span>
+                  <span class="site-state-item-count">154</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -671,7 +674,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#把-2-5-7-3-降维成-2-5-7-3"><span class="nav-number">1.</span> <span class="nav-text">把[[2,5],[7,3]]降维成[2,5,7,3]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.</span> <span class="nav-text">方法一:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.2.</span> <span class="nav-text">方法二:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#把-2-5-7-3-降维成-2-5-7-3"><span class="nav-number">1.</span> <span class="nav-text">把[[2,5],[7,3]]降维成[2,5,7,3]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.1.</span> <span class="nav-text">方法一:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.2.</span> <span class="nav-text">方法二:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三-reduce"><span class="nav-number">1.3.</span> <span class="nav-text">方法三:reduce</span></a></li></ol></li></ol></div>
             
 
           </div>
