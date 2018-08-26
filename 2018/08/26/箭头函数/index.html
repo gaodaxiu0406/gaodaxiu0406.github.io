@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://gaodaxiu0406.github.io/2018/08/26/箭头函数/index.html">
 <meta property="og:site_name" content="滴答">
 <meta property="og:description" content="箭头函数:不具备this和arguments，自己家没有this就会往上级找this，从而解决this的指向问题。">
-<meta property="og:updated_time" content="2018-08-26T14:25:42.564Z">
+<meta property="og:updated_time" content="2018-08-26T14:26:35.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="箭头函数">
 <meta name="twitter:description" content="箭头函数:不具备this和arguments，自己家没有this就会往上级找this，从而解决this的指向问题。">
@@ -438,7 +438,7 @@
 <li><p>箭头函数:</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//第一步</div><div class="line">let a=b=&gt;&#123;</div><div class="line">    return function(c)&#123;</div><div class="line">        return b+c</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//第二步:删除function和一个形参的小括号</div><div class="line">let a=b=&gt;&#123;</div><div class="line">    return c=&gt;&#123;</div><div class="line">        return b+c</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//第三步:删return和&#123;&#125;</div><div class="line">let a=b=&gt;c=&gt;b+c //高阶函数(俩个箭头及两个以上箭头的)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//第一步</div><div class="line">let a=b=&gt;&#123;</div><div class="line">    return function(c)&#123;</div><div class="line">        return b+c</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//第二步:删除function和一个形参的小括号</div><div class="line">let a=b=&gt;&#123;</div><div class="line">    return c=&gt;&#123;</div><div class="line">        return b+c</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//第三步:删return和大括号</div><div class="line">let a=b=&gt;c=&gt;b+c //高阶函数(俩个箭头及两个以上箭头的)</div></pre></td></tr></table></figure>
 <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
 <li>函数执行的一瞬间</li>
 <li>导致内存泄漏-&gt;因为会产出不销毁的作用域</li>
